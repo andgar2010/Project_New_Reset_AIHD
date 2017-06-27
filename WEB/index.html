@@ -85,6 +85,10 @@
                 display: block;
             }
         }
+
+        #sidebar {
+            min-width: 280px;
+        }
     </style>
 </head>
 
@@ -98,17 +102,17 @@
             </div>
             <div class="col-lg-10 col-md-10 col-sm-9 affix-content">
                 <center>
-                    <h1 class="display-1">NEW RESET A.I.H.D.</h1>
+                    <h1 class="display-4" style="margin: 20px;">NEW RESET A.I.H.D.</h1>
                 </center>
             </div>
         </header>
         <!--/Bloque Header-->
 
         <!-- Bloque Centrado -->
-        <div class="row" style="background: pink">
+        <div class="row" style="background: #bbdefb">
 
             <!--Bloque Sidebar -->
-            <sidebar class="col-md-4 col-lg-3">
+            <sidebar class="col-md-3 col-lg-3">
 
                 <!-- Bloque Navbar -->
                 <nav class="bootstrap-vertical-nav">
@@ -121,7 +125,7 @@
                     <!--/BUTTON COLLASPE-->
 
                     <!--div collapse nav-->
-                    <div class="collapse d-md-flex" id="navbarNav">
+                    <div class="collapse" id="navbarNav">
 
                         <!--ul nav-->
                         <ul class="nav nav-pills flex-column">
@@ -133,20 +137,34 @@
                             <!--/li HOME-->
 
                             <!--li ADMINISTRACION-->
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
-                                
-                                <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Usuarios</a>
-                                    <a href="#" class="dropdown-item">Hardware</a>
-                                    <a href="#" class="dropdown-item">Software</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="#submenu0" data-toggle="collapse" data-target="#submenu0">Administración <i class="fa fa-caret-down"></i></a>
 
+                                <div class="collapse" id="submenu0" aria-expanded="false">
+
+                                    <ul class="flex-column pl-2 nav">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled collapsed py-0" href="#submenu0sub0" data-toggle="collapse" data-target="#submenu0sub0">Usuarios</a>
+                                        </li>
+
+                                        <br>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled collapsed py-0" href="#submenu0sub1" data-toggle="collapse" data-target="#submenu0sub1">Software</a>
+                                        </li>
+
+                                        <br>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled collapsed py-0" href="#submenu0sub2" data-toggle="collapse" data-target="#submenu0sub2">Hardware</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <!--/li ADMINISTRACION-->
 
-                            <!--li ASISTENCIA NEW-->
-
+                            <!--li ASISTENCIA-->
                             <li class="nav-item">
                                 <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Asistencia <i class="fa fa-caret-down"></i></a>
 
@@ -209,7 +227,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <!--/li ASISTENCIA NEW-->
+                            <!--/li ASISTENCIA -->
 
                             <!--li CONFIGURACION-->
                             <li class="nav-item">
@@ -248,7 +266,6 @@
                             <!--/li CONFIGURACION-->
 
                             <!--li INVENTARIO-->
-
                             <li class="nav-item">
                                 <a class="nav-link collapsed" href="#submenu3" data-toggle="collapse" data-target="#submenu3">Inventario <i class="fa fa-caret-down"></i></a>
 
@@ -296,11 +313,41 @@
             <!--/Bloque Sidebar-->
 
             <!--Bloque Section-->
-            <section class="col-md-8 col-lg-9" style="border: 1px solid;">
-                <div class=" container-fluid" style="border: 1px solid;">
-                    <h2>Seccion Editable</h2>
-                    <br>
-                    <a href="a.html">prueba</a>
+            <section class="col-md-9 col-lg-9" style="border: 1px solid;">
+                <br>
+                <div class="row">
+                    <div class=" container-fluid">
+                        <h2>Seccion Editable</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="a.html">prueba</a>
+                    </div>
                 </div>
             </section>
             <!--/Bloque Section-->
@@ -309,16 +356,16 @@
         <!-- /Bloque Centrado -->
 
         <!--Bloque Footer-->
-        <footer class="row " style="background: yellow ">
+        <footer class="row " style="background: lightgreen;">
 
-            <div class="container-fluid">
+            <div class="container">
 
                 <!--footer row-->
                 <div class="row">
 
                     <div class="col-md-5">
 
-                        <h5><i class="fa fa-road"></i> ACME CO INC.</h5>
+                        <h5><i class="fa fa-road"></i> NEW RESET A.I.H.D.</h5>
 
                         <div class="row">
 
@@ -361,20 +408,20 @@
                     </div>
 
                     <div class="col-md-2">
-                        <h5 class="text-md-right">Contact Us</h5>
+                        <h5 class="text-md-right">Contactanos</h5>
                         <hr>
                     </div>
 
                     <div class="col-md-5">
                         <form>
                             <fieldset class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="su email">
                             </fieldset>
                             <fieldset class="form-group">
-                                <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                                <textarea class="form-control" id="exampleMessage" placeholder="su mensaje"></textarea>
                             </fieldset>
                             <fieldset class="form-group text-xs-right">
-                                <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                                <button type="button" class="btn btn-secondary-outline btn-lg">Enviar</button>
                             </fieldset>
                         </form>
                     </div>
@@ -387,9 +434,8 @@
 
                     <div class="container">
                         <p>ACERCA DE </p>
-                        <p>NEW RESET 0.0.1 Derechos reservados © 2017 Andrés García y los contribuidores - Derechos reservados
-                            © 2017 PROJECT NEW RESET Development Team</p>
-                        <p>CONTACTO</p>
+                        <p>NEW RESET A.I.H.D. 0.0.1 Derechos reservados © 2017 Andrés García y los contribuidores - <br>Derechos
+                            reservados © 2017 PROJECT NEW RESET A.I.H.D. Development Team</p>
                     </div>
 
                 </div>
