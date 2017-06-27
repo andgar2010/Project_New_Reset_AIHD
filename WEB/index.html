@@ -78,7 +78,7 @@
             .bootstrap-vertical-nav {
                 margin-top: 20px;
             }
-            
+
             /*Bootstrap Vertical Nav*/
             /* Creates a vertical nav starting at 768px (sm) */
             .bootstrap-vertical-nav .collapse {
@@ -90,6 +90,7 @@
 
 <body>
     <div class=”container”>
+        <!--Bloque Header-->
         <header class="row" style="background: lightblue">
             <div class="col-lg-2 col-md-2 col-sm-3 affix-sidebar">
                 <a href="a.html">
@@ -101,37 +102,116 @@
                 </center>
             </div>
         </header>
+        <!--/Bloque Header-->
 
         <!-- Bloque Centrado -->
         <div class="row" style="background: pink">
-            <!--Bloque Navbar-->
-            <div class="col-md-4 col-lg-3">
-                <!-- nav version corregido -->
+
+            <!--Bloque Sidebar -->
+            <sidebar class="col-md-4 col-lg-3">
+
+                <!-- Bloque Navbar -->
                 <nav class="bootstrap-vertical-nav">
+
+                    <!--BUTTON COLLASPE-->
                     <button class="btn btn-primary hidden-md-up" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler">Menú</span>
                     </button>
-                    <div class="collapse" id="navbarNav">
+                    <!--/BUTTON COLLASPE-->
+
+                    <!--div collapse nav-->
+                    <div class="collapse d-md-flex" id="navbarNav">
+
+                        <!--ul nav-->
                         <ul class="nav nav-pills flex-column">
+
+                            <!--li HOME-->
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">Home</a>
                             </li>
+                            <!--/li HOME-->
+
+                            <!--li ADMINISTRACION-->
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
-                                <ul>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">Usuarios</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">Hardware</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Software</a>
-                                    </li>
-                                </ul>
+                                
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Usuarios</a>
+                                    <a href="#" class="dropdown-item">Hardware</a>
+                                    <a href="#" class="dropdown-item">Software</a>
+                                </div>
+
                             </li>
+                            <!--/li ADMINISTRACION-->
+
+                            <!--li ASISTENCIA NEW-->
+
                             <li class="nav-item">
+                                <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Asistencia</a>
+
+                                <div class="collapse" id="submenu1" aria-expanded="false">
+
+                                    <ul class="flex-column pl-2 nav">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Ticket</a>
+
+                                            <div class="collapse small" id="submenu1sub1" aria-expanded="false">
+
+                                                <ul class="flex-column nav pl-4">
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link p-0" href="#"><i class="fa fa-fw fa-clock-o"></i> Solicitar Nuevo Ticket</a>
+                                                    </li>
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link p-0" href="#"><i class="fa fa-fw fa-dashboard"></i> Consultar Ticket</a>
+                                                    </li>
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link p-0" href="#"><i class="fa fa-fw fa-bar-chart"></i> Actualizar Ticket</a>
+                                                    </li>
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link p-0" href="#"><i class="fa fa-fw fa-compass"></i> Areas</a>
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link collapsed py-0" href="#submenu1sub2" data-toggle="collapse" data-target="#submenu1sub2">Reporte</a>
+
+                                            <div class="collapse small" id="submenu1sub2" aria-expanded="false">
+
+                                                <ul class="flex-column nav p-2">
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link p-0" href="#">Generar Nuevo Reporte</a>
+                                                    </li>
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link p-0" href="#">imprimir PDF Reporte</a>
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!--/li ASISTENCIA NEW-->
+
+                            <!--li ASISTENCIA OLD-->
+<!--                            <li class="nav-item">
                                 <a class="nav-link" href="#">Asistencia</a>
                                 <ul>
                                     <li class="nav-item">
@@ -160,7 +240,10 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>-->
+                            <!--/li ASISTENCIA OLD-->
+
+                            <!--li CONFIGURACION-->
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Configuración</a>
                                 <ul>
@@ -177,6 +260,9 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!--/li CONFIGURACION-->
+
+                            <!--li INVENTARIO-->
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Inventario</a>
                                 <ul>
@@ -191,32 +277,52 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!--/li INVENTARIO-->
+
+                            <!--li HERRAMIENTAS-->
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Herramientas</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Configuración</a>
-                            </li>
+                            <!--/li HERRAMIENTAS-->
+
                         </ul>
+                        <!--/ul nav-->
+
                     </div>
+                    <!--/div collapse nav-->
+
                 </nav>
-            </div>
-            
+                <!-- /Bloque Navbar -->
+
+            </sidebar>
+            <!--/Bloque Sidebar-->
+
             <!--Bloque Section-->
-            <div class="col-md-8 col-lg-9" style="border: 1px solid;">
-                <section style="border: 1px solid;">
-                    <div class=" container-fluid" style="border: 1px solid;">
-                        <h2>Seccion Editable</h2>
-                    </div>
-                </section>
-            </div>
+            <section class="col-md-8 col-lg-9" style="border: 1px solid;">
+                <div class=" container-fluid" style="border: 1px solid;">
+                    <h2>Seccion Editable</h2>
+                    <a href="a.html">prueba</a>
+                </div>
+            </section>
+            <!--/Bloque Section-->
+
         </div>
+        <!-- /Bloque Centrado -->
+
+        <!--Bloque Footer-->
         <footer class="row " style="background: yellow ">
-            <div class="container">
+
+            <div class="container-fluid">
+
+                <!--footer row-->
                 <div class="row">
+
                     <div class="col-md-5">
+
                         <h5><i class="fa fa-road"></i> ACME CO INC.</h5>
+
                         <div class="row">
+
                             <div class="col-6">
                                 <ul class="list-unstyled">
                                     <li><a href="">Product</a></li>
@@ -225,6 +331,7 @@
                                     <li><a href="">Team</a></li>
                                 </ul>
                             </div>
+
                             <div class="col-6">
                                 <ul class="list-unstyled">
                                     <li><a href="">Documentation</a></li>
@@ -233,7 +340,9 @@
                                     <li><a href="">About</a></li>
                                 </ul>
                             </div>
+
                         </div>
+
                         <ul class="nav">
                             <li class="nav-item">
                                 <a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a>
@@ -249,11 +358,14 @@
                             </li>
                         </ul>
                         <br>
+
                     </div>
+
                     <div class="col-md-2">
                         <h5 class="text-md-right">Contact Us</h5>
                         <hr>
                     </div>
+
                     <div class="col-md-5">
                         <form>
                             <fieldset class="form-group">
@@ -267,19 +379,30 @@
                             </fieldset>
                         </form>
                     </div>
+
                 </div>
+                <!--footer row-->
+
+
+                <div class="row">
+
+                    <div class="container">
+                        <p>ACERCA DE </p>
+                        <p>NEW RESET 0.0.1 Derechos reservados © 2017 Andrés García y los contribuidores - Derechos reservados
+                            © 2017 PROJECT NEW RESET Development Team</p>
+                        <p>CONTACTO</p>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="row">
-                <div class="container">
-                    <p>ACERCA DE </p>
-                    <p>NEW RESET 0.0.1 Derechos reservados © 2017 Andrés García y los contribuidores - Derechos reservados ©
-                        2017 PROJECT NEW RESET Development Team</p>
-                    <p>CONTACTO</p>
-                </div>
-            </div>
         </footer>
+        <!--/Bloque Footer-->
+
     </div>
+    <!--/Bloque Container-->
+
 </body>
 
 </html>
