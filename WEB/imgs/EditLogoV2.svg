@@ -15,10 +15,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="EditLogoV2.svg"
-   inkscape:export-filename="G:\ADSI\PORTAFOLIO APRENDIZ GARCIA RAMÍREZ ANDRÉS FELIPE\07. Evidencias de Aprendizaje\CEET\Project_New_Reset_AIHD\WEB\assets\img\LogoV2_200.png"
-   inkscape:export-xdpi="9.6774197"
-   inkscape:export-ydpi="9.6774197">
+   sodipodi:docname="LogoNew.svg"
+   inkscape:export-filename="G:\ADSI\PORTAFOLIO APRENDIZ GARCIA RAMÍREZ ANDRÉS FELIPE\07. Evidencias de Aprendizaje\CEET\Project_New_Reset_AIHD\WEB\assets\img\LogoNewOk.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -29,7 +29,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="41.678023"
+     inkscape:cx="568.82088"
      inkscape:cy="697.84425"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
