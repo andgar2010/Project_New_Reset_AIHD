@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Form Examples | Propeller - Admin Dashboard">
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-    <title>Form Examples | Propeller - Admin Dashboard</title>
+    <title>Formulario AIHD</title>
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
     <!-- Google icon -->
@@ -41,7 +41,6 @@
     <!-- Propeller admin theme css-->
     <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
 
-
     <!--Google Analytics code-->
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -60,15 +59,12 @@
         ga('send', 'pageview');
 
     </script>
-
-
 </head>
-
 <!-- Styles Ends -->
-</head>
+
+<!-- Header Starts -->
 
 <body>
-    <!-- Header Starts -->
     <!--Start Nav bar -->
     <nav class="navbar navbar-inverse navbar-fixed-top pmd-navbar pmd-z-depth">
 
@@ -506,14 +502,65 @@
             </ol>
             <!--breadcrum end-->
 
+            <!--Bloque-->
             <div class="section section-custom billinfo">
+
                 <!--section-title -->
-                <h2>Basic Form</h2>
+                <h2>Crear nuevo ticket</h2>
                 <!--section-title end -->
+
                 <!-- section content start-->
                 <form id="validationForm" action="" method="post">
                     <div class="pmd-card pmd-z-depth">
                         <div class="pmd-card-body">
+                            <!--Row 1-->
+                            <div class="group-fields clearfix row">
+                                <!--Columns size 4 -->
+                                <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Fecha de solicitud</label>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <!--Colmun 1 date-->
+                                    <div class="media-right datetimepicker">
+                                        <!--calendar start-->
+                                        <div class="range-calendar" style=" height:40px;">
+                                            <div class="form-group pmd-textfield">
+                                                <div class="input-group">
+                                                    <input id="datepicker-default" type="text" class="form-control datepicker" placeholder="Seleccionar Fecha">
+                                                    <div class="input-group-addon hidden-xs">
+                                                        <svg x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+											<g>
+											<path fill="#010101" d="M-8.736-20.232c0,2.88-2.304,5.184-5.184,5.184s-5.184-2.304-5.184-5.184v-13.824
+											c0-2.88,2.304-5.184,5.184-5.184s5.184,2.304,5.184,5.184V-20.232z M41.952-34.056c0-2.88-2.304-5.184-5.185-5.184
+											c-2.879,0-5.184,2.304-5.184,5.184v13.824c0,2.88,2.305,5.184,5.184,5.184c2.881,0,5.185-2.304,5.185-5.184V-34.056z M63.84-20.923
+											V58.68c0,3.111-2.534,5.645-5.76,5.645h-92.16c-3.226,0-5.76-2.533-5.76-5.645v-79.603c0-3.11,2.534-5.645,5.76-5.645h11.52v6.336
+											c0,4.954,3.687,8.87,8.64,8.87s8.64-4.032,8.64-8.87v-6.336h33.408v6.336c0,4.954,3.687,8.87,8.64,8.87
+											c4.954,0,8.641-4.032,8.641-8.87v-6.336h12.557C61.075-26.568,63.84-24.034,63.84-20.923z M54.624-5.192
+											c0-1.152-1.036-2.189-2.304-2.189h-80.64c-1.268,0-2.304,0.921-2.304,2.189v58.227c0,1.152,1.037,2.189,2.304,2.189h80.64
+											c1.268,0,2.304-0.922,2.304-2.189V-5.192z"/>
+											</g>
+											<g>
+											<path fill="#A5A4A4" d="M7.2,4.414C7.2,5.08,6.667,5.613,6,5.613S4.8,5.08,4.8,4.414v-3.2c0-0.667,0.534-1.2,1.2-1.2
+											s1.2,0.533,1.2,1.2V4.414z M18.934,1.214c0-0.667-0.533-1.2-1.2-1.2s-1.2,0.533-1.2,1.2v3.2c0,0.666,0.533,1.199,1.2,1.199
+											s1.2-0.533,1.2-1.199V1.214z M24,4.254V22.68c0,0.721-0.587,1.307-1.333,1.307H1.333C0.586,23.986,0,23.4,0,22.68V4.254
+											c0-0.721,0.586-1.307,1.333-1.307H4v1.467c0,1.146,0.854,2.053,2,2.053s2-0.934,2-2.053V2.947h7.733v1.467
+											c0,1.146,0.854,2.053,2,2.053s2-0.934,2-2.053V2.947h2.906C23.36,2.947,24,3.533,24,4.254z M21.867,7.896
+											c0-0.268-0.24-0.507-0.534-0.507H2.667c-0.293,0-0.533,0.213-0.533,0.507v13.478c0,0.268,0.24,0.507,0.533,0.507h18.667
+											c0.294,0,0.534-0.213,0.534-0.507V7.896z"/>
+											</g>
+										</svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="selected-date typo-fill-secondary"></span>
+                                        </div>
+                                        <!-- calendar end-->
+                                    </div>
+                                    <!--End Colmun 1 date-->
+                                </div>
+                                <!--End Columns size 3 -->
+                            </div>
+
+                            <br>
+
                             <div class="group-fields clearfix row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
@@ -724,128 +771,6 @@
                 <!-- section content end -->
             </div>
 
-            <div class="section section-custom login-card-section">
-                <!--section-title -->
-                <h2>login Form </h2>
-                <!--section-title end -->
-                <!-- section content start-->
-                <div class="pmd-card card-default pmd-z-depth">
-                    <div class="login-card">
-                        <form>
-                            <div class="pmd-card-title card-header-border text-center">
-                                <div class="loginlogo">
-                                    <a href="javascript:void(0);"><img src="themes/images/logo-icon.png" alt="Logo"></a>
-                                </div>
-                                <h3>Sign In <span>with <strong>PROPELLER</strong></span></h3>
-                            </div>
-
-                            <div class="pmd-card-body">
-                                <div class="alert alert-success" role="alert"> Oh snap! Change a few things up and try submitting again. </div>
-                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                    <label for="inputError1" class="control-label pmd-input-group-label">Username</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
-                                        <input class="form-control" id="exampleInputAmount" type="text"><span class="pmd-textfield-focused"></span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                    <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div>
-                                        <input class="form-control" id="exampleInputAmount" type="text"><span class="pmd-textfield-focused"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-                                <div class="form-group clearfix">
-                                    <div class="checkbox pull-left">
-                                        <label class="pmd-checkbox checkbox-pmd-ripple-effect">
-										<input checked="" value="" type="checkbox">
-										<span class="pmd-checkbox-label">&nbsp;</span><span class="pmd-checkbox"> Remember me</span>
-									</label>
-                                    </div>
-                                    <span class="pull-right forgot-password">
-									<a href="javascript:void(0);">Forgot password?</a>
-								</span>
-                                </div>
-                                <a href="../index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Login</a>
-                                <p class="redirection-link">Don't have an account? <a href="javascript:void(0);" class="login-register">Sign Up</a>. </p>
-                            </div>
-
-                        </form>
-                    </div>
-
-                    <div class="register-card">
-                        <div class="pmd-card-title card-header-border text-center">
-                            <div class="loginlogo">
-                                <a href="javascript:void(0);"><img src="themes/images/logo-icon.png" alt="Logo"></a>
-                            </div>
-                            <h3>Sign Up <span>with <strong>PROPELLER</strong></span></h3>
-                        </div>
-                        <form>
-                            <div class="pmd-card-body">
-
-                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                    <label for="inputError1" class="control-label pmd-input-group-label">Username</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
-                                        <input class="form-control" id="exampleInputAmount" type="text"><span class="pmd-textfield-focused"></span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                    <label for="inputError1" class="control-label pmd-input-group-label">Email address</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">email</i></div>
-                                        <input class="form-control" id="exampleInputAmount" type="text"><span class="pmd-textfield-focused"></span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                    <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div>
-                                        <input class="form-control" id="exampleInputAmount" type="text"><span class="pmd-textfield-focused"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-                                <a href="../index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Sign Up</a>
-                                <p class="redirection-link">Already have an account? <a href="javascript:void(0);" class="register-login">Sign In</a>. </p>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="forgot-password-card">
-                        <form>
-                            <div class="pmd-card-title card-header-border text-center">
-                                <div class="loginlogo">
-                                    <a href="javascript:void(0);"><img src="themes/images/logo-icon.png" alt="Logo"></a>
-                                </div>
-                                <h3>Forgot password?<br><span>Submit your email address and we'll send you a link to reset your password.</span></h3>
-                            </div>
-                            <div class="pmd-card-body">
-                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                    <label for="inputError1" class="control-label pmd-input-group-label">Email address</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">email</i></div>
-                                        <input class="form-control" id="exampleInputAmount" type="text"><span class="pmd-textfield-focused"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-                                <a href="../index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Submit</a>
-                                <p class="redirection-link">Already registered? <a href="javascript:void(0);" class="register-login">Sign In</a></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- section content end -->
-            </div>
-
         </div>
         <!-- tab end -->
 
@@ -857,40 +782,8 @@
         <div class="container-fluid">
             <ul class="list-unstyled list-inline">
                 <li>
-                    <span class="pmd-card-subtitle-text">Propeller &copy; <span class="auto-update-year"></span>. All Rights Reserved.</span>
+                    <span class="pmd-card-subtitle-text">NEW RESET A.I.H.D. V0.0.1 &copy; <span class="auto-update-year"></span>. Derechos reservados.</span>
                     <h3 class="pmd-card-subtitle-text">Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license.</a></h3>
-                </li>
-                <li class="pull-right download-now">
-                    <a onClick="downloadPMDadmintemplate()" href="../../archive/pmd-admin-template-1.1.0.zip">
-                        <div>
-                            <svg x="0px" y="0px" width="38px" height="32px" viewBox="0 0 38 32" enable-background="new 0 0 38 32" xml:space="preserve">
-<g>
-	<path fill="#A5A4A4" d="M13.906,26.652l4.045,4.043c0.001,0,0.002,0.002,0.003,0.004l1.047,1.047l1.047-1.049
-		c0.001,0,0.001,0,0.001,0l4.044-4.045c0.579-0.58,0.579-1.518,0-2.098c-0.579-0.578-1.519-0.578-2.096,0l-1.514,1.514V16.22
-		c0-0.818-0.664-1.482-1.483-1.482c-0.818,0-1.482,0.664-1.482,1.482v9.85l-1.515-1.516c-0.29-0.289-0.669-0.434-1.048-0.434
-		c-0.38,0-0.759,0.145-1.049,0.434C13.327,25.133,13.327,26.072,13.906,26.652z"/>
-	<g>
-		<g>
-			<path fill="#A5A4A4" d="M8.453,26.363c-0.032,0-0.065,0-0.099-0.002C3.67,26.053,0,22.137,0,17.443
-				c0-4.434,3.242-8.124,7.48-8.825c0.3-4.663,4.188-8.364,8.926-8.364c2.249,0,4.393,0.844,6.032,2.346
-				c4.602-1.86,9.527-0.766,12.266,2.831c1.808,2.375,2.399,5.513,1.671,8.719C37.416,15.412,38,17.008,38,18.65
-				c0,3.902-3.176,7.076-7.077,7.076c-1.221,0-2.428-0.32-3.492-0.926c-0.712-0.404-0.961-1.311-0.556-2.021
-				c0.404-0.713,1.312-0.963,2.021-0.557c0.619,0.352,1.319,0.539,2.027,0.539c2.267,0,4.111-1.844,4.111-4.111
-				c0-1.146-0.467-2.212-1.312-3.001l-0.673-0.627l0.264-0.881c0.769-2.574,0.416-5.094-0.969-6.913
-				c-2.061-2.706-5.997-3.332-9.577-1.522l-1.045,0.528L20.966,5.34c-1.139-1.347-2.802-2.12-4.56-2.12
-				c-3.297,0-5.979,2.683-5.979,5.979c0,0.21,0.01,0.416,0.033,0.619l0.186,1.648l-1.784-0.004
-				c-3.215,0.003-5.896,2.685-5.896,5.983c0,3.135,2.453,5.752,5.584,5.957c0.817,0.055,1.436,0.76,1.382,1.576
-				C9.88,25.762,9.228,26.363,8.453,26.363z"/>
-		</g>
-	</g>
-</g>
-</svg>
-                        </div>
-                        <div>
-                            <span class="pmd-card-subtitle-text">Version- 1.1.0</span>
-                            <h3 class="pmd-card-title-text">Download Now</h3>
-                        </div>
-                    </a>
                 </li>
                 <li class="pull-right for-support">
                     <a href="mailto:support@propeller.in">
@@ -1022,6 +915,19 @@
                 $('.forgot-password-card').show();
             });
         });
+
+    </script>
+
+    <!-- Javascript for Datepicker -->
+    <!-- build:[src] components/datetimepicker/js/ -->
+    <script type="text/javascript" language="javascript" src="../node_modules/moment/min/moment-with-locales.js"></script>
+    <script type="text/javascript" language="javascript" src="../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <!-- /build -->
+    <script>
+        // Linked date and time picker 
+        // start date date and time picker 
+        $('#datepicker-default').datetimepicker();
+        $(".auto-update-year").html(new Date().getFullYear());
 
     </script>
 
