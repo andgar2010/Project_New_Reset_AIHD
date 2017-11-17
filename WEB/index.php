@@ -1,6 +1,9 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,7 +102,7 @@
                         <div class="register-photo">
                             <div class="form-container">
                                 <div class="image-holder"></div>
-                                <form method="post" action="registronuevousuario.php">
+                                <form method="post" action="modules/registronuevousuario.php">
                                     <div class="form-group">
                                         <input type="text" name="nombre" placeholder="Su nombre" class="form-control" />
                                     </div>
@@ -127,13 +130,13 @@
                                             <div>
                                                 <!-- SELECCIONA TIPO DE CEDULA -->
                                                 <label class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                                    <input name="inlineRadioOptions" id="inlineRadio1" value="CC" type="radio">&nbsp;CC
+                                                    <input name="tipoDocumento" id="inlineRadio1" value="1" type="radio">&nbsp;CC
                                                 </label>
                                                 <label class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                                    <input name="inlineRadioOptions" id="inlineRadio2" value="TI" type="radio">&nbsp;TI
+                                                    <input name="tipoDocumento" id="inlineRadio2" value="2" type="radio">&nbsp;TI
                                                 </label>
                                                 <label class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                                    <input name="inlineRadioOptions" id="inlineRadio3" value="CE" type="radio">&nbsp;CE
+                                                    <input name="tipoDocumento" id="inlineRadio3" value="3" type="radio">&nbsp;CE
                                                 </label>
                                                 <!-- /SELECCIONA TIPO DE CEDULA -->
                                             </div>
@@ -177,9 +180,9 @@
                                             //Set the colors we will be using ...
                                             var goodColor = "#66cc66";
                                             var badColor = "#ff6666";
-                                            
+
                                             var correcta = false;
-                                            
+
                                             //Compare the values in the password field 
                                             //and the confirmation field
                                             if (pass1.value == pass2.value) {
