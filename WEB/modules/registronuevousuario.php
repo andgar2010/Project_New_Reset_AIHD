@@ -14,9 +14,10 @@ if
     include "conexion.php";
 
 
+
     if ($registrado) {
         
-        
+
         // ya registrado base de datos
         
     } else {
