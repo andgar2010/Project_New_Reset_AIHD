@@ -1,13 +1,5 @@
 {
-  "name": "new-reset-aihd",
-  "version": "1.0.0",
-  "description": "Project New Reset AHID",
-  "main": "index.js",
-  "repository": "https://github.com/andgar2010/Project_New_Reset_AIHD.git",
-  "author": "Andres Garcia",
-  "license": "MIT",
-  "private": false  
-  "dependencies":{
+  "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
@@ -18,19 +10,5 @@
     "propellerkit-datetimepicker": "^1.1.0",
     "propellerkit-range-slider": "^1.1.0",
     "propellerkit-select2": "^1.1.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-	"start": "node index" //nuevo
-  },
-  "keywords": [],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andgar2010/Project_New_Reset_AIHD.git"
-  },
-  "bugs": {
-    "url": "https://github.com/andgar2010/Project_New_Reset_AIHD/issues"
-  },
-  "homepage": "https://github.com/andgar2010/Project_New_Reset_AIHD#readme"
+  }
 }
