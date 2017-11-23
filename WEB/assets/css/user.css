@@ -8,7 +8,7 @@
 }
 
 .hero {
-  background:url(https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Flat-Design-Wallpapers-HD-Free-Download-PIC-WPB004641.jpg) no-repeat center;
+  background:url("../images/Wallpaper-hero.jpg") no-repeat center;
   background-size:cover;
   border:none;
 }
