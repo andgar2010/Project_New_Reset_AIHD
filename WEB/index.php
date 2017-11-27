@@ -68,7 +68,7 @@ session_start();
 
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="POST" action="modules/dashboard.html">
+                        <form role="form" method="POST" action="modules/dashboard.php">
                             <div class="form-group">
                                 <label for="usrname"><span class="glyphicon glyphicon-user"></span> Usuario</label>
                                 <input type="text" class="form-control" id="usrname" placeholder="Ingrese su email" required>
