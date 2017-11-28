@@ -226,8 +226,8 @@ session_start();
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="text-center" data-aos="zoom-in" data-aos-duration="1600" id="quienesSomos">Quienes Somos?</h1>
-                        <p class="text-center" data-aos="zoom-in" data-aos-duration="1600">NBW RESET es un sistema el cual permite brindar uan determinada ayuda hacia una empresa que necesite
-                            un sistema de informacion el cual le aporte un soporte pasra su efectividad y mantenimiento de equipos.
+                        <p class="text-center" data-aos="zoom-in" data-aos-duration="1600">NEW RESET es un sistema el cual permite brindar una determinada ayuda hacia una empresa que necesite
+                            un sistema de informacion el cual le aporte un soporte para su efectividad y mantenimiento de equipos.
                             En una empresa que brinda tecnologia e ingformatica, como sistemas de informacion para empresas pequeñas,
                             fundada en octubre del 2030 donde ofrece necesidades de alojamientos de reducido tamaño. un producto
                             facil de manejar y facil de implantar con un soporte tecnico online</p>
@@ -288,9 +288,9 @@ session_start();
                     <div class="col-md-4 col-sm-6 item"><img class="img-circle" src="assets/images/2.jpg" data-aos="zoom-in" data-aos-duration="3000">
                         <h3 data-aos="zoom-in" data-aos-duration="1600" class="name">Dayanne Agudelo</h3>
                         <p data-aos="zoom-in" data-aos-duration="1600" class="title">Aprendiz ADSI </p>
-                        <p data-aos="zoom-in" data-aos-duration="1800" class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.
-                            Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper
-                            massa. </p>
+                        <p data-aos="zoom-in" data-aos-duration="1800" class="description">Mi nombre es Dayanne Agudelo, tengo 19 años y actualmente soy estudiante del programa tecnologo en Analisis y Desarrollo
+                            de Sistemas de Información (ADSI) en el SENA CEET (Centro Electricidad, Electrónica y Telecomunicaciones).
+                            </p>
                         <div data-aos="zoom-in" data-aos-duration="3000" class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a>
                             <a
                                 href="#"><i class="fa fa-instagram"></i></a>
