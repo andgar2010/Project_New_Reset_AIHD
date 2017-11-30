@@ -1,15 +1,34 @@
-Numero Ticket
-fecha creada
-tiempo transccuido
-tiempo por solucionado
-tipo 
-	incidente
-	solictud
+** Numero Ticket
+** fecha creada
+** tiempo transccuido
+** tiempo por solucionado
+** tipo 
+** 	solictud
+** 	incidente
 Categoria
+	Hardware
+	Software
+	Telefonia IP
+	Redes
 Actor
 	nombre
 	rol
+		RECTOR
+		PROFESOR
+		TECNICO
+		COORDINADOR ACADEMICO
+		COORDINADOR CONVIVIENCIAL
 	area
+		IDIOMAS (RA)
+		TECNOLOGIA (RA)
+		BINESTAR AL ESTUDIANTE (PS)
+		GERENCIA (AD)
+		ETICA DEL ESTUDIANTE (CO)
+	gerencia
+		ADMINISTRATIVA
+		CONVICENCIAL
+		RENDIMIENTO ACADEMICO
+		PSICOLOGIA
 Estado
 	nuevo
 	en proceso (asignada)
@@ -31,6 +50,11 @@ Prioridad
 	alta
 	muy alta
 tipo Equipo
+	Portatil
+	Escritorio
+	VideoBeam
+
+********************	
 	General
 	Computador
 	dispositivo
@@ -40,7 +64,7 @@ tipo Equipo
 	Impresora
 	Software
 Titulo
-Descripcion
 Adjunto Archivo (Pantallazo, fotos, logs)
+Descripcion
 
 	

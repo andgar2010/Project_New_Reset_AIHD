@@ -27,8 +27,8 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/propeller.min.css">
     
     <!-- Font Awesome  -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min">
     
     <!-- /build -->
     <!-- /build -->
@@ -45,23 +45,6 @@ session_start();
     
     <!-- Propeller admin theme css-->
     <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
-    
-    <!-- Custom Style -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/buttonRotate.css" />
-    
-    <style>
-        .rotate {
-            -moz-transition: all 0.3s linear;
-            -webkit-transition: all 0.3s linear;
-            transition: all 0.3s linear;
-        }
-    
-        .rotate.down {
-            -moz-transform: rotate(-180deg);
-            -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-        }
-    </style>
     
     <!--Google Analytics code-->
     <script>
@@ -85,16 +68,16 @@ session_start();
 <body>
     <!-- Title -->
     <h1 class="section-title" id="services">
-        <span>Form Examples</span>
+        <span>Solicitar nuevo ticket</span>
     </h1>
     <!-- End Title -->
     
     <!--breadcrum start-->
     <ol class="breadcrumb text-left">
         <li>
-            <a href="dashboard.html">Dashboard</a>
+            <a href="dashboard.html">Panel de control</a>
         </li>
-        <li class="active">Form Examples</li>
+        <li class="active">Solicitar nuevo ticket</li>
     </ol>
     <!--breadcrum end-->
     
@@ -113,7 +96,7 @@ session_start();
                     <div class="group-fields clearfix row">
                         <!--Columns size 4 -->
                         <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Fecha de solicitud</label>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                             <!--Colmun 1 date-->
                             <div class="media-right datetimepicker">
                                 <!--calendar start-->
@@ -125,22 +108,22 @@ session_start();
                                                 <svg x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
                                                     <g>
                                                         <path fill="#010101" d="M-8.736-20.232c0,2.88-2.304,5.184-5.184,5.184s-5.184-2.304-5.184-5.184v-13.824
-    											c0-2.88,2.304-5.184,5.184-5.184s5.184,2.304,5.184,5.184V-20.232z M41.952-34.056c0-2.88-2.304-5.184-5.185-5.184
-    											c-2.879,0-5.184,2.304-5.184,5.184v13.824c0,2.88,2.305,5.184,5.184,5.184c2.881,0,5.185-2.304,5.185-5.184V-34.056z M63.84-20.923
-    											V58.68c0,3.111-2.534,5.645-5.76,5.645h-92.16c-3.226,0-5.76-2.533-5.76-5.645v-79.603c0-3.11,2.534-5.645,5.76-5.645h11.52v6.336
-    											c0,4.954,3.687,8.87,8.64,8.87s8.64-4.032,8.64-8.87v-6.336h33.408v6.336c0,4.954,3.687,8.87,8.64,8.87
-    											c4.954,0,8.641-4.032,8.641-8.87v-6.336h12.557C61.075-26.568,63.84-24.034,63.84-20.923z M54.624-5.192
-    											c0-1.152-1.036-2.189-2.304-2.189h-80.64c-1.268,0-2.304,0.921-2.304,2.189v58.227c0,1.152,1.037,2.189,2.304,2.189h80.64
-    											c1.268,0,2.304-0.922,2.304-2.189V-5.192z" />
+                                                        c0-2.88,2.304-5.184,5.184-5.184s5.184,2.304,5.184,5.184V-20.232z M41.952-34.056c0-2.88-2.304-5.184-5.185-5.184
+                                                        c-2.879,0-5.184,2.304-5.184,5.184v13.824c0,2.88,2.305,5.184,5.184,5.184c2.881,0,5.185-2.304,5.185-5.184V-34.056z M63.84-20.923
+                                                        V58.68c0,3.111-2.534,5.645-5.76,5.645h-92.16c-3.226,0-5.76-2.533-5.76-5.645v-79.603c0-3.11,2.534-5.645,5.76-5.645h11.52v6.336
+                                                        c0,4.954,3.687,8.87,8.64,8.87s8.64-4.032,8.64-8.87v-6.336h33.408v6.336c0,4.954,3.687,8.87,8.64,8.87
+                                                        c4.954,0,8.641-4.032,8.641-8.87v-6.336h12.557C61.075-26.568,63.84-24.034,63.84-20.923z M54.624-5.192
+                                                        c0-1.152-1.036-2.189-2.304-2.189h-80.64c-1.268,0-2.304,0.921-2.304,2.189v58.227c0,1.152,1.037,2.189,2.304,2.189h80.64
+                                                        c1.268,0,2.304-0.922,2.304-2.189V-5.192z" />
                                                     </g>
                                                     <g>
                                                         <path fill="#A5A4A4" d="M7.2,4.414C7.2,5.08,6.667,5.613,6,5.613S4.8,5.08,4.8,4.414v-3.2c0-0.667,0.534-1.2,1.2-1.2
-    											s1.2,0.533,1.2,1.2V4.414z M18.934,1.214c0-0.667-0.533-1.2-1.2-1.2s-1.2,0.533-1.2,1.2v3.2c0,0.666,0.533,1.199,1.2,1.199
-    											s1.2-0.533,1.2-1.199V1.214z M24,4.254V22.68c0,0.721-0.587,1.307-1.333,1.307H1.333C0.586,23.986,0,23.4,0,22.68V4.254
-    											c0-0.721,0.586-1.307,1.333-1.307H4v1.467c0,1.146,0.854,2.053,2,2.053s2-0.934,2-2.053V2.947h7.733v1.467
-    											c0,1.146,0.854,2.053,2,2.053s2-0.934,2-2.053V2.947h2.906C23.36,2.947,24,3.533,24,4.254z M21.867,7.896
-    											c0-0.268-0.24-0.507-0.534-0.507H2.667c-0.293,0-0.533,0.213-0.533,0.507v13.478c0,0.268,0.24,0.507,0.533,0.507h18.667
-    											c0.294,0,0.534-0.213,0.534-0.507V7.896z" />
+                                                        s1.2,0.533,1.2,1.2V4.414z M18.934,1.214c0-0.667-0.533-1.2-1.2-1.2s-1.2,0.533-1.2,1.2v3.2c0,0.666,0.533,1.199,1.2,1.199
+                                                        s1.2-0.533,1.2-1.199V1.214z M24,4.254V22.68c0,0.721-0.587,1.307-1.333,1.307H1.333C0.586,23.986,0,23.4,0,22.68V4.254
+                                                        c0-0.721,0.586-1.307,1.333-1.307H4v1.467c0,1.146,0.854,2.053,2,2.053s2-0.934,2-2.053V2.947h7.733v1.467
+                                                        c0,1.146,0.854,2.053,2,2.053s2-0.934,2-2.053V2.947h2.906C23.36,2.947,24,3.533,24,4.254z M21.867,7.896
+                                                        c0-0.268-0.24-0.507-0.534-0.507H2.667c-0.293,0-0.533,0.213-0.533,0.507v13.478c0,0.268,0.24,0.507,0.533,0.507h18.667
+                                                        c0.294,0,0.534-0.213,0.534-0.507V7.896z" />
                                                     </g>
                                                 </svg>
                                             </div>
@@ -152,21 +135,185 @@ session_start();
                             </div>
                             <!--End Colmun 1 date-->
                         </div>
-                        <!--End Columns size 3 -->
+                        <!--End Columns size 4 -->
+                        
+                        <!--Colmun 2 Blank -->
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "> </div>
+                        <!--Colmun 2 Blank -->
+
+                        <!--Colmun 3 NumTicket size 3-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">
+                            <!-- Readonly Input Numero ticket -->
+                            <div class="form-group pmd-textfield">
+                                  <label for="first-name" class="control-label" style="display: block; text-align:right;"> Numero de ticket </label>
+                                    <input type="text" readonly="" value="#000" id="first-name" class="mat-input form-control" style="text-align:right;"></input>
+                                </div>
+                        </div>
+                        <!--End Colmun 3 NumTicket size 3-->
+
                     </div>
-    
-                    <br>
-    
+                    <!--End Row 1-->                          
+
+
+                    
+                    <!--Row 2-->
                     <div class="group-fields clearfix row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <!--Colmun 1 Tiempo transccuido-->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+
+                            <div class="form-group pmd-textfield">
+                                  <label for="tiempotransccuido" class="control-label" style="display: block; text-align:center;"> Tiempo transccuido </label>
+                                  <input type="text" readonly="" value="00 Días 00:00:00" id="first-name" class="mat-input form-control" style="text-align:center;"></input>
+                            </div>
+
+                        </div>
+                        <!--End Colmun 1 Tiempo transccuido-->
+                        
+                        <!--Colmun 2 Tiempo por solucionado-->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+
+                            <div class="form-group pmd-textfield">
+                                  <label for="tiemposolucionado" class="control-label" style="display: block; text-align:center;"> Tiempo por solucionado </label>
+                                  <input type="text" readonly="" value="00 Días 00:00:00" id="first-name" class="mat-input form-control" style="text-align:center;"></input>
+                            </div>
+
+                        </div>
+                        <!--End Colmun 2 Tiempo por solucionado-->
+
+                    </div>
+                    <!--End Row 2-->
+
+                    <!-- Row 3  -->
+                    <div class="group-fields clearfix row">
+                        
+                        <!--Column 1 Tipo -->
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="tipoticket" class="control-label" style="display: block; text-align: center"> Tipo* </label>
+                                <select class="select-simple form-control pmd-select2">
+                                    <option></option>                                  
+	                                <option>Incidente</option>
+                                    <option>Solictud</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <!--End Column 1 Tipo -->
+
+                        <!--Column 2 Categoria -->
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="categoria" class="control-label" style="display: block; text-align: center"> Categoria* </label>
+                                <select class="select-simple form-control pmd-select2">
+                                    <option></option>                                  
+	                                <option>Hardware</option>
+	                                <option>Software</option>
+	                                <option>Telefonia IP</option>
+                                    <option>Redes</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <!--End Column 2 Categoria -->
+
+
+
+
+                    </div>
+                    <!-- End Row 3  -->
+
+
+
+
+
+
+
+                    <br>
+
+
+
+                    <!--Row 2-->
+                    <div class="group-fields clearfix row">
+
+                        <!--Colmun 1 Nombre de usuario-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                 <label for="regular1" class="control-label">
-                                    Name*
+                                    Nombre*
                                 </label>
                                 <input type="text" id="regular1" class="form-control">
                             </div>
                         </div>
+                        <!--End Colmun 1 Nombre de usuario-->
+                        
+                        <!--Colmun 1 Nombre de usuario-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="regular1" class="control-label">
+                                    Nombre*
+                                </label>
+                                <input type="text" id="regular1" class="form-control">
+                            </div>
+                        </div>
+                        <!--End Colmun 1 Nombre de usuario-->
+
+                        <!--Colmun 1 Nombre de usuario-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="regular1" class="control-label">
+                                    Nombre*
+                                </label>
+                                <input type="text" id="regular1" class="form-control">
+                            </div>
+                        </div>
+                        <!--End Colmun 1 Nombre de usuario-->
+
+                        <!--Colmun 1 Nombre de usuario-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="regular1" class="control-label">
+                                    Nombre*
+                                </label>
+                                <input type="text" id="regular1" class="form-control">
+                            </div>
+                        </div>
+                        <!--End Colmun 1 Nombre de usuario-->
+
                     </div>
+                    <!--End Row 2-->
+
+                    <br>
+
+                    
+                    <!--Row 3-->
+                    <div class="group-fields clearfix row">
+                        <!--Colmun 1 Nombre de usuario-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="regular1" class="control-label">
+                                    Nombre*
+                                </label>
+                                <input type="text" id="regular1" class="form-control">
+                            </div>
+                        </div>
+                        <!--End Colmun 1 Nombre de usuario-->
+
+                        <!--Colmun 2 Apellido de usuario-->
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="regular1" class="control-label">
+                                    Apellido*
+                                </label>
+                                <input type="text" id="regular1" class="form-control">
+                            </div>
+                        </div>
+                        <!--End Colmun 1 Nombre de usuario-->
+                    </div>
+                    <!--End Row 3-->
+
                     <div class="group-fields clearfix row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">

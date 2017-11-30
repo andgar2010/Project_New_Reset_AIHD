@@ -260,7 +260,7 @@ session_start();
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="" onclick='openNewTicket()'>
+                        <a id="new-ticket" href="formulario-ticket.php" target="iframe">
                             <i class="media-left media-middle">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                             </i>
@@ -329,8 +329,7 @@ session_start();
  
                 <!-- Today's Site Activity -->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <!-- <iframe align="center" width="100%" height="850px" frameborder="yes" scrolling="yes" name="myIframe" id="myIframe" src="formulario-ticket.php" frameborder="0"></iframe> -->
-                    <iframe align="center" width="100%" height="850px" frameborder="yes" scrolling="yes" name="iframe" id="iframe" src="" frameborder="0"></iframe>
+                    <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="" frameborder="0"></iframe>
                 </div>
                 <!--end Today's Site Activity -->
 
