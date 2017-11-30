@@ -225,7 +225,7 @@ session_start();
             </li>
             <!-- End user info -->
             <li>
-                <a class="pmd-ripple-effect" href="dashboard.html">
+                <a class="pmd-ripple-effect" href="dashboard.php">
                     <i class="media-left media-middle">
                         <svg version="1.1" x="0px" y="0px" width="19.83px" height="18px" viewBox="287.725 407.535 19.83 18" enable-background="new 287.725 407.535 19.83 18"
                             xml:space="preserve">
