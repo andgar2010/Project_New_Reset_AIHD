@@ -217,7 +217,7 @@ session_start();
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="login.html">
+                        <a href="SignIn.php">
                             <i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión
                         </a>
                     </li>
