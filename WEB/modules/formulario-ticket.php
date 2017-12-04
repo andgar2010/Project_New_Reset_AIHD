@@ -89,7 +89,7 @@ session_start();
         <!--section-title end -->
     
         <!-- section content start-->
-        <form id="newTicket" action="" method="post">
+        <form id="newTicket" action="" method="post" enctype="multipart/form-data">
             <div class="pmd-card pmd-z-depth">
                 <div class="pmd-card-body">
 
@@ -209,7 +209,6 @@ session_start();
                                     <option>Redes</option>
                                 </select>
                             </div>
-
                         </div>
                         <!--End Column 2 Categoria -->
 
@@ -290,160 +289,95 @@ session_start();
                             </div>
                         </div>
                         <!--End Colmun 1 estado-->
-
-
-
-    
-                        <!--Colmun 1 Nombre de usuario-->
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="regular1" class="control-label">
-                                    Nombre*
-                                </label>
-                                <input type="text" id="regular1" class="form-control">
+                        
+                        <!--Colmun 2 Prioridad-->
+                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="prioridad" class="control-label" style="display: block; text-align:center;"> Prioridad* </label>
+                                <select class="select-simple form-control pmd-select2">
+                                    <option></option>                                  
+	                                <option>muy baja</option>
+	                                <option> baja</option>
+	                                <option>medio</option>
+                                    <option>alta</option>
+	                                <option>muy alta</option>
+                                </select>
                             </div>
                         </div>
-                        <!--End Colmun 1 Nombre de usuario-->
-
+                        <!--End Colmun 2 Prioridad-->
 
                     </div>
                     <!--End Row 4-->
 
 
+                    <!--Row 5-->
+                    <div>
+                        <!--Colmun 1 Ubicacion-->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                      <label for="ubicacion" class="control-label" style="display: block; text-align:center;"> Ubicacion* </label>
+                                      <input type="text" value="" id="ubicacion" class="mat-input form-control" style="text-align:center;"></input>
+                                </div>
+                            </div>
+                        <!--End Colmun 1 Ubicacion-->
+                        
+                        <!--Colmun 2 Tipo de equipo-->
+                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="tipo_equipo" class="control-label" style="display: block; text-align:center;"> Tipo de equipo* </label>
+                                <select class="select-simple form-control pmd-select2">
+                                    <option></option>                                  
+	                                <option>Portatil</option>
+	                                <option> Escritorio</option>
+	                                <option>VideoBeam</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--End Colmun 2 Tipo de equipo-->
 
-
-
-
-                    <br>
-
+                    </div>
+                    <!--End Row 5-->
                     
-                    <!--Row 3-->
-                    <div class="group-fields clearfix row">
-                        <!--Colmun 1 Nombre de usuario-->
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="regular1" class="control-label">
-                                    Nombre*
-                                </label>
-                                <input type="text" id="regular1" class="form-control">
-                            </div>
-                        </div>
-                        <!--End Colmun 1 Nombre de usuario-->
 
-                        <!--Colmun 2 Apellido de usuario-->
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="regular1" class="control-label">
-                                    Apellido*
-                                </label>
-                                <input type="text" id="regular1" class="form-control">
+                    <!--Row 6-->
+                    <div>
+                        <!--Colmun 1 Titulo-->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                      <label for="ubicacion" class="control-label" style="display: block; text-align:center;"> Titiulo* </label>
+                                      <input type="text" value="" id="ubicacion" class="mat-input form-control" style="text-align:center;"></input>
+                                </div>
                             </div>
-                        </div>
-                        <!--End Colmun 1 Nombre de usuario-->
+                        <!--End Colmun 1 Titulo-->                       
                     </div>
-                    <!--End Row 3-->
+                    <!--End Row 6-->
 
-                    <div class="group-fields clearfix row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <!--Row 7-->
+                    <div>
+                        <!--Colmun 1 Descripcion-->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label>City*</label>
-                                <select class="select-simple form-control pmd-select2">
-                                    <option></option>
-                                    <option>Dallas Cowboys</option>
-                                    <option>New York Giants</option>
-                                    <option>Philadelphia Eagles</option>
-                                    <option>Washington Redskins</option>
-                                    <option>Chicago Bears</option>
-                                    <option>Detroit Lions</option>
-                                    <option>Green Bay Packers</option>
-                                    <option>Minnesota Vikings</option>
-                                    <option>Arizona Cardinals</option>
-                                    <option>St. Louis Rams</option>
-                                    <option>San Francisco 49ers</option>
-                                    <option>Seattle Seahawks</option>
-                                    <option>Baltimore Ravens</option>
-                                    <option>Cincinnati Bengals</option>
-                                    <option>Cleveland Browns</option>
-                                    <option>Pittsburgh Steelers</option>
-                                    <option>Houston Texans</option>
-                                    <option>Indianapolis Colts</option>
-                                    <option>Jacksonville Jaguars</option>
-                                    <option>Tennessee Titans</option>
-                                    <option>Denver Broncos</option>
-                                    <option>Kansas City Chiefs</option>
-                                    <option>Oakland Raiders</option>
-                                    <option>San Diego Chargers</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label>State*</label>
-                                <select class="select-simple form-control pmd-select2">
-                                    <option></option>
-                                    <option>Dallas Cowboys</option>
-                                    <option>New York Giants</option>
-                                    <option>Philadelphia Eagles</option>
-                                    <option>Washington Redskins</option>
-                                    <option>Chicago Bears</option>
-                                    <option>Detroit Lions</option>
-                                    <option>Green Bay Packers</option>
-                                    <option>Minnesota Vikings</option>
-                                    <option>Arizona Cardinals</option>
-                                    <option>St. Louis Rams</option>
-                                    <option>San Francisco 49ers</option>
-                                    <option>Seattle Seahawks</option>
-                                    <option>Baltimore Ravens</option>
-                                    <option>Cincinnati Bengals</option>
-                                    <option>Cleveland Browns</option>
-                                    <option>Pittsburgh Steelers</option>
-                                    <option>Houston Texans</option>
-                                    <option>Indianapolis Colts</option>
-                                    <option>Jacksonville Jaguars</option>
-                                    <option>Tennessee Titans</option>
-                                    <option>Denver Broncos</option>
-                                    <option>Kansas City Chiefs</option>
-                                    <option>Oakland Raiders</option>
-                                    <option>San Diego Chargers</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="regular1" class="control-label">
-                                    Zip Code*
-                                </label>
-                                <input type="text" id="regular1" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group-fields clearfix row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="regular1" class="control-label">
-                                    Phone*
-                                </label>
-                                <input type="text" id="regular1" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="regular1" class="control-label">
-                                    Email*
-                                </label>
-                                <input type="text" id="regular1" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group-fields clearfix row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label class="control-label">Address</label>
+                                <label class="control-label" tyle="display: block; text-align:center;"> Descripcion* </label>
                                 <textarea required class="form-control"></textarea>
                             </div>
                         </div>
+                        <!--End Colmun 1 Descripcion-->                       
                     </div>
-                    <div class="group-fields clearfix row">
+                    <!--End Row 7-->
+
+                    <!--Row 8-->
+                    <div>
+                        <!--Colmun 1 Archivo adjunto-->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label class="control-label" tyle="display: block; text-align:center;"> Archivo adjunto </label>
+                                <input type='file' name='archivo1' id='archivo1' placeholder="carga tu Archivo adjunto" required>
+                            </div>
+                        </div>
+                        <!--End Colmun 1 Archivo adjunto-->                       
+                    </div>
+                    <!--End Row 8-->
+                  <!--   <div class="group-fields clearfix row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="checkbox pmd-default-theme">
                                 <label class="pmd-checkbox checkbox-pmd-ripple-effect">
@@ -452,11 +386,11 @@ session_start();
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="pmd-card-actions">
-                    <a href="javascript:void(0);" class="btn btn-primary next">Submit</a>
-                    <a href="javascript:void(0);" class="btn btn-default">Cancel</a>
+                    <a href="javascript:void(0);" class="btn btn-primary next">Enviar</a>
+                    <a href="javascript:void(0);" class="btn btn-default">Cancelar</a>
                 </div>
             </div>
             <!-- section content end -->
