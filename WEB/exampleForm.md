@@ -36,23 +36,23 @@
 ** 	pendiente
 ** 	solucionado
 ** 	archivado
-Nivel Urgencia
-	muy baja
-	baja
-	medio
-	alta
-	muy alta
-Ubicacion
-Prioridad
-	muy baja
-	baja
-	medio
-	alta
-	muy alta
-tipo Equipo
-	Portatil
-	Escritorio
-	VideoBeam
+** Nivel Urgencia
+** 	muy baja
+** 	baja
+** 	medio
+** 	alta
+** 	muy alta
+** Ubicacion
+** Prioridad
+** 	muy baja
+** 	baja
+** 	medio
+** 	alta
+** 	muy alta
+** tipo Equipo
+** 	Portatil
+** 	Escritorio
+** 	VideoBeam
 
 ********************	
 	General
@@ -63,8 +63,6 @@ tipo Equipo
 	Telefono
 	Impresora
 	Software
-Titulo
-Adjunto Archivo (Pantallazo, fotos, logs)
-Descripcion
-
-	
+** Titulo
+** Adjunto Archivo (Pantallazo, fotos, logs)
+** Descripcion
