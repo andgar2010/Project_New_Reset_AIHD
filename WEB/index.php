@@ -68,7 +68,7 @@ session_start();
 
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="POST" action="modules/dashboard.php">
+                        <form role="form" method="POST" action="views/dashboard.php">
                             <div class="form-group">
                                 <label for="usrname"><span class="glyphicon glyphicon-user"></span> Usuario</label>
                                 <input type="text" class="form-control" id="usrname" placeholder="Ingrese su email" required>
@@ -102,7 +102,7 @@ session_start();
                         <div class="register-photo">
                             <div class="form-container">
                                 <div class="image-holder"></div>
-                                <form method="post" action="modules/registronuevousuario.php">
+                                <form method="post" action="controllers/registronuevousuario.php">
                                     <div class="form-group">
                                         <input type="text" name="nombre" placeholder="Su nombre" class="form-control" />
                                     </div>
@@ -121,9 +121,9 @@ session_start();
                                                 </label>
                                             </div>
                                         </div>
-
-                                    </div>
-
+                                    
+									</div>
+									
                                     <div class="form-group">
                                         <div id="tipo_cedula">
                                             <h5 style="color: #555; font-size: 1,05rem;">Tipo de Cédula</h5>
