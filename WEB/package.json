@@ -4,12 +4,14 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "material-design-icons": "^3.0.1",
+    "moment": "^2.19.4",
     "propellerkit": "^1.1.0",
     "propellerkit-custom-scrollbar": "^1.1.0",
     "propellerkit-datatables": "^1.1.0",
     "propellerkit-datetimepicker": "^1.1.0",
     "propellerkit-range-slider": "^1.1.0",
-    "propellerkit-select2": "^1.1.0"
+    "propellerkit-select2": "^1.1.0",
+    "tinymce": "^4.7.4"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
