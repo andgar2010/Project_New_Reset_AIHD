@@ -11,7 +11,7 @@ session_start();
     <meta name="description" content="Propeller Admin Dashboard">
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 
-    <title>Nuevo Ticket</title>
+    <title>Lista de Tickets</title>
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
     <!-- Google icon -->
@@ -69,7 +69,7 @@ session_start();
 <body>
     <!-- Title -->
     <h1 class="section-title" id="services">
-        <span>Solicitar nuevo ticket</span>
+        <span>Lista de Tickets</span>
     </h1>
     <!-- End Title -->
 
@@ -78,7 +78,7 @@ session_start();
         <li>
             <a href="dashboard.php">Panel de control</a>
         </li>
-        <li class="active">Solicitar nuevo ticket</li>
+        <li class="active">Lista de Tickets</li>
     </ol>
     <!--breadcrum end-->
 
@@ -86,8 +86,23 @@ session_start();
     <div class="section section-custom billinfo">
 
         <!--section-title -->
-        <h2>Crear nuevo ticket</h2>
+        <h2>Lista de Tickets</h2>
         <!--section-title end -->
+
+    <!-- Section content start -->
+    <div class="pmd-card pmd-z-depth">
+        <!-- Body Section  -->
+        <div class="pmd-card-body">
+
+
+            
+        </div>            
+            <!-- End Body Section  -->
+    </div>
+    <!-- End Section content start -->
+
+<br>
+<br>
 
         <!-- section content start-->
         <form id="newTicket" action="" method="post" enctype="multipart/form-data">
