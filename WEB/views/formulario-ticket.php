@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -426,8 +426,7 @@ session_start();
     <!--circle chart-->
     <script src="../assets/Framework/propeller-themes/js/circles.min.js"></script>
     <script>
-        < !--javascript
-        for total sales chart-- >
+        // < !--javascript for total sales chart-- >
         var colors = [
                 ['#dfe3e7', '#f79332'],
                 ['#dfe3e7', '#f79332'],
@@ -448,9 +447,8 @@ session_start();
                 textClass: 'circles-text',
                 styleText: true
             }));
-        } <
-        !--javascript
-        for total sales chart-- >
+        } 
+        // < !--javascript for total sales chart-- >
     </script>
 
     <!--staked column chart for payment-->
