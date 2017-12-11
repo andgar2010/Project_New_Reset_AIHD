@@ -70,12 +70,12 @@ session_start();
                     <div class="modal-body">
                         <form role="form" method="POST" action="views/dashboard.php">
                             <div class="form-group">
-                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Usuario</label>
-                                <input type="text" class="form-control" id="usrname" placeholder="Ingrese su email" required>
+                                <label for="username"><span class="glyphicon glyphicon-user"></span> Usuario</label>
+                                <input type="text" class="form-control" name="email" id="username" placeholder="Ingrese su email" required>
                             </div>
                             <div class="form-group">
                                 <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Contraseña</label>
-                                <input type="Password" class="form-control" id="psw" placeholder="ingrese contraseña" required>
+                                <input type="Password" class="form-control" name="password" id="psw" placeholder="ingrese contraseña" required>
                             </div>
                             <div class="checkbox">
                                 <label><input  type="checkbox" value="si" >recordar tu contraseña?</label>
