@@ -264,7 +264,7 @@ session_start();
                         vitae. </p>
                 </div>
                 <div class="row people">
-                    <div class="col-md-4 col-sm-6 item"><img class="img-circle" src="assets/images/avatar-AGarcia.jpg" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="col-md-4 col-sm-12 item"><img class="img-circle" src="assets/images/avatar-AGarcia.jpg" data-aos="zoom-in" data-aos-duration="1000">
                         <h3 data-aos="zoom-in" data-aos-duration="1000" class="name">Andrés García</h3>
                         <p data-aos="zoom-in" data-aos-duration="1000" class="title">Aprendiz ADSI</p>
                         <p class="text-center description" data-aos="zoom-in" data-aos-duration="1000">Mi nombre es Andrés García, tengo 27 años y actualmente soy estudiante tecnología de Analisis y Desarrollo
@@ -274,7 +274,7 @@ session_start();
                             el mundo. </p>
                         <div data-aos="zoom-in" data-aos-duration="1000" class="social"><a href="#"><i class="fa fa-github"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-skype" style="font-weight:normal;font-style:normal;"></i></a></div>
                     </div>
-                    <div class="col-md-4 col-sm-6 item"><img class="img-circle" src="assets/images/2.jpg" data-aos="zoom-in" data-aos-duration="2000">
+                    <div class="col-md-4 col-sm-12 item"><img class="img-circle" src="assets/images/2.jpg" data-aos="zoom-in" data-aos-duration="2000">
                         <h3 data-aos="zoom-in" data-aos-duration="2000" class="name">Camila Torres</h3>
                         <p data-aos="zoom-in" data-aos-duration="2000" class="title">Aprendiz ADSI </p>
                         <p data-aos="zoom-in" data-aos-duration="2000" class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida.
@@ -285,7 +285,7 @@ session_start();
                                 href="#"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 item"><img class="img-circle" src="assets/images/2.jpg" data-aos="zoom-in" data-aos-duration="3000">
+                    <div class="col-md-4 col-sm-12 item"><img class="img-circle" src="assets/images/2.jpg" data-aos="zoom-in" data-aos-duration="3000">
                         <h3 data-aos="zoom-in" data-aos-duration="1600" class="name">Dayanne Agudelo</h3>
                         <p data-aos="zoom-in" data-aos-duration="1600" class="title">Aprendiz ADSI </p>
                         <p data-aos="zoom-in" data-aos-duration="1800" class="description">Mi nombre es Dayanne Agudelo, tengo 19 años y actualmente soy estudiante del programa tecnologo en Analisis y Desarrollo
@@ -324,6 +324,10 @@ session_start();
                 </div>
             </div>
         </footer>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/js/bs-animation.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
         <script>
             $(document).ready(function () {
                 $("#myBtn").click(function () {
@@ -331,11 +335,6 @@ session_start();
                 });
             });
         </script>
-        <script src="node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="assets/Framework/Bootstrap-3.3.7/js/bootstrap.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-animation.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     </body>
 
 </html>
