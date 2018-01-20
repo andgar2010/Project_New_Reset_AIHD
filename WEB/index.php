@@ -7,7 +7,34 @@ session_start();
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- HTML Meta Tags -->
         <title>Bienvenido NEW RESET A.I.H.D.</title>
+        <meta name="description" content="NEW RESET es un sistema el cual permite brindar una determinada ayuda hacia una empresa que necesite un sistema de informacion el cual le aporte un soporte para su efectividad y mantenimiento de equipos.">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="Bienvenido NEW RESET A.I.H.D.">
+        <meta itemprop="description" content="NEW RESET es un sistema el cual permite brindar una determinada ayuda hacia una empresa que necesite un sistema de informacion el cual le aporte un soporte para su efectividad y mantenimiento de equipos.">
+        <meta itemprop="image" content="assets/images/LogoV2Alpha.png">
+        <!-- End Google / Search Engine Tags -->
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="http://127.0.0.1">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Bienvenido NEW RESET A.I.H.D.">
+        <meta property="og:description" content="NEW RESET es un sistema el cual permite brindar una determinada ayuda hacia una empresa que necesite un sistema de informacion el cual le aporte un soporte para su efectividad y mantenimiento de equipos.">
+        <meta property="og:image" content="assets/images/LogoV2Alpha.png">
+        <!-- End Facebook Meta Tags -->
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Bienvenido NEW RESET A.I.H.D.">
+        <meta name="twitter:description" content="NEW RESET es un sistema el cual permite brindar una determinada ayuda hacia una empresa que necesite un sistema de informacion el cual le aporte un soporte para su efectividad y mantenimiento de equipos.">
+        <meta name="twitter:image" content="assets/images/LogoV2Alpha.png">
+        <!-- End Twitter Meta Tags -->
+
+        <!-- End HTML Meta Tags -->
+        
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">    
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
