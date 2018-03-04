@@ -11,7 +11,7 @@
     "propellerkit-datetimepicker": "^1.1.0",
     "propellerkit-range-slider": "^1.1.0",
     "propellerkit-select2": "^1.1.0",
-    "tinymce": "^4.7.4"
+    "tinymce": "^4.7.9"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",
