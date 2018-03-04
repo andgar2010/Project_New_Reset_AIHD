@@ -14,74 +14,57 @@ session_start();
     <title>New Reset AIHD Admin Dashboard</title>
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
-    <!-- Google icon -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Google icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Bootstrap css -->
-    <!-- build:[href] assets/css/ -->
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
-    <!-- /build -->
+<!-- Bootstrap css -->
+<!-- build:[href] assets/css/ -->
+<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
+<!-- /build -->
 
-    <!-- Propeller css -->
-    <!-- build:[href] assets/css/ -->
-    <!-- build:[href] assets/css/ -->
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/propeller.min.css">
+<!-- Propeller css -->
+<!-- build:[href] assets/css/ -->
+<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/propeller.min.css">
+<!-- /build -->
 
-    <!-- Font Awesome  -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min">
+<!-- Font Awesome  -->
+<link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- /build -->
 
-    <!-- /build -->
-    <!-- /build -->
+<!-- Propeller date time picker css-->
+<!-- build:[href] components/datetimepicker/css/ -->
+<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css"
+/>
+<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css" />
+<!-- /build -->
 
-    <!-- Propeller date time picker css-->
-    <!-- build:[href] components/datetimepicker/css/ -->
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css"
-    />
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css" />
-    <!-- /build -->
+<!-- Propeller theme css-->
+<link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-theme.css" />
 
-    <!-- Propeller theme css-->
-    <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-theme.css" />
+<!-- Propeller admin theme css-->
+<link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
 
-    <!-- Propeller admin theme css-->
-    <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
+<!-- Custom Style -->
+<link rel="stylesheet" type="text/css" href="../assets/css/buttonRotate.css" />
 
-    <!-- Custom Style -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/buttonRotate.css" />
+ <!--Google Analytics code-->
+   <script>(function (i, s, o, g, r, a, m) {
+       i['GoogleAnalyticsObject']=r;
+       i[r]=i[r] || function () {
+           (i[r].q=i[r].q || []).push(arguments)
+       }
+       , i[r].l=1 * new Date();
+       a=s.createElement(o), m=s.getElementsByTagName(o)[0];
+       a.async=1;
+       a.src=g;
+       m.parentNode.insertBefore(a, m)
+   }
 
-    <style>
-        .rotate {
-            -moz-transition: all 0.3s linear;
-            -webkit-transition: all 0.3s linear;
-            transition: all 0.3s linear;
-        }
-
-        .rotate.down {
-            -moz-transform: rotate(-180deg);
-            -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-        }
-    </style>
-
-    <!--Google Analytics code-->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-124615-22', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
+   )(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+   ga('create', 'UA-124615-22', 'auto');
+   ga('send', 'pageview');
+   </script>
 </head>
 
 <!-- Styles Ends -->
@@ -326,7 +309,7 @@ session_start();
 
     <!--content area start-->
     <div id="content" class="pmd-content content-area dashboard">
- 
+
                 <!-- Today's Site Activity -->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="" frameborder="0"></iframe>
@@ -335,7 +318,7 @@ session_start();
 
     </div>
     <!--end content area-->
-    
+
 
     <!-- Scripts Starts -->
     <!-- build:[src] assets/js/ -->
@@ -689,15 +672,14 @@ session_start();
     <script type="text/javascript" language="javascript" src="../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
     <!-- /build -->
     <script>
-        // Linked date and time picker 
-        // start date date and time picker 
+        // Linked date and time picker
+        // start date date and time picker
         $('#datepicker-default').datetimepicker();
         $(".auto-update-year").html(new Date().getFullYear());
 
     </script>
 
     <script src="../assets/js/animateSidebar.js"></script>
-    <script src="../assets/js/iframe.js"></script>
 
 </body>
 
