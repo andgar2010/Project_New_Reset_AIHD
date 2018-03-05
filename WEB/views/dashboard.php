@@ -14,59 +14,59 @@ session_start();
     <title>New Reset AIHD Admin Dashboard</title>
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
 
-<!-- Google icon -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- Bootstrap css -->
-<!-- build:[href] assets/css/ -->
-<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
-<!-- /build -->
+    <!-- Bootstrap css -->
+    <!-- build:[href] assets/css/ -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
+    <!-- /build -->
 
-<!-- Propeller css -->
-<!-- build:[href] assets/css/ -->
-<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/propeller.min.css">
-<!-- /build -->
+    <!-- Propeller css -->
+    <!-- build:[href] assets/css/ -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/propeller.min.css">
+    <!-- /build -->
 
-<!-- Font Awesome  -->
-<link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- /build -->
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- /build -->
 
-<!-- Propeller date time picker css-->
-<!-- build:[href] components/datetimepicker/css/ -->
-<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css"
-/>
-<link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css" />
-<!-- /build -->
+    <!-- Propeller date time picker css-->
+    <!-- build:[href] components/datetimepicker/css/ -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css" />
+    <!-- /build -->
 
-<!-- Propeller theme css-->
-<link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-theme.css" />
+    <!-- Propeller theme css-->
+    <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-theme.css" />
 
-<!-- Propeller admin theme css-->
-<link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
+    <!-- Propeller admin theme css-->
+    <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
 
-<!-- Custom Style -->
-<link rel="stylesheet" type="text/css" href="../assets/css/buttonRotate.css" />
+    <!-- Custom Style -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/buttonRotate.css" />
 
- <!--Google Analytics code-->
-   <script>(function (i, s, o, g, r, a, m) {
-       i['GoogleAnalyticsObject']=r;
-       i[r]=i[r] || function () {
-           (i[r].q=i[r].q || []).push(arguments)
-       }
-       , i[r].l=1 * new Date();
-       a=s.createElement(o), m=s.getElementsByTagName(o)[0];
-       a.async=1;
-       a.src=g;
-       m.parentNode.insertBefore(a, m)
-   }
-
-   )(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-   ga('create', 'UA-124615-22', 'auto');
-   ga('send', 'pageview');
-   </script>
+    <!--Google Analytics code-->
+    <script>
+        (
+            function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            }
+        )
+        (window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-124615-22', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
-
 <!-- Styles Ends -->
 
 <body>
@@ -234,8 +234,7 @@ session_start();
                         </svg>
                     </i>
                     <span class="media-body">
-                        Asistencia Ticket
-                        <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
+                        Asistencia Ticket <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
                     </span>
                     <div class="media-right media-bottom">
                         <i class="dic-more-vert dic"></i>
