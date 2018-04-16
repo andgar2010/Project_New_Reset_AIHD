@@ -1,7 +1,7 @@
 ![Logo of the project](./WEB/assets/images/LogoV2Alpha.png)
 
 # New Reset A.I.H.D. *(Alpha)* &middot; 
-#![PHP Support](https://img.shields.io/badge/PHP-%3E%3D%207.2.4-blue.svg?longCache=true&style=flat-square) ![Yarn](https://img.shields.io/badge/Yarn-%3E%3D%201.5.1-blue.svg?longCache=true&style=flat-square) [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/github/license/andgar2010/Project_New_Reset_AIHD.svg?style=flat-square)](https://github.com/andgar2010/Project_New_Reset_AIHD)
+# ![PHP Support](https://img.shields.io/badge/PHP-%3E%3D%207.2.4-blue.svg?longCache=true&style=flat-square) ![Yarn](https://img.shields.io/badge/Yarn-%3E%3D%201.5.1-blue.svg?longCache=true&style=flat-square) [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/github/license/andgar2010/Project_New_Reset_AIHD.svg?style=flat-square)](https://github.com/andgar2010/Project_New_Reset_AIHD)
 
 > Additional information or tag line
 
@@ -41,7 +41,7 @@ Nota: **^**, es versión adelante superior .
 | Tipos | Requimientos |
 | :----------------- | :--: |
 | Tipo de procesador | Procesador de 1 gigahercio (GHz) o más rápido de 32 bits (x86) o de 64 bits (x64). <br>*Servidor recomendado 64 bits (x64)* |
-| Memoria 			 | 1 GB de RAM (32 bits) o 2 GB de RAM (64 bits). <br>*Servidor recomendado 4GB de RAM (64 bits) para * |
+| Memoria 			 | 1 GB de RAM (32 bits) o 2 GB de RAM (64 bits). <br>*Servidor recomendado 4GB de RAM (64 bits)* |
 | Resolución de pantalla |1280 x 720 (Servidor se recomienda 1440 x 810 o superior) con color verdadero.<br>125% de escala de escritorio (120 ppp) o menor (recomendado).|
 | Espacio en disco   | 4 GB de espacio disponible en el disco duro. <br>*Servidor recomendado 20 GB de espacio disponible* |
 | Red				 | Acceso a red local (Cable Ethernet o Wifi) <br> *Servidor recomendado cable Ethernet* |
@@ -68,9 +68,6 @@ Nota: **^**, es versión adelante superior .
   * MariaBD ^10.1
 
 * Editor de texto ([Visual Studio Code](https://code.visualstudio.com/download), [Sublime Text](https://www.sublimetext.com/3), [Atom Editor](https://atom.io/), [NotePad++](https://notepad-plus-plus.org/download/v7.5.6.html) o  su preferido)
-
-  ​
-
 
 
 #### Entorno de ejecución (Servidor)
