@@ -1,5 +1,27 @@
 {
+  "name": "New_Reset_AIHD",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Sistema de incidencias en I.E.D. Alfedo Ireate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andgar2010/Project_New_Reset_AIHD.git"
+  },
+  "author": "Andres Garcia",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/andgar2010/Project_New_Reset_AIHD/issues"
+  },
+  "homepage": "https://github.com/andgar2010/Project_New_Reset_AIHD#readme",
+  "scripts": {
+    "test": "test.js"
+  },
+  "keywords": [
+    "ahid"
+  ],
   "dependencies": {
+    "barba.js": "^1.0.0",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
@@ -11,7 +33,8 @@
     "propellerkit-datetimepicker": "^1.1.0",
     "propellerkit-range-slider": "^1.1.0",
     "propellerkit-select2": "^1.1.0",
-    "tinymce": "^4.7.9"
+    "tinymce": "^4.7.9",
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.1",

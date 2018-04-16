@@ -34,8 +34,8 @@ session_start();
         <!-- End Twitter Meta Tags -->
 
         <!-- End HTML Meta Tags -->
-        
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">    
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
@@ -148,9 +148,9 @@ session_start();
                                                 </label>
                                             </div>
                                         </div>
-                                    
+
 									</div>
-									
+
                                     <div class="form-group">
                                         <div id="tipo_cedula">
                                             <h5 style="color: #555; font-size: 1,05rem;">Tipo de Cédula</h5>
@@ -210,12 +210,12 @@ session_start();
 
                                             var correcta = false;
 
-                                            //Compare the values in the password field 
+                                            //Compare the values in the password field
                                             //and the confirmation field
                                             if (pass1.value == pass2.value) {
-                                                //The passwords match. 
+                                                //The passwords match.
                                                 //Set the color to the good color and inform
-                                                //the user that they have entered the correct password 
+                                                //the user that they have entered the correct password
                                                 pass2.style.backgroundColor = goodColor;
                                                 message.style.color = goodColor;
                                                 message.innerHTML = "Contraseña correcta!"
@@ -363,5 +363,4 @@ session_start();
             });
         </script>
     </body>
-
 </html>
