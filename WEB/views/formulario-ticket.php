@@ -44,6 +44,9 @@ session_start();
     <!-- Propeller admin theme css-->
     <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
 
+    <!--Toastr-->
+    <link rel="stylesheet" href="../node_modules/toastr/build/toastr.min.css">
+
     <!--Google Analytics code-->
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -69,7 +72,7 @@ session_start();
 
     <!-- Row -->
     <div class="row">
-    
+
         <!-- Col-12 -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 control-label">
 
@@ -367,7 +370,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="pmd-card-actions">
-                                <a href="javascript:void(0);" class="btn btn-primary next">Enviar</a>
+                                <a href="javascript:void(0);" id="btnSend" class="btn btn-primary next">Enviar</a>
                                 <a href="javascript:void(0);" class="btn btn-default">Cancelar</a>
                             </div>
                         </div>
@@ -772,6 +775,34 @@ session_start();
     <script type="text/javascript">
         moment.locale('es');
         document.getElementById('now-time').value = moment().format('DD/MMM/YYYY, hh:mm a');
+    </script>
+    
+    <!-- Toastr -->
+    <script src="../node_modules/toastr/build/toastr.min.js"></script>
+    <script>
+        $("#btnSend").click(function() {
+            toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
+        }
+
+        Command: toastr["success"]("ccc", "aaa")
+        
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "preventDuplicates": false,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "5000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
     </script>
 
     <body>
