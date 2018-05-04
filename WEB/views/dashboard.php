@@ -155,11 +155,9 @@ session_start();
                                     </div>
                                 </a>
                             </li>
-                        </ul>
-                        <!-- End notifications list -->
+                        </ul><!-- End notifications list -->
                     </div>
-                </div>
-                <!-- End notifications -->
+                </div><!-- End notifications -->
             </div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -172,8 +170,7 @@ session_start();
             </div>
         </div>
 
-    </nav>
-    <!--End Nav bar -->
+    </nav><!--End Nav bar -->
     <!-- Header Ends -->
 
     <!-- Sidebar Starts -->
@@ -205,8 +202,8 @@ session_start();
                         </a>
                     </li>
                 </ul>
-            </li>
-            <!-- End user info -->
+            </li><!-- End user info -->
+
             <li>
                 <a class="pmd-ripple-effect" href="dashboard.php">
                     <i class="media-left media-middle">
@@ -267,8 +264,7 @@ session_start();
                         </a>
                     </li>
                 </ul>
-            </li>
-            <!-- End Asistencia  -->
+            </li><!-- End Asistencia  -->
 
 
             <!-- Reporte  -->
@@ -298,12 +294,10 @@ session_start();
                         </a>
                     </li>
                 </ul>
-            </li>
-            <!-- End Reporte  -->
+            </li><!-- End Reporte  -->
 
         </ul>
-    </aside>
-    <!-- End Left sidebar -->
+    </aside><!-- End Left sidebar -->
     <!-- Sidebar Ends -->
 
     <!--content area start-->
@@ -315,8 +309,7 @@ session_start();
                 </div>
                 <!--end Today's Site Activity -->
 
-    </div>
-    <!--end content area-->
+    </div><!--end content area-->
 
 
     <!-- Scripts Starts -->
