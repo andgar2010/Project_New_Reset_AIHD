@@ -79,8 +79,7 @@ session_start();
             <!-- Title -->
             <h1 class="section-title" id="services">
                 <span>Solicitar nuevo ticket</span>
-            </h1>
-            <!-- End Title -->
+            </h1><!-- End Title -->
 
             <!--breadcrum start-->
             <ol class="breadcrumb text-left">
@@ -88,15 +87,13 @@ session_start();
                     <a href="dashboard.php">Panel de control</a>
                 </li>
                 <li class="active">Solicitar nuevo ticket</li>
-            </ol>
-            <!--End breadcrum -->
+            </ol><!--End breadcrum -->
 
             <!--Bloque-->
             <div class="section section-custom billinfo">
 
                 <!--section-title -->
-                <h2>Crear nuevo ticket</h2>
-                <!--End section-title  -->
+                <h2>Crear nuevo ticket</h2><!--End section-title  -->
 
                 <!-- Start section content -->
                 <form id="newTicket" action="" method="post" enctype="multipart/form-data">
@@ -113,11 +110,9 @@ session_start();
                                     <div class="form-group pmd-textfield">
                                         <label for="now-time" class="control-label" style="display: block; text-align:center;">Fecha de solicitud </label>
                                         <input id="now-time" type="datetime" readonly="" value="" class="mat-input form-control" style="text-align:center; line-height: 20px;"></input>
-                                    </div>
-                                    <!-- End Readonly Input Numero ticket -->
+                                    </div><!-- End Readonly Input Numero ticket -->
 
-                                </div>
-                                <!--End Colmun 3 FechaSolictud size 6-->
+                                </div><!--End Colmun 3 FechaSolictud size 6-->
 
                                 <!--Colmun 3 NumTicket size 6-->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label">
@@ -126,14 +121,11 @@ session_start();
                                     <div class="form-group pmd-textfield">
                                         <label for="first-name" class="control-label" style="display: block; text-align:center;"> Numero de ticket </label>
                                         <input type="text" readonly="" value="#000" id="first-name" class="mat-input form-control" style="text-align:center;"></input>
-                                    </div>
-                                    <!-- End Readonly Input Numero ticket -->
+                                    </div><!-- End Readonly Input Numero ticket -->
 
-                                </div>
-                                <!--End Colmun 3 NumTicket size 6-->
+                                </div><!--End Colmun 3 NumTicket size 6-->
 
-                            </div>
-                            <!--End Row 1-->
+                            </div><!--End Row 1-->
 
                             <!--Row 2-->
                             <div class="group-fields clearfix row">
@@ -144,8 +136,7 @@ session_start();
                                         <label for="tiempotransccuido" class="control-label" style="display: block; text-align:center;"> Tiempo transccuido </label>
                                         <input type="text" readonly="" value="00 Días 00:00:00" id="first-name" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 Tiempo transccuido-->
+                                </div><!--End Colmun 1 Tiempo transccuido-->
 
                                 <!--Colmun 2 Tiempo por solucionado-->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
@@ -153,11 +144,9 @@ session_start();
                                         <label for="tiemposolucionado" class="control-label" style="display: block; text-align:center;"> Tiempo por solucionado </label>
                                         <input type="text" readonly="" value="00 Días 00:00:00" id="first-name" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 2 Tiempo por solucionado-->
+                                </div><!--End Colmun 2 Tiempo por solucionado-->
 
-                            </div>
-                            <!--End Row 2-->
+                            </div><!--End Row 2-->
 
                             <!-- Row 3  -->
                             <div class="group-fields clearfix row">
@@ -172,8 +161,7 @@ session_start();
                                             <option>Solictud</option>
                                         </select>
                                     </div>
-                                </div>
-                                <!--End Column 1 Tipo -->
+                                </div><!--End Column 1 Tipo -->
 
                                 <!--Column 2 Categoria -->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -187,11 +175,9 @@ session_start();
                                             <option>Redes</option>
                                         </select>
                                     </div>
-                                </div>
-                                <!--End Column 2 Categoria -->
+                                </div><!--End Column 2 Categoria -->
 
-                            </div>
-                            <!-- End Row 3  -->
+                            </div><!-- End Row 3  -->
 
                             <!-- Row 4  -->
                             <div class="group-fields clearfix row">
@@ -204,8 +190,7 @@ session_start();
                                         </label>
                                         <input type="text" readonly="" value="nombre_usuario" id="regular1" class="form-control" style="display: block; text-align:center;">
                                     </div>
-                                </div>
-                                <!--End Column 1 Nombre -->
+                                </div><!--End Column 1 Nombre -->
 
                                 <!--Column 2 Apellidos -->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -215,11 +200,9 @@ session_start();
                                         </label>
                                         <input type="text" readonly="" value="apellido_usuario" id="regular1" class="form-control" style="display: block; text-align:center;">
                                     </div>
-                                </div>
-                                <!--End Column 2 Apellidos -->
+                                </div><!--End Column 2 Apellidos -->
 
-                            </div>
-                            <!-- End Row 4  -->
+                            </div><!-- End Row 4  -->
 
                             <!--Row 3-->
                             <div class="group-fields clearfix row">
@@ -230,8 +213,7 @@ session_start();
                                         <label for="rol" class="control-label" style="display: block; text-align:center;"> Rol </label>
                                         <input type="text" readonly="" value="nombre_rol" id="rol" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 Rol-->
+                                </div><!--End Colmun 1 Rol-->
 
                                 <!--Colmun 2 Area-->
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -239,8 +221,7 @@ session_start();
                                         <label for="area" class="control-label" style="display: block; text-align:center;"> Area </label>
                                         <input type="text" readonly="" value="nombre_area" id="area" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 2 Area-->
+                                </div><!--End Colmun 2 Area-->
 
                                 <!--Colmun 3 Gerencia-->
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -248,11 +229,9 @@ session_start();
                                         <label for="gerencia" class="control-label" style="display: block; text-align:center;"> Gerencia </label>
                                         <input type="text" readonly="" value="nombre_gerencia" id="gerencia" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 3 Gerencia-->
+                                </div><!--End Colmun 3 Gerencia-->
 
-                            </div>
-                            <!--End Row 3-->
+                            </div><!--End Row 3-->
 
                             <!--Row 4-->
                             <div>
@@ -263,8 +242,7 @@ session_start();
                                         <label for="estado" class="control-label" style="display: block; text-align:center;"> Estado </label>
                                         <input type="text" readonly="" value="nombre_estado" id="estado" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 estado-->
+                                </div><!--End Colmun 1 estado-->
 
                                 <!--Colmun 2 Prioridad-->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -279,11 +257,9 @@ session_start();
                                             <option>muy alta</option>
                                         </select>
                                     </div>
-                                </div>
-                                <!--End Colmun 2 Prioridad-->
+                                </div><!--End Colmun 2 Prioridad-->
 
-                            </div>
-                            <!--End Row 4-->
+                            </div><!--End Row 4-->
 
                             <!--Row 5-->
                             <div>
@@ -294,8 +270,7 @@ session_start();
                                         <label for="ubicacion" class="control-label" style="display: block; text-align:center;"> Ubicacion* </label>
                                         <input type="text" value="" id="ubicacion" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 Ubicacion-->
+                                </div><!--End Colmun 1 Ubicacion-->
 
                                 <!--Colmun 2 Tipo de equipo-->
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -308,11 +283,9 @@ session_start();
                                             <option>VideoBeam</option>
                                         </select>
                                     </div>
-                                </div>
-                                <!--End Colmun 2 Tipo de equipo-->
+                                </div><!--End Colmun 2 Tipo de equipo-->
 
-                            </div>
-                            <!--End Row 5-->
+                            </div><!--End Row 5-->
 
                             <!--Row 6-->
                             <div>
@@ -323,11 +296,9 @@ session_start();
                                         <label for="titulo" class="control-label"> Titiulo* </label>
                                         <input type="text" value="" id="titulo" class="mat-input form-control" style="text-align:center;"></input>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 Titulo-->
+                                </div><!--End Colmun 1 Titulo-->
 
-                            </div>
-                            <!--End Row 6-->
+                            </div><!--End Row 6-->
 
                             <!--Row 7-->
                             <div>
@@ -338,11 +309,9 @@ session_start();
                                         <label class="control-label"> Descripcion* </label>
                                         <textarea required class="form-control"></textarea>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 Descripcion-->
+                                </div><!--End Colmun 1 Descripcion-->
 
-                            </div>
-                            <!--End Row 7-->
+                            </div><!--End Row 7-->
 
                             <!--Row 8-->
                             <div>
@@ -353,11 +322,9 @@ session_start();
                                         <label class="control-label"> Archivo adjunto </label>
                                         <input type='file' name='archivo1' id='archivo1' placeholder="carga tu Archivo adjunto" required>
                                     </div>
-                                </div>
-                                <!--End Colmun 1 Archivo adjunto-->
+                                </div><!--End Colmun 1 Archivo adjunto-->
 
-                            </div>
-                            <!--End Row 8-->
+                            </div><!--End Row 8-->
 
                             <div class="group-fields clearfix row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -374,437 +341,412 @@ session_start();
                                 <a href="javascript:void(0);" class="btn btn-default">Cancelar</a>
                             </div>
                         </div>
-                    </div>
-                    <!-- section content end -->
+                    </div><!-- section content end -->
 
                 </form>
 
-            </div>
-            <!-- End Bloque-->
+            </div><!-- End Bloque-->
 
-        </div>
-        <!--End Col-12 -->
+        </div><!--End Col-12 -->
 
-    </div>
-    <!--End Row -->
+    </div><!--End Row -->
 
-</div>
-<!-- End Container -->
+</div><!-- End Container -->
 
-
-    
-
-    <!-- Scripts Starts -->
-    <!-- build:[src] assets/js/ -->
-    <script src="../assets/Framework/propeller-themes/js/jquery-1.12.2.min.js"></script>
-    <script src="../node_modules/propellerkit/dist/js/bootstrap.min.js"></script>
-    <!-- /build -->
-    <script>
-        $(document).ready(function () {
-            var sPath = window.location.pathname;
-            var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-            $(".pmd-sidebar-nav").each(function () {
-                $(this).find("a[href='" + sPage + "']").parents(".dropdown").addClass("open");
-                $(this).find("a[href='" + sPage + "']").parents(".dropdown").find('.dropdown-menu').css(
-                    "display", "block");
-                $(this).find("a[href='" + sPage + "']").parents(".dropdown").find('a.dropdown-toggle').addClass(
-                    "active");
-                $(this).find("a[href='" + sPage + "']").addClass("active");
-            });
+<!-- Scripts Starts -->
+<!-- build:[src] assets/js/ -->
+<script src="../assets/Framework/propeller-themes/js/jquery-1.12.2.min.js"></script>
+<script src="../node_modules/propellerkit/dist/js/bootstrap.min.js"></script>
+<!-- /build -->
+<script>
+    $(document).ready(function () {
+        var sPath = window.location.pathname;
+        var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+        $(".pmd-sidebar-nav").each(function () {
+            $(this).find("a[href='" + sPage + "']").parents(".dropdown").addClass("open");
+            $(this).find("a[href='" + sPage + "']").parents(".dropdown").find('.dropdown-menu').css(
+                "display", "block");
+            $(this).find("a[href='" + sPage + "']").parents(".dropdown").find('a.dropdown-toggle').addClass(
+                "active");
+            $(this).find("a[href='" + sPage + "']").addClass("active");
         });
-    </script>
-    <script type="text/javascript">
-        (function () {
-            "use strict";
-            var toggles = document.querySelectorAll(".c-hamburger");
-            for (var i = toggles.length - 1; i >= 0; i--) {
-                var toggle = toggles[i];
-                toggleHandler(toggle);
-            };
-
-            function toggleHandler(toggle) {
-                toggle.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    (this.classList.contains("is-active") === true) ? this.classList.remove("is-active"):
-                        this.classList.add("is-active");
-                });
-            }
-        })();
-    </script>
-
-    <!-- build:[src] assets/js/ -->
-    <script src="../node_modules/propellerkit/dist/js/propeller.min.js"></script>
-    <!-- /build -->
-
-    <!-- Javascript for revenue progressbar animation effect-->
-    <script>
-        function progress(percent, $element) {
-            var progressBarWidth = percent * $element.width() / 100;
-            $element.find('.progress-bar').animate({
-                width: progressBarWidth
-            }, 500);
+    });
+</script>
+<script type="text/javascript">
+    (function () {
+        "use strict";
+        var toggles = document.querySelectorAll(".c-hamburger");
+        for (var i = toggles.length - 1; i >= 0; i--) {
+            var toggle = toggles[i];
+            toggleHandler(toggle);
+        };
+        function toggleHandler(toggle) {
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                (this.classList.contains("is-active") === true) ? this.classList.remove("is-active"):
+                    this.classList.add("is-active");
+            });
         }
-
-        progress(50, $('.cash-progressbar'));
-        progress(30, $('.card-progressbar'));
-        progress(60, $('.wallet-progressbar'));
-        progress(40, $('.credit-progressbar'));
-        progress(10, $('.other-progressbar'));
-    </script>
-    <!-- Javascript for revenue progressbar animation effect-->
-
-
-    <!--circle chart-->
-    <script src="../assets/Framework/propeller-themes/js/circles.min.js"></script>
-    <script>
-        // < !--javascript for total sales chart-- >
-        var colors = [
-                ['#dfe3e7', '#f79332'],
-                ['#dfe3e7', '#f79332'],
-                ['#dfe3e7', '#f79332'],
-                ['#dfe3e7', '#2ab7ee'],
-                ['#dfe3e7', '#00719d']
-            ],
-            circles = [];
-        for (var i = 1; i <= 3; i++) {
-            var child = document.getElementById('circles-' + i),
-                percentage = 10 + (i * 8);
-            circles.push(Circles.create({
-                id: child.id,
-                value: percentage,
-                radius: 50,
-                width: 7,
-                colors: colors[i - 1],
-                textClass: 'circles-text',
-                styleText: true
-            }));
-        }
-        // < !--javascript for total sales chart-- >
-    </script>
-
-    <!--staked column chart for payment-->
-    <script src="../assets/Framework/propeller-themes/js/highcharts.js"></script>
-    <script src="../assets/Framework/propeller-themes/js/highcharts-more.js"></script>
-
-    <!-- Payment chart js-->
-    <script>
-        $(function paymentChart() {
-            $('#payment-chart').highcharts({
-                chart: {
-                    type: 'column'
+    })();
+</script>
+<!-- build:[src] assets/js/ -->
+<script src="../node_modules/propellerkit/dist/js/propeller.min.js"></script>
+<!-- /build -->
+<!-- Javascript for revenue progressbar animation effect-->
+<script>
+    function progress(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 100;
+        $element.find('.progress-bar').animate({
+            width: progressBarWidth
+        }, 500);
+    }
+    progress(50, $('.cash-progressbar'));
+    progress(30, $('.card-progressbar'));
+    progress(60, $('.wallet-progressbar'));
+    progress(40, $('.credit-progressbar'));
+    progress(10, $('.other-progressbar'));
+</script>
+<!-- Javascript for revenue progressbar animation effect-->
+<!--circle chart-->
+<script src="../assets/Framework/propeller-themes/js/circles.min.js"></script>
+<script>
+    // < !--javascript for total sales chart-- >
+    var colors = [
+            ['#dfe3e7', '#f79332'],
+            ['#dfe3e7', '#f79332'],
+            ['#dfe3e7', '#f79332'],
+            ['#dfe3e7', '#2ab7ee'],
+            ['#dfe3e7', '#00719d']
+        ],
+        circles = [];
+    for (var i = 1; i <= 3; i++) {
+        var child = document.getElementById('circles-' + i),
+            percentage = 10 + (i * 8);
+        circles.push(Circles.create({
+            id: child.id,
+            value: percentage,
+            radius: 50,
+            width: 7,
+            colors: colors[i - 1],
+            textClass: 'circles-text',
+            styleText: true
+        }));
+    }
+    // < !--javascript for total sales chart-- >
+</script>
+<!--staked column chart for payment-->
+<script src="../assets/Framework/propeller-themes/js/highcharts.js"></script>
+<script src="../assets/Framework/propeller-themes/js/highcharts-more.js"></script>
+<!-- Payment chart js-->
+<script>
+    $(function paymentChart() {
+        $('#payment-chart').highcharts({
+            chart: {
+                type: 'column'
+            },
+            colors: "#00719d,#2ab7ee".split(","),
+            title: {
+                text: 'Last 10 days comparison',
+                style: {
+                    color: "#4d575d",
+                    fontSize: "14px",
                 },
-                colors: "#00719d,#2ab7ee".split(","),
+            },
+            xAxis: {
+                categories: ['9-7', '10-7', '11-7', '12-7', '13-7', '14-7', '15-7', '16-7', '17-7',
+                    '18-7'
+                ]
+            },
+            yAxis: {
+                min: 0,
                 title: {
-                    text: 'Last 10 days comparison',
+                    text: "Amount"
+                },
+                stackLabels: {
+                    enabled: false,
                     style: {
-                        color: "#4d575d",
-                        fontSize: "14px",
-                    },
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                    }
+                }
+            },
+            legend: {
+                enabled: !0,
+                align: "right",
+                layout: "horizontal",
+                labelFormatter: function () {
+                    return this.name
                 },
-                xAxis: {
-                    categories: ['9-7', '10-7', '11-7', '12-7', '13-7', '14-7', '15-7', '16-7', '17-7',
-                        '18-7'
-                    ]
+                borderColor: false,
+                borderRadius: 0,
+                navigation: {
+                    activeColor: "#274b6d",
+                    inactiveColor: "#CCC"
                 },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: "Amount"
-                    },
-                    stackLabels: {
+                shadow: false,
+                itemStyle: {
+                    color: "#888888",
+                    fontSize: "12px",
+                    fontWeight: "normal"
+                },
+                itemHoverStyle: {
+                    color: "#000"
+                },
+                itemHiddenStyle: {
+                    color: "#CCC"
+                },
+                itemCheckboxStyle: {
+                    position: "absolute"
+                },
+                symbolHeight: 10,
+                symbolWidth: 10,
+                symbolPadding: 5,
+                verticalAlign: "bottom",
+                x: 0,
+                y: 0,
+                title: {
+                    style: {
+                        fontWeight: "normal"
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>{point.x}</b><br/>',
+                pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}',
+                backgroundColor: '#ffffff',
+                borderColor: '#f0f0f0',
+                shadow: true
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
                         enabled: false,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
                         style: {
-                            fontWeight: 'bold',
-                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                            textShadow: '0 0 3px black'
                         }
                     }
-                },
-                legend: {
-                    enabled: !0,
-                    align: "right",
-                    layout: "horizontal",
-                    labelFormatter: function () {
-                        return this.name
-                    },
-                    borderColor: false,
-                    borderRadius: 0,
-                    navigation: {
-                        activeColor: "#274b6d",
-                        inactiveColor: "#CCC"
-                    },
-                    shadow: false,
-                    itemStyle: {
-                        color: "#888888",
-                        fontSize: "12px",
-                        fontWeight: "normal"
-                    },
-                    itemHoverStyle: {
-                        color: "#000"
-                    },
-                    itemHiddenStyle: {
-                        color: "#CCC"
-                    },
-                    itemCheckboxStyle: {
-                        position: "absolute"
-                    },
-                    symbolHeight: 10,
-                    symbolWidth: 10,
-                    symbolPadding: 5,
-                    verticalAlign: "bottom",
-                    x: 0,
-                    y: 0,
-                    title: {
-                        style: {
-                            fontWeight: "normal"
-                        }
-                    }
-                },
-                tooltip: {
-                    headerFormat: '<b>{point.x}</b><br/>',
-                    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}',
-                    backgroundColor: '#ffffff',
-                    borderColor: '#f0f0f0',
-                    shadow: true
-                },
-                plotOptions: {
-                    column: {
-                        stacking: 'normal',
-                        dataLabels: {
-                            enabled: false,
-                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
-                            style: {
-                                textShadow: '0 0 3px black'
-                            }
-                        }
-                    }
-                },
-                credits: {
-                    enabled: false,
-                },
-                series: [{
-                    name: 'Card',
-                    data: [25000, 50000, 75000, 75000, 60000, 70000, 10000, 2500, 5000, 25000]
-                }, {
-                    name: 'Wallet',
-                    data: [75000, 50000, 25000, 25000, 30000, 30000, 90000, 25000, 3000, 50000]
-                }]
-
-            });
+                }
+            },
+            credits: {
+                enabled: false,
+            },
+            series: [{
+                name: 'Card',
+                data: [25000, 50000, 75000, 75000, 60000, 70000, 10000, 2500, 5000, 25000]
+            }, {
+                name: 'Wallet',
+                data: [75000, 50000, 25000, 25000, 30000, 30000, 90000, 25000, 3000, 50000]
+            }]
         });
-    </script>
-
-    <!--staked column chart for sms details-->
-    <script>
-        $(function smsChart() {
-            $('#sms-chart').highcharts({
-                chart: {
-                    zoomType: 'none'
+    });
+</script>
+<!--staked column chart for sms details-->
+<script>
+    $(function smsChart() {
+        $('#sms-chart').highcharts({
+            chart: {
+                zoomType: 'none'
+            },
+            colors: "#e75c5c,#9159b8".split(","),
+            title: {
+                text: 'Last 7 days comparison',
+                style: {
+                    color: "#4d575d",
+                    fontSize: "14px",
                 },
-                colors: "#e75c5c,#9159b8".split(","),
-                title: {
-                    text: 'Last 7 days comparison',
+            },
+            xAxis: [{
+                categories: ['3-7', '4-7', '5-7', '6-7', '7-7', '8-7', '9-7']
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
                     style: {
-                        color: "#4d575d",
-                        fontSize: "14px",
-                    },
-                },
-                xAxis: [{
-                    categories: ['3-7', '4-7', '5-7', '6-7', '7-7', '8-7', '9-7']
-                }],
-                yAxis: [{ // Primary yAxis
-                    labels: {
-                        style: {
-                            color: Highcharts.getOptions().colors[1]
-                        }
-                    },
-                    title: {
-                        text: 'User Count',
-                        style: {
-                            color: Highcharts.getOptions().colors[1]
-                        }
+                        color: Highcharts.getOptions().colors[1]
                     }
-                }, { // Secondary yAxis
-                    title: {
-                        text: 'Total Days',
-                        style: {
-                            color: Highcharts.getOptions().colors[0]
-                        }
-                    },
-                    labels: {
-                        style: {
-                            color: Highcharts.getOptions().colors[0]
-                        }
-                    },
-                    opposite: true
-                }],
-                legend: {
-                    enabled: !0,
-                    align: "right",
-                    layout: "horizontal",
-                    labelFormatter: function () {
-                        return this.name
-                    },
-                    borderColor: false,
-                    borderRadius: 0,
-                    navigation: {
-                        activeColor: "#274b6d",
-                        inactiveColor: "#CCC"
-                    },
-                    shadow: false,
-                    itemStyle: {
-                        color: "#888888",
-                        fontSize: "12px",
+                },
+                title: {
+                    text: 'User Count',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: 'Total Days',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                opposite: true
+            }],
+            legend: {
+                enabled: !0,
+                align: "right",
+                layout: "horizontal",
+                labelFormatter: function () {
+                    return this.name
+                },
+                borderColor: false,
+                borderRadius: 0,
+                navigation: {
+                    activeColor: "#274b6d",
+                    inactiveColor: "#CCC"
+                },
+                shadow: false,
+                itemStyle: {
+                    color: "#888888",
+                    fontSize: "12px",
+                    fontWeight: "normal"
+                },
+                itemHoverStyle: {
+                    color: "#000"
+                },
+                itemHiddenStyle: {
+                    color: "#CCC"
+                },
+                itemCheckboxStyle: {
+                    position: "absolute",
+                    width: "12px",
+                    height: "12px"
+                },
+                symbolHeight: 10,
+                symbolWidth: 10,
+                symbolPadding: 5,
+                verticalAlign: "bottom",
+                x: 0,
+                y: 0,
+                title: {
+                    style: {
                         fontWeight: "normal"
-                    },
-                    itemHoverStyle: {
-                        color: "#000"
-                    },
-                    itemHiddenStyle: {
-                        color: "#CCC"
-                    },
-                    itemCheckboxStyle: {
-                        position: "absolute",
-                        width: "12px",
-                        height: "12px"
-                    },
-                    symbolHeight: 10,
-                    symbolWidth: 10,
-                    symbolPadding: 5,
-                    verticalAlign: "bottom",
-                    x: 0,
-                    y: 0,
-                    title: {
-                        style: {
-                            fontWeight: "normal"
-                        }
                     }
-                },
+                }
+            },
+            tooltip: {
+                shared: true,
+                backgroundColor: '#ffffff',
+                borderColor: '#f0f0f0',
+                shadow: true
+            },
+            credits: {
+                enabled: false,
+            },
+            series: [{
+                name: 'Total Days',
+                type: 'spline',
+                yAxis: 1,
+                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6],
                 tooltip: {
-                    shared: true,
-                    backgroundColor: '#ffffff',
-                    borderColor: '#f0f0f0',
-                    shadow: true
-                },
-                credits: {
-                    enabled: false,
-                },
-                series: [{
-                    name: 'Total Days',
-                    type: 'spline',
-                    yAxis: 1,
-                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6],
-                    tooltip: {
-                        pointFormat: '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: '
-                    }
-                }, {
-                    name: 'Total Days error',
-                    type: 'errorbar',
-                    yAxis: 1,
-                    data: [
-                        [48, 51],
-                        [68, 73],
-                        [92, 110],
-                        [128, 136],
-                        [140, 150],
-                        [171, 179],
-                        [135, 143]
-                    ],
-                    tooltip: {
-                        pointFormat: '(error range: {point.low}-{point.high})<br/>'
-                    }
-                }, {
-                    name: 'User Count',
-                    type: 'column',
-                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2],
-                    tooltip: {
-                        pointFormat: '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f}</b> '
-                    }
-                }, {
-                    name: 'User Count error',
-                    type: 'errorbar',
-                    data: [
-                        [6, 8],
-                        [5.9, 7.6],
-                        [9.4, 10.4],
-                        [14.1, 15.9],
-                        [18.0, 20.1],
-                        [21.0, 24.0],
-                        [23.2, 25.3]
-                    ],
-                    tooltip: {
-                        pointFormat: '(error range: {point.low}-{point.high})<br/>'
-                    }
-                }]
-            });
+                    pointFormat: '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: '
+                }
+            }, {
+                name: 'Total Days error',
+                type: 'errorbar',
+                yAxis: 1,
+                data: [
+                    [48, 51],
+                    [68, 73],
+                    [92, 110],
+                    [128, 136],
+                    [140, 150],
+                    [171, 179],
+                    [135, 143]
+                ],
+                tooltip: {
+                    pointFormat: '(error range: {point.low}-{point.high})<br/>'
+                }
+            }, {
+                name: 'User Count',
+                type: 'column',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2],
+                tooltip: {
+                    pointFormat: '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f}</b> '
+                }
+            }, {
+                name: 'User Count error',
+                type: 'errorbar',
+                data: [
+                    [6, 8],
+                    [5.9, 7.6],
+                    [9.4, 10.4],
+                    [14.1, 15.9],
+                    [18.0, 20.1],
+                    [21.0, 24.0],
+                    [23.2, 25.3]
+                ],
+                tooltip: {
+                    pointFormat: '(error range: {point.low}-{point.high})<br/>'
+                }
+            }]
         });
-    </script>
-    <!-- Scripts Ends -->
-    <!-- Javascript for Datepicker -->
-    <!-- build:[src] components/datetimepicker/js/ -->
-    <script type="text/javascript" language="javascript" src="../node_modules/moment/min/moment-with-locales.js"></script>
-    <script type="text/javascript" language="javascript" src="../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <!-- /build -->
-    <script>
-        // Linked date and time picker
-        // start date date and time picker
-        $('#datepicker-default').datetimepicker();
-        $(".auto-update-year").html(new Date().getFullYear());
-    </script>
+    });
+</script>
+<!-- Scripts Ends -->
+<!-- Javascript for Datepicker -->
+<!-- build:[src] components/datetimepicker/js/ -->
+<script type="text/javascript" language="javascript" src="../node_modules/moment/min/moment-with-locales.js"></script>
+<script type="text/javascript" language="javascript" src="../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<!-- /build -->
+<script>
+    // Linked date and time picker
+    // start date date and time picker
+    $('#datepicker-default').datetimepicker();
+    $(".auto-update-year").html(new Date().getFullYear());
+</script>
+<!-- Animate Sidebar -->
+<script src="../assets/js/animateSidebar.js"></script>
+<!-- TinyMCE Script  -->
+<script src="../node_modules/tinymce/tinymce.min.js"></script>
+<!-- TinyMCE Configure -->
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 100,
+        theme: 'modern',
+        plugins: [
+            'advlist autolink lists link image charmap print preview hr anchor pagebreak'
+        ],
+        language_url: '../assets/Framework/TinyMCE/langs/es_MX.js'
+    });
+</script>
+<!-- Moment and format datetime -->
+<script src="../node_modules/moment/min/moment-with-locales.min.js"></script>
+<script type="text/javascript">
+    moment.locale('es');
+    document.getElementById('now-time').value = moment().format('DD/MMM/YYYY, hh:mm a');
+</script>
 
-    <!-- Animate Sidebar -->
-    <script src="../assets/js/animateSidebar.js"></script>
+<!-- Toastr -->
+<script src="../node_modules/toastr/build/toastr.min.js"></script>
+<script>
+    $("#btnSend").click(function() {
+        toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
+    }
+    Command: toastr["success"]("ccc", "aaa")
 
-    <!-- TinyMCE Script  -->
-    <script src="../node_modules/tinymce/tinymce.min.js"></script>
-
-    <!-- TinyMCE Configure -->
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            height: 100,
-            theme: 'modern',
-            plugins: [
-                'advlist autolink lists link image charmap print preview hr anchor pagebreak'
-            ],
-            language_url: '../assets/Framework/TinyMCE/langs/es_MX.js'
-        });
-    </script>
-
-    <!-- Moment and format datetime -->
-    <script src="../node_modules/moment/min/moment-with-locales.min.js"></script>
-    <script type="text/javascript">
-        moment.locale('es');
-        document.getElementById('now-time').value = moment().format('DD/MMM/YYYY, hh:mm a');
-    </script>
-    
-    <!-- Toastr -->
-    <script src="../node_modules/toastr/build/toastr.min.js"></script>
-    <script>
-        $("#btnSend").click(function() {
-            toastr.success('We do have the Kapua suite available.', 'Turtle Bay Resort', {timeOut: 5000});
-        }
-
-        Command: toastr["success"]("ccc", "aaa")
-        
-        toastr.options = {
-          "closeButton": true,
-          "debug": false,
-          "newestOnTop": false,
-          "progressBar": true,
-          "positionClass": "toast-top-right",
-          "preventDuplicates": false,
-          "onclick": null,
-          "showDuration": "300",
-          "hideDuration": "1000",
-          "timeOut": "5000",
-          "extendedTimeOut": "1000",
-          "showEasing": "swing",
-          "hideEasing": "linear",
-          "showMethod": "fadeIn",
-          "hideMethod": "fadeOut"
-        }
-    </script>
-
-    <body>
-
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+</script>
+<body>
 </html>
