@@ -15,6 +15,7 @@ session_start();
 
     <!-- Google icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
 
     <!-- Bootstrap css -->
     <!-- build:[href] assets/css/ -->
