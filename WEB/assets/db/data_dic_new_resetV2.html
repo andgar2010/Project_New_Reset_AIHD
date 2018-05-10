@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="WB Datadict">
+    <meta name="description" content="BDNew_Reset Data Dictionary.">
+    <title>BDNew_Reset Data Dictionary</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        // Highlight table corresponding to the current fragment in the URL.
+        $(document).ready(function () {
+            $("a").click(function () {
+                var elem = $(this);
+                // Remove all classes from tables.
+                $("table").removeClass("focused")
+                // Get a.href value and extract its fragment id.
+                var id = elem.attr("href");
+                // Highlight table using fragment id.
+                $(id).addClass("focused");
+            });
+        });
+    </script>
+    <style type="text/css">
+        a {
+            text-decoration: none;
+        }
+
+        abbr {
+            cursor: help;
+        }
+
+        header {
+            color: #6A6A6A;
+            text-align: right;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        table caption {
+            font-size: 120%;
+            font-weight: bold;
+        }
+
+        table,
+        td,
+        th {
+            border-color: silver;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        caption {
+            color: black;
+        }
+
+        td,
+        th {
+            padding: 1em;
+        }
+
+        tr:hover {
+            color: #333;
+            background-color: #F2F2F2;
+        }
+
+        th {
+            background-color: #F5F5F5;
+        }
+
+        td {
+            color: #6A6A6A;
+        }
+
+        ul {
+            font-style: italic;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .field {
+            color: #4C4C4C;
+            font-weight: bold;
+        }
+
+        .focused {
+            outline-color: aqua;
+            outline-style: solid;
+            outline-width: thin;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>BDNew_Reset
+            <br> Data Dictionary</h1>
+        <p>
+            <em>2018-05-10</em>
+        </p>
+        <p>
+            <em></em>
+        </p>
+    </header>
+
+    <nav>
+        <h2>Index</h2>
+        <ul>
+            <li>
+                <a href='#Equipo'>Equipo</a>
+            </li>
+            <li>
+                <a href='#Ticket'>Ticket</a>
+            </li>
+            <li>
+                <a href='#Usuario'>Usuario</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div>
+        <table class="table table-responsive" id='Equipo'>
+            <h1>Equipo</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Equipo</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_tipo_equipo</td>
+                <td>ENUM('Seleccione', 'Escritorio', 'Portátil')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del tipo de equipo </td>
+            </tr>
+            <tr>
+                <td class='field'>serial_equipo</td>
+                <td>VARCHAR(45)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Número de Serial del equipo</td>
+            </tr>
+        </table>
+        <table id='Ticket' class="table table-responsive">
+            <h1>Ticket</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_ticket</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>id Ticket </td>
+            </tr>
+            <tr>
+                <td class='field'>fecha_inicio</td>
+                <td>DATETIME</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Fecha de inicio del nuevo ticket</td>
+            </tr>
+            <tr>
+                <td class='field'>fecha_fin</td>
+                <td>DATETIME</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Fecha de finalizacion del ticket</td>
+            </tr>
+            <tr>
+                <td class='field'>descrip_incidencia</td>
+                <td>TEXT(255)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Descripción de la incidencia</td>
+            </tr>
+            <tr>
+                <td class='field'>archivo_evidencia</td>
+                <td>VARCHAR(255)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Ruta de la carpeta que guarda los archivos evidencia</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_categoria</td>
+                <td>ENUM('Seleccionar', 'Hardware', 'Software')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de especificacion de la categoria de la incidencia.</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_estado_ticket</td>
+                <td>ENUM('Enviado', 'Visto', 'En proceso', 'Solucionado')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de estado de la incidencia en el ticket</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_usuario</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_usuario'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de Usuario desde tabla Usuario </td>
+            </tr>
+            <tr>
+                <td class='field'>cod_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_equipo'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de Equipo desde tabla Equipo</td>
+            </tr>
+        </table>
+        <table id='Usuario' class="table table-responsive">
+            <h1>Usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_usuario</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class='field'>tipo_doc</td>
+                <td>ENUM('Seleccionar', 'Cedula de ciudadania', 'Cedula de extranjeria', 'Pasaporte', 'NIT')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Tipo de documento del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>documento</td>
+                <td>VARCHAR(45)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Numero de documento del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>apellido</td>
+                <td>VARCHAR(30)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Apellido del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(30)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>genero</td>
+                <td>ENUM('Seleccionar', 'Masculino', 'Femenino', 'Indefinido')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Género del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>email</td>
+                <td>VARCHAR(50)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Email del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>password</td>
+                <td>VARCHAR(50)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Contraseña del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_area</td>
+                <td>ENUM('Seleccionar', 'Tecnica', 'Administrativa', 'Academica', 'Tecnologica')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del área de la Institución a la que pertenece el usuario.</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_cargo</td>
+                <td>ENUM('Seleccionar', 'Tecnico', 'Rector', 'Coordinador academico', 'Profesor')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del cargo del usuario.</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_rol</td>
+                <td>ENUM('Seleccionar', 'Tecnico', 'Adminstrativo', 'Usuario')</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del rol del usuario</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
