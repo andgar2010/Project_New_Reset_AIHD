@@ -114,8 +114,8 @@ session_start();
                                         <!--Colmun 2 Tiempo por solucionado-->
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                                             <div class="form-group pmd-textfield">
-                                                <label for="tiemposolucionado" class="control-label" style="display: block; text-align:center;"> Tiempo por solucionado </label>
-                                                <input type="text" readonly="" value="00 Días 00:00:00" id="first-name" class="mat-input form-control" style="text-align:center;"
+                                                <label for="solve_time" class="control-label" style="display: block; text-align:center;"> Tiempo por solucionado </label>
+                                                <input id="solve_time" type="text" name="solve_time" readonly="" value="00 Días 00:00:00" class="mat-input form-control" style="text-align:center;"
                                                     disabled></input>
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="nombre" class="control-label" style="display: block; text-align:center;"> Nombre </label>
-                                                <input type="text" readonly="" value="nombre_usuario" id="regular1" class="form-control" style="display: block; text-align:center;"
+                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="nombre_usuario" style="display: block; text-align:center;"
                                                     disabled>
                                             </div>
                                         </div>
@@ -141,7 +141,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="apellido" class="control-label" style="display: block; text-align:center;"> Apellidos </label>
-                                                <input type="text" readonly="" value="apellido_usuario" id="regular1" class="form-control" style="display: block; text-align:center;"
+                                                <input id="apellido" name="apellido" type="text" class="form-control" readonly="" value="apellido_usuario" style="display: block; text-align:center;"
                                                     disabled>
                                             </div>
                                         </div>
@@ -157,7 +157,7 @@ session_start();
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="rol" class="control-label" style="display: block; text-align:center;"> Rol </label>
-                                                <input type="text" readonly="" value="nombre_rol" id="rol" class="mat-input form-control" style="text-align:center;" disabled></input>
+                                                <input id="rol" name="rol" type="text" class="form-control" readonly="" value="nombre_rol" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Rol-->
@@ -166,7 +166,7 @@ session_start();
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="area" class="control-label" style="display: block; text-align:center;"> Area </label>
-                                                <input type="text" readonly="" value="nombre_area" id="area" class="mat-input form-control" style="text-align:center;" disabled></input>
+                                                <input id="area" name="area" type="text" class="form-control" readonly="" value="nombre_area" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Area-->
@@ -175,7 +175,7 @@ session_start();
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="gerencia" class="control-label" style="display: block; text-align:center;"> Gerencia </label>
-                                                <input type="text" readonly="" value="nombre_gerencia" id="gerencia" class="mat-input form-control" style="text-align:center;" disabled></input>
+                                                <input id="gerencia" name="gerencia" type="text" class="form-control" readonly="" value="nombre_gerencia" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 3 Gerencia-->
@@ -208,7 +208,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="estado" class="control-label" style="display: block; text-align:center;"> Estado </label>
-                                                <input type="text" readonly="" value="nombre_estado" id="estado" class="mat-input form-control" style="text-align:center;"></input>
+                                                <input id="estado" type="text" class="form-control" readonly="" value="nombre_estado" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 estado-->
@@ -216,14 +216,14 @@ session_start();
                                         <!--Colmun 2 Prioridad-->
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="prioridad" class="control-label" style="display: block; text-align:center;"> Prioridad* </label>
-                                                <select class="select-simple form-control pmd-select2">
+                                                <label id="prioridad" for="prioridad" class="control-label" style="display: block; text-align:center;"> Prioridad* </label>
+                                                <select name="prioridad" class="select-simple form-control pmd-select2 text-center">
                                                     <option value=""></option>
-                                                    <option>muy baja</option>
-                                                    <option> baja</option>
-                                                    <option>medio</option>
-                                                    <option>alta</option>
-                                                    <option>muy alta</option>
+                                                    <option value="1">muy baja</option>
+                                                    <option value="2"> baja</option>
+                                                    <option value="3">medio</option>
+                                                    <option value="4">alta</option>
+                                                    <option value="5">muy alta</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -238,7 +238,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="ubicacion" class="control-label" style="display: block; text-align:center;"> Ubicacion* </label>
-                                                <input type="text" value="" id="ubicacion" class="mat-input form-control" style="text-align:center;"></input>
+                                                <input id="ubicacion" name="ubicacion" type="text" class="mat-input form-control" value="" style="text-align:center;"></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Ubicacion-->
@@ -247,11 +247,11 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="tipo_equipo" class="control-label" style="display: block; text-align:center;"> Tipo de equipo* </label>
-                                                <select class="select-simple form-control pmd-select2">
-                                                    <option></option>
-                                                    <option>Portatil</option>
-                                                    <option> Escritorio</option>
-                                                    <option>VideoBeam</option>
+                                                <select name="tipo_equipo" class="select-simple form-control pmd-select2 text-center">
+                                                    <option value=""></option>
+                                                    <option value="1">Portatil</option>
+                                                    <option value="2"> Escritorio</option>
+                                                    <option value="3">VideoBeam</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -266,7 +266,7 @@ session_start();
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="titulo" class="control-label"> Titiulo* </label>
-                                                <input type="text" value="" id="titulo" class="mat-input form-control" style="text-align:center;"></input>
+                                                <input  id="titulo" name="titulo" type="text" class="form-control" value="" style="text-align:center;"></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Titulo-->
@@ -278,8 +278,8 @@ session_start();
                                         <!--Colmun 1 Descripcion-->
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield">
-                                                <label class="control-label"> Descripcion* </label>
-                                                <textarea required class="form-control"></textarea>
+                                                <label class="control-label"> Descripción* </label>
+                                                <textarea name="descripcion" class="form-control"required ></textarea>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Descripcion-->
@@ -291,8 +291,8 @@ session_start();
                                         <!--Colmun 1 Archivo adjunto-->
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield">
-                                                <label class="control-label"> Archivo adjunto </label>
-                                                <input type='file' name='archivo1' id='archivo1' placeholder="carga tu Archivo adjunto" required>
+                                                <label for="archivo" class="control-label"> Archivo adjunto </label>
+                                                <input id="archivo" name="archivo" type='file' class="" placeholder="carga tu Archivo adjunto" required>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Archivo adjunto-->
@@ -311,8 +311,18 @@ session_start();
                                     </div>
 
                                     <div class="pmd-card-actions">
-                                        <a href="javascript:void(0);" class="btn btn-primary next">Enviar</a>
-                                        <a href="javascript:void(0);" class="btn btn-default">Cancelar</a>
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                                                <button id="enviar" name="enviar" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect">Enviar</button>
+                                            </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                                            <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <br>
+                                        <br>
+                                        <br>
                                     </div>
 
                             </div>
