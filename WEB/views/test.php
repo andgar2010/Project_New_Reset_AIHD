@@ -1,37 +1,33 @@
-<?php
-require './../config/Config.php';
-// (@include('../config/Config.php'))
-// OR die('Could not find Config.php!');
-// (@include('../config/Database.php'))
-// OR die("Could not find Database.php!");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <?php include '../config/base_head.php';?>
+</head>
+<body>
+    <h1>Prueba</h1>
+    <table class="table pmd-table">
+        <thead>
+        <tr>
+            <th>Nombre</th>  
+            <th>Apellido</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>A</th>  
+            <th>B</th>
+        </tr>
+        <tr>
+            <th>C</th>  
+            <th>D</th>
+        </tr>
+        </tbody>
+    </table>
+    <?php include '../config/base_script.php'; ?>
+</body>
+</html>
 
-
-$host = $_SERVER;
-
-foreach ($host as $key => $value) {
-    if ($value != null) {
-        echo '
-        <table border="1">
-            <tr>
-                <td>'.$key.'</td>
-                <td> ==> </td>
-                <td>'.$value.'</td>
-            </tr>
-        </table>';
-    }
-}
-
-$host = 'http://'.$_SERVER ['HTTP_HOST'].'/project_new_reset_aihd/web';
-$config = new Config($host);
-// $config->head('Prueba PHP POO');
-// $config->linkCSS();
-// $config->linkToastr();
-
-// echo'<h1>Prueba POO PHP</h1>';
-
-// $config->linkJS();
-
-
-$image_path = "{$host}/assets/images/avatar-AGarcia.jpg";
-echo ' <img src="'.$image_path.'" alt="image">';
-?>
