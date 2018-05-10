@@ -14,14 +14,15 @@ $propeller_css              = $url_host.'/node_modules/propellerkit/dist/css/pro
 $bootstrap_datepicker_css   = $url_host.'/node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css';
 $propeller_datepicker_css   = $url_host.'/node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css';
 $font_awesome_css           = $url_host.'/node_modules/font-awesome/css/font-awesome.min.css';
-$material_design_fonts_css  = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+$material_design_fonts_css  = $url_host.'/node_modules/material-design-icons/iconfont/material-icons.css';
 
 
 echo '
 <link rel="shortcut icon" type="image/x-icon" href="' . $image_path . 'favicon.ico">
 
 <!-- Google icon -->
-<link href="' . $material_design_fonts_css . '" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="' . $material_design_fonts_css . '">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <!-- Bootstrap css -->
 <!-- build:[href] assets/css/ -->
