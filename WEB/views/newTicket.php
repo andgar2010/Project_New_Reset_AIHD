@@ -190,7 +190,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="categoria" class="control-label" style="display: block; text-align: center">Categoria*</label>
-                                                <select class="select-simple form-control pmd-select2">
+                                                <select class="select-simple form-control pmd-select2 text-center">
                                                     <option value=""> </option>
                                                     <option value="1">Hardware</option>
                                                     <option value="2">Software</option>
