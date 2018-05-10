@@ -54,15 +54,15 @@ session_start();
                             <div class="pmd-card-body">
 
                                 <!-- TO DO -->
-                                <!-- PK idTicket OK  -->
-                                    <!-- fecha_inicio OK  -->
-                                    <!-- fin_atencion  -->
-                                    <!-- archivo_evidencia  -->
-                                    <!-- descrip_incidencia  -->
-                                <!-- ENUM cod_categoria  -->
-                                <!-- ENUM cod_estado_ticket -->
-                                <!-- FK Usuario_idUsuarioÍndice  -->
-                                <!-- FK Equipo_idEquipoÍndice -->
+                                <!-- PK idTicket OK         **** num_ticket-->
+                                    <!-- fecha_inicio OK    **** now_time_ticket-->
+                                    <!-- fin_atencion       **** solve_time-->
+                                    <!-- archivo_evidencia  **** archivo-->
+                                    <!-- descrip_incidencia **** descripcion-->
+                                <!-- ENUM cod_categoria     **** categoria-->
+                                <!-- ENUM cod_estado_ticket **** estado-->
+                                <!-- FK cod_usuario         **** id_usuario-->
+                                <!-- FK cod_equipo -->
 
                                 <?php
                                 //$idLastTicket = $con->id;
@@ -72,8 +72,8 @@ session_start();
                                     <!--Row 1-->
                                     <div class="group-fields clearfix row">
 
-                                        <!--Colmun 3 FechaSolictud size 6-->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label">
+                                        <!--Colmun 1 FechaSolictud size 6-->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label">
                                             <!-- Readonly Input Numero ticket -->
                                             <div class="form-group pmd-textfield">
                                                 <label for="now_time_ticket" class="control-label" style="display: block; text-align:center;">Fecha de solicitud </label>
@@ -82,10 +82,10 @@ session_start();
                                             </div>
                                             <!-- End Readonly Input fecha inicio solicitud -->
                                         </div>
-                                        <!--End Colmun 3 FechaSolictud size 6-->
+                                        <!--End Colmun 1 FechaSolictud size 6-->
 
-                                        <!--Colmun 3 NumTicket size 6-->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label">
+                                        <!--Colmun 2 NumTicket size 6-->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label">
                                             <!-- Readonly Input Numero ticket -->
                                             <div class="form-group pmd-textfield">
                                                 <label for="num_ticket" class="control-label" style="display: block; text-align:center;"> Numero de ticket </label>
@@ -93,7 +93,16 @@ session_start();
                                                     style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
-                                        <!--End Colmun 3 NumTicket size 6-->
+                                        <!--End Colmun 2 NumTicket size 6-->
+
+                                        <!--Colmun 3 estado-->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group pmd-textfield ">
+                                                <label for="estado" class="control-label" style="display: block; text-align:center;"> Estado </label>
+                                                <input id="estado" name="estado" type="text" class="form-control" readonly="" value="Nuevo<?php //echo $datos_ticket->estado; ?>" style="text-align:center;" disabled></input>
+                                            </div>
+                                        </div>
+                                        <!--End Colmun 3 estado-->
 
                                     </div>
                                     <!--End Row 1-->
@@ -114,7 +123,7 @@ session_start();
                                         <!--Colmun 2 Tiempo por solucionado-->
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                                             <div class="form-group pmd-textfield">
-                                                <label for="solve_time" class="control-label" style="display: block; text-align:center;"> Tiempo por solucionado </label>
+                                                <label for="solve_time" class="control-label" style="display: block; text-align:center;"> Fecha de Finalizado solucionado </label>
                                                 <input id="solve_time" type="text" name="solve_time" readonly="" value="00 Días 00:00:00" class="mat-input form-control" style="text-align:center;"
                                                     disabled></input>
                                             </div>
@@ -131,8 +140,9 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="nombre" class="control-label" style="display: block; text-align:center;"> Nombre </label>
-                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="nombre_usuario" style="display: block; text-align:center;"
+                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->nombre; ?>" style="display: block; text-align:center;"
                                                     disabled>
+                                                <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" maxlength="100" value="<?php //echo $datos_usuario->id; ?>">
                                             </div>
                                         </div>
                                         <!--End Column 1 Nombre -->
@@ -141,44 +151,44 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="apellido" class="control-label" style="display: block; text-align:center;"> Apellidos </label>
-                                                <input id="apellido" name="apellido" type="text" class="form-control" readonly="" value="apellido_usuario" style="display: block; text-align:center;"
+                                                <input id="apellido" name="apellido" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->apellido;?>" style="display: block; text-align:center;"
                                                     disabled>
                                             </div>
                                         </div>
                                         <!--End Column 2 Apellidos -->
 
                                     </div>
-                                    <!-- End Row 4  -->
+                                    <!-- End Row 3  -->
 
-                                    <!--Row 3-->
+                                    <!--Row 4-->
                                     <div class="group-fields clearfix row">
 
                                         <!--Colmun 1 Rol-->
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="rol" class="control-label" style="display: block; text-align:center;"> Rol </label>
-                                                <input id="rol" name="rol" type="text" class="form-control" readonly="" value="nombre_rol" style="text-align:center;" disabled></input>
+                                                <input id="rol" name="rol" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->rol; ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Rol-->
 
-                                        <!--Colmun 2 Area-->
+                                        <!--Colmun 2 Cargo-->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                                <label for="cargo" class="control-label" style="display: block; text-align:center;"> Cargo </label>
+                                                <input id="cargo" name="cargo" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->cargo; ?>" style="text-align:center;" disabled></input>
+                                            </div>
+                                        </div>
+                                        <!--End Colmun 2 Cargo-->
+
+                                        <!--Colmun 3 Area-->
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="area" class="control-label" style="display: block; text-align:center;"> Area </label>
-                                                <input id="area" name="area" type="text" class="form-control" readonly="" value="nombre_area" style="text-align:center;" disabled></input>
+                                                <input id="area" name="area" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->area; ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
-                                        <!--End Colmun 2 Area-->
-
-                                        <!--Colmun 3 Gerencia-->
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="gerencia" class="control-label" style="display: block; text-align:center;"> Gerencia </label>
-                                                <input id="gerencia" name="gerencia" type="text" class="form-control" readonly="" value="nombre_gerencia" style="text-align:center;" disabled></input>
-                                            </div>
-                                        </div>
-                                        <!--End Colmun 3 Gerencia-->
+                                        <!--End Colmun 3 Area-->
 
                                     </div>
                                     <!--End Row 2-->
@@ -186,94 +196,45 @@ session_start();
                                     <!-- Row 3  -->
                                     <div class="group-fields clearfix row">
 
-                                        <!--Column 2 Categoria -->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                      <!--Colmun 1 Tipo de Equipo-->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                                <label for="rol" class="control-label" style="display: block; text-align:center;"> Tipo de Equipo* </label>
+                                                <select id="cod_tipo_equipo" name="cod_tipo_equipo" class="select-simple form-control pmd-select2 text-center">
+                                                    <option value=""> </option>
+                                                    <option value="1">Escritorio</option>
+                                                    <option value="2">Portátil</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--End Colmun 1 Tipo de Equipo-->
+
+                                        <!--Colmun 2 Serial Equipo-->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                                <label for="serial_equipo" class="control-label" style="display: block; text-align:center;"> Serial Equipo* </label>
+                                                <input id="serial_equipo" name="serial_equipo" type="text" class="form-control" readonly="" value="" style="text-align:center;"></input>
+                                            </div>
+                                        </div>
+                                        <!--End Colmun 2 Serial Equipo-->
+
+                                        <!--Column 3 Categoria -->
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="categoria" class="control-label" style="display: block; text-align: center">Categoria*</label>
-                                                <select class="select-simple form-control pmd-select2 text-center">
+                                                <select id="categoria" name="categoria" class="select-simple form-control pmd-select2 text-center">
                                                     <option value=""> </option>
                                                     <option value="1">Hardware</option>
                                                     <option value="2">Software</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <!--End Column 2 Categoria -->
+                                        <!--End Column 3 Categoria -->
 
                                     </div>
                                     <!-- End Row 3  -->
 
                                     <!--Row 4-->
-                                    <div>
-                                        <!--Colmun 1 estado-->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="estado" class="control-label" style="display: block; text-align:center;"> Estado </label>
-                                                <input id="estado" type="text" class="form-control" readonly="" value="nombre_estado" style="text-align:center;" disabled></input>
-                                            </div>
-                                        </div>
-                                        <!--End Colmun 1 estado-->
-
-                                        <!--Colmun 2 Prioridad-->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label id="prioridad" for="prioridad" class="control-label" style="display: block; text-align:center;"> Prioridad* </label>
-                                                <select name="prioridad" class="select-simple form-control pmd-select2 text-center">
-                                                    <option value=""></option>
-                                                    <option value="1">muy baja</option>
-                                                    <option value="2"> baja</option>
-                                                    <option value="3">medio</option>
-                                                    <option value="4">alta</option>
-                                                    <option value="5">muy alta</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!--End Colmun 2 Prioridad-->
-
-                                    </div>
-                                    <!--End Row 4-->
-
-                                    <!--Row 5-->
-                                    <div>
-                                        <!--Colmun 1 Ubicacion-->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="ubicacion" class="control-label" style="display: block; text-align:center;"> Ubicacion* </label>
-                                                <input id="ubicacion" name="ubicacion" type="text" class="mat-input form-control" value="" style="text-align:center;"></input>
-                                            </div>
-                                        </div>
-                                        <!--End Colmun 1 Ubicacion-->
-
-                                        <!--Colmun 2 Tipo de equipo-->
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="tipo_equipo" class="control-label" style="display: block; text-align:center;"> Tipo de equipo* </label>
-                                                <select name="tipo_equipo" class="select-simple form-control pmd-select2 text-center">
-                                                    <option value=""></option>
-                                                    <option value="1">Portatil</option>
-                                                    <option value="2"> Escritorio</option>
-                                                    <option value="3">VideoBeam</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!--End Colmun 2 Tipo de equipo-->
-
-                                    </div>
-                                    <!--End Row 5-->
-
-                                    <!--Row 6-->
-                                    <div>
-                                        <!--Colmun 1 Titulo-->
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="titulo" class="control-label"> Titiulo* </label>
-                                                <input  id="titulo" name="titulo" type="text" class="form-control" value="" style="text-align:center;"></input>
-                                            </div>
-                                        </div>
-                                        <!--End Colmun 1 Titulo-->
-                                    </div>
-                                    <!--End Row 6-->
-
-                                    <!--Row 7-->
                                     <div>
                                         <!--Colmun 1 Descripcion-->
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -284,9 +245,9 @@ session_start();
                                         </div>
                                         <!--End Colmun 1 Descripcion-->
                                     </div>
-                                    <!--End Row 7-->
+                                    <!--End Row 4-->
 
-                                    <!--Row 8-->
+                                    <!--Row 5-->
                                     <div>
                                         <!--Colmun 1 Archivo adjunto-->
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -297,7 +258,7 @@ session_start();
                                         </div>
                                         <!--End Colmun 1 Archivo adjunto-->
                                     </div>
-                                    <!--End Row 8-->
+                                    <!--End Row 5-->
 
                                     <div class="group-fields clearfix row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
