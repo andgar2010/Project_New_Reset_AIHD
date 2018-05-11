@@ -156,6 +156,34 @@ session_start();
             </li>
             <!-- End user info -->
 
+            <!-- Panel de Control-->
+            <li>
+                <a id="newTicket" href="newTicket.php" target="iframe">
+                    <div class="row">
+                        <button type="button" class="btn btn-primary pmd-ripple-effect pmd-z-depth-2">
+                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
+                        </button>
+                        <!-- <br>
+                        <br>
+                        <button type="button" class="btn btn-large btn-success pmd-ripple-effect">
+                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-large btn-danger pmd-ripple-effect">
+                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-large btn-info pmd-ripple-effect">
+                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
+                        </button> -->
+                    </div>
+                </a>
+            </li>
+            <!-- End Panel de Control-->
+
+            <!-- Panel de Control-->
             <li>
                 <a class="pmd-ripple-effect" href="dashboard.php">
                     <i class="media-left media-middle">
@@ -170,54 +198,7 @@ session_start();
                     <span class="media-body">Panel de control</span>
                 </a>
             </li>
-
-            <!-- Asistencia  -->
-            <li class="dropdown pmd-dropdown">
-                <a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">
-                    <i class="media-left media-middle">
-                        <svg version="1.1" x="0px" y="0px" width="14.187px" height="18px" viewBox="0 0 14.187 18" enable-background="new 0 0 14.187 18"
-                            xml:space="preserve">
-                            <path fill="#C9C8C8" d="M0,0v18h14.187V0H0z M3.121,3.293h2.023v4.767H3.121V3.293z M11.211,14.764H2.948v-2.022h8.263V14.764 L11.211,14.764z M11.211,11.585H2.948V9.563h8.263V11.585L11.211,11.585z M11.211,8.407H7.455V6.385h3.756V8.407z M11.211,5.229 H7.455V3.207h3.756V5.229z"
-                            />
-                        </svg>
-                    </i>
-                    <span class="media-body">
-                        Asistencia Ticket
-                        <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
-                    </span>
-                    <div class="media-right media-bottom">
-                        <i class="dic-more-vert dic"></i>
-                    </div>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a id="new-ticket" href="newTicket.php" target="iframe">
-                            <i class="media-left media-middle">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </i>
-                            <span class="media-body">Solicitar Nuevo Ticket</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="media-left media-middle">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </i>
-                            </i>
-                            <span class="media-body"> Consultar Ticket</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="media-left media-middle">
-                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                            </i>
-                            <span class="media-body">Actualizar Ticket</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- End Asistencia  -->
+            <!-- End Panel de Control-->
 
             <!-- Reporte  -->
             <li class="dropdown pmd-dropdown">
@@ -260,7 +241,7 @@ session_start();
 
         <!-- Today's Site Activity -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="" frameborder="0"></iframe>
+            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src=""></iframe>
         </div>
         <!--end Today's Site Activity -->
 
