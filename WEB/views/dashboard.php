@@ -139,12 +139,16 @@ session_start();
                         <img src="../assets/images/user-icon.png" alt="New User">
                     </div>
                     <div class="media-body media-middle">
-                        Administrador
-                        <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
+                        Administrador <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
                     </div>
                     <div class="media-right media-middle">
                         <i class="dic-more-vert dic"></i>
                     </div>
+                    <span >
+                            <i class="dic-more-vert dic">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ROL
+                            </i>
+                    </span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
@@ -158,7 +162,8 @@ session_start();
 
             <!-- Solicitar nuevo ticket -->
             <li>
-                <a id="newTicket" href="newTicket.php" target="iframe">
+                <a id="newTicket">
+                    <!-- href="newTicket.php" target="iframe" -->
                     <div class="row">
                         <button type="button" class="btn btn-primary pmd-ripple-effect pmd-z-depth-2">
                             <i class="fa fa-plus fa-lg"></i>Solicitar nuevo ticket
@@ -185,7 +190,7 @@ session_start();
 
             <!-- Lista de Tickets-->
             <li>
-                <a class="pmd-ripple-effect" href="dashboard.php">
+                <a id="listTicket" class="pmd-ripple-effect">
                     <span class="media-body">
                         <i class="fa fa-table fa-lg"></i>Lista de Tickets
                     </span>
@@ -246,11 +251,16 @@ session_start();
     <!-- Sidebar Ends -->
 
     <!--content area start-->
-    <div id="content" class="pmd-content content-area dashboard">
-
+    <div id="contentarea" class="pmd-content content-area dashboard">
+        
         <!-- Today's Site Activity -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="./listTicket.php"></iframe>
+            <div class="row">
+                <div id="content" class="">
+                </div>
+
+            </div>
+            <!-- <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="./listTicket.php"></iframe> -->
         </div>
         <!--end Today's Site Activity -->
 
@@ -274,6 +284,32 @@ session_start();
     </script>
 
     <script src="../assets/js/animateSidebar.js"></script>
+
+    <script>
+    $(document).ready(function()
+    {
+        $("#newTicket").click(function()
+        {
+            $.ajax(
+                { url: "./newTicket.php", success: function(result)
+                {
+                    $("#content").html(result);
+                }
+                }
+            );
+        });
+        $("#listTicket").click(function()
+        {
+            $.ajax(
+                { url: "./listTicket.php", success: function(result)
+                {
+                    $("#content").html(result);
+                }
+                }
+            );
+        });
+    });
+    </script>
 
 </body>
 

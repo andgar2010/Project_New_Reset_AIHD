@@ -103,7 +103,7 @@
     <!-- End div container -->
 
     <!-- Scripts Starts -->
-    <?php include '../config/base_script.php';?>
+    <?php //include '../config/base_script.php';?>
     <!-- Scripts End -->
 </body>
 </html>
