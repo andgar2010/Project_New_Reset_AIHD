@@ -161,7 +161,7 @@ session_start();
                 <a id="newTicket" href="newTicket.php" target="iframe">
                     <div class="row">
                         <button type="button" class="btn btn-primary pmd-ripple-effect pmd-z-depth-2">
-                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
+                            <i class="fa fa-plus fa-lg"></i>Solicitar nuevo ticket
                         </button>
                         <!-- <br>
                         <br>
@@ -183,8 +183,18 @@ session_start();
             </li>
             <!-- End Solicitar nuevo ticket -->
 
-            <!-- Panel de Control-->
+            <!-- Lista de Tickets-->
             <li>
+                <a class="pmd-ripple-effect" href="dashboard.php">
+                    <span class="media-body">
+                        <i class="fa fa-table fa-lg"></i>Lista de Tickets
+                    </span>
+                </a>
+            </li>
+            <!-- End Lista de Tickets-->
+
+            <!-- Panel de Control-->
+            <!-- <li>
                 <a class="pmd-ripple-effect" href="dashboard.php">
                     <i class="media-left media-middle">
                         <svg version="1.1" x="0px" y="0px" width="19.83px" height="18px" viewBox="287.725 407.535 19.83 18" enable-background="new 287.725 407.535 19.83 18"
@@ -197,8 +207,8 @@ session_start();
                     </i>
                     <span class="media-body">Panel de control</span>
                 </a>
-            </li>
-            <!-- End Panel de Control-->
+            </li> -->
+            <!-- End Panel de Control -->
 
             <!-- Reporte  -->
             <li class="dropdown pmd-dropdown">
@@ -240,7 +250,7 @@ session_start();
 
         <!-- Today's Site Activity -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="./viewListTicket.php"></iframe>
+            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="./listTicket.php"></iframe>
         </div>
         <!--end Today's Site Activity -->
 
