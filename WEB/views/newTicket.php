@@ -196,7 +196,7 @@ session_start();
                                     <!-- Row 3  -->
                                     <div class="group-fields clearfix row">
 
-                                      <!--Colmun 1 Tipo de Equipo-->
+                                        <!--Colmun 1 Tipo de Equipo-->
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="rol" class="control-label" style="display: block; text-align:center;"> Tipo de Equipo* </label>
@@ -276,7 +276,9 @@ session_start();
                                                 <button id="enviar" name="enviar" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect">Enviar</button>
                                             </div>
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-                                            <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
+                                            <a href="./viewListTicket.php">
+                                                <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
+                                            </a>
                                         </div>
                                     </div>
 
