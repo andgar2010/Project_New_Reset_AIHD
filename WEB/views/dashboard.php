@@ -114,7 +114,7 @@ session_start();
                 <a href="javascript:void(0);" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle">
                     <i class="material-icons">menu</i>
                 </a>
-                <a href="index.html" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <img class="img-responsive" src="../assets/images/LogoInverted_TEXTV2Alpha_128.png" alt="Logo New Reset AHID">
                 </a>
             </div>
@@ -156,7 +156,7 @@ session_start();
             </li>
             <!-- End user info -->
 
-            <!-- Panel de Control-->
+            <!-- Solicitar nuevo ticket -->
             <li>
                 <a id="newTicket" href="newTicket.php" target="iframe">
                     <div class="row">
@@ -181,7 +181,7 @@ session_start();
                     </div>
                 </a>
             </li>
-            <!-- End Panel de Control-->
+            <!-- End Solicitar nuevo ticket -->
 
             <!-- Panel de Control-->
             <li>
@@ -211,11 +211,10 @@ session_start();
                         </svg>
                     </i>
                     <span class="media-body">
-                        Reporte
-                        <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
+                        Reporte <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
                     </span>
                     <div class="media-right media-bottom">
-                        <i class="dic-more-vert dic"></i>
+                        <!-- <i class="dic-more-vert dic"></i> -->
                     </div>
                 </a>
                 <ul class="dropdown-menu">
@@ -241,7 +240,7 @@ session_start();
 
         <!-- Today's Site Activity -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src=""></iframe>
+            <iframe align="center" width="100%" height="850px" frameborder="no" scrolling="yes" name="iframe" id="iframe" src="./viewListTicket.php"></iframe>
         </div>
         <!--end Today's Site Activity -->
 
