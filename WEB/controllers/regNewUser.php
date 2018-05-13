@@ -4,12 +4,16 @@ $registrado = FALSE;
 
 if
  (isset($_POST['num_cedula']) and
+        isset($_POST['tipo_doc'] and
         isset($_POST['nombre']) and
         isset($_POST['apellido']) and
-        isset($_POST['num_tel'])and
         isset($_POST['email']) and
-        isset($_POST['Password']) and
-        isset($_POST['tipoDocumento'])
+        isset($_POST['genero']) and
+        isset($_POST['cod_area']) and
+        isset($_POST['cod_cargo']) and
+        isset($_POST['cod_rol']) and
+        isset($_POST['send']) 
+        )
 ) {
     include "conexion.php";
 
