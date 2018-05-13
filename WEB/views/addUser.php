@@ -25,7 +25,7 @@
 
 <body>
     <div class="modal-dialog">
-        <div class="modal-content" style="weight: 80%"  >
+        <div class="modal-content">
             <div class="modal-header">
                 <h1 class="section-title modal-title text-center">Crear una cuenta usuario</h1>
             </div>
@@ -161,9 +161,24 @@
 
                     </div>
 
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block" name="send" type="submit" onsubmit="return checkPass()">Crear nuevo usuario</button>
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                            <button id="enviar" name="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Crear nuevo usuario</button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                            <a id="listUsers" href="./listUsers.php">
+                                <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
+                            </a>
+                        </div>
+
                     </div>
+                    <br>
+
+                    <div class="form-group">
+                        <!-- <button class="btn btn-primary btn-block" name="send" type="submit" >Crear nuevo usuario</button> -->
+                    </div>
+
                 </form>
             </div>
         </div>
