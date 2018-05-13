@@ -198,6 +198,16 @@ session_start();
             </li>
             <!-- End Lista de Tickets-->
 
+            <!-- Gestion de usuarios  -->
+            <li>
+                <a id="listUsers" class="pmd-ripple-effect">
+                    <span class="media-body">
+                        <i class="fa fa-user fa-lg"></i>Gestión de usuarios
+                    </span>
+                </a>
+            </li>
+            <!-- End Gestion de usuarios  -->
+
             <!-- Panel de Control-->
             <!-- <li>
                 <a class="pmd-ripple-effect" href="dashboard.php">
@@ -252,7 +262,6 @@ session_start();
 
     <!--content area start-->
     <div id="contentarea" class="pmd-content content-area dashboard">
-        
         <!-- Today's Site Activity -->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
@@ -291,7 +300,7 @@ session_start();
         $("#newTicket").click(function()
         {
             $.ajax(
-                { url: "./newTicket.php", success: function(result)
+                { url: "./addTicket.php", success: function(result)
                 {
                     $("#content").html(result);
                 }
@@ -302,6 +311,26 @@ session_start();
         {
             $.ajax(
                 { url: "./listTicket.php", success: function(result)
+                {
+                    $("#content").html(result);
+                }
+                }
+            );
+        });
+        $("#listUsers").click(function()
+        {
+            $.ajax(
+                { url: "./listUsers.php", success: function(result)
+                {
+                    $("#content").html(result);
+                }
+                }
+            );
+        });
+        $("#addUser").click(function()
+        {
+            $.ajax(
+                { url: "./addUser.php", success: function(result)
                 {
                     $("#content").html(result);
                 }
