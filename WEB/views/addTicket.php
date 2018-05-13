@@ -249,7 +249,7 @@ session_start();
                                                 <button id="enviar" name="enviar" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect">Enviar</button>
                                             </div>
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-                                            <a href="./viewListTicket.php">
+                                            <a href="./listTicket.php">
                                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
                                             </a>
                                         </div>
