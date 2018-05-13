@@ -13,9 +13,11 @@
     <meta name="description" content="Registro de nuevo usuario de NEW RESET A.H.I.D.">
     <!-- End HTML Meta Tags -->
 
-    <?php include '../config/base_head.php' ?>
-    <?php include '../config/Toastr.php';?>
-    <?php include '../config/googleAnaytics.php';?>
+    <?php   include '../config/base_head.php';
+            include '../config/Toastr.php';
+            include '../config/googleAnaytics.php';?>
+
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -30,8 +32,55 @@
                 <h1 class="section-title modal-title text-center">Crear una cuenta usuario</h1>
             </div>
             <div class="modal-body">
-                <form method="post" action="../controllers/regNewUser.php">
 
+                <?php
+                include '../config/Database.php';
+                $db = new Database();
+                $msg = $class = null;
+
+                if (isset($_POST) && !empty($_POST)) {
+                    if (isset($_POST['send'])) {
+
+                        //$usuario = new Usuario();
+                        //$usuario->id           = $_con->sanitize($_POST['id']);
+                        $tipo_doc    = $db->sanitize($_POST['tipo_doc']);
+                        $documento    = $db->sanitize($_POST['num_cedula']);
+                        $nombre       = $db->sanitize($_POST['nombre']);
+                        $apellido     = $db->sanitize($_POST['apellido']);
+                        $cod_genero   = $db->sanitize($_POST['cod_genero']);
+                        $email        = $db->sanitize($_POST['email']);
+                        //$password     = $db->sanitize($_POST['password']);
+                        $cod_area     = $db->sanitize($_POST['cod_area']);
+                        $cod_cargo    = $db->sanitize($_POST['cod_cargo']);
+                        $cod_rol      = $db->sanitize($_POST['cod_rol']);
+                        //$usuario->cod_estado   = $_con->sanitize($_POST['cod_estado']);
+
+                        $creadoNuevoRegistrodB = $db->createUser($tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol);
+                        if ($creadoNuevoRegistrodB) {
+                            $stusT  = 'success';
+                            $titleT = 'Bien hecho!';
+                            $msgT   = 'Los datos han sido guardados con éxito.';
+                            $class  = "alert alert-success";
+                            $msg    = 'Datos insertados con éxito';
+                        } else {
+                            $stusT  = 'error';
+                            $titleT = 'Error';
+                            $msg    = $msgT = 'No se pudieron insertar los datos';
+                            $class  = 'alert alert-danger';
+                        }
+
+                        if (isset($msg) && isset($class)) {
+                                    echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                                    echo '<div class="'.$class.'">'.
+                                            $msg.
+                                        '</div>';
+                        }
+                    }
+                }
+
+                ?>
+
+                <form method="post" action="" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -95,14 +144,14 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="genero" class="control-label">Género de usuario</label>
+                                <label for="cod_genero" class="control-label">Género de usuario</label>
                                 <div>
-                                    <label id="genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input type="radio" name="genero" id="masculino" value="1">&nbsp;Masculino
+                                    <label id="cod_genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
+                                        <input type="radio" name="cod_genero" id="masculino" value="1">&nbsp;Masculino
                                     </label>
                                     &nbsp;
-                                    <label id="genero" for="femenino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input type="radio" name="genero" id="femenino" value="2">&nbsp;Femenino
+                                    <label id="cod_genero" for="femenino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
+                                        <input type="radio" name="cod_genero" id="femenino" value="2">&nbsp;Femenino
                                     </label>
                                 </div>
                             </div>
@@ -117,7 +166,7 @@
                                 <label for="cod_area" class="control-label ">Área de la Institución a la que pertenece el usuario</label>
                                 <div>
                                     <select id="cod_area" name="cod_area" required>
-                                        <option value=""> ------ Seleccionar ------ </option>
+                                        <option value="0"> ------ Seleccionar ------ </option>
                                         <option value="1">Académica</option>
                                         <option value="2">Administrativa</option>
                                         <option value="3">Técnica</option>
@@ -134,7 +183,7 @@
                                     <br>&nbsp;&nbsp;Cargo del usuario</label>
                                 <div>
                                     <select id="cod_cargo" name="cod_cargo" required>
-                                        <option value=""> ------ Seleccionar ------ </option>
+                                        <option value="0"> ------ Seleccionar ------ </option>
                                         <option value="1">Técnico</option>
                                         <option value="2">Rector</option>
                                         <option value="3">Coordinador académico</option>
@@ -150,7 +199,7 @@
                                     <br>Asignar rol al usuario</label>
                                 <div>
                                     <select id="cod_rol" name="cod_rol" required>
-                                        <option value=""> ------ Seleccionar ------ </option>
+                                        <option value="0"> ------ Seleccionar ------ </option>
                                         <option value="1">Técnico</option>
                                         <option value="2">Administrativo</option>
                                         <option value="3">Usuario</option>
