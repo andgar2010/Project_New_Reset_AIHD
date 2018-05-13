@@ -70,6 +70,26 @@
                                     <!-- END Button  -->
                                 </td>
                             </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2018-05-12</td>
+                                <td>Escritorio</td>
+                                <td>544658</td>
+                                <td>Hardware</td>
+                                <td>No prende compu...</td>
+                                <td>
+                                    <!--  -->
+                                    <a href="" class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                    <!--  -->
+                                    <!-- END Button  -->
+                                    <a href="" class="btn btn-danger btn-sm">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                    <!-- END Button  -->
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -83,7 +103,7 @@
     <!-- End div container -->
 
     <!-- Scripts Starts -->
-    <?php include '../config/base_script.php';?>
+    <?php //include '../config/base_script.php';?>
     <!-- Scripts End -->
 </body>
 </html>
