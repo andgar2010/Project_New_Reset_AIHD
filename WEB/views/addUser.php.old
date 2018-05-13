@@ -35,29 +35,29 @@
             <div class="modal-body">
 
                 <?php
-                include '../model/Usuario.php';
-                $usuario = new Usuario();
+                include '../config/Database.php';
+                $db = new Database();
                 $msg = $class = null;
 
                 if (isset($_POST) && !empty($_POST)) {
                     if (isset($_POST['send'])) {
 
-                        $usuario->tipo_doc     = $usuario->sanitize($_POST['tipo_doc']);
-                        $usuario->documento    = $usuario->sanitize($_POST['num_cedula']);
-                        $usuario->nombre       = $usuario->sanitize($_POST['nombre']);
-                        $usuario->apellido     = $usuario->sanitize($_POST['apellido']);
-                        $usuario->cod_genero   = $usuario->sanitize($_POST['cod_genero']);
-                        $usuario->email        = $usuario->sanitize($_POST['email']);
-                        $usuario->cod_area     = $usuario->sanitize($_POST['cod_area']);
-                        $usuario->cod_cargo    = $usuario->sanitize($_POST['cod_cargo']);
-                        $usuario->cod_rol      = $usuario->sanitize($_POST['cod_rol']);
-
+                        //$usuario = new Usuario();
                         //$usuario->id           = $_con->sanitize($_POST['id']);
+                        $tipo_doc     = $db->sanitize($_POST['tipo_doc']);
+                        $documento    = $db->sanitize($_POST['num_cedula']);
+                        $nombre       = $db->sanitize($_POST['nombre']);
+                        $apellido     = $db->sanitize($_POST['apellido']);
+                        $cod_genero   = $db->sanitize($_POST['cod_genero']);
+                        $email        = $db->sanitize($_POST['email']);
                         //$password     = $db->sanitize($_POST['password']);
+                        $cod_area     = $db->sanitize($_POST['cod_area']);
+                        $cod_cargo    = $db->sanitize($_POST['cod_cargo']);
+                        $cod_rol      = $db->sanitize($_POST['cod_rol']);
                         //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
                         //$usuario->cod_estado   = $_con->sanitize($_POST['cod_estado']);
 
-                        $creadoNuevoRegistrodB = $usuario->createUser();
+                        $creadoNuevoRegistrodB = $db->createUser($tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol);
                         if ($creadoNuevoRegistrodB) {
                             $stusT  = 'success';
                             $titleT = 'Bien hecho!';
