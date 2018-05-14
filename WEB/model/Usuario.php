@@ -28,7 +28,6 @@
  * This Model of Class User
  * Source DB
  */
-
 class Usuario
 {
     public $id;
@@ -42,35 +41,43 @@ class Usuario
     public $cod_cargo;
     public $cod_rol;
     public $cod_estado;
+    public $fecha_creado;
 
     /**
-     * This Construct Class Database
+     * This Construct Class Usuario
      */
     public function __construct()
     {
 
     }
 
-    // /**
-    //  * Function sanitize
-    //  *
-    //  * $var @param String
-    //  * This inpur string
-    //  *
-    //  * @return String
-    //  * $vareturn vareturn
-    //  */
+    /**
+     * Function sanitize
+     *
+     * $var @param String
+     * This inpur string
+     *
+     * @return String
+     * $vareturn vareturn
+     */
     function sanitize($var)
     {
-        include '../config/db.php';
-        return $conx->real_escape_string($var);
+        include '../config/Database.php';
+        return $db->real_escape_string($var);
     }
 
+    /**
+     * Crear usuario al BD mediante metodo por objeto usuario
+     *
+     * @return Boolean $insertadoClienteDb
+     */
     function createUser()
     {
-        include '../config/db.php';
+        define('ACTIVO', '2');//Defecto num 2: Activo por ENUM Estado de Ususario
+
+        include '../config/Database.php';
         $sql_insert = "INSERT INTO `usuario`
-                            (`tipo_doc`, `documento`, `apellido`, `nombre`, `genero`, `email`, `cod_area`, `cod_cargo`, `cod_rol`, `cod_estado`)
+                            (`tipo_doc`, `documento`, `apellido`, `nombre`, `genero`, `email`, `password`, `cod_area`, `cod_cargo`, `cod_rol`, `cod_estado`)
                         VALUES (
                             '".$this->tipo_doc."',
                             '".$this->documento."',
@@ -78,16 +85,15 @@ class Usuario
                             '".$this->nombre."',
                             '".$this->cod_genero."',
                             '".$this->email."',
+                            '".$this->password."',
                             '".$this->cod_area."',
                             '".$this->cod_cargo."',
                             '".$this->cod_rol."',
-                            '2')";
+                            '".ACTIVO."')";
 
-        $insertadoClienteDb = $conx->query($sql_insert);
-        $conx->close();
+        $insertadoClienteDb = $db->query($sql_insert) or die('Hubo un error al registrar al Usuario ' . mysqli_error($db));
+        $db->close();
         return ($insertadoClienteDb) ? true : false;
     }
-
-
 }
 ?>
