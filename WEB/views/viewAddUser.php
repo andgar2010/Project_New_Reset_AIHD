@@ -64,7 +64,7 @@ if (isset($_POST) && !empty($_POST)) {
         $usuario->cod_area      = $usuario->sanitize($_POST['cod_area']);
         $usuario->cod_cargo     = $usuario->sanitize($_POST['cod_cargo']);
         $usuario->cod_rol       = $usuario->sanitize($_POST['cod_rol']);
-        $usuario->password      = $usuario->sanitize($passwordRandomx);
+        $usuario->password      = $usuario->sanitize($passwordRandom);
         // $usuario->password      = $usuario->sanitize(password_hash($passwordRandom, PASSWORD_DEFAULT));
         //$usuario->id         = $_con->sanitize($_POST['id']);
         //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
