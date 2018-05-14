@@ -75,65 +75,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Pepe Rodriguez</td>
-                                <td>Profesor</td>
-                                <td>Académica</td>
-                                <td>Usuario</td>
-                                <td>Activo</td>
-                                <td>
-                                    <!--  -->
-                                    <a href="" class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </a>
-                                    <!--  -->
-                                    <!-- END Button  -->
-                                    <a href="" class="btn btn-danger btn-sm">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </a>
-                                    <!-- END Button  -->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Lorena Sanchez</td>
-                                <td>Rector</td>
-                                <td>Administrativa</td>
-                                <td>Administrativo</td>
-                                <td>Activo</td>
-                                <td>
-                                    <!--  -->
-                                    <a href="" class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </a>
-                                    <!--  -->
-                                    <!-- END Button  -->
-                                    <a href="" class="btn btn-danger btn-sm">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </a>
-                                    <!-- END Button  -->
-                                </td>
-                            <tr>
-                                <td>3</td>
-                                <td>José Tujiano</td>
-                                <td>Rector</td>
-                                <td>Administrativa</td>
-                                <td>Administrativo</td>
-                                <td>Inactivo</td>
-                                <td>
-                                    <!--  -->
-                                    <a href="" class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </a>
-                                    <!--  -->
-                                    <!-- END Button  -->
-                                    <a href="" class="btn btn-danger btn-sm">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </a>
-                                    <!-- END Button  -->
-                                </td>
-                            </tr>
+                        <?php
+                            require '../model/Usuario.php';
+                            $usuario = new Usuario();
+                            $usuario->readUser();
+                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -149,7 +95,7 @@
     <!-- Scripts Starts -->
     <?php include '../config/base_script.php';?>
 
-     <script>
+    <script>
     $(document).ready(function()
     {
         $("#newTicket").click(function()

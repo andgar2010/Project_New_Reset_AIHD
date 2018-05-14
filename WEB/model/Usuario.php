@@ -92,8 +92,80 @@ class Usuario
                             '".ACTIVO."')";
 
         $insertadoClienteDb = $db->query($sql_insert) or die('Hubo un error al registrar al Usuario ' . mysqli_error($db));
+        $insertadoClienteDb->close();
         $db->close();
         return ($insertadoClienteDb) ? true : false;
+    }
+
+    /**
+     * Consultar lista de usuarios
+     *
+     * @return String arrayListUsers
+     */
+    function readUser()
+    {
+        include '../config/Database.php';
+        $sql_query = "SELECT * FROM usuario";
+
+        if ($output_sql = $db->query($sql_query)) {
+
+            if ($row = $output_sql->num_rows == 0) {
+                echo'
+                <tr>
+                    <td colspan="8">No hay datos</td>
+                </tr>';
+            } else {
+                    while ($row = $output_sql->fetch_assoc()) {
+                    $numID = 1;
+                    echo'
+                    <tr>
+                        <td>'.$row['id_usuario'].'</td>
+                        <td>
+                            <a href="profile.php?nik='.$row['id_usuario'].'">
+                            <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
+                                $row['nombre'].' '. $row['apellido'].
+                            '</a> </td>
+                            <td>'.$row['cod_cargo'].'</td>
+                            <td>'. $row['cod_area'].'</td>
+                            <td>'. $row['cod_rol'].'</td>';
+
+                            switch ($row['cod_estado']) {
+                                case 'Inactivo':
+                                    echo '
+                                        <td>
+                                            <span class="label label-info">inactivo</span>
+                                        </td>';
+                                    break;
+                                case 'Activo':
+                                    echo '
+                                        <td>
+                                            <span class="label label-success">Activo</span>
+                                        </td>';
+                                    break;
+                                default:
+                                    echo '
+                                        <td>
+                                            <span class="label label-warning">No seleccionado</span>
+                                        </td>';
+                                    break;
+                            }
+
+                            echo'
+                            </td>
+                            <td>
+                                <a href="edit.php?nik='.$row['id_usuario'].'" title="Editar datos" class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
+                                <a href="index.php?aksi=delete&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
+                            </td>
+                    </tr>';
+                    $numID++;
+                    }
+
+            $output_sql->close();
+            }
+            $db->close();
+        }
     }
 }
 ?>
