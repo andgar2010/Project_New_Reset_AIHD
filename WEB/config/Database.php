@@ -1,10 +1,10 @@
 <?php
+
 $dbhost = 'localhost';  //  nombre de ruta base de datos
 $dbuser = 'root';       //  nombre de usuario de base de datos
 $dbpass = '';           //  contraseña de usuario de base de datos
 $dbname = 'newreset';   //  nombre de base de datos que utiliza
-
-$conx   = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+$db   = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 // Check connection
 if (mysqli_connect_errno())
@@ -15,7 +15,7 @@ if (mysqli_connect_errno())
         . mysqli_connect_error() .
         '<br><em>Código error:</em> ' . mysqli_connect_errno());
 }
-$conx->set_charset('utf8');
+$db->set_charset('utf8');
 
 
 //magic quotes logic
