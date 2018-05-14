@@ -19,7 +19,7 @@
             <div class="table-title">
                 <div class="row pmd-card-title">
                     <div class="pmd-card-title-text">
-                        <h1>Lista de Tickets</h1>
+                        <h1>Lista de <strong>Tickets</strong></h1>
                         <hr>
                     </div>
                 </div>
@@ -46,6 +46,7 @@
                                 <th>Serial Equipo</th>
                                 <th>Tipo de incidencia</th>
                                 <th>Descripción</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -57,6 +58,7 @@
                                 <td>544654</td>
                                 <td>Software</td>
                                 <td>No abra office...</td>
+                                <td>Visto</td>
                                 <td>
                                     <!--  -->
                                     <a href="" class="btn btn-primary btn-sm">
@@ -77,6 +79,7 @@
                                 <td>544658</td>
                                 <td>Hardware</td>
                                 <td>No prende compu...</td>
+                                <td>Nuevo</td>
                                 <td>
                                     <!--  -->
                                     <a href="" class="btn btn-primary btn-sm">
