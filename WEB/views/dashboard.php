@@ -320,7 +320,7 @@ session_start();
         $("#listUsers").click(function()
         {
             $.ajax(
-                { url: "./listUsers.php", success: function(result)
+                { url: "./viewListUsers.php", success: function(result)
                 {
                     $("#content").html(result);
                 }
@@ -330,7 +330,7 @@ session_start();
         $("#addUser").click(function()
         {
             $.ajax(
-                { url: "./addUser.php", success: function(result)
+                { url: "./viewAddUser.php", success: function(result)
                 {
                     $("#content").html(result);
                 }
