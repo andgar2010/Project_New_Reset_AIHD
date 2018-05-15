@@ -48,11 +48,11 @@ echo '
 <!-- /build -->
 
 <!-- Propeller theme css-->
+<!--
 <link rel="stylesheet" type="text/css" href="' . $framework_path . 'propeller-themes/css/propeller-theme.css" />
-
+-->
 <!-- Propeller admin theme css-->
 <link rel="stylesheet" type="text/css" href="' . $framework_path . 'propeller-themes/css/propeller-admin.css" />
-
 <!-- Custom Style -->
 <link rel="stylesheet" type="text/css" href="' . $css_path . 'buttonRotate.css" />';
 
