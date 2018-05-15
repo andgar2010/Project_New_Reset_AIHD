@@ -56,7 +56,7 @@ $passwordRandom = bin2hex(random_bytes(2));
 
 if (isset($_POST) && !empty($_POST)) {
     if (isset($_POST['send'])) {
-        $usuario->tipo_doc      = $usuario->sanitize($_POST['tipo_doc']);
+        $usuario->cod_tipo_doc  = $usuario->sanitize($_POST['cod_tipo_doc']);
         $usuario->documento     = $usuario->sanitize($_POST['num_cedula']);
         $usuario->nombre        = $usuario->sanitize($_POST['nombre']);
         $usuario->apellido      = $usuario->sanitize($_POST['apellido']);
@@ -107,22 +107,22 @@ if (isset($_POST) && !empty($_POST)) {
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="tipo_doc" class="control-label">Tipo de cédula</label>
+                                <label for="cod_tipo_doc" class="control-label">Tipo de cédula</label>
                                 <div>
                                     <!-- SELECCIONA TIPO DE CEDULA -->
                                     <label for="cc" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input name="tipo_doc" id="cc" value="1" type="radio" required>&nbsp;CC
+                                        <input name="cod_tipo_doc" id="cc" value="1" type="radio" required>&nbsp;CC
                                     </label>
 
                                     <label for="ce" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input name="tipo_doc" id="ce" value="2" type="radio" required>&nbsp;CE
+                                        <input name="cod_tipo_doc" id="ce" value="2" type="radio" required>&nbsp;CE
                                     </label>
 
                                     <label for="pasaporte" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input name="tipo_doc" id="pasaporte" value="3" type="radio" required>&nbsp;Pasaporte
+                                        <input name="cod_tipo_doc" id="pasaporte" value="3" type="radio" required>&nbsp;Pasaporte
                                     </label>
                                     <!-- <label for="nit" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                    <input name="tipo_doc" id="nit" value="4" type="radio">&nbsp;NIT
+                    <input name="cod_tipo_doc" id="nit" value="4" type="radio">&nbsp;NIT
                 </label> -->
                                     <!-- /SELECCIONA TIPO DE CEDULA -->
                                 </div>
