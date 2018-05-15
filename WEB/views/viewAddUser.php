@@ -13,15 +13,16 @@
     <meta name="description" content="Registro de nuevo usuario de NEW RESET A.H.I.D.">
     <!-- End HTML Meta Tags -->
 
-    <?php   include '../config/base_head.php';
-            include '../config/Toastr.php';
-            include '../config/googleAnaytics.php';?>
+    <?php   require '../config/base_head.php';
+            require '../config/Toastr.php';
+            //require '../config/googleAnaytics.php';?>
 
-
+    <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    -->
 
 </head>
 
@@ -242,9 +243,9 @@ if (isset($_POST) && !empty($_POST)) {
     <div class="modal-footer"></div>
 
     <?php include '../config/base_script.php';?>
-    <script src="assets/js/checkComparativePassword.js"></script>
-    <script src="assets/js/bs-animation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <!-- <script src="assets/js/checkComparativePassword.js"></script> -->
+    <!-- <script src="assets/js/bs-animation.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> -->
 </body>
 
 </html>

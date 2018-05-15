@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista de Usuarios</title>
-    <?php include '../config/base_head.php';?>
-    <?php include '../config/googleAnaytics.php';?>
-    <?php include '../config/Toastr.php';?>
+    <?php
+    require '../config/base_head.php';
+    require '../config/Toastr.php'
+    //include '../config/googleAnaytics.php';
+    ;?>
     <!-- Styles Ends -->
 </head>
 <body>

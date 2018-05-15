@@ -36,7 +36,9 @@ echo '
 
 <!-- Font Awesome  -->
 <link rel="stylesheet" type="text/css" href="' . $font_awesome_css . '">
+<!--
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+-->
 <!-- /build -->
 
 <!-- Propeller date time picker css-->

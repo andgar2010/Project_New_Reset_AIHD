@@ -12,8 +12,10 @@ session_start();
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 
     <title>New Reset AIHD Admin Dashboard</title>
-    <?php include '../config/base_head.php';?>
-    <?php include '../config/googleAnaytics.php';?>
+    <?php
+        require '../config/base_head.php';
+        //require '../config/googleAnaytics.php';
+    ?>
     <!-- Styles Ends -->
 </head>
 
