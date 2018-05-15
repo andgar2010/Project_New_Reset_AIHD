@@ -44,18 +44,21 @@
             <div class="row">
             <?php
             if (isset($_GET['info']) == 'added') {
-                $stusT  = 'success';
-                $titleT = 'Bien hecho!';
-                $msgT   = 'Los datos han sido guardados con éxito.';
-                $class  = "alert alert-success";
-                $msg    = 'Datos insertados con éxito';
-                $nameUser = $_GET['name'];
+                if (isset($_GET['name'])) {
+                    $nameUser = $_GET['name'];
+                    $stusT  = 'success';
+                    $titleT = 'Bien hecho!';
+                    $msgT   = 'Los datos han sido guardados con éxito.';
+                    $class  = "alert alert-success";
+                    $msg    = 'usuario de datos insertados con éxito';
+                }
+
+                if (isset($msg) && isset($class)) {
+                    echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                    echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                }
             }
 
-            if (isset($msg) && isset($class)) {
-                echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                echo '<div class="'.$class.'">'. $nameUser. ' de '. $msg. '</div>';
-            }
             ?>
             </div>
             <!-- End div row -->
@@ -64,16 +67,16 @@
             <div class="row">
                 <!-- TABLE -->
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped table-bordered ">
+                    <table class="table table-hover table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Nombres y apellidos</th>
-                                <th>Cargo</th>
-                                <th>Área</th>
-                                <th>Rol</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Nombres y apellidos</th>
+                                <th class="text-center">Cargo</th>
+                                <th class="text-center">Área</th>
+                                <th class="text-center">Rol</th>
+                                <th class="text-center">Estado</th>
+                                <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -133,7 +136,7 @@
         $("#addUser").click(function()
         {
             $.ajax(
-                { url: "./addUser.php", success: function(result)
+                { url: "./viewAddUser.php", success: function(result)
                 {
                     $("#content").html(result);
                 }
