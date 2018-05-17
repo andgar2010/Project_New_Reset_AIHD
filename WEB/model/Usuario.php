@@ -131,26 +131,26 @@ class Usuario
                             <td class="text-center">'. $row['cod_area'].'</td>
                             <td class="text-center">'. $row['cod_rol'].'</td>';
 
-                            switch ($row['cod_estado']) {
-                                case 'Inactivo':
-                                    echo '
-                                        <td class="text-center">
-                                            <span class="label label-info">inactivo</span>
-                                        </td>';
-                                    break;
-                                case 'Activo':
-                                    echo '
-                                        <td class="text-center">
-                                            <span class="label label-success">Activo</span>
-                                        </td>';
-                                    break;
-                                default:
-                                    echo '
-                                        <td class="text-center">
-                                            <span class="label label-warning">No seleccionado</span>
-                                        </td>';
-                                    break;
-                            }
+                    switch ($row['cod_estado']) {
+                    case 'Inactivo':
+                        echo '
+                            <td class="text-center">
+                                <span class="label label-info">inactivo</span>
+                            </td>';
+                        break;
+                    case 'Activo':
+                        echo '
+                            <td class="text-center">
+                                <span class="label label-success">Activo</span>
+                            </td>';
+                        break;
+                    default:
+                        echo '
+                            <td class="text-center">
+                                <span class="label label-warning">No seleccionado</span>
+                            </td>';
+                        break;
+                    }
 
                             echo'
                             </td>
@@ -173,6 +173,8 @@ class Usuario
 
     /**
      * Consultar unico usuario
+     *
+     * $id_usuario @param int numero de usuario desde selecciona lista de usuario
      *
      * @return Usuario objeto
      */
@@ -203,9 +205,6 @@ class Usuario
                     $this->cod_cargo    = $this->sanitize($obj->cod_cargo);
                     $this->cod_rol      = $this->sanitize($obj->cod_rol);
                     $this->cod_estado   = $this->sanitize($obj->cod_estado);
-                    //$this->password      = $this->sanitize($passwordRandom);
-                    // $usuario->password      = $usuario->sanitize(password_hash($passwordRandom, PASSWORD_DEFAULT));
-                    //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
                 }
 
                 /* fetch associative array */
@@ -231,6 +230,117 @@ class Usuario
         }
         /* close connection */
         $db->close();
-    }
-}
+    } //End readSingleRecordUsuer()
+
+    /**
+     * Editar unico usuario
+     *
+     * $id_usuario @param int numero de usuario desde selecciona lista de usuario
+     *
+     * @return Boolean actualizadoUsuario
+     */
+    function updateUser($id_usuario)
+    {
+        include '../config/Database.php';
+
+        //Controller
+        $usuario->id_usuario   = $db->sanitize($id_usuario);
+        $usuario->cod_tipo_doc = $db->sanitize($cod_tipo_doc);
+        $usuario->documento    = $db->sanitize($documento);
+        $usuario->nombre       = $db->sanitize($nombre);
+        $usuario->apellido     = $db->sanitize($apellido);
+        $usuario->cod_genero   = $db->sanitize($cod_genero);
+        $usuario->email        = $db->sanitize($email);
+        $usuario->cod_area     = $db->sanitize($cod_area);
+        $usuario->cod_cargo    = $db->sanitize($cod_cargo);
+        $usuario->cod_rol      = $db->sanitize($cod_rol);
+        $usuario->cod_estado   = $db->sanitize($cod_estado);
+        //End Controller
+
+        if ($this->id_usuario == $id_usuario) {
+            $sql_update = "UPDATE
+								`usuario`
+							SET
+								`cod_tipo_doc`          = '". $this->cod_tipo_doc."',
+								`documento`             = '". $this->documento."',
+								`nombre`                = '". $this->nombre ."',
+								`apellido`              = '". $this->apellido ."',
+								`cod_genero`            = '". $this->cod_genero ."',
+								`email`                 = '". $this->email ."',
+								`password`              = '". $this->password ."',
+								`cod_area`              = '". $this->cod_area ."',
+								`cod_cargo`             = '". $this->cod_cargo ."',
+								`cod_rol`               = '". $this->cod_rol ."',
+								`cod_estado`            = '". $this->cod_estado ."'
+							WHERE
+								`usuario`.`id_usuario`  = ".$this->id_usuario;
+
+            $actualizadoClienteDb = $db->query($sql_update)
+            or die(
+                '<h1 class="text-center">Oooops!</h1>
+				    <br>
+				    <p>Hubo un error al actualizar al Usuario.</p>
+				    <br><br>
+				    <strong>Origen error:</strong>
+				    <br>' . mysqli_error($db)
+            );
+
+            /* free sql_update set */
+            $actualizadoClienteDb->close();
+
+            /* close connection */
+            $db->close();
+
+            return ($actualizadoClienteDb) ? true : false;
+        }//End if equal object->id_usuario == $id_usuario
+
+    } //End UpdateUser()
+
+    /**
+     * Desactivar usuario
+     *
+     * $id_usuario @param int numero de usuario desde selecciona lista de usuario
+     *
+     * @return Boolean desactivadoUsuario
+     */
+    function desactiveUser($id_usuario)
+    {
+        define(INACTIVO, 1);
+
+        include '../config/Database.php';
+
+        //Controller
+        $usuario->id_usuario   = $db->sanitize($id_usuario);
+        $usuario->cod_estado   = $db->sanitize($cod_estado);
+        //End Controller
+
+        if ($this->id_usuario == $id_usuario) {
+            $sql_update = "UPDATE
+								`usuario`
+							SET
+								`cod_estado`            = 'INACTIVO'
+							WHERE
+								`usuario`.`id_usuario`  = ".$this->id_usuario;
+
+            $actualizadoClienteDb = $db->query($sql_update)
+            or die(
+                '<h1 class="text-center">Oooops!</h1>
+				    <br>
+				    <p>Hubo un error al actualizar estado al Usuario.</p>
+				    <br><br>
+				    <strong>Origen error:</strong>
+				    <br>' . mysqli_error($db)
+            );
+
+            /* free sql_update set */
+            $desactivadoClienteDb->close();
+
+            /* close connection */
+            $db->close();
+            return ($desactivadoClienteDb) ? true : false;
+        }//End if equal object->id_usuario == $id_usuario
+
+    } //End DesactivedUser()
+
+}// End Class Usuario
 ?>

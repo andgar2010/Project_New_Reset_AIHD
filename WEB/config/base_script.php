@@ -27,7 +27,7 @@ echo '
 <!-- Scripts Starts -->
 <!-- Javascript for Bootstrap Propeller -->
 <!-- build:[src] assets/js/ -->
-<script src="' . $framework_path.'propeller-themes/js/jquery-1.12.2.min.js"></script>
+<script src="' . $framework_path.'propeller-themes/js/jquery-2.2.4.min.js"></script>
 <script src="' . $propeller_bootstrap_js . '"></script>
 <!-- /build -->
 
