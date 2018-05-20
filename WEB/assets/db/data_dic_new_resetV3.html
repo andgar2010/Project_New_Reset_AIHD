@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Andres Garcia">
+    <meta name="description" content="newreset Data Dictionary.">
+    <title>newreset Data Dictionary</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../node_modules/popper.js/dist/umd/popper.min.js">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Highlight table corresponding to the current fragment in the URL.
+        $(document).ready(function () {
+            $("a").click(function () {
+                var elem = $(this);
+                // Remove all classes from tables.
+                $("table").removeClass("focused")
+                // Get a.href value and extract its fragment id.
+                var id = elem.attr("href");
+                // Highlight table using fragment id.
+                $(id).addClass("focused");
+            });
+        });
+    </script>
+    <style type="text/css">
+        a {
+            text-decoration: none;
+        }
+
+        abbr {
+            cursor: help;
+        }
+
+        header {
+            color: #6A6A6A;
+            text-align: right;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        table caption {
+            font-size: 120%;
+            font-weight: bold;
+        }
+
+        table,
+        td,
+        th {
+            border-color: silver;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        caption {
+            color: black;
+        }
+
+        td,
+        th {
+            padding: 1em;
+        }
+
+        tr:hover {
+            color: #333;
+            background-color: #F2F2F2;
+        }
+
+        th {
+            background-color: #F5F5F5;
+        }
+
+        td {
+            color: #6A6A6A;
+        }
+
+        ul {
+            font-style: italic;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .field {
+            color: #4C4C4C;
+            font-weight: bold;
+        }
+
+        .focused {
+            outline-color: aqua;
+            outline-style: solid;
+            outline-width: thin;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>newreset
+            <br> Data Dictionary</h1>
+        <p>
+            <em>2018-05-20</em>
+        </p>
+        <p>
+            <em></em>
+        </p>
+    </header>
+
+    <nav>
+        <h2>Index</h2>
+        <ul>
+            <li>
+                <a href='#area_usuario'>area_usuario</a>
+            </li>
+            <li>
+                <a href='#cargo_usuario'>cargo_usuario</a>
+            </li>
+            <li>
+                <a href='#categoria_ticket'>categoria_ticket</a>
+            </li>
+            <li>
+                <a href='#equipo'>equipo</a>
+            </li>
+            <li>
+                <a href='#estado_equipo'>estado_equipo</a>
+            </li>
+            <li>
+                <a href='#estado_ticket'>estado_ticket</a>
+            </li>
+            <li>
+                <a href='#estado_usuario'>estado_usuario</a>
+            </li>
+            <li>
+                <a href='#genero_usuario'>genero_usuario</a>
+            </li>
+            <li>
+                <a href='#rol_usuario'>rol_usuario</a>
+            </li>
+            <li>
+                <a href='#ticket'>ticket</a>
+            </li>
+            <li>
+                <a href='#tipo_documento_usuario'>tipo_documento_usuario</a>
+            </li>
+            <li>
+                <a href='#tipo_equipo'>tipo_equipo</a>
+            </li>
+            <li>
+                <a href='#usuario'>usuario</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div>
+        <table id='area_usuario' class="table table-responsive">
+            <h1 class="text-center">area_usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_area</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Área</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(15)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del área de la Institución a la que pertenece el usuario.</td>
+            </tr>
+        </table>
+        <table id='cargo_usuario' class="table table-responsive">
+            <h1 class="text-center">cargo_usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_cargo</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Cargo</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(50)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del cargo del usuario</td>
+            </tr>
+        </table>
+        <table id='categoria_ticket' class="table table-responsive">
+            <h1 class="text-center">categoria_ticket</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_categoria</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID categoria de la incidencia.</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(15)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del especificacion de la categoria de la incidencia.</td>
+            </tr>
+        </table>
+        <table id='equipo' class="table table-responsive">
+            <h1 class="text-center">equipo</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Equipo</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_tipo_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_tipo_equipo'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del tipo de equipo desde tabla tipo_equipo - Escritorio - Portátil</td>
+            </tr>
+            <tr>
+                <td class='field'>serial_equipo</td>
+                <td>VARCHAR(30)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Número de Serial del equipo</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_estado_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_estado_equipo'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del estado del equipo desde tabla estado_equipo - Inactivo - Activo</td>
+            </tr>
+        </table>
+        <table id='estado_equipo' class="table table-responsive">
+            <h1 class="text-center">estado_equipo</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_estado_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID estado del equipo</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(15)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del estado del equipo</td>
+            </tr>
+        </table>
+        <table id='estado_ticket' class="table table-responsive">
+            <h1 class="text-center">estado_ticket</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_estado_ticket</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID estado de la incidencia en el ticket</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(15)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre de estado de la incidencia en el ticket</td>
+            </tr>
+        </table>
+        <table id='estado_usuario' class="table table-responsive">
+            <h1 class="text-center">estado_usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_estado</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Estado del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(45)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre de estado del usuario</td>
+            </tr>
+        </table>
+        <table id='genero_usuario' class="table table-responsive">
+            <h1 class="text-center">genero_usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_genero</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Género</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(15)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre de Género</td>
+            </tr>
+        </table>
+        <table id='rol_usuario' class="table table-responsive">
+            <h1 class="text-center">rol_usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_rol</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Rol del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(50)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre de Rol de usuario</td>
+            </tr>
+        </table>
+        <table id='ticket' class="table table-responsive">
+            <h1 class="text-center">ticket</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_ticket</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Ticket </td>
+            </tr>
+            <tr>
+                <td class='field'>fecha_inicio</td>
+                <td>DATETIME</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td>CURRENT_TIMESTAMP</td>
+                <td>Fecha de inicio del nuevo ticket</td>
+            </tr>
+            <tr>
+                <td class='field'>fecha_fin</td>
+                <td>DATETIME</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Fecha de finalizacion del ticket</td>
+            </tr>
+            <tr>
+                <td class='field'>descrip_incidencia</td>
+                <td>TEXT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Descripción de la incidencia</td>
+            </tr>
+            <tr>
+                <td class='field'>archivo_evidencia</td>
+                <td>VARCHAR(255)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Ruta de la carpeta que guarda los archivos evidencia</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_categoria</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_categoria'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de especificacion de la categoria de la incidencia desde tabla categoria - Hardware - Software</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_estado_ticket</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_estado_ticket'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de estado de la incidencia en el ticket desde tabla estado_ticket - Enviado - Visto - En proceso -
+                    Solucionado
+                </td>
+            </tr>
+            <tr>
+                <td class='field'>cod_usuario</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_usuario'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de Usuario desde tabla Usuario </td>
+            </tr>
+            <tr>
+                <td class='field'>cod_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_equipo'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código de Equipo desde tabla Equipo</td>
+            </tr>
+        </table>
+        <table id='tipo_documento_usuario' class="table table-responsive">
+            <h1 class="text-center">tipo_documento_usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_tipo_documento</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Tipo de documento del usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(50)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del Tipo de documento</td>
+            </tr>
+        </table>
+        <table id='tipo_equipo' class="table table-responsive">
+            <h1 class="text-center">tipo_equipo</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_tipo_equipo</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID tipo de equipo </td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(15)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del tipo de equipo </td>
+            </tr>
+        </table>
+        <table id='usuario' class="table table-responsive">
+            <h1 class="text-center">usuario</h1>
+            <tr>
+                <td colspan='12'></td>
+            </tr>
+            <tr>
+                <th>Column name</th>
+                <th>DataType</th>
+                <th>
+                    <abbr title='Primary Key'>PK</abbr>
+                </th>
+                <th>
+                    <abbr title='Foreign Key'>FK</abbr>
+                </th>
+                <th>
+                    <abbr title='Not Null'>NN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unique'>UQ</abbr>
+                </th>
+                <th>
+                    <abbr title='Binary'>BIN</abbr>
+                </th>
+                <th>
+                    <abbr title='Unsigned'>UN</abbr>
+                </th>
+                <th>
+                    <abbr title='Zero Fill'>ZF</abbr>
+                </th>
+                <th>
+                    <abbr title='Auto Increment'>AI</abbr>
+                </th>
+                <th>Default</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td class='field'>id_usuario</td>
+                <td>INT</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td></td>
+                <td>ID Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_tipo_doc</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_tipo_doc'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Tipo de documento del Usuario desde tabla tipo_documento_usuario - Cedula de ciudadania - Cedula de extranjeria
+                    - Pasaporte - NIT</td>
+            </tr>
+            <tr>
+                <td class='field'>documento</td>
+                <td>VARCHAR(20)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Número de documento del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>nombre</td>
+                <td>VARCHAR(30)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Nombre del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>apellido</td>
+                <td>VARCHAR(30)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Apellido del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_genero</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_genero'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Género del Usuario desde tabla genero_usuario - Masculino - Femenino</td>
+            </tr>
+            <tr>
+                <td class='field'>email</td>
+                <td>VARCHAR(50)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Email del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>password</td>
+                <td>VARCHAR(60)</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Contraseña del Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_area</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_area'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del área de la Institución a la que pertenece el usuario desde tabla area_usuario - Académica - Administrativa
+                    - Técnica - Tecnológica</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_cargo</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_cargo'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del cargo del usuario desde tabla cargo_usuario - Técnico - Rector - Coordinador académico - Profesor</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_rol</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_rol'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del rol del usuario desde tabla rol_usuario - Técnico - Administrativo - Usuario</td>
+            </tr>
+            <tr>
+                <td class='field'>cod_estado_usuario</td>
+                <td>INT</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>
+                    <a href='#cod_estado_usuario'>&#10004;</a>
+                </td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td></td>
+                <td>Código del estado del usuario desde tabla estado_usuario - Inactivo - Activo</td>
+            </tr>
+            <tr>
+                <td class='field'>fecha_creado</td>
+                <td>DATETIME</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&#10004;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td class='centered'>&nbsp;</td>
+                <td>CURRENT_TIMESTAMP</td>
+                <td>Fecha creado del usuario en hora de sistema</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
