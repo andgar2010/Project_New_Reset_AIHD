@@ -34,68 +34,7 @@
             </div>
             <hr>
             <div class="modal-body">
-<?php
-/**
- * Modelo Clase Usuario
- *
- * @category Class
- * @package  Model
- * @author   Andres Garcia <afagrcia0479@misena.edu.co>
- * @license  <a href="www.mit.org">mit</a>
- * @version  GIT:<ASD4A6S54DASD>
- * @link     www.github.com/andgar2010
- *
- * This Model of Class User
- * Source DB
- */
-
-require '../model/Usuario.php';
-$usuario = new Usuario();
-$msg = $class = null;
-$passwordRandom = bin2hex(random_bytes(2));
-
-if (isset($_POST) && !empty($_POST)) {
-    if (isset($_POST['send'])) {
-        $usuario->cod_tipo_doc  = $usuario->sanitize($_POST['cod_tipo_doc']);
-        $usuario->documento     = $usuario->sanitize($_POST['num_cedula']);
-        $usuario->nombre        = $usuario->sanitize($_POST['nombre']);
-        $usuario->apellido      = $usuario->sanitize($_POST['apellido']);
-        $usuario->cod_genero    = $usuario->sanitize($_POST['cod_genero']);
-        $usuario->email         = $usuario->sanitize($_POST['email']);
-        $usuario->cod_area      = $usuario->sanitize($_POST['cod_area']);
-        $usuario->cod_cargo     = $usuario->sanitize($_POST['cod_cargo']);
-        $usuario->cod_rol       = $usuario->sanitize($_POST['cod_rol']);
-        $usuario->password      = $usuario->sanitize($passwordRandom);
-        // $usuario->password      = $usuario->sanitize(password_hash($passwordRandom, PASSWORD_DEFAULT));
-        //$usuario->id         = $_con->sanitize($_POST['id']);
-        //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
-        //$usuario->cod_estado = $_con->sanitize($_POST['cod_estado']);
-
-        $creadoNuevoRegistrodB = $usuario->createUser();
-        if ($creadoNuevoRegistrodB) {
-            $stusT  = 'success';
-            $titleT = 'Bien hecho!';
-            $msgT   = 'Los datos han sido guardados con éxito.';
-            $class  = "alert alert-success";
-            $msg    = 'Datos insertados con éxito';
-            header("location: ./viewListUsers.php?info=added&name=$usuario->nombre");
-        } else {
-            $stusT  = 'error';
-            $titleT = 'Error';
-            $msg    = $msgT = 'No se pudieron insertar los datos';
-            $class  = 'alert alert-danger';
-        }
-
-        if (isset($msg) && isset($class)) {
-            echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-            echo '<div class="'.$class.'">'.
-            $msg.
-            '</div>';
-        }
-    }
-}
-?>
-                <form method="post" action="" class="">
+                <form method="post" action="../controllers/ControllerAddNewUser.php" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -162,11 +101,11 @@ if (isset($_POST) && !empty($_POST)) {
                                 <label for="cod_genero" class="control-label">Género de usuario</label>
                                 <div>
                                     <label id="cod_genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input type="radio" name="cod_genero" id="masculino" value="1">&nbsp;Masculino
+                                        <input type="radio" name="cod_genero" id="masculino" value="1" required>&nbsp;Masculino
                                     </label>
                                     &nbsp;
                                     <label id="cod_genero" for="femenino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input type="radio" name="cod_genero" id="femenino" value="2">&nbsp;Femenino
+                                        <input type="radio" name="cod_genero" id="femenino" value="2" required>&nbsp;Femenino
                                     </label>
                                 </div>
                             </div>
@@ -212,9 +151,9 @@ if (isset($_POST) && !empty($_POST)) {
                                 <div>
                                     <select id="cod_rol" name="cod_rol" required>
                                         <option value="0"> ------ Seleccionar ------ </option>
-                                        <option value="1">Técnico</option>
-                                        <option value="2">Administrativo</option>
-                                        <option value="3">Usuario</option>
+                                        <option value="2">Técnico</option>
+                                        <option value="3">Administrativo</option>
+                                        <option value="4">Usuario</option>
                                     </select>
                                 </div>
                             </div>
