@@ -18,7 +18,7 @@ require '../config/base_script.php';
 require '../config/base_head.php';
 //require '../config/Toastr.php';
 require '../model/Usuario.php';
-$usuario = new Usuario();
+|
 $msg = $class = null;
 $passwordRandom = bin2hex(random_bytes(3));
 
@@ -70,5 +70,4 @@ if (headers_sent()) {
         }
     }
 }
-
 ?>

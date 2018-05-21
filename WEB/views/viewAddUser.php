@@ -34,7 +34,7 @@
             </div>
             <hr>
             <div class="modal-body">
-                <form method="post" action="../controllers/ControllerAddNewUser.php" class="">
+                <form method="post" action="../controllers/controllerAddNewUser.php" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
