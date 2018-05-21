@@ -7,6 +7,7 @@
     <title>Lista de Usuarios</title>
     <?php
     require '../config/base_head.php';
+    require '../config/base_script.php';
     require '../config/Toastr.php'
     //include '../config/googleAnaytics.php';
     ;?>
@@ -59,6 +60,22 @@
                 }
             }
 
+            if (isset($_GET['info']) == 'updated') {
+                if (isset($_GET['name'])) {
+                    $nameUser = $_GET['name'];
+                    $stusT  = 'success';
+                    $titleT = 'Bien hecho!';
+                    $msgT   = 'Los datos han sido actualizado con éxito.';
+                    $class  = "alert alert-success";
+                    $msg    = 'usuario de datos actualizado con éxito';
+                }
+            }
+
+            if (isset($msg) && isset($class)) {
+                    echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                    echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+            }
+
             ?>
             </div>
             <!-- End div row -->
@@ -98,8 +115,6 @@
     <!-- End div container -->
 
     <!-- Scripts Starts -->
-    <?php include '../config/base_script.php';?>
-
     <script>
     $(document).ready(function()
     {
