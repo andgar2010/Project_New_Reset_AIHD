@@ -13,8 +13,6 @@
  * Source DB
  */
 
-
-
 /**
  * Modelo Clase Usuario
  *
@@ -30,20 +28,20 @@
  */
 class Usuario
 {
-    public $id_usuario;
-    public $documento;
-    public $cod_tipo_doc;
-    public $nombre;
-    public $apellido;
-    public $cod_genero;
-    public $email;
-    public $password;
-    public $cod_area;
-    public $cod_cargo;
-    public $cod_rol;
-    public $cod_estado_usuario;
-    public $fecha_creado;
-    public $encontradoDB;
+    protected $id_usuario;
+    protected $documento;
+    protected $cod_tipo_doc;
+    protected $nombre;
+    protected $apellido;
+    protected $cod_genero;
+    protected $email;
+    protected $password;
+    protected $cod_area;
+    protected $cod_cargo;
+    protected $cod_rol;
+    protected $cod_estado_usuario;
+    protected $fecha_creado;
+    protected $encontradoDB;
 
     /**
      * This Construct Class Usuario
@@ -54,18 +52,283 @@ class Usuario
     }
 
     /**
-     * Function sanitize
-     *
-     * $var @param String
-     * This inpur string
-     *
-     * @return String
-     * $vareturn vareturn
+     * Get the value of encontradoDB
      */
-    function sanitize($var)
+    public function getEncontradoDB()
     {
-        include '../config/Database.php';
-        return $db->real_escape_string($var);
+        return $this->encontradoDB;
+    }
+
+    /**
+     * Set the value of encontradoDB
+     *
+     * @return self
+     */
+    public function setEncontradoDB($encontradoDB)
+    {
+        $this->encontradoDB = $db->real_escape_string($encontradoDB);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fecha_creado
+     */
+    public function getFecha_creado()
+    {
+        return $this->fecha_creado;
+    }
+
+    /**
+     * Set the value of fecha_creado
+     *
+     * @return  self
+     */ 
+    public function setFecha_creado($fecha_creado)
+    {
+        $this->fecha_creado = $db->real_escape_string($fecha_creado);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_estado_usuario
+     */ 
+    public function getCod_estado_usuario()
+    {
+        return $this->cod_estado_usuario;
+    }
+
+    /**
+     * Set the value of cod_estado_usuario
+     *
+     * @return  self
+     */ 
+    public function setCod_estado_usuario($cod_estado_usuario)
+    {
+        $this->cod_estado_usuario = $db->real_escape_string($cod_estado_usuario);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_rol
+     */ 
+    public function getCod_rol()
+    {
+        return $this->cod_rol;
+    }
+
+    /**
+     * Set the value of cod_rol
+     *
+     * @return  self
+     */ 
+    public function setCod_rol($cod_rol)
+    {
+        $this->cod_rol = $db->real_escape_string($cod_rol);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_cargo
+     */ 
+    public function getCod_cargo()
+    {
+        return $this->cod_cargo;
+    }
+
+    /**
+     * Set the value of cod_cargo
+     *
+     * @return  self
+     */ 
+    public function setCod_cargo($cod_cargo)
+    {
+        $this->cod_cargo = $db->real_escape_string($cod_cargo);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_area
+     */ 
+    public function getCod_area()
+    {
+        return $this->cod_area;
+    }
+
+    /**
+     * Set the value of cod_area
+     *
+     * @return  self
+     */ 
+    public function setCod_area($cod_area)
+    {
+        $this->cod_area = $db->real_escape_string($cod_area);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of password
+     */ 
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the value of password
+     *
+     * @return  self
+     */ 
+    public function setPassword($password)
+    {
+        $this->password = $db->real_escape_string($password);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of email
+     */ 
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set the value of email
+     *
+     * @return  self
+     */ 
+    public function setEmail($email)
+    {
+        $this->email = $db->real_escape_string($email);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_genero
+     */ 
+    public function getCod_genero()
+    {
+        return $this->cod_genero;
+    }
+
+    /**
+     * Set the value of cod_genero
+     *
+     * @return  self
+     */ 
+    public function setCod_genero($cod_genero)
+    {
+        $this->cod_genero = $db->real_escape_string($cod_genero);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of apellido
+     */ 
+    public function getApellido()
+    {
+        return $this->apellido;
+    }
+
+    /**
+     * Set the value of apellido
+     *
+     * @return  self
+     */ 
+    public function setApellido($apellido)
+    {
+        $this->apellido = $db->real_escape_string($apellido);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombre
+     */ 
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set the value of nombre
+     *
+     * @return  self
+     */ 
+    public function setNombre($nombre)
+    {
+        $this->nombre = $db->real_escape_string($nombre);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cod_tipo_doc
+     */ 
+    public function getCod_tipo_doc()
+    {
+        return $this->cod_tipo_doc;
+    }
+
+    /**
+     * Set the value of cod_tipo_doc
+     *
+     * @return  self
+     */ 
+    public function setCod_tipo_doc($cod_tipo_doc)
+    {
+        $this->cod_tipo_doc = $db->real_escape_string($cod_tipo_doc);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of documento
+     */ 
+    public function getDocumento()
+    {
+        return $this->documento;
+    }
+
+    /**
+     * Set the value of documento
+     *
+     * @return  self
+     */ 
+    public function setDocumento($documento)
+    {
+        $this->documento = $db->real_escape_string($documento);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_usuario
+     */ 
+    public function getId_usuario()
+    {
+        return $this->id_usuario;
+    }
+
+    /**
+     * Set the value of id_usuario
+     *
+     * @return  self
+     */ 
+    public function setId_usuario($id_usuario)
+    {
+        $this->id_usuario = $db->real_escape_string($id_usuario);
+
+        return $this;
     }
 
     /**
@@ -75,23 +338,33 @@ class Usuario
      */
     function createUser()
     {
+        include '../config/Database.php';
         define('ACTIVO', '2');//Defecto num 2: Activo por ENUM Estado de Ususario
 
-        include '../config/Database.php';
         $sql_insert = "INSERT INTO `usuario`
-                            (`cod_tipo_doc`, `documento`, `nombre`, `apellido`, `cod_genero`, `email`, `password`, `cod_area`, `cod_cargo`, `cod_rol`, `cod_estado_usuario`)
-                        VALUES (
-                            '".$this->cod_tipo_doc."',
-                            '".$this->documento."',
-                            '".$this->nombre."',
-                            '".$this->apellido."',
-                            '".$this->cod_genero."',
-                            '".$this->email."',
-                            '".$this->password."',
-                            '".$this->cod_area."',
-                            '".$this->cod_cargo."',
-                            '".$this->cod_rol."',
-                            '".ACTIVO."')";
+                            (`cod_tipo_doc`,
+                            `documento`,
+                            `nombre`,
+                            `apellido`,
+                            `cod_genero`,
+                            `email`,
+                            `password`,
+                            `cod_area`,
+                            `cod_cargo`,
+                            `cod_rol`,
+                            `cod_estado_usuario`)
+                        VALUES
+                            ('".$this->getCod_tipo_doc()."',
+                            '".$this->getDocumento()."',
+                            '".$this->getNombre()."',
+                            '".$this->getApellido()."',
+                            '".$this->getCod_genero()."',
+                            '".$this->getEmail()."',
+                            '".$this->getPassword()."',
+                            '".$this->getCod_area()."',
+                            '".$this->getCod_cargo()."',
+                            '".$this->getCod_rol()."',
+                            '".ACTIVO."');";
 
         $insertadoClienteDb = $db->query($sql_insert) or die(infoErrorCreatedUser($db));
         //$insertadoClienteDb->close();
@@ -177,17 +450,17 @@ class Usuario
 
                 /* fetch object array */
                 while ($obj = $output_sql->fetch_object()) {
-                    $this->id_usuario           = $this->sanitize($obj->id_usuario);
-                    $this->cod_tipo_doc         = $this->sanitize($obj->cod_tipo_doc);
-                    $this->documento            = $this->sanitize($obj->documento);
-                    $this->nombre               = $this->sanitize($obj->nombre);
-                    $this->apellido             = $this->sanitize($obj->apellido);
-                    $this->cod_genero           = $this->sanitize($obj->cod_genero);
-                    $this->email                = $this->sanitize($obj->email);
-                    $this->cod_area             = $this->sanitize($obj->cod_area);
-                    $this->cod_cargo            = $this->sanitize($obj->cod_cargo);
-                    $this->cod_rol              = $this->sanitize($obj->cod_rol);
-                    $this->cod_estado_usuario   = $this->sanitize($obj->cod_estado_usuario);
+                    $this->id_usuario           = $obj->id_usuario;
+                    $this->cod_tipo_doc         = $obj->cod_tipo_doc;
+                    $this->documento            = $obj->documento;
+                    $this->nombre               = $obj->nombre;
+                    $this->apellido             = $obj->apellido;
+                    $this->cod_genero           = $obj->cod_genero;
+                    $this->email                = $obj->email;
+                    $this->cod_area             = $obj->cod_area;
+                    $this->cod_cargo            = $obj->cod_cargo;
+                    $this->cod_rol              = $obj->cod_rol;
+                    $this->cod_estado_usuario   = $obj->cod_estado_usuario;
                 }
 
                 /* fetch associative array */
@@ -450,7 +723,7 @@ function infoErrorCreatedUser($db)
 }
 
 /**
- * Imprimir Aviso error crear nuevo usuario
+ * Imprimir Aviso error actualizar usuario
  *
  * $db @param Object db desde BD
  *
@@ -479,5 +752,6 @@ function infoErrorUpdateUser($db)
             window.history.back();
         }
     </script>';
+
 }
 ?>
