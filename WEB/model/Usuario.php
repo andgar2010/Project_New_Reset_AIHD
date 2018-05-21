@@ -42,6 +42,7 @@ class Usuario
     protected $cod_estado_usuario;
     protected $fecha_creado;
     protected $encontradoDB;
+    protected $db;
 
     /**
      * This Construct Class Usuario
@@ -49,7 +50,7 @@ class Usuario
     public function __construct()
     {
 
-    }
+    }//End construct()
 
     /**
      * Get the value of encontradoDB
@@ -66,9 +67,10 @@ class Usuario
      */
     public function setEncontradoDB($encontradoDB)
     {
+        include '../config/Database.php';
         $this->encontradoDB = $db->real_escape_string($encontradoDB);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -86,9 +88,10 @@ class Usuario
      */ 
     public function setFecha_creado($fecha_creado)
     {
+        include '../config/Database.php';
         $this->fecha_creado = $db->real_escape_string($fecha_creado);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -106,9 +109,10 @@ class Usuario
      */ 
     public function setCod_estado_usuario($cod_estado_usuario)
     {
+        include '../config/Database.php';
         $this->cod_estado_usuario = $db->real_escape_string($cod_estado_usuario);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -126,9 +130,10 @@ class Usuario
      */ 
     public function setCod_rol($cod_rol)
     {
+        include '../config/Database.php';
         $this->cod_rol = $db->real_escape_string($cod_rol);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -146,9 +151,10 @@ class Usuario
      */ 
     public function setCod_cargo($cod_cargo)
     {
+        include '../config/Database.php';
         $this->cod_cargo = $db->real_escape_string($cod_cargo);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -166,9 +172,10 @@ class Usuario
      */ 
     public function setCod_area($cod_area)
     {
+        include '../config/Database.php';
         $this->cod_area = $db->real_escape_string($cod_area);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -186,9 +193,10 @@ class Usuario
      */ 
     public function setPassword($password)
     {
+        include '../config/Database.php';
         $this->password = $db->real_escape_string($password);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -206,9 +214,10 @@ class Usuario
      */ 
     public function setEmail($email)
     {
+        include '../config/Database.php';
         $this->email = $db->real_escape_string($email);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -226,9 +235,10 @@ class Usuario
      */ 
     public function setCod_genero($cod_genero)
     {
+        include '../config/Database.php';
         $this->cod_genero = $db->real_escape_string($cod_genero);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -246,9 +256,10 @@ class Usuario
      */ 
     public function setApellido($apellido)
     {
+        include '../config/Database.php';
         $this->apellido = $db->real_escape_string($apellido);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -266,9 +277,10 @@ class Usuario
      */ 
     public function setNombre($nombre)
     {
+        include '../config/Database.php';
         $this->nombre = $db->real_escape_string($nombre);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -286,9 +298,10 @@ class Usuario
      */ 
     public function setCod_tipo_doc($cod_tipo_doc)
     {
+        include '../config/Database.php';
         $this->cod_tipo_doc = $db->real_escape_string($cod_tipo_doc);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -306,9 +319,10 @@ class Usuario
      */ 
     public function setDocumento($documento)
     {
+        include '../config/Database.php';
         $this->documento = $db->real_escape_string($documento);
 
-        return $this;
+        //return $this;
     }
 
     /**
@@ -326,9 +340,10 @@ class Usuario
      */ 
     public function setId_usuario($id_usuario)
     {
+        include '../config/Database.php';
         $this->id_usuario = $db->real_escape_string($id_usuario);
 
-        return $this;
+        // return $this;
     }
 
     /**
@@ -413,7 +428,7 @@ class Usuario
                         <td class="text-center">
                             <a href="viewEditUser.php?id='.$row['id_usuario'].'" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
-                            <a href="index.php?aksi=delete&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
+                            <a href="../controllers/controllerDeletedUser.php?btnClickedUser=delete&name='.$row['nombre'].'&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
                         </td>
                     </tr>';
@@ -495,25 +510,24 @@ class Usuario
      *
      * @return Boolean actualizadoUsuario
      */
-    function updateUser($id_usuario, $cod_tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol, $cod_estado_usuario)
+    public function updateUser()
     {
+        //function updateUser($id_usuario, $cod_tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol, $cod_estado_usuario)
         include '../config/Database.php';
 
-        $sql_update = "UPDATE
-                            `usuario`
-                        SET
-                            `cod_tipo_doc`          = '$cod_tipo_doc',
-                            `documento`             = '$documento',
-                            `nombre`                = '$nombre',
-                            `apellido`              = '$apellido',
-                            `cod_genero`            = '$cod_genero',
-                            `email`                 = '$email',
-                            `cod_area`              = '$cod_area',
-                            `cod_cargo`             = '$cod_cargo',
-                            `cod_rol`               = '$cod_rol',
-                            `cod_estado_usuario`    = '$cod_estado_usuario'
+        $sql_update = "UPDATE `usuario`
+                        SET `cod_tipo_doc`          = '".$this->getCod_tipo_doc()."',
+                            `documento`             = '".$this->getDocumento()."',
+                            `nombre`                = '".$this->getNombre()."',
+                            `apellido`              = '".$this->getApellido()."',
+                            `cod_genero`            = '".$this->getCod_genero()."',
+                            `email`                 = '".$this->getEmail()."',
+                            `cod_area`              = '".$this->getCod_area()."',
+                            `cod_cargo`             = '".$this->getCod_cargo()."',
+                            `cod_rol`               = '".$this->getCod_rol()."',
+                            `cod_estado_usuario`    = '".$this->getCod_estado_usuario()."'
                         WHERE
-                            `usuario`.`id_usuario`  = '$id_usuario'";
+                            `usuario`.`id_usuario`  = '".$this->getId_usuario()."'";
 
             $actualizadoUsuarioDb = $db->query($sql_update) or die(infoErrorUpdateUser($db));
 
@@ -535,24 +549,16 @@ class Usuario
      */
     function desactiveUser($id_usuario)
     {
-        define(INACTIVO, 1);
+        define('INACTIVO', '1');
 
         include '../config/Database.php';
-
-        //Controller
-        $usuario->id_usuario   = $db->sanitize($id_usuario);
-        $usuario->cod_estado   = $db->sanitize($cod_estado_usuario);
-        //End Controller
-
-        if ($this->id_usuario == $id_usuario) {
             $sql_update = "UPDATE
 								`usuario`
 							SET
-								`cod_estado`            = 'INACTIVO'
+								`cod_estado_usuario`    = '".INACTIVO."'
 							WHERE
-								`usuario`.`id_usuario`  = ".$this->id_usuario;
-
-            $actualizadoClienteDb = $db->query($sql_update)
+								`usuario`.`id_usuario`  = '".$id_usuario."'";
+            $desactivadoClienteDb = $db->query($sql_update)
             or die(
                 '<h1 class="text-center">Oooops!</h1>
 				    <br>
@@ -563,13 +569,11 @@ class Usuario
             );
 
             /* free sql_update set */
-            $desactivadoClienteDb->close();
+            //$desactivadoClienteDb->close();
 
             /* close connection */
             $db->close();
             return ($desactivadoClienteDb) ? true : false;
-        }//End if equal object->id_usuario == $id_usuario
-
     } //End DesactivedUser()
 
 }// End Class Usuario

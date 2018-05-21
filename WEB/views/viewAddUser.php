@@ -16,9 +16,7 @@ ob_start();
     <meta name="description" content="Registro de nuevo usuario de NEW RESET A.H.I.D.">
     <!-- End HTML Meta Tags -->
 
-    <?php   require '../config/base_head.php';
-            require '../config/base_script.php';
-            require '../config/Toastr.php';
+    <?php
     /*
      * Modelo Clase Usuario
      *
@@ -33,68 +31,20 @@ ob_start();
      * Source DB
      */
 
-    require '../model/Usuario.php';
+    require '../config/base_head.php';
+    require '../config/base_script.php';
+    require '../config/Toastr.php';
+
     require '../model/RolUsuario.php';
     require '../model/CargoUsuario.php';
     require '../model/AreaUsuario.php';
     require '../model/TipoDocumentoUsuario.php';
     require '../model/GeneroUsuario.php';
-
-    $usuario    = new Usuario();
     $rol        = new RolUsuario();
     $cargo      = new CargoUsuario();
     $area       = new AreaUsuario();
     $tipoDoc    = new TipoDocumentoUsuario();
     $genero     = new GeneroUsuario;
-
-    $msg = $class = null;
-    $passwordRandom = bin2hex(random_bytes(3));
-
-    // es posible añadir nuevas cabeceras HTTP
-    if (isset($_POST['send'])) {
-        if (isset($_POST) && !empty($_POST)) {
-            $usuario->setCod_tipo_doc   = $_POST['cod_tipo_doc'];
-            $usuario->setDocumento      = $_POST['num_cedula'];
-            $usuario->setNombre         = $_POST['nombre'];
-            $usuario->setApellido       = $_POST['apellido'];
-            $usuario->setCod_genero     = $_POST['cod_genero'];
-            $usuario->setEmail          = $_POST['email'];
-            $usuario->setCod_area       = $_POST['cod_area'];
-            $usuario->setCod_cargo      = $_POST['cod_cargo'];
-            $usuario->setCod_rol        = $_POST['cod_rol'];
-            $usuario->setPassword       = $passwordRandom;
-            // $usuario->password      = $usuario->sanitize(password_hash($passwordRandom, PASSWORD_DEFAULT));
-            //$usuario->id         = $_con->sanitize($_POST['id']);
-            //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
-            //$usuario->cod_estado = $_con->sanitize($_POST['cod_estado']);
-
-            $creadoNuevoRegistrodB = $usuario->createUser();
-            if ($creadoNuevoRegistrodB) {
-                $nombreUsuario = $_POST['nombre'];
-                $stusT  = 'success';
-                $titleT = 'Bien hecho!';
-                $msgT   = 'Los datos han sido guardados con éxito.';
-                $class  = "alert alert-success";
-                $msg    = 'Datos insertados con éxito';
-                //header("location: ../views/viewListUsers.php");
-                header("location: ../views/viewListUsers.php?info=added&name=$nombreUsuario");
-                //ob_end_flush();
-            } else {
-                // header("location: ../views/viewAddUser.php");
-                $stusT  = 'error';
-                $titleT = 'Error';
-                $msg    = $msgT = 'No se pudieron insertar los datos';
-                $class  = 'alert alert-danger';
-            }
-
-            if (isset($msg) && isset($class)) {
-                echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                echo '<div class="'.$class.'">'.
-                $msg.
-                '</div>';
-            }
-        }
-    }
 ?>
 
     <!--
@@ -114,7 +64,7 @@ ob_start();
             </div>
             <hr>
             <div class="modal-body">
-                <form method="post" action="" class="">
+                <form method="POST" action="../controllers/controllerAddNewUser.php" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -217,7 +167,7 @@ ob_start();
                     <div class="row">
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <button id="enviar" name="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Crear nuevo usuario</button>
+                            <button id="enviar" name="btnClickedUser" value="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Crear nuevo usuario</button>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"> &nbsp;&nbsp;&nbsp;&nbsp;</div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">

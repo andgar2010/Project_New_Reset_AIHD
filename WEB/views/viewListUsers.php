@@ -44,38 +44,56 @@
             <!-- div row -->
             <div class="row">
             <?php
-            if (isset($_GET['info']) == 'added') {
-                if (isset($_GET['name'])) {
+
+            if (isset($_GET['info']) && isset($_GET['name'])) {
+                switch ($_GET['info']) {
+                case 'added':
                     $nameUser = $_GET['name'];
                     $stusT  = 'success';
                     $titleT = 'Bien hecho!';
                     $msgT   = 'Los datos han sido guardados con éxito.';
                     $class  = "alert alert-success";
                     $msg    = 'usuario de datos insertados con éxito';
-                }
 
-                if (isset($msg) && isset($class)) {
-                    echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                    echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
-                }
-            }
+                    if (isset($msg) && isset($class)) {
+                        echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                        echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                    }
+                    break;
 
-            if (isset($_GET['info']) == 'updated') {
-                if (isset($_GET['name'])) {
+                case 'updated':
                     $nameUser = $_GET['name'];
                     $stusT  = 'success';
                     $titleT = 'Bien hecho!';
                     $msgT   = 'Los datos han sido actualizado con éxito.';
                     $class  = "alert alert-success";
                     $msg    = 'usuario de datos actualizado con éxito';
+
+                    if (isset($msg) && isset($class)) {
+                        echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                        echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                    }
+                    break;
+
+                case 'deleted':
+                    $nameUser = $_GET['name'];
+                    $stusT  = 'info';
+                    $titleT = 'Bien hecho!';
+                    $msgT   = 'Los datos han sido eliminado con éxito.';
+                    $class  = "alert alert-info";
+                    $msg    = 'usuario de datos eliminado con éxito';
+
+                    if (isset($msg) && isset($class)) {
+                        echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                        echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                    }
+                    break;
+
+                default:
+
+                    break;
                 }
             }
-
-            if (isset($msg) && isset($class)) {
-                    echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                    echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
-            }
-
             ?>
             </div>
             <!-- End div row -->

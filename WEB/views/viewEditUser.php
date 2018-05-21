@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group text-center">
-                                <label for="cod_tipo_doc" class="control-label ">Estado de Usuario</label>
+                                <label for="cod_estado_usuario" class="control-label ">Estado de Usuario</label>
                                 <div>
                                 <!-- SELECCIONA ESTADO DE USUARIO -->';
 
@@ -103,9 +103,10 @@ if (isset($_GET['id'])) {
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                            <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" value="'.$id_usuario.'">
-                                <label for="documento" class="control-label">Número de cédula</label>
-                                <input id="documento" type="text" name="documento" value="'.$documento.'" class="form-control" disabled>
+                                <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" value="'.$id_usuario.'">
+                                <input type="hidden" id="documento" name="documento" value="'.$documento.'" class="form-control">
+                                <label for="text_documento" class="control-label">Número de cédula</label>
+                                <input id="text_documento" type="text" name="text_documento" value="'.$documento.'" class="form-control" disabled>
                             </div>
                         </div>
 
@@ -211,7 +212,7 @@ if (isset($_GET['id'])) {
                     <div class="row">
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <button id="enviar" name="sendUpdate" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Actualizar datos</button>
+                            <button id="enviar" name="btnClickedUser" value="sendUpdate" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Actualizar datos</button>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
