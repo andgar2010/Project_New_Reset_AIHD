@@ -177,16 +177,16 @@ class Usuario
 
                 /* fetch object array */
                 while ($obj = $output_sql->fetch_object()) {
-                    $this->id_usuario   = $this->sanitize($obj->id_usuario);
-                    $this->cod_tipo_doc = $this->sanitize($obj->cod_tipo_doc);
-                    $this->documento    = $this->sanitize($obj->documento);
-                    $this->nombre       = $this->sanitize($obj->nombre);
-                    $this->apellido     = $this->sanitize($obj->apellido);
-                    $this->cod_genero   = $this->sanitize($obj->cod_genero);
-                    $this->email        = $this->sanitize($obj->email);
-                    $this->cod_area     = $this->sanitize($obj->cod_area);
-                    $this->cod_cargo    = $this->sanitize($obj->cod_cargo);
-                    $this->cod_rol      = $this->sanitize($obj->cod_rol);
+                    $this->id_usuario           = $this->sanitize($obj->id_usuario);
+                    $this->cod_tipo_doc         = $this->sanitize($obj->cod_tipo_doc);
+                    $this->documento            = $this->sanitize($obj->documento);
+                    $this->nombre               = $this->sanitize($obj->nombre);
+                    $this->apellido             = $this->sanitize($obj->apellido);
+                    $this->cod_genero           = $this->sanitize($obj->cod_genero);
+                    $this->email                = $this->sanitize($obj->email);
+                    $this->cod_area             = $this->sanitize($obj->cod_area);
+                    $this->cod_cargo            = $this->sanitize($obj->cod_cargo);
+                    $this->cod_rol              = $this->sanitize($obj->cod_rol);
                     $this->cod_estado_usuario   = $this->sanitize($obj->cod_estado_usuario);
                 }
 
@@ -222,61 +222,35 @@ class Usuario
      *
      * @return Boolean actualizadoUsuario
      */
-    function updateUser($id_usuario)
+    function updateUser($id_usuario, $cod_tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol, $cod_estado_usuario)
     {
         include '../config/Database.php';
 
-        //Controller
-        $usuario->id_usuario   = $db->sanitize($id_usuario);
-        $usuario->cod_tipo_doc = $db->sanitize($cod_tipo_doc);
-        $usuario->documento    = $db->sanitize($documento);
-        $usuario->nombre       = $db->sanitize($nombre);
-        $usuario->apellido     = $db->sanitize($apellido);
-        $usuario->cod_genero   = $db->sanitize($cod_genero);
-        $usuario->email        = $db->sanitize($email);
-        $usuario->cod_area     = $db->sanitize($cod_area);
-        $usuario->cod_cargo    = $db->sanitize($cod_cargo);
-        $usuario->cod_rol      = $db->sanitize($cod_rol);
-        $usuario->cod_estado   = $db->sanitize($cod_estado);
-        //End Controller
+        $sql_update = "UPDATE
+                            `usuario`
+                        SET
+                            `cod_tipo_doc`          = '$cod_tipo_doc',
+                            `documento`             = '$documento',
+                            `nombre`                = '$nombre',
+                            `apellido`              = '$apellido',
+                            `cod_genero`            = '$cod_genero',
+                            `email`                 = '$email',
+                            `cod_area`              = '$cod_area',
+                            `cod_cargo`             = '$cod_cargo',
+                            `cod_rol`               = '$cod_rol',
+                            `cod_estado_usuario`    = '$cod_estado_usuario'
+                        WHERE
+                            `usuario`.`id_usuario`  = '$id_usuario'";
 
-        if ($this->id_usuario == $id_usuario) {
-            $sql_update = "UPDATE
-								`usuario`
-							SET
-								`cod_tipo_doc`          = '". $this->cod_tipo_doc."',
-								`documento`             = '". $this->documento."',
-								`nombre`                = '". $this->nombre ."',
-								`apellido`              = '". $this->apellido ."',
-								`cod_genero`            = '". $this->cod_genero ."',
-								`email`                 = '". $this->email ."',
-								`password`              = '". $this->password ."',
-								`cod_area`              = '". $this->cod_area ."',
-								`cod_cargo`             = '". $this->cod_cargo ."',
-								`cod_rol`               = '". $this->cod_rol ."',
-								`cod_estado`            = '". $this->cod_estado ."'
-							WHERE
-								`usuario`.`id_usuario`  = ".$this->id_usuario;
-
-            $actualizadoClienteDb = $db->query($sql_update)
-            or die(
-                '<h1 class="text-center">Oooops!</h1>
-				    <br>
-				    <p>Hubo un error al actualizar al Usuario.</p>
-				    <br><br>
-				    <strong>Origen error:</strong>
-				    <br>' . mysqli_error($db)
-            );
+            $actualizadoUsuarioDb = $db->query($sql_update) or die(infoErrorUpdateUser($db));
 
             /* free sql_update set */
-            $actualizadoClienteDb->close();
+            //$actualizadoUsuarioDb->close();
 
             /* close connection */
             $db->close();
 
-            return ($actualizadoClienteDb) ? true : false;
-        }//End if equal object->id_usuario == $id_usuario
-
+            return ($actualizadoUsuarioDb) ? true : false;
     } //End UpdateUser()
 
     /**
@@ -294,7 +268,7 @@ class Usuario
 
         //Controller
         $usuario->id_usuario   = $db->sanitize($id_usuario);
-        $usuario->cod_estado   = $db->sanitize($cod_estado);
+        $usuario->cod_estado   = $db->sanitize($cod_estado_usuario);
         //End Controller
 
         if ($this->id_usuario == $id_usuario) {

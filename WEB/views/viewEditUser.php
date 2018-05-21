@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
         $cod_area       = $usuario->cod_area;
         $cod_cargo      = $usuario->cod_cargo;
         $cod_rol        = $usuario->cod_rol;
-        $cod_estado     = $usuario->cod_estado;
+        $cod_estado_usuario     = $usuario->cod_estado_usuario;
     }
 
 } else {
@@ -81,7 +81,7 @@ if (isset($_GET['id'])) {
             <div class="modal-body">
         <?php
         echo'
-                <form method="post" action="" class="">
+                <form method="post" action="../controllers/controllerUpdateUser.php" class="">
 
                     <div class="row">
                         <div class="col-sm-4">
@@ -92,7 +92,7 @@ if (isset($_GET['id'])) {
                                 <div>
                                 <!-- SELECCIONA ESTADO DE USUARIO -->';
 
-                                printBtnRadioCodEstado($cod_estado);
+                                printBtnRadioCodEstado($cod_estado_usuario);
 
                                 echo '
                                 </div>
@@ -103,8 +103,8 @@ if (isset($_GET['id'])) {
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
+                            <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" value="'.$id_usuario.'">
                                 <label for="documento" class="control-label">Número de cédula</label>
-                                <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" value="'.$id_usuario.'">
                                 <input id="documento" type="text" name="documento" value="'.$documento.'" class="form-control" disabled>
                             </div>
                         </div>
@@ -213,7 +213,7 @@ if (isset($_GET['id'])) {
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
                             <button id="enviar" name="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Actualizar datos</button>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2"> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
                             <a id="listUsers" href="./viewListUsers.php">
                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
@@ -240,43 +240,6 @@ if (isset($_GET['id'])) {
 
 
 <?php
-$msg = $class = null;
-if (isset($_POST) && !empty($_POST)) {
-    if (isset($_POST['send'])) {
-
-        $usuario->id_usuario    = $usuario->sanitize($_POST['id_usuario']);
-        $usuario->cod_tipo_doc  = $usuario->sanitize($_POST['cod_tipo_doc']);
-        $usuario->documento     = $usuario->sanitize($_POST['documento']);
-        $usuario->nombre        = $usuario->sanitize($_POST['nombre']);
-        $usuario->apellido      = $usuario->sanitize($_POST['apellido']);
-        $usuario->cod_genero    = $usuario->sanitize($_POST['cod_genero']);
-        $usuario->email         = $usuario->sanitize($_POST['email']);
-        $usuario->cod_area      = $usuario->sanitize($_POST['cod_area']);
-        $usuario->cod_cargo     = $usuario->sanitize($_POST['cod_cargo']);
-        $usuario->cod_rol       = $usuario->sanitize($_POST['cod_rol']);
-        $usuario->cod_estado    = $usuario->sanitize($_POST['$cod_estado']);
-
-
-        $creadoNuevoRegistrodB = $usuario->createUser();
-        if ($creadoNuevoRegistrodB) {
-            header("location: ./viewListUsers.php?info=updated&name=$usuario->nombre");
-            // $stusT  = 'success';
-            // $titleT = 'Bien hecho!';
-            // $msgT   = 'Los datos han sido guardados con éxito.';
-            // $class  = "alert alert-success";
-            // $msg    = 'Datos insertados con éxito';
-        } else {
-            $stusT  = 'error';
-            $titleT = 'Error';
-            $msg    = $msgT = 'No se pudieron insertar los datos';
-            $class  = 'alert alert-danger';
-            echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-            echo '<div class="'.$class.'">'. $msg. '</div>';
-        }
-        // if (isset($msg) && isset($class)) {
-        // }
-    }
-}
 
 /* ========================== */
 /* ----- FUNCTION PRINT ----- */
@@ -292,29 +255,36 @@ if (isset($_POST) && !empty($_POST)) {
 function printOptionCodRol($cod_rol)
 {
     switch ($cod_rol) {
-    case 'Técnico':
+    case '1':
         echo '<option value="0"> ------ Seleccionar ------ </option>
-                <option value="1" selected>Técnico</option>
-                <option value="2">Administrativo</option>
-                <option value="3">Usuario</option>';
+                <option value="1" selected>Superadministrador</option>
+                <option value="2">Técnico</option>
+                <option value="3">Administrativo</option>
+                <option value="4">Usuario</option>';
         break;
-    case 'Administrativo':
+    case '2':
         echo '<option value="0"> ------ Seleccionar ------ </option>
-                <option value="1">Técnico</option>
-                <option value="2" selected>Administrativo</option>
-                <option value="3">Usuario</option>';
+                <option value="2" selected>Técnico</option>
+                <option value="3">Administrativo</option>
+                <option value="4">Usuario</option>';
         break;
-    case 'Usuario':
+    case '3':
         echo '<option value="0"> ------ Seleccionar ------ </option>
-                <option value="1">Técnico</option>
-                <option value="2">Administrativo</option>
-                <option value="3" selected>Usuario</option>';
+                <option value="2">Técnico</option>
+                <option value="3" selected>Administrativo</option>
+                <option value="4">Usuario</option>';
+        break;
+    case '4':
+        echo '<option value="0"> ------ Seleccionar ------ </option>
+                <option value="2">Técnico</option>
+                <option value="3">Administrativo</option>
+                <option value="4" selected>Usuario</option>';
         break;
     default:
         echo '<option value="0" selected> ------ Seleccionar ------ </option>
-                <option value="1">Técnico</option>
-                <option value="2">Administrativo</option>
-                <option value="3">Usuario</option>';
+                <option value="2">Técnico</option>
+                <option value="3">Administrativo</option>
+                <option value="4">Usuario</option>';
         break;
     }
 }
@@ -329,28 +299,28 @@ function printOptionCodRol($cod_rol)
 function printOptionCodCargo($cod_cargo)
 {
     switch ($cod_cargo) {
-    case 'Técnico':
+    case '1':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1" selected>Técnico</option>
                 <option value="2">Rector</option>
                 <option value="3">Coordinador académico</option>
                 <option value="4">Profesor</option>';
         break;
-    case 'Rector':
+    case '2':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1">Técnico</option>
                 <option value="2" selected>Rector</option>
                 <option value="3">Coordinador académico</option>
                 <option value="4">Profesor</option>';
         break;
-    case 'Coordinador académico':
+    case '3':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1">Técnico</option>
                 <option value="2">Rector</option>
                 <option value="3" selected>Coordinador académico</option>
                 <option value="4">Profesor</option>';
         break;
-    case 'Profesor':
+    case '4':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1">Técnico</option>
                 <option value="2">Rector</option>
@@ -379,28 +349,28 @@ function printOptionCodCargo($cod_cargo)
 function printOptionCodArea($cod_area)
 {
     switch ($cod_area) {
-    case 'Académica':
+    case '1':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1" selected>Académica</option>
                 <option value="2">Administrativa</option>
                 <option value="3">Técnica</option>
                 <option value="4">Tecnológica</option>';
         break;
-    case 'Administrativa':
+    case '2':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1">Académica</option>
                 <option value="2" selected>Administrativa</option>
                 <option value="3">Técnica</option>
                 <option value="4">Tecnológica</option>';
         break;
-    case 'Técnica':
+    case '3':
         echo '<option value="0" > ------ Seleccionar ------ </option>
                 <option value="1">Académica</option>
                 <option value="2">Administrativa</option>
                 <option value="3" selected>Técnica</option>
                 <option value="4">Tecnológica</option>';
         break;
-    case 'Tecnológica':
+    case '4':
         echo '<option value="0"> ------ Seleccionar ------ </option>
                 <option value="1">Académica</option>
                 <option value="2">Administrativa</option>
@@ -428,7 +398,7 @@ function printOptionCodArea($cod_area)
 function printBtnRadioCodGenero($cod_genero)
 {
     switch ($cod_genero) {
-    case 'Masculino':
+    case '1':
         echo '<label id="cod_genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
                 <input type="radio" name="cod_genero" id="masculino" value="1" checked>&nbsp;Masculino
             </label>
@@ -438,7 +408,7 @@ function printBtnRadioCodGenero($cod_genero)
             </label>';
         break;
 
-    case 'Femenino':
+    case '2':
         echo'<label id="cod_genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
                 <input type="radio" name="cod_genero" id="masculino" value="1">&nbsp;Masculino
             </label>
@@ -471,7 +441,7 @@ function printBtnRadioCodGenero($cod_genero)
 function printBtnRadioCodTipoDoc($cod_tipoDoc)
 {
     switch ($cod_tipoDoc) {
-    case 'Cedula de ciudadania':
+    case '1':
         echo '<label for="cc" class="radio-inline pmd-radio pmd-radio-ripple-effect">
                 <input name="cod_tipo_doc" id="cc" value="1" type="radio" checked >&nbsp;CC
             </label>
@@ -483,7 +453,7 @@ function printBtnRadioCodTipoDoc($cod_tipoDoc)
             </label>
     <!-- /SELECCIONA TIPO DE CEDULA -->';
         break;
-    case 'Cedula de extranjeria':
+    case '2':
         echo '<label for="cc" class="radio-inline pmd-radio pmd-radio-ripple-effect">
                 <input name="cod_tipo_doc" id="cc" value="1" type="radio">&nbsp;CC
             </label>
@@ -495,7 +465,7 @@ function printBtnRadioCodTipoDoc($cod_tipoDoc)
             </label>
     <!-- /SELECCIONA TIPO DE CEDULA -->';
         break;
-    case 'Cedula de ciudadania':
+    case '3':
         echo '<label for="cc" class="radio-inline pmd-radio pmd-radio-ripple-effect">
                 <input name="cod_tipo_doc" id="cc" value="1" type="radio">&nbsp;CC
             </label>
@@ -528,35 +498,35 @@ function printBtnRadioCodTipoDoc($cod_tipoDoc)
 /**
  * Imprimir button radio Código de Estado del usuario, según Código de Estado del usuario
  *
- * @param Int $cod_estado Código de Código de Estado del usuario
+ * @param Int $cod_estado_usuario Código de Código de Estado del usuario
  *
  * @return void echo
  */
-function printBtnRadioCodEstado($cod_estado)
+function printBtnRadioCodEstado($cod_estado_usuario)
 {
-    switch ($cod_estado) {
-    case 'Inactivo':
+    switch ($cod_estado_usuario) {
+    case '1':
         echo '<label for="inactivo" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                <input name="cod_estado" id="inactivo" value="1" type="radio" checked >&nbsp;Inactivo
+                <input name="cod_estado_usuario" id="inactivo" value="1" type="radio" checked >&nbsp;Inactivo
             </label>
             <label for="activo" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                <input name="cod_estado" id="activo" value="2" type="radio">&nbsp;Activo
+                <input name="cod_estado_usuario" id="activo" value="2" type="radio">&nbsp;Activo
             </label>';
         break;
-    case 'Activo':
+    case '2':
         echo '<label for="inactivo" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                <input name="cod_estado" id="inactivo" value="1" type="radio">&nbsp;Inactivo
+                <input name="cod_estado_usuario" id="inactivo" value="1" type="radio">&nbsp;Inactivo
             </label>
             <label for="activo" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                <input name="cod_estado" id="activo" value="2" type="radio" checked>&nbsp;Activo
+                <input name="cod_estado_usuario" id="activo" value="2" type="radio" checked>&nbsp;Activo
             </label>';
         break;
     default:
         echo '<label for="inactivo" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                <input name="cod_estado" id="inactivo" value="1" type="radio">&nbsp;Inactivo
+                <input name="cod_estado_usuario" id="inactivo" value="1" type="radio">&nbsp;Inactivo
             </label>
             <label for="activo" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                <input name="cod_estado" id="activo" value="2" type="radio">&nbsp;Activo
+                <input name="cod_estado_usuario" id="activo" value="2" type="radio">&nbsp;Activo
             </label>';
         break;
     }
