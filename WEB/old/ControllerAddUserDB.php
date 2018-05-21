@@ -13,7 +13,7 @@
  * Source DB
  */
 
-include '../model/Usuario.php';
+require '../model/Usuario.php';
 $usuario = new Usuario();
 $msg = $class = null;
 $passwordRandom = bin2hex(random_bytes(5));

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/propellerkit/dist/css/propeller.min.css">
+</head>
+
+<body>
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                <h1 class="section-title modal-title text-center"> Oooops!</h1>
+            </div>
+            <hr>
+            <div class="modal-body">
+                Hubo un error al registrar al Usuario.
+                <br>
+                <br>
+                <strong>Origen error:</strong>
+                </br> ' . mysqli_error($db) . '
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/propellerkit/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/propellerkit/dist/js/propeller.min.js"></script>
+</body>
+
+</html>
