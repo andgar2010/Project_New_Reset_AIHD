@@ -41,7 +41,7 @@ class Usuario
     public $cod_area;
     public $cod_cargo;
     public $cod_rol;
-    public $cod_estado;
+    public $cod_estado_usuario;
     public $fecha_creado;
     public $encontradoDB;
 
@@ -79,12 +79,12 @@ class Usuario
 
         include '../config/Database.php';
         $sql_insert = "INSERT INTO `usuario`
-                            (`cod_tipo_doc`, `documento`, `apellido`, `nombre`, `cod_genero`, `email`, `password`, `cod_area`, `cod_cargo`, `cod_rol`, `cod_estado`)
+                            (`cod_tipo_doc`, `documento`, `nombre`, `apellido`, `cod_genero`, `email`, `password`, `cod_area`, `cod_cargo`, `cod_rol`, `cod_estado_usuario`)
                         VALUES (
                             '".$this->cod_tipo_doc."',
                             '".$this->documento."',
-                            '".$this->apellido."',
                             '".$this->nombre."',
+                            '".$this->apellido."',
                             '".$this->cod_genero."',
                             '".$this->email."',
                             '".$this->password."',
@@ -93,7 +93,7 @@ class Usuario
                             '".$this->cod_rol."',
                             '".ACTIVO."')";
 
-        $insertadoClienteDb = $db->query($sql_insert) or die('<h1 class="text-center">Oooops!</h1><br>Hubo un error al registrar al Usuario. <br><br><strong>Origen error:</strong><br>' . mysqli_error($db));
+        $insertadoClienteDb = $db->query($sql_insert) or die(infoErrorCreatedUser($db));
         //$insertadoClienteDb->close();
         $db->close();
         return ($insertadoClienteDb) ? true : false;
@@ -118,7 +118,7 @@ class Usuario
                 </tr>';
             } else {
                 while ($row = $output_sql->fetch_assoc()) {
-                    $numID = 1;
+                    //$numID = 1;
                     echo'
                     <tr>
                         <td class="text-center">'.$row['id_usuario'].'</td>
@@ -126,43 +126,26 @@ class Usuario
                             <a href="profile.php?nik='.$row['id_usuario'].'">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['nombre'].' '. $row['apellido'].
-                            '</a> </td>
-                            <td class="text-center">'. $row['cod_cargo'].'</td>
-                            <td class="text-center">'. $row['cod_area'].'</td>
-                            <td class="text-center">'. $row['cod_rol'].'</td>';
+                            '</a> </td>';
 
-                    switch ($row['cod_estado']) {
-                    case 'Inactivo':
-                        echo '
-                            <td class="text-center">
-                                <span class="label label-info">inactivo</span>
-                            </td>';
-                        break;
-                    case 'Activo':
-                        echo '
-                            <td class="text-center">
-                                <span class="label label-success">Activo</span>
-                            </td>';
-                        break;
-                    default:
-                        echo '
-                            <td class="text-center">
-                                <span class="label label-warning">No seleccionado</span>
-                            </td>';
-                        break;
-                    }
+                        printCodCargoToText($row['cod_cargo']);
 
-                            echo'
-                            </td>
-                            <td class="text-center">
-                                <a href="viewEditUser.php?id='.$row['id_usuario'].'" title="Editar datos" class="btn btn-primary btn-sm">
-                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
-                                <a href="index.php?aksi=delete&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
-                            </td>
+                        printCodAreaToText($row['cod_area']);
+
+                        printCodRolToText($row['cod_rol']);
+
+                        printCodEstadoUsuarioToText($row['cod_estado_usuario']);
+
+                    echo'
+                        <td class="text-center">
+                            <a href="viewEditUser.php?id='.$row['id_usuario'].'" title="Editar datos" class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
+                            <a href="index.php?aksi=delete&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
+                        </td>
                     </tr>';
 
-                            $numID++;
+                    //$numID++;
                 }
 
                 $output_sql->close();
@@ -343,4 +326,184 @@ class Usuario
     } //End DesactivedUser()
 
 }// End Class Usuario
+
+/**
+ * Imprimir estado de usuario en texto por codigo de estado de usuario BD
+ *
+ * $cod_estado_usuario @param int codigo de estado de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */
+function printCodEstadoUsuarioToText($cod_estado_usuario)
+{
+    switch ($cod_estado_usuario) {
+    case '1':
+        echo '
+            <td class="text-center">
+                <span class="label label-info">inactivo</span>
+            </td>';
+        break;
+    case '2':
+        echo '
+            <td class="text-center">
+                <span class="label label-success">Activo</span>
+            </td>';
+        break;
+    default:
+        echo '
+            <td class="text-center">
+                <span class="label label-warning">No seleccionado</span>
+            </td>';
+        break;
+    }
+}
+
+/**
+ * Imprimir rol de usuario en texto por codigo de rol de usuario BD
+ *
+ * $cod_rol @param int codigo de rol de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */
+function printCodRolToText($cod_rol)
+{
+    switch ($cod_rol) {
+    case '1':
+        echo'<td class="text-center">Superadministrador</td>';
+        break;
+    case '2':
+        echo'<td class="text-center">Técnico</td>';
+        break;
+    case '3':
+        echo'<td class="text-center">Administrativo</td>';
+        break;
+    case '4':
+        echo'<td class="text-center">Usuario</td>';
+        break;
+    default:
+        echo'<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
+        break;
+    }
+}
+
+/**
+ * Imprimir cargo de usuario en texto por codigo de cargo de usuario BD
+ *
+ * $cod_cargo @param int codigo de cargo de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */
+function printCodCargoToText($cod_cargo)
+{
+    switch ($cod_cargo) {
+    case '1':
+        echo'<td class="text-center">Técnico</td>';
+        break;
+    case '2':
+        echo'<td class="text-center">Rector</td>';
+        break;
+    case '3':
+        echo'<td class="text-center">Coordinador académico</td>';
+        break;
+    case '4':
+        echo'<td class="text-center">Profesor</td>';
+        break;
+    default:
+        echo'<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
+        break;
+    }
+}
+
+/**
+ * Imprimir area de usuario en texto por codigo de area de usuario BD
+ *
+ * $cod_area @param int codigo de area de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */
+function printCodAreaToText($cod_area)
+{
+    switch ($cod_area) {
+    case '1':
+        echo'<td class="text-center">Académica</td>';
+        break;
+    case '2':
+        echo'<td class="text-center">Administrativa</td>';
+        break;
+    case '3':
+        echo'<td class="text-center">Técnica</td>';
+        break;
+    case '4':
+        echo'<td class="text-center">Tecnológica</td>';
+        break;
+    default:
+        echo'<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
+        break;
+    }
+}
+
+/**
+ * Imprimir Aviso error crear nuevo usuario
+ *
+ * $db @param Object db desde BD
+ *
+ * @return String echo html
+ */
+function infoErrorCreatedUser($db)
+{
+    echo '<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                <h1 class="section-title modal-title text-center"> Oooops!</h1>
+            </div>
+            <hr>
+            <div class="modal-body">
+                Hubo un error al registrar al Usuario.
+                <br>
+                <br>
+                <strong>Origen error:</strong>
+                </br> ' . mysqli_error($db) . '
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>';
+}
+
+/**
+ * Imprimir Aviso error crear nuevo usuario
+ *
+ * $db @param Object db desde BD
+ *
+ * @return String echo html
+ */
+function infoErrorUpdateUser($db)
+{
+    echo '<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                <h1 class="section-title modal-title text-center"> Oooops!</h1>
+            </div>
+            <hr>
+            <div class="modal-body">
+                Hubo un error al actualizar al Usuario.
+                <br>
+                <br>
+                <strong>Origen error:</strong>
+                </br> ' . mysqli_error($db) . '
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>';
+}
 ?>
