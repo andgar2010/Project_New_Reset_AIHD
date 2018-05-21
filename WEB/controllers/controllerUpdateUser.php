@@ -13,11 +13,14 @@
  * Source DB
  */
 
+require '../config/base_head.php';
+require '../config/base_script.php';
+require '../config/Toastr.php';
 require '../model/Usuario.php';
 $usuario = new Usuario();
 
 $msg = $class = null;
-if (isset($_POST['send'])) {
+if (isset($_POST['sendUpdate'])) {
     if (isset($_POST) && !empty($_POST)) {
         $id_usuario         = $_POST['id_usuario'] ?? '';
         $cod_tipo_doc       = $_POST['cod_tipo_doc'] ?? '';
