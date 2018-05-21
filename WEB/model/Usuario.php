@@ -187,7 +187,7 @@ class Usuario
                     $this->cod_area     = $this->sanitize($obj->cod_area);
                     $this->cod_cargo    = $this->sanitize($obj->cod_cargo);
                     $this->cod_rol      = $this->sanitize($obj->cod_rol);
-                    $this->cod_estado   = $this->sanitize($obj->cod_estado);
+                    $this->cod_estado_usuario   = $this->sanitize($obj->cod_estado_usuario);
                 }
 
                 /* fetch associative array */
