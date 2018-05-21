@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
     $usuario = new Usuario();
     $usuario->readSingleRecordUsuer($id_usuario);
 
-    if ($usuario->nombre == null) {
+    if ($usuario->getNombre() == null) {
 
         //Si no encontrado registro de usuario en base de datos, redireccionar -> viewListUsers.php con parametros
         header("location: ./viewListUsers.php?info=search&result=no");
@@ -27,17 +27,17 @@ if (isset($_GET['id'])) {
     } else {
 
         //Si encontrado registro de usuario en base de datos, llevar datos de usuario al formulario
-        $id_usuario     = $usuario->id_usuario;
-        $cod_tipo_doc   = $usuario->cod_tipo_doc;
-        $documento      = $usuario->documento;
-        $nombre         = $usuario->nombre;
-        $apellido       = $usuario->apellido;
-        $cod_genero     = $usuario->cod_genero;
-        $email          = $usuario->email;
-        $cod_area       = $usuario->cod_area;
-        $cod_cargo      = $usuario->cod_cargo;
-        $cod_rol        = $usuario->cod_rol;
-        $cod_estado_usuario     = $usuario->cod_estado_usuario;
+        $id_usuario             = $usuario->getId_usuario();
+        $cod_tipo_doc           = $usuario->getCod_tipo_doc();
+        $documento              = $usuario->getDocumento();
+        $nombre                 = $usuario->getNombre();
+        $apellido               = $usuario->getApellido();
+        $cod_genero             = $usuario->getCod_genero();
+        $email                  = $usuario->getEmail();
+        $cod_area               = $usuario->getCod_area();
+        $cod_cargo              = $usuario->getCod_cargo();
+        $cod_rol                = $usuario->getCod_rol();
+        $cod_estado_usuario     = $usuario->getCod_estado_usuario();
     }
 
 } else {
@@ -211,7 +211,7 @@ if (isset($_GET['id'])) {
                     <div class="row">
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <button id="enviar" name="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Actualizar datos</button>
+                            <button id="enviar" name="sendUpdate" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Actualizar datos</button>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">

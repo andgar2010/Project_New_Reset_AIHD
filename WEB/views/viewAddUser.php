@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,8 +17,85 @@
     <!-- End HTML Meta Tags -->
 
     <?php   require '../config/base_head.php';
+            require '../config/base_script.php';
             require '../config/Toastr.php';
-            //require '../config/googleAnaytics.php';?>
+    /*
+     * Modelo Clase Usuario
+     *
+     * @category Class
+     * @package  Model
+     * @author   Andres Garcia <afagrcia0479@misena.edu.co>
+     * @license  <a href="www.mit.org">mit</a>
+     * @version  GIT:<ASD4A6S54DASD>
+     * @link     www.github.com/andgar2010
+     *
+     * This Model of Class User
+     * Source DB
+     */
+
+    require '../model/Usuario.php';
+    require '../model/RolUsuario.php';
+    require '../model/CargoUsuario.php';
+    require '../model/AreaUsuario.php';
+    require '../model/TipoDocumentoUsuario.php';
+    require '../model/GeneroUsuario.php';
+
+    $usuario    = new Usuario();
+    $rol        = new RolUsuario();
+    $cargo      = new CargoUsuario();
+    $area       = new AreaUsuario();
+    $tipoDoc    = new TipoDocumentoUsuario();
+    $genero     = new GeneroUsuario;
+
+    $msg = $class = null;
+    $passwordRandom = bin2hex(random_bytes(3));
+
+    // es posible añadir nuevas cabeceras HTTP
+    if (isset($_POST['send'])) {
+        if (isset($_POST) && !empty($_POST)) {
+            $usuario->setCod_tipo_doc   = $_POST['cod_tipo_doc'];
+            $usuario->setDocumento      = $_POST['num_cedula'];
+            $usuario->setNombre         = $_POST['nombre'];
+            $usuario->setApellido       = $_POST['apellido'];
+            $usuario->setCod_genero     = $_POST['cod_genero'];
+            $usuario->setEmail          = $_POST['email'];
+            $usuario->setCod_area       = $_POST['cod_area'];
+            $usuario->setCod_cargo      = $_POST['cod_cargo'];
+            $usuario->setCod_rol        = $_POST['cod_rol'];
+            $usuario->setPassword       = $passwordRandom;
+            // $usuario->password      = $usuario->sanitize(password_hash($passwordRandom, PASSWORD_DEFAULT));
+            //$usuario->id         = $_con->sanitize($_POST['id']);
+            //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
+            //$usuario->cod_estado = $_con->sanitize($_POST['cod_estado']);
+
+            $creadoNuevoRegistrodB = $usuario->createUser();
+            if ($creadoNuevoRegistrodB) {
+                $nombreUsuario = $_POST['nombre'];
+                $stusT  = 'success';
+                $titleT = 'Bien hecho!';
+                $msgT   = 'Los datos han sido guardados con éxito.';
+                $class  = "alert alert-success";
+                $msg    = 'Datos insertados con éxito';
+                //header("location: ../views/viewListUsers.php");
+                header("location: ../views/viewListUsers.php?info=added&name=$nombreUsuario");
+                //ob_end_flush();
+            } else {
+                // header("location: ../views/viewAddUser.php");
+                $stusT  = 'error';
+                $titleT = 'Error';
+                $msg    = $msgT = 'No se pudieron insertar los datos';
+                $class  = 'alert alert-danger';
+            }
+
+            if (isset($msg) && isset($class)) {
+                echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                echo '<div class="'.$class.'">'.
+                $msg.
+                '</div>';
+            }
+        }
+    }
+?>
 
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
@@ -34,7 +114,7 @@
             </div>
             <hr>
             <div class="modal-body">
-                <form method="post" action="../controllers/controllerAddNewUser.php" class="">
+                <form method="post" action="" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -49,20 +129,7 @@
                                 <label for="cod_tipo_doc" class="control-label">Tipo de cédula</label>
                                 <div>
                                     <!-- SELECCIONA TIPO DE CEDULA -->
-                                    <label for="cc" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input name="cod_tipo_doc" id="cc" value="1" type="radio" required>&nbsp;CC
-                                    </label>
-
-                                    <label for="ce" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input name="cod_tipo_doc" id="ce" value="2" type="radio" required>&nbsp;CE
-                                    </label>
-
-                                    <label for="pasaporte" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input name="cod_tipo_doc" id="pasaporte" value="3" type="radio" required>&nbsp;Pasaporte
-                                    </label>
-                                    <!-- <label for="nit" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                    <input name="cod_tipo_doc" id="nit" value="4" type="radio">&nbsp;NIT
-                </label> -->
+                                    <?php $tipoDoc->readTipoDocumento();?>
                                     <!-- /SELECCIONA TIPO DE CEDULA -->
                                 </div>
                             </div>
@@ -100,13 +167,7 @@
                             <div class="form-group">
                                 <label for="cod_genero" class="control-label">Género de usuario</label>
                                 <div>
-                                    <label id="cod_genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input type="radio" name="cod_genero" id="masculino" value="1" required>&nbsp;Masculino
-                                    </label>
-                                    &nbsp;
-                                    <label id="cod_genero" for="femenino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
-                                        <input type="radio" name="cod_genero" id="femenino" value="2" required>&nbsp;Femenino
-                                    </label>
+                                    <?php $genero->readGenero();?>
                                 </div>
                             </div>
                         </div>
@@ -121,10 +182,7 @@
                                 <div>
                                     <select id="cod_area" name="cod_area" required>
                                         <option value="0"> ------ Seleccionar ------ </option>
-                                        <option value="1">Académica</option>
-                                        <option value="2">Administrativa</option>
-                                        <option value="3">Técnica</option>
-                                        <option value="4">Tecnológica</option>
+                                        <?php $area->readArea();?>
                                     </select>
                                 </div>
                             </div>
@@ -136,10 +194,7 @@
                                 <div>
                                     <select id="cod_cargo" name="cod_cargo" required>
                                         <option value="0"> ------ Seleccionar ------ </option>
-                                        <option value="1">Técnico</option>
-                                        <option value="2">Rector</option>
-                                        <option value="3">Coordinador académico</option>
-                                        <option value="4">Profesor</option>
+                                        <?php $cargo->readCargo();?>
                                     </select>
                                 </div>
                             </div>
@@ -151,9 +206,7 @@
                                 <div>
                                     <select id="cod_rol" name="cod_rol" required>
                                         <option value="0"> ------ Seleccionar ------ </option>
-                                        <option value="2">Técnico</option>
-                                        <option value="3">Administrativo</option>
-                                        <option value="4">Usuario</option>
+                                        <?php $rol->readRol();?>
                                     </select>
                                 </div>
                             </div>
@@ -180,8 +233,6 @@
         </div>
     </div>
     <div class="modal-footer"></div>
-
-    <?php include '../config/base_script.php';?>
     <!-- <script src="assets/js/checkComparativePassword.js"></script> -->
     <!-- <script src="assets/js/bs-animation.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> -->
