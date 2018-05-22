@@ -44,20 +44,22 @@
             <!-- div row -->
             <div class="row">
             <?php
-
             if (isset($_GET['info']) && isset($_GET['name'])) {
+
+                $btnMsg = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>';
+
                 switch ($_GET['info']) {
                 case 'added':
                     $nameUser = $_GET['name'];
                     $stusT  = 'success';
                     $titleT = 'Bien hecho!';
                     $msgT   = 'Los datos han sido guardados con éxito.';
-                    $class  = "alert alert-success";
+                    $class  = "alert alert-success alert-dismissable pmd-z-depth-1";
                     $msg    = 'usuario de datos insertados con éxito';
 
                     if (isset($msg) && isset($class)) {
                         echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                        echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                        echo '<div class="'.$class.'">'.$btnMsg . $nameUser. ' '. $msg. '</div>';
                     }
                     break;
 
@@ -66,12 +68,12 @@
                     $stusT  = 'success';
                     $titleT = 'Bien hecho!';
                     $msgT   = 'Los datos han sido actualizado con éxito.';
-                    $class  = "alert alert-success";
+                    $class  = "alert alert-success alert-dismissable pmd-z-depth-1";
                     $msg    = 'usuario de datos actualizado con éxito';
 
                     if (isset($msg) && isset($class)) {
                         echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                        echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                        echo '<div class="'.$class.'">' . $btnMsg . $nameUser. ' '. $msg. '</div>';
                     }
                     break;
 
@@ -80,17 +82,19 @@
                     $stusT  = 'info';
                     $titleT = 'Bien hecho!';
                     $msgT   = 'Los datos han sido eliminado con éxito.';
-                    $class  = "alert alert-info";
+                    $class  = "alert alert-info alert-dismissable pmd-z-depth-1";
                     $msg    = 'usuario de datos eliminado con éxito';
 
                     if (isset($msg) && isset($class)) {
                         echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                        echo '<div class="'.$class.'">'. $nameUser. ' '. $msg. '</div>';
+                        echo '<div class="'.$class.'">'. $btnMsg .$nameUser. ' '. $msg. '</div>';
                     }
                     break;
 
                 default:
-
+                /*echo '<div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
+                        </div>';*/
                     break;
                 }
             }
