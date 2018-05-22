@@ -2,10 +2,14 @@
 
 # New Reset A.I.H.D. *(Alpha)* &middot; 
 # ![PHP Support](https://img.shields.io/badge/PHP-%3E%3D%207.2.4-blue.svg?longCache=true&style=flat-square) ![Yarn](https://img.shields.io/badge/Yarn-%3E%3D%201.5.1-blue.svg?longCache=true&style=flat-square) [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/github/license/andgar2010/Project_New_Reset_AIHD.svg?style=flat-square)](https://github.com/andgar2010/Project_New_Reset_AIHD)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fandgar2010%2FProject_New_Reset_AIHD.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fandgar2010%2FProject_New_Reset_AIHD?ref=badge_shield)
 
 > Additional information or tag line
 
 Proyecto de grado para App Servidor Gestión de incidentes de equipos de computo para Institución Educativa Distrital Alfredo Iriarte
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fandgar2010%2FProject_New_Reset_AIHD.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fandgar2010%2FProject_New_Reset_AIHD?ref=badge_large)
 
 ## Instalación / Primeros pasos
 
