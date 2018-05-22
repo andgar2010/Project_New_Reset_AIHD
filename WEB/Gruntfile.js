@@ -14,7 +14,8 @@ module.exports = function (grunt) {
                         "css/*.css",
                         "js/*.js",
                         "*.html",
-                        "*.php"
+                        "*.php",
+                        "views/*.php"
                     ]
                 },
                 options: {

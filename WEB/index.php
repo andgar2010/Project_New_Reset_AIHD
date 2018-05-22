@@ -40,8 +40,10 @@ session_start();
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/user.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+        <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
+        <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> -->
         <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
         <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
         <link rel="stylesheet" href="assets/css/Team-Clean.css">
@@ -94,19 +96,19 @@ session_start();
 
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="POST" action="views/dashboard.php">
+                        <form role="form" method="POST" action="./controllers/checkEmail.php">
                             <div class="form-group">
-                                <label for="username"><span class="glyphicon glyphicon-user"></span> Usuario</label>
-                                <input type="text" class="form-control" name="email" id="username" placeholder="Ingrese su email" required>
+                                <label id="email" for="email"><span class="fa fa-user fa-lg"></span> Usuario</label>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Ingrese su email" required>
                             </div>
                             <div class="form-group">
-                                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Contraseña</label>
-                                <input type="Password" class="form-control" name="password" id="psw" placeholder="ingrese contraseña" required>
+                                <label id="password" for="password"><span class="fa fa-key fa-lg"></span> Contraseña</label>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="ingrese contraseña" required>
                             </div>
                             <div class="checkbox">
-                                <label><input  type="checkbox" value="si" >recordar tu contraseña?</label>
+                                <label><input name="save_session" type="checkbox" value="on" >recordar tu contraseña?</label>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block"><span  class="glyphicon glyphicon-off" required></span>  <p>Ingresar </p></button>
+                            <button type="submit" class="btn btn-success btn-block"><span  class="fa fa-sign-in fa-lg" required></span> <p>Ingresar </p></button>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -224,7 +226,9 @@ session_start();
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-animation.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+        <script src="node_modules/aos/dist/aos.js"></script>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> -->
         <script>
             $(document).ready(function () {
                 $("#myBtn").click(function () {

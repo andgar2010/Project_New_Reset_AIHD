@@ -11,47 +11,8 @@ session_start();
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 <title>Login | NEW RESET AIHD - Admin Dashboard</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
-
-    <!-- Google icon -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Bootstrap css -->
-    <!-- build:[href] assets/css/ -->
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
-    <!-- /build -->
-
-    <!-- Propeller css -->
-    <!-- build:[href] assets/css/ -->
-    <!-- build:[href] assets/css/ -->
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit/dist/css/propeller.min.css">
-
-    <!-- /build -->
-    <!-- /build -->
-
-    <!-- Propeller date time picker css-->
-    <!-- build:[href] components/datetimepicker/css/ -->
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/bootstrap-datetimepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../node_modules/propellerkit-datetimepicker/css/pmd-datetimepicker.css" />
-    <!-- /build -->
-
-    <!-- Propeller theme css-->
-    <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-theme.css" />
-
-    <!-- Propeller admin theme css-->
-    <link rel="stylesheet" type="text/css" href="../assets/Framework/propeller-themes/css/propeller-admin.css" />
-
-    <!--Google Analytics code-->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-124615-22', 'auto');
-      ga('send', 'pageview');
-    </script>
-</head>
+    <?php include '../config/base_head.php';?>
+    <?php include '../config/googleAnaytics.php';?>
 
 <!-- Styles Ends -->
 </head>
@@ -63,7 +24,7 @@ session_start();
 			<form>	
 				<div class="pmd-card-title card-header-border text-center">
 					<div class="loginlogo">
-						<a href="javascript:void(0);"><img src="../assets/images/IsotipoV2_Alpha.png" alt="Logo"></a>
+						<a href="javascript:void(0);"><img src="../assets/images/IsotipoV2_Alpha_256.png" alt="Logo"></a>
 					</div>
 					<h3>Iniciar Sesión <span>con <strong>NEW RESET AIHD</strong></span></h3>
 				</div>
@@ -110,7 +71,7 @@ session_start();
 		<div class="register-card">
 			<div class="pmd-card-title card-header-border text-center">
 				<div class="loginlogo">
-					<a href="javascript:void(0);"><img src="../assets/images/IsotipoV2_Alpha.png" alt="Logo"></a>
+					<a href="javascript:void(0);"><img src="../assets/images/IsotipoV2_Alpha_256.png" alt="Logo"></a>
 				</div>
 				<h3>Crear cuenta <span>con <strong>NEW RESET AIHD</strong></span></h3>
 			</div>
@@ -153,7 +114,7 @@ session_start();
 			<form>	
 			  <div class="pmd-card-title card-header-border text-center">
 				<div class="loginlogo">
-					<a href="javascript:void(0);"><img src="../assets/images/IsotipoV2_Alpha.png" alt="Logo"></a>
+					<a href="javascript:void(0);"><img src="../assets/images/IsotipoV2_Alpha_256.png" alt="Logo"></a>
 				</div>
 				<h3>¿Has olvidado tu contraseña?<br><span>Envíe su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña.</span></h3>
 			</div>
@@ -176,11 +137,7 @@ session_start();
 </div>
 
 <!-- Scripts Starts -->
-<!-- build:[src] assets/js/ -->
-    <script src="../assets/Framework/propeller-themes/js/jquery-1.12.2.min.js"></script>
-    <script src="../node_modules/propellerkit/dist/js/bootstrap.min.js"></script>
-	<script src="../node_modules/propellerkit/dist/js/propeller.min.js"></script>
-<!-- /build -->
+<?php include '../config/base_script.php';?>
 <script>
 	$(document).ready(function() {
 		var sPath=window.location.pathname;

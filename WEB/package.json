@@ -21,8 +21,11 @@
     "ahid"
   ],
   "dependencies": {
+    "animate.css": "^3.6.1",
+    "aos": "^2.3.0",
     "barba.js": "^1.0.0",
     "bootstrap": "^3.3.7",
+    "bootstrap-sweetalert": "^1.0.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "material-design-icons": "^3.0.1",
