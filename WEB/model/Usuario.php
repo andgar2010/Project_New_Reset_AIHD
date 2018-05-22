@@ -406,12 +406,11 @@ class Usuario
                 </tr>';
             } else {
                 while ($row = $output_sql->fetch_assoc()) {
-                    //$numID = 1;
                     echo'
                     <tr>
                         <td class="text-center">'.$row['id_usuario'].'</td>
                         <td>
-                            <a href="profile.php?nik='.$row['id_usuario'].'">
+                            <a href="../views/viewProfileUser.php?id='.$row['id_usuario'].'">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['nombre'].' '. $row['apellido'].
                             '</a> </td>';
@@ -432,8 +431,6 @@ class Usuario
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
                         </td>
                     </tr>';
-
-                    //$numID++;
                 }
 
                 $output_sql->close();
