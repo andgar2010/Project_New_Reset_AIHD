@@ -96,7 +96,7 @@ session_start();
 
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="POST" action="./controllers/checkEmail.php">
+                        <form role="form" method="POST" action="./controllers/authLogin.php">
                             <div class="form-group">
                                 <label id="email" for="email"><span class="fa fa-user fa-lg"></span> Usuario</label>
                                 <input id="email" type="text" class="form-control" name="email" placeholder="Ingrese su email" required>

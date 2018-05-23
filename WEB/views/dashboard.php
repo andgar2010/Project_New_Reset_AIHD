@@ -210,6 +210,16 @@ session_start();
             </li>
             <!-- End Gestion de usuarios  -->
 
+            <!-- Gestion de Equipos  -->
+            <li>
+                <a id="listDevices" class="pmd-ripple-effect">
+                    <span class="media-body">
+                        <i class="fa fa-desktop fa-lg"></i>Gestión de Equipos
+                    </span>
+                </a>
+            </li>
+            <!-- End Gestion de Equipos  -->
+
             <!-- Panel de Control-->
             <!-- <li>
                 <a class="pmd-ripple-effect" href="dashboard.php">
@@ -268,6 +278,13 @@ session_start();
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
                 <div id="content" class="">
+
+                <?php 
+                
+                var_dump($_SESSION);
+
+                ?>
+
                 </div>
 
             </div>
