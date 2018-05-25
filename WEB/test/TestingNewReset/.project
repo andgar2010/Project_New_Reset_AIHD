@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>C%%xampp%htdocs%Project_New_Reset_AIHD%WEB%test%TestingNewReset%TestingNewReset.prj</name>
+	<name>C%%xampp%htdocs%Project_New_Reset_AIHD%WEB%test%testingNewReset%testingNewReset.prj</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -17,7 +17,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1526840558957</id>
+			<id>1527288927140</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -26,7 +26,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1526840558983</id>
+			<id>1527288927152</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
