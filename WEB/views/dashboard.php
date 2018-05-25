@@ -1,5 +1,41 @@
 <?php
 session_start();
+
+if (isset($_SESSION)) {
+    $nombreUsuario  = $_SESSION['nombres_completos'];
+    $codRol         = $_SESSION['cod_rol'];
+} else {
+    header('location: ../index.php?info=noAuth');
+}
+
+/**
+ * Imprimir rol de usuario en texto por codigo de rol de usuario BD
+ *
+ * $cod_rol @param int codigo de rol de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */
+function printCodRolToText($cod_rol)
+{
+    switch ($cod_rol) {
+    case '1':
+        echo'Superadministrador';
+        break;
+    case '2':
+        echo'Técnico';
+        break;
+    case '3':
+        echo'Administrativo';
+        break;
+    case '4':
+        echo'Usuario';
+        break;
+    default:
+        echo'<span class="label label-warning">No seleccionado</span>';
+        break;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -141,14 +177,14 @@ session_start();
                         <img src="../assets/images/user-icon.png" alt="New User">
                     </div>
                     <div class="media-body media-middle">
-                        Administrador <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
+                        <?php echo $nombreUsuario;?> <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
                     </div>
                     <div class="media-right media-middle">
                         <i class="dic-more-vert dic"></i>
                     </div>
                     <span >
                             <i class="dic-more-vert dic">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ROL
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php printCodRolToText($codRol);?>
                             </i>
                     </span>
                 </a>
