@@ -27,7 +27,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if ($row = $output_sql->num_rows == 0) {
 
-        header('location: ../index.php?info=noFoundDB');
+        return header('location: ../index.php?info=noFoundDB');
 
     } else {
 
@@ -72,13 +72,16 @@ case '2': // -- cod_estado_usuario 2 Activo --
         header('location:../views/dashboard.php');
         break;
     case '2'://Tecnico
-        header('location:../views/viewListUsers.php');
+        header('location:../views/dashboard.php');
+        // header('location:../views/viewListUsers.php');
         break;
     case '3'://Administrativo
-        header('location:../views/viewAddUser.php');
+        header('location:../views/dashboard.php');
+        // header('location:../views/viewAddUser.php');
         break;
     case '4'://Profesor
-        header('location:../views/listTicket.php');
+        header('location:../views/dashboard.php');
+        // header('location:../views/listTicket.php');
         break;
     }//End Switch cod_rol
 
@@ -87,6 +90,7 @@ case '2': // -- cod_estado_usuario 2 Activo --
 
 default:
     # code...
+        header('location: ../index.php?info=outnumcodrol');
     break;
 }
 ?>
