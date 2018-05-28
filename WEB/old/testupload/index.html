@@ -9,6 +9,7 @@
 	<title>Subir archivos usando PHP - jQuery - Bootstrap</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../node_modules/propellerkit/dist/css/propeller.min.css">
 </head>
 
 <body>
@@ -35,6 +36,7 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../node_modules/propellerkit/dist/js/propeller.min.js"></script>
 	<script>
 		function upload_image() { //Funcion encargada de enviar el archivo via AJAX
 			$(".upload-msg").text('Cargando...');
@@ -61,7 +63,7 @@
 						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function () {
 							$(this).remove();
 						});
-					}, 5000);
+					}, 10000);
 				}
 			});
 
