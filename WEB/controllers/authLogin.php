@@ -51,13 +51,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $db->close();
 }
 
-$nombresCompletos = $usuario->getNombre().' '.$usuario->getApellido();
-
 $_SESSION['nombre']                 = $usuario->getNombre();
 $_SESSION['apellido']               = $usuario->getApellido();
 $_SESSION['cod_rol']                = $usuario->getCod_rol();
 $_SESSION['cod_estado_usuario']     = $usuario->getCod_estado_usuario();
-$_SESSION['nombres_completos']      = $nombresCompletos;
+$_SESSION['nombres_completos']      = $usuario->getNombre().' '.$usuario->getApellido();
 
 switch ($_SESSION['cod_estado_usuario']) {
 case '1': // -- cod_estado_usuario 1 Inactivo --
