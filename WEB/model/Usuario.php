@@ -85,7 +85,7 @@ class Usuario
      * Set the value of fecha_creado
      *
      * @return  self
-     */ 
+     */
     public function setFecha_creado($fecha_creado)
     {
         include '../config/Database.php';
@@ -96,7 +96,7 @@ class Usuario
 
     /**
      * Get the value of cod_estado_usuario
-     */ 
+     */
     public function getCod_estado_usuario()
     {
         return $this->cod_estado_usuario;
@@ -106,7 +106,7 @@ class Usuario
      * Set the value of cod_estado_usuario
      *
      * @return  self
-     */ 
+     */
     public function setCod_estado_usuario($cod_estado_usuario)
     {
         include '../config/Database.php';
@@ -117,7 +117,7 @@ class Usuario
 
     /**
      * Get the value of cod_rol
-     */ 
+     */
     public function getCod_rol()
     {
         return $this->cod_rol;
@@ -127,7 +127,7 @@ class Usuario
      * Set the value of cod_rol
      *
      * @return  self
-     */ 
+     */
     public function setCod_rol($cod_rol)
     {
         include '../config/Database.php';
@@ -138,7 +138,7 @@ class Usuario
 
     /**
      * Get the value of cod_cargo
-     */ 
+     */
     public function getCod_cargo()
     {
         return $this->cod_cargo;
@@ -148,7 +148,7 @@ class Usuario
      * Set the value of cod_cargo
      *
      * @return  self
-     */ 
+     */
     public function setCod_cargo($cod_cargo)
     {
         include '../config/Database.php';
@@ -159,7 +159,7 @@ class Usuario
 
     /**
      * Get the value of cod_area
-     */ 
+     */
     public function getCod_area()
     {
         return $this->cod_area;
@@ -169,7 +169,7 @@ class Usuario
      * Set the value of cod_area
      *
      * @return  self
-     */ 
+     */
     public function setCod_area($cod_area)
     {
         include '../config/Database.php';
@@ -180,7 +180,7 @@ class Usuario
 
     /**
      * Get the value of password
-     */ 
+     */
     public function getPassword()
     {
         return $this->password;
@@ -190,7 +190,7 @@ class Usuario
      * Set the value of password
      *
      * @return  self
-     */ 
+     */
     public function setPassword($password)
     {
         include '../config/Database.php';
@@ -201,7 +201,7 @@ class Usuario
 
     /**
      * Get the value of email
-     */ 
+     */
     public function getEmail()
     {
         return $this->email;
@@ -211,7 +211,7 @@ class Usuario
      * Set the value of email
      *
      * @return  self
-     */ 
+     */
     public function setEmail($email)
     {
         include '../config/Database.php';
@@ -222,7 +222,7 @@ class Usuario
 
     /**
      * Get the value of cod_genero
-     */ 
+     */
     public function getCod_genero()
     {
         return $this->cod_genero;
@@ -232,7 +232,7 @@ class Usuario
      * Set the value of cod_genero
      *
      * @return  self
-     */ 
+     */
     public function setCod_genero($cod_genero)
     {
         include '../config/Database.php';
@@ -243,7 +243,7 @@ class Usuario
 
     /**
      * Get the value of apellido
-     */ 
+     */
     public function getApellido()
     {
         return $this->apellido;
@@ -253,7 +253,7 @@ class Usuario
      * Set the value of apellido
      *
      * @return  self
-     */ 
+     */
     public function setApellido($apellido)
     {
         include '../config/Database.php';
@@ -264,7 +264,7 @@ class Usuario
 
     /**
      * Get the value of nombre
-     */ 
+     */
     public function getNombre()
     {
         return $this->nombre;
@@ -274,7 +274,7 @@ class Usuario
      * Set the value of nombre
      *
      * @return  self
-     */ 
+     */
     public function setNombre($nombre)
     {
         include '../config/Database.php';
@@ -285,7 +285,7 @@ class Usuario
 
     /**
      * Get the value of cod_tipo_doc
-     */ 
+     */
     public function getCod_tipo_doc()
     {
         return $this->cod_tipo_doc;
@@ -295,7 +295,7 @@ class Usuario
      * Set the value of cod_tipo_doc
      *
      * @return  self
-     */ 
+     */
     public function setCod_tipo_doc($cod_tipo_doc)
     {
         include '../config/Database.php';
@@ -306,7 +306,7 @@ class Usuario
 
     /**
      * Get the value of documento
-     */ 
+     */
     public function getDocumento()
     {
         return $this->documento;
@@ -316,7 +316,7 @@ class Usuario
      * Set the value of documento
      *
      * @return  self
-     */ 
+     */
     public function setDocumento($documento)
     {
         include '../config/Database.php';
@@ -327,7 +327,7 @@ class Usuario
 
     /**
      * Get the value of id_usuario
-     */ 
+     */
     public function getId_usuario()
     {
         return $this->id_usuario;
@@ -337,7 +337,7 @@ class Usuario
      * Set the value of id_usuario
      *
      * @return  self
-     */ 
+     */
     public function setId_usuario($id_usuario)
     {
         include '../config/Database.php';
@@ -354,7 +354,7 @@ class Usuario
     function createUser()
     {
         include '../config/Database.php';
-        define('ACTIVO', '2');//Defecto num 2: Activo por ENUM Estado de Ususario
+        define('INACTIVO', '1');//Defecto num 2: Activo por ENUM Estado de Ususario
 
         $sql_insert = "INSERT INTO `usuario`
                             (`cod_tipo_doc`,
@@ -379,7 +379,7 @@ class Usuario
                             '".$this->getCod_area()."',
                             '".$this->getCod_cargo()."',
                             '".$this->getCod_rol()."',
-                            '".ACTIVO."');";
+                            '".INACTIVO."');";
 
         $insertadoClienteDb = $db->query($sql_insert) or die(infoErrorCreatedUser($db));
         //$insertadoClienteDb->close();
@@ -469,6 +469,7 @@ class Usuario
                     $this->apellido             = $obj->apellido;
                     $this->cod_genero           = $obj->cod_genero;
                     $this->email                = $obj->email;
+                    $this->password             = $obj->password;
                     $this->cod_area             = $obj->cod_area;
                     $this->cod_cargo            = $obj->cod_cargo;
                     $this->cod_rol              = $obj->cod_rol;
@@ -536,6 +537,82 @@ class Usuario
 
             return ($actualizadoUsuarioDb) ? true : false;
     } //End UpdateUser()
+
+
+    /**
+     * Confirmar nuevo usuario
+     *
+     * @return Boolean confirmadaNuevoUsuario
+     */
+    public function confirmNewUser()
+    {
+        include '../config/Database.php';
+
+        $sql_update = "UPDATE `usuario`
+                        SET `documento`             = '".$this->getDocumento()."',
+                            `nombre`                = '".$this->getNombre()."',
+                            `apellido`              = '".$this->getApellido()."',
+                            `password`              = '".$this->getPassword()."',
+                            `cod_estado_usuario`    = '".$this->getCod_estado_usuario()."'
+                        WHERE
+                            `usuario`.`id_usuario`  = '".$this->getId_usuario()."'";
+
+            $confirmadaNuevoUsuarioDb = $db->query($sql_update) or die(infoErrorConfirmNewUser($db));
+
+            /* close connection */
+            $db->close();
+
+            return ($confirmadaNuevoUsuarioDb) ? true : false;
+    } //End confirmNewUser()
+
+
+    /**
+     * Cambia contraseña al codigo de confirmacion por solicitado de usuario
+     *
+     * @return Boolean recuperadoClave
+     */
+    public function recoveryPasswordUser()
+    {
+        include '../config/Database.php';
+        $codConfirm = bin2hex(random_bytes(7));
+
+        $sql_update = "UPDATE `usuario`
+                        SET
+                            `password`              = '".$codConfirm."'
+                        WHERE
+                            `usuario`.`id_usuario`  = '".$this->getId_usuario()."'";
+
+            $recuperadoClaveUsuarioDb = $db->query($sql_update) or die(infoErrorRecoveryPasswordUser($db));
+
+            /* close connection */
+            $db->close();
+
+            return ($recuperadoClaveUsuarioDb) ? true : false;
+    } //End recoveryPasswordUser()
+
+
+    /**
+     * Restablecer nueva contraseña, solicitado por usuario
+     *
+     * @return Boolean restablecidoNuevoClave
+     */
+    public function resetPasswordUser()
+    {
+        include '../config/Database.php';
+
+        $sql_update = "UPDATE `usuario`
+                        SET
+                            `password`              = '".$this->getPassword()."'
+                        WHERE
+                            `usuario`.`id_usuario`  = '".$this->getId_usuario()."'";
+
+            $restablecidoNuevoClaveUsuarioDb = $db->query($sql_update) or die(infoErrorResetPasswordUser($db));
+
+            /* close connection */
+            $db->close();
+
+            return ($restablecidoNuevoClaveUsuarioDb) ? true : false;
+    } //End resetPasswordUser()
 
     /**
      * Desactivar usuario
@@ -741,6 +818,105 @@ function infoErrorUpdateUser($db)
             <hr>
             <div class="modal-body">
                 Hubo un error al actualizar al Usuario.
+                <br>
+                <br>
+                <strong>Origen error:</strong>
+                </br> ' . mysqli_error($db) . '
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>';
+
+}
+
+/**
+ * Imprimir Aviso error confirmada nuevo usuario
+ *
+ * $db @param Object db desde BD
+ *
+ * @return String echo html
+ */
+function infoErrorConfirmNewUser($db)
+{
+    echo '<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                <h1 class="section-title modal-title text-center"> Oooops!</h1>
+            </div>
+            <hr>
+            <div class="modal-body">
+                Hubo un error al confirmada nuevo usuario.
+                <br>
+                <br>
+                <strong>Origen error:</strong>
+                </br> ' . mysqli_error($db) . '
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>';
+
+}
+
+/**
+ * Imprimir Aviso error recuperar la contrseña del usuario
+ *
+ * $db @param Object db desde BD
+ *
+ * @return String echo html
+ */
+function infoErrorRecoveryPasswordUser($db)
+{
+    echo '<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                <h1 class="section-title modal-title text-center"> Oooops!</h1>
+            </div>
+            <hr>
+            <div class="modal-body">
+                Hubo un error al recuperar contraseña del usuario.
+                <br>
+                <br>
+                <strong>Origen error:</strong>
+                </br> ' . mysqli_error($db) . '
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>';
+
+}
+
+/**
+ * Imprimir Aviso error restablecer la contrseña del usuario
+ *
+ * $db @param Object db desde BD
+ *
+ * @return String echo html
+ */
+function infoErrorResetPasswordUser($db)
+{
+    echo '<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                <h1 class="section-title modal-title text-center"> Oooops!</h1>
+            </div>
+            <hr>
+            <div class="modal-body">
+                Hubo un error al restablecer contraseña del usuario.
                 <br>
                 <br>
                 <strong>Origen error:</strong>
