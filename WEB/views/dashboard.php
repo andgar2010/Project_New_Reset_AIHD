@@ -179,14 +179,11 @@ function printCodRolToText($cod_rol)
                     <div class="media-body media-middle">
                         <?php echo $nombreUsuario;?> <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
                     </div>
-                    <div class="media-right media-middle">
-                        <i class="dic-more-vert dic"></i>
+                    <div>
+                        <i class="dic-more-vert dic" style="margin-left: 55px;">
+                            <?php printCodRolToText($codRol);?>
+                        </i>
                     </div>
-                    <span >
-                            <i class="dic-more-vert dic">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php printCodRolToText($codRol);?>
-                            </i>
-                    </span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
@@ -317,7 +314,7 @@ function printCodRolToText($cod_rol)
 
                 <?php 
                 
-                var_dump($_SESSION);
+                print_r($_SESSION);
 
                 ?>
 
