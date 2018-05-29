@@ -3,7 +3,7 @@
    <description></description>
    <name>button_Ingresar</name>
    <tag></tag>
-   <elementGuidId>c2e00d06-41a7-4aee-bc84-882491db2726</elementGuidId>
+   <elementGuidId>c073e6d8-4618-4214-aa2f-8f19b84cf433</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>

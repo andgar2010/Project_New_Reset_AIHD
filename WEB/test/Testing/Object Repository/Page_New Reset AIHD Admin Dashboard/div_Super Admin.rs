@@ -3,7 +3,7 @@
    <description></description>
    <name>div_Super Admin</name>
    <tag></tag>
-   <elementGuidId>df5b0595-b871-4cfa-b155-1b196f8bd1c4</elementGuidId>
+   <elementGuidId>93ab175e-09c5-4112-aa24-e331dfbf83bf</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -34,6 +34,6 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html[1]/body[1]/aside[@class=&quot;pmd-sidebar sidebar-default pmd-sidebar-left bg-fill-darkblue sidebar-with-icons pmd-sidebar-open pmd-sidebar-slide-push&quot;]/ul[@class=&quot;nav pmd-sidebar-nav&quot;]/li[@class=&quot;dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg&quot;]/a[@class=&quot;btn-user dropdown-toggle media&quot;]/div[@class=&quot;media-body media-middle&quot;]</value>
+      <value>/html[1]/body[1]/aside[@class=&quot;pmd-sidebar sidebar-default pmd-sidebar-left bg-fill-darkblue sidebar-with-icons pmd-sidebar-left-fixed&quot;]/ul[@class=&quot;nav pmd-sidebar-nav&quot;]/li[@class=&quot;dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg&quot;]/a[@class=&quot;btn-user dropdown-toggle media&quot;]/div[@class=&quot;media-body media-middle&quot;]</value>
    </webElementProperties>
 </WebElementEntity>

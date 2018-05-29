@@ -3,7 +3,7 @@
    <description></description>
    <name>button_Inicia sesion</name>
    <tag></tag>
-   <elementGuidId>b0307ca3-c8ee-44af-9048-9ed0a7bed07e</elementGuidId>
+   <elementGuidId>51ff4dcf-9e47-4a2b-a43f-d8349c24fbe1</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
