@@ -234,23 +234,35 @@ function printCodRolToText($cod_rol)
             <!-- End Lista de Tickets-->
 
             <!-- Gestion de usuarios  -->
-            <li>
-                <a id="listUsers" class="pmd-ripple-effect">
-                    <span class="media-body">
-                        <i class="fa fa-user fa-lg"></i>Gestión de usuarios
-                    </span>
-                </a>
-            </li>
+            <?php
+            if ($codRol == 1 || $codRol == 1) {
+                echo '
+                <li>
+                    <a id="listUsers" class="pmd-ripple-effect">
+                        <span class="media-body">
+                            <i class="fa fa-user fa-lg"></i>Gestión de usuarios
+                        </span>
+                    </a>
+                </li>';
+            }
+
+            ?>
             <!-- End Gestion de usuarios  -->
 
             <!-- Gestion de Equipos  -->
-            <li>
+           <?php
+           if ($codRol == 1 || $codRol == 2) {
+               echo '
+                <li>
                 <a id="listDevices" class="pmd-ripple-effect">
                     <span class="media-body">
                         <i class="fa fa-desktop fa-lg"></i>Gestión de Equipos
                     </span>
                 </a>
             </li>
+               ';
+           }
+           ?>
             <!-- End Gestion de Equipos  -->
 
             <!-- Panel de Control-->
