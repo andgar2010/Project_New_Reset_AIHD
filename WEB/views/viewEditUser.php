@@ -417,6 +417,7 @@ function printBtnRadioCodGenero($cod_genero)
             <label id="cod_genero" for="femenino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
                 <input type="radio" name="cod_genero" id="femenino" value="2" checked>&nbsp;Femenino
             </label>';
+            break;
 
     default:
         echo'<label id="cod_genero" for="masculino" class="radio-inline pmd-radio pmd-radio-ripple-effect">
