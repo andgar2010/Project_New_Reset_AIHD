@@ -11,7 +11,7 @@
  * @version  Release:<ASD4A6S54DASD>
  * @link     www.github.com/andgar2010
  */
-$url_host = '..';
+$url_host = '../..';
 $js_path        =$url_host .'/assets/js/';
 $framework_path =$url_host .'/assets/Framework/';
 //  JAVASCRIPT NODE_MODULES
@@ -70,4 +70,12 @@ echo '
 <!-- Javascript for Propeller -->
 <!-- build:[src] assets/js/ -->
 <script src="' . $propeller_js . '"></script>
-<!-- /build -->';
+<!-- /build -->
+
+<!-- Javascript for Ajax Load Page -->
+<!-- build:[src] assets/js/ -->
+<script src="' . $js_path . 'ajaxLoadPage.js"></script>
+<!-- /build -->
+
+
+';

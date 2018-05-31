@@ -1,5 +1,5 @@
 <?php
-$url_host       = '..';
+$url_host       = '../..';
 $image_path     = $url_host."/assets/images/";
 $js_path        = $url_host.'/assets/js/';
 $css_path       = $url_host.'/assets/css/';

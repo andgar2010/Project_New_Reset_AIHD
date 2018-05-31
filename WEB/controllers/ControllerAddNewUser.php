@@ -51,14 +51,14 @@ if (isset($_POST['btnClickedUser']) == 'send') {
             $class  = "alert alert-success";
             $msg    = 'Datos insertados con éxito';
             //header("location: ../views/viewListUsers.php");
-            header("location: ../views/viewListUsers.php?info=added&name=$nombreUsuario");
+            header("location: ../views/mgmtUser/viewListUsers.php?info=added&name=$nombreUsuario");
             //ob_end_flush();
         } else {
             $stusT  = 'error';
             $titleT = 'Error';
             $msg    = $msgT = 'No se pudieron insertar los datos';
             $class  = 'alert alert-danger';
-            header("location: ../views/viewAddUser.php");
+            header("location: ../views/mgmtUser/viewAddUser.php");
         }
 
         if (isset($msg) && isset($class)) {

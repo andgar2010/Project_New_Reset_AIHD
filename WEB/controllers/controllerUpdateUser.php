@@ -40,7 +40,7 @@ if (isset($_POST['btnClickedUser']) == 'sendUpdate') {
         $actualizadoUsuarioDB = $usuario->updateUser();
         if ($actualizadoUsuarioDB) {
             $name = $usuario->getNombre();
-            header("location: ../views/viewListUsers.php?info=updated&name=$name");
+            header("location: ../views/mgmtUser/viewListUsers.php?info=updated&name=$name");
             // $stusT  = 'success';
             // $titleT = 'Bien hecho!';
             // $msgT   = 'Los datos han sido guardados con éxito.';

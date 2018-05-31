@@ -5,7 +5,7 @@ if (isset($_SESSION)) {
     $nombreUsuario  = $_SESSION['nombres_completos'];
     $codRol         = $_SESSION['cod_rol'];
 } else {
-    header('location: ../index.php?info=noAuth');
+    header('location: ../../index.php?info=noAuth');
 }
 
 /**
@@ -49,7 +49,7 @@ function printCodRolToText($cod_rol)
 
     <title>New Reset AIHD Admin Dashboard</title>
     <?php
-        require '../config/base_head.php';
+        require '../../config/base_head.php';
         //require '../config/googleAnaytics.php';
     ?>
     <!-- Styles Ends -->
@@ -88,7 +88,7 @@ function printCodRolToText($cod_rol)
                                 <a href="javascript:void(0)">
                                     <div class="media-left">
                                         <span class="avatar-list-img40x40">
-                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../assets/images/profile-1.png" data-holder-rendered="true">
+                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../../assets/images/profile-1.png" data-holder-rendered="true">
                                         </span>
                                     </div>
                                     <div class="media-body">
@@ -102,7 +102,7 @@ function printCodRolToText($cod_rol)
                                 <a href="javascript:void(0)">
                                     <div class="media-left">
                                         <span class="avatar-list-img40x40">
-                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../assets/images/profile-2.png" data-holder-rendered="true">
+                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../../assets/images/profile-2.png" data-holder-rendered="true">
                                         </span>
                                     </div>
                                     <div class="media-body">
@@ -116,7 +116,7 @@ function printCodRolToText($cod_rol)
                                 <a href="javascript:void(0)">
                                     <div class="media-left">
                                         <span class="avatar-list-img40x40">
-                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../assets/images/profile-3.png" data-holder-rendered="true">
+                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../../assets/images/profile-3.png" data-holder-rendered="true">
                                         </span>
                                     </div>
 
@@ -131,7 +131,7 @@ function printCodRolToText($cod_rol)
                                 <a href="javascript:void(0)">
                                     <div class="media-left">
                                         <span class="avatar-list-img40x40">
-                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../assets/images/profile-4.png" data-holder-rendered="true">
+                                            <img alt="40x40" data-src="holder.js/40x40" class="img-responsive" src="../../assets/images/profile-4.png" data-holder-rendered="true">
                                         </span>
                                     </div>
                                     <div class="media-body">
@@ -152,8 +152,8 @@ function printCodRolToText($cod_rol)
                 <a href="javascript:void(0);" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle">
                     <i class="material-icons">menu</i>
                 </a>
-                <a href="../index.php" class="navbar-brand">
-                    <img class="img-responsive" src="../assets/images/LogoInverted_TEXTV2Alpha_128.png" alt="Logo New Reset AHID">
+                <a href="../../index.php" class="navbar-brand">
+                    <img class="img-responsive" src="../../assets/images/LogoInverted_TEXTV2Alpha_128.png" alt="Logo New Reset AHID">
                 </a>
             </div>
         </div>
@@ -174,7 +174,7 @@ function printCodRolToText($cod_rol)
             <li class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg">
                 <a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" aria-expandedhref="javascript:void(0);">
                     <div class="media-left">
-                        <img src="../assets/images/user-icon.png" alt="New User">
+                        <img src="../../assets/images/user-icon.png" alt="New User">
                     </div>
                     <div class="media-body media-middle">
                         <?php echo $nombreUsuario;?> <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
@@ -324,10 +324,8 @@ function printCodRolToText($cod_rol)
             <div class="row">
                 <div id="content" class="">
 
-                <?php 
-                
-                print_r($_SESSION);
-
+                <?php
+                    print_r($_SESSION);
                 ?>
 
                 </div>
@@ -341,13 +339,13 @@ function printCodRolToText($cod_rol)
     <!--end content area-->
 
     <!-- Scripts Starts -->
-    <?php include '../config/base_script.php';?>
+    <?php include '../../config/base_script.php';?>
     <!-- Scripts End -->
 
     <!-- Javascript for Datepicker -->
     <!-- build:[src] components/datetimepicker/js/ -->
-    <script type="text/javascript" language="javascript" src="../node_modules/moment/min/moment-with-locales.js"></script>
-    <script type="text/javascript" language="javascript" src="../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
+    <script type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
     <!-- /build -->
     <script>
         // Linked date and time picker
@@ -356,53 +354,8 @@ function printCodRolToText($cod_rol)
         $(".auto-update-year").html(new Date().getFullYear());
     </script>
 
-    <script src="../assets/js/animateSidebar.js"></script>
-
-    <script>
-    $(document).ready(function()
-    {
-        $("#newTicket").click(function()
-        {
-            $.ajax(
-                { url: "./addTicket.php", success: function(result)
-                {
-                    $("#content").html(result);
-                }
-                }
-            );
-        });
-        $("#listTicket").click(function()
-        {
-            $.ajax(
-                { url: "./listTicket.php", success: function(result)
-                {
-                    $("#content").html(result);
-                }
-                }
-            );
-        });
-        $("#listUsers").click(function()
-        {
-            $.ajax(
-                { url: "./viewListUsers.php", success: function(result)
-                {
-                    $("#content").html(result);
-                }
-                }
-            );
-        });
-        $("#addUser").click(function()
-        {
-            $.ajax(
-                { url: "./viewAddUser.php", success: function(result)
-                {
-                    $("#content").html(result);
-                }
-                }
-            );
-        });
-    });
-    </script>
+    <script src="../../assets/js/animateSidebar.js"></script>
+    <script src="../../assets/js/ajaxLoadPage.js"></script>
 
 </body>
 

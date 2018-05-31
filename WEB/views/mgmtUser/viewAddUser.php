@@ -31,15 +31,15 @@ ob_start();
      * Source DB
      */
 
-    require '../config/base_head.php';
-    require '../config/base_script.php';
-    require '../config/Toastr.php';
+    // require '../../config/base_head.php';
+    require '../../config/base_script.php';
+    require '../../config/Toastr.php';
 
-    require '../model/RolUsuario.php';
-    require '../model/CargoUsuario.php';
-    require '../model/AreaUsuario.php';
-    require '../model/TipoDocumentoUsuario.php';
-    require '../model/GeneroUsuario.php';
+    require '../../model/RolUsuario.php';
+    require '../../model/CargoUsuario.php';
+    require '../../model/AreaUsuario.php';
+    require '../../model/TipoDocumentoUsuario.php';
+    require '../../model/GeneroUsuario.php';
     $rol        = new RolUsuario();
     $cargo      = new CargoUsuario();
     $area       = new AreaUsuario();
@@ -64,7 +64,7 @@ ob_start();
             </div>
             <hr>
             <div class="modal-body">
-                <form method="POST" action="../controllers/controllerAddNewUser.php" class="">
+                <form method="POST" action="../../controllers/controllerAddNewUser.php" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">

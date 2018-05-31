@@ -42,7 +42,6 @@ class Usuario
     protected $cod_estado_usuario;
     protected $fecha_creado;
     protected $encontradoDB;
-    protected $db;
 
     /**
      * This Construct Class Usuario
@@ -392,9 +391,9 @@ class Usuario
      *
      * @return String arrayListUsers
      */
-    function readUser()
+    function readListUsers()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM usuario";
 
         if ($output_sql = $db->query($sql_query)) {
@@ -408,9 +407,9 @@ class Usuario
                 while ($row = $output_sql->fetch_assoc()) {
                     echo'
                     <tr>
-                        <td class="text-center">'.$row['id_usuario'].'</td>
+                        <td class="text-center" id="id_usuario">'.$row['id_usuario'].'</td>
                         <td>
-                            <a href="../views/viewProfileUser.php?id='.$row['id_usuario'].'">
+                            <a href="../views/mgmtUser/viewProfileUser.php?id='.$row['id_usuario'].'">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['nombre'].' '. $row['apellido'].
                             '</a> </td>';
@@ -423,11 +422,13 @@ class Usuario
 
                         printCodEstadoUsuarioToText($row['cod_estado_usuario']);
 
-                    echo'
+
+                        //href="../mgmtUser/viewEditUser.php?id='.$row['id_usuario'].'"
+                    echo '
                         <td class="text-center">
-                            <a href="viewEditUser.php?id='.$row['id_usuario'].'" title="Editar datos" class="btn btn-primary btn-sm">
+                            <a id="editUser" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
-                            <a href="../controllers/controllerDeletedUser.php?btnClickedUser=delete&name='.$row['nombre'].'&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
+                            <a href="../../controllers/controllerDeletedUser.php?btnClickedUser=delete&name='.$row['nombre'].'&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
                         </td>
                     </tr>';
@@ -448,7 +449,7 @@ class Usuario
      */
     function readSingleRecordUsuer($id_usuario)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM usuario WHERE id_usuario =". $id_usuario;
 
         if ($output_sql = $db->query($sql_query)) {
@@ -510,7 +511,6 @@ class Usuario
      */
     public function updateUser()
     {
-        //function updateUser($id_usuario, $cod_tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol, $cod_estado_usuario)
         include '../config/Database.php';
 
         $sql_update = "UPDATE `usuario`
@@ -546,7 +546,7 @@ class Usuario
      */
     public function confirmNewUser()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
 
         $sql_update = "UPDATE `usuario`
                         SET `documento`             = '".$this->getDocumento()."',
@@ -573,7 +573,7 @@ class Usuario
      */
     public function recoveryPasswordUser()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $codConfirm = bin2hex(random_bytes(7));
 
         $sql_update = "UPDATE `usuario`
@@ -598,7 +598,7 @@ class Usuario
      */
     public function resetPasswordUser()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
 
         $sql_update = "UPDATE `usuario`
                         SET
@@ -625,7 +625,7 @@ class Usuario
     {
         define('INACTIVO', '1');
 
-        include '../config/Database.php';
+        include '../../config/Database.php';
             $sql_update = "UPDATE
 								`usuario`
 							SET

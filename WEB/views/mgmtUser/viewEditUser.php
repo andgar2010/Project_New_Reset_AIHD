@@ -15,7 +15,7 @@
 if (isset($_GET['id'])) {
 
     $id_usuario = intval($_GET['id']);
-    include '../model/Usuario.php';
+    include '../../model/Usuario.php';
     $usuario = new Usuario();
     $usuario->readSingleRecordUsuer($id_usuario);
 
@@ -55,10 +55,11 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Editar usuario</title>
-    <meta name="description" content="Registro de nuevo usuario de NEW RESET A.H.I.D.">
+    <meta name="description" content="Editar usuario de NEW RESET A.H.I.D.">
     <!-- End HTML Meta Tags -->
 
-    <?php   require '../config/base_head.php';
+    <?php   require '../../config/base_head.php';
+            require '../../config/base_script.php';
             //require '../config/googleAnaytics.php';?>
 
 
@@ -81,7 +82,7 @@ if (isset($_GET['id'])) {
             <div class="modal-body">
         <?php
         echo'
-                <form method="post" action="../controllers/controllerUpdateUser.php" class="">
+                <form method="post" action="../../controllers/controllerUpdateUser.php" class="">
 
                     <div class="row">
                         <div class="col-sm-4">
@@ -216,7 +217,7 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <a id="listUsers" href="./viewListUsers.php">
+                            <a id="listUsers" href="../dashboard/indexDashboard.php">
                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
                             </a>
                         </div>
@@ -228,8 +229,6 @@ if (isset($_GET['id'])) {
         </div>
     </div>
     <div class="modal-footer"></div>
-
-    <?php require '../config/base_script.php';?>
     <!--
     <script src="assets/js/bs-animation.js"></script>
     <script src="assets/js/checkComparativePassword.js"></script>
