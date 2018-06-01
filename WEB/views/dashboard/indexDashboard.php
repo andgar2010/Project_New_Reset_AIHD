@@ -198,26 +198,10 @@ function printCodRolToText($cod_rol)
             <!-- Solicitar nuevo ticket -->
             <li>
                 <a id="newTicket">
-                    <!-- href="newTicket.php" target="iframe" -->
                     <div class="row">
                         <button type="button" class="btn btn-primary pmd-ripple-effect pmd-z-depth-2">
                             <i class="fa fa-plus fa-lg"></i>Solicitar nuevo ticket
                         </button>
-                        <!-- <br>
-                        <br>
-                        <button type="button" class="btn btn-large btn-success pmd-ripple-effect">
-                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
-                        </button>
-                        <br>
-                        <br>
-                        <button type="button" class="btn btn-large btn-danger pmd-ripple-effect">
-                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
-                        </button>
-                        <br>
-                        <br>
-                        <button type="button" class="btn btn-large btn-info pmd-ripple-effect">
-                            <i class="fa fa-plus"></i>Solicitar nuevo ticket
-                        </button> -->
                     </div>
                 </a>
             </li>

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista de Tickets</title>
-    <?php include '../config/base_head.php';?>
-    <?php include '../config/googleAnaytics.php';?>
-    <?php include '../config/Toastr.php';?>
+    <?php include '../../config/base_head.php';?>
+    <?php include '../../config/googleAnaytics.php';?>
+    <?php include '../../config/Toastr.php';?>
     <!-- Styles Ends -->
 </head>
 <body>
@@ -106,7 +106,7 @@
     <!-- End div container -->
 
     <!-- Scripts Starts -->
-    <?php include '../config/base_script.php';?>
+    <?php include '../../config/base_script.php';?>
     <!-- Scripts End -->
 </body>
 </html>

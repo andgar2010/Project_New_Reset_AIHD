@@ -12,9 +12,8 @@ session_start();
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 
     <title>Nuevo Ticket</title>
-    <?php include '../config/base_head.php';?>
-    <?php include '../config/googleAnaytics.php';?>
-    <?php include '../config/Toastr.php';?>
+    <?php include '../../config/base_head.php';?>
+    <?php include '../../config/Toastr.php';?>
 </head>
 
 <body>
@@ -249,7 +248,7 @@ session_start();
                                                 <button id="enviar" name="enviar" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect">Enviar</button>
                                             </div>
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-                                            <a href="./listTicket.php">
+                                            <a id="listTicket">
                                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
                                             </a>
                                         </div>
@@ -274,7 +273,7 @@ session_start();
         <!-- End Row -->
     </div>
     <!-- End Container -->
-    <?php include '../config/base_script.php';?>
+    <?php include '../../config/base_script.php';?>
 
     <script>
         // Linked date and time picker
@@ -284,9 +283,9 @@ session_start();
     </script>
 
     <!-- Animate Sidebar -->
-    <script src="../assets/js/animateSidebar.js"></script>
+    <script src="../../assets/js/animateSidebar.js"></script>
 
-    <?php include '../config/TinyMCE.php';?>
+    <?php include '../../config/TinyMCE.php';?>
 
     <!-- Moment and format datetime -->
     <?php include '../config/moment.php';?>

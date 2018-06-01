@@ -68,7 +68,7 @@ $(document).ready(function() {
     // Go list of Ticket
     $("#listTicket").click(function() {
         $.ajax({
-            url: "../mgmtTicket/listTicket.php",
+            url: "../mgmtTicket/viewListTicket.php",
             success: function(result) {
                 $("#content").html(result);
             }
@@ -78,7 +78,7 @@ $(document).ready(function() {
     // Go add new Ticket
     $("#newTicket").click(function() {
         $.ajax({
-            url: "../mgmtTicket/addTicket.php",
+            url: "../mgmtTicket/viewAddTicket.php",
             success: function(result) {
                 $("#content").html(result);
             }
