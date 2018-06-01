@@ -391,7 +391,7 @@ class Usuario
      *
      * @return String arrayListUsers
      */
-    function readListUsers()
+    function readAllListUsers()
     {
         include '../../config/Database.php';
         $sql_query = "SELECT * FROM usuario";
@@ -405,8 +405,8 @@ class Usuario
                 </tr>';
             } else {
                 while ($row = $output_sql->fetch_assoc()) {
-                    echo'
-                    <tr>
+                    echo '
+                    <tr id="' . $row['id_usuario'] . '">
                         <td class="text-center" id="id_usuario">'.$row['id_usuario'].'</td>
                         <td>
                             <a href="../views/mgmtUser/viewProfileUser.php?id='.$row['id_usuario'].'">

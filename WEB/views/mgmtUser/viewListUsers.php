@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +12,14 @@
     require '../../config/Toastr.php'
     //include '../config/googleAnaytics.php';
     ;?>
-    <!-- Styles Ends -->
+        <!-- Styles Ends -->
 </head>
+
 <body>
     <!-- div container -->
     <div class="container">
         <!-- div content -->
-        <div  class="table-wrapper">
+        <div class="table-wrapper">
             <!-- div row -->
             <div class="table-title">
                 <div class="row pmd-card-title">
@@ -29,7 +31,7 @@
                     <!-- End div .col-sm-8 -->
                     <div class="col-sm-4 col-xs-6">
                         <br>
-                        <a id="addUser" >
+                        <a id="addUser">
                             <button type="button" class="btn btn-info pmd-btn-raised pmd-ripple-effect">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Agregar usuario
                             </button>
@@ -43,7 +45,7 @@
 
             <!-- div row -->
             <div class="row">
-            <?php
+                <?php
             if (isset($_GET['info']) && isset($_GET['name'])) {
 
                 $btnMsg = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>';
@@ -106,7 +108,7 @@
             <div class="row">
                 <!-- TABLE -->
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped table-bordered">
+                    <table id="myTable" class="table table-hover table-striped table-bordered tablesorter">
                         <thead>
                             <tr>
                                 <th class="text-center">ID</th>
@@ -119,10 +121,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
+                            <?php
                             require '../../model/Usuario.php';
                             $usuario = new Usuario();
-                            $usuario->readListUsers();
+                            $usuario->readAllListUsers();
                         ?>
                         </tbody>
                     </table>
@@ -138,6 +140,13 @@
 
     <!-- Scripts Starts -->
     <script src="../../assets/js/ajaxLoadPage.js"></script>
+    <script src="../../node_modules/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myTable").tablesorter();
+        });
+    </script>
     <!-- Scripts End -->
 </body>
+
 </html>
