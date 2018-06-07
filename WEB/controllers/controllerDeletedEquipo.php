@@ -1,15 +1,16 @@
 <?php
 /**
- * Modelo Clase Usuario
+ * Modelo Controller Equipo
  *
- * @category Class
- * @package  Model
+ * @category Controller
+ * @package  Controller
  * @author   Andres Garcia <afagrcia0479@misena.edu.co>
+ * @author   Camila Torres <lctorres14@misena.edu.co>
  * @license  <a href="www.mit.org">mit</a>
  * @version  GIT:<ASD4A6S54DASD>
  * @link     www.github.com/andgar2010
  *
- * This Model of Class User
+ * This Model of Controller Equipo
  * Source DB
  */
 ob_start();
@@ -21,9 +22,9 @@ if (isset($_GET['btnClickedEquipo']) == 'delete') {
     $result = $equipo->desactiveEquipo($id);
 
     if ($result) {
-        header("location: ../views/listEquipo.php?info=deleted&name=$name");
+        header("location: ../views/viewListEquipo.php?info=deleted&name=$name");
     } else {
-        header('location: ../views/listEquipo.php?info=errorDeleted');
+        header('location: ../views/viewListEquipo.php?info=errorDeleted');
     }
 
 }

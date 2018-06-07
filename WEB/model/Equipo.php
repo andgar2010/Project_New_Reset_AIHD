@@ -3,7 +3,7 @@
  * Modelo Clase Equipo
  *
  * @category Class
- * @package  Model
+ * @package  Class
  * @author   Andres Garcia <afagrcia0479@misena.edu.co>
  * @author   Camila Torres <lctorres14@misena.edu.co>
  * @license  <a href="www.mit.org">mit</a>
@@ -145,7 +145,7 @@ class Equipo
      *
      * @return String arrayListUsers
      */
-function readEquipo()
+function readAllEquipo()
     {
         include '../config/Database.php';
         $sql_query = "SELECT * FROM equipo";
@@ -167,9 +167,9 @@ function readEquipo()
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['serial_equipo'].'</a> </td>';
 
-                        printCodTipoEquipoToText($row['cod_tipo_equipo']);
+                        $this->printCodTipoEquipoToTable($row['cod_tipo_equipo']);
 
-                        printCodEstadoEquipoToText($row['cod_estado_equipo']);
+                        $this->printCodEstadoEquipoToTable($row['cod_estado_equipo']);
 
                     echo'
                         <td class="text-center">
@@ -198,7 +198,7 @@ function readEquipo()
         include '../config/Database.php';
         $sql_query = "SELECT * FROM equipo WHERE id_equipo =". $id_equipo;
 
-        if ($output_sql = $db->query($sql_query)) {
+       if ($output_sql = $db->query($sql_query)) {
 
             if ($output_sql->num_rows == 0) {
                 // Si no encontrado usuario en BD
@@ -210,31 +210,13 @@ function readEquipo()
                 /* fetch object array */
                 while ($obj = $output_sql->fetch_object()) {
                     $this->id_equipo           = $obj->id_equipo;
-                    $this->cod_tipo_equipo         = $obj->cod_tipo_equipo;
-                    $this->serial_equipo           = $obj->serial_equipo;
+                    $this->cod_tipo_equipo     = $obj->cod_tipo_equipo;
+                    $this->serial_equipo       = $obj->serial_equipo;
                     $this->cod_estado_equipo   = $obj->cod_estado_equipo;
-                }
-
-                /* fetch associative array */
-                // while ($row = $result->fetch_assoc()) {
-                //     printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
-                //     $this->id_usuario    = $this->sanitize($row['id_usuario']);
-                //     $this->cod_tipo_doc  = $this->sanitize($row['cod_tipo_doc']);
-                //     $this->documento     = $this->sanitize($row['num_cedula']);
-                //     $this->nombre        = $this->sanitize($row['nombre']);
-                //     $this->apellido      = $this->sanitize($row['apellido']);
-                //     $this->cod_genero    = $this->sanitize($row['cod_genero']);
-                //     $this->email         = $this->sanitize($row['email']);
-                //     $this->cod_area      = $this->sanitize($row['cod_area']);
-                //     $this->cod_cargo     = $this->sanitize($row['cod_cargo']);
-                //     $this->cod_rol       = $this->sanitize($row['cod_rol']);
-                //     $this->cod_estado    = $this->sanitize($row['cod_estado']);
-                    //$this->password       = $this->sanitize($passwordRandom);
-                    // $usuario->password   = $usuario->sanitize(password_hash($passwordRandom, PASSWORD_DEFAULT));
-                    //$fecha_creado =  ;//Format Timedate BD '2018-05-13 16:40:39'
+                }             
             }
             /* free output_sql set */
-            $output_sql->close();
+            //$output_sql->close();
         }
         /* close connection */
         $db->close();
@@ -254,10 +236,11 @@ function readEquipo()
 
         $sql_update = "UPDATE `equipo`
                         SET `cod_tipo_equipo`          = '".$this->getCod_tipo_equipo()."',
-                            `serial_equipo`             = '".$this->getserial_equipo()."',
-                            `cod_estado_equipo`    = '".$this->getCod_estado_equipo()."'
+                            `serial_equipo`            = '".$this->getSerial_equipo()."',
+                            `cod_estado_equipo`        = '".$this->getCod_estado_equipo()."'
+
                         WHERE
-                            `equipo`.`id_equipo`  = '".$this->getId_equipo()."'";
+                            `equipo`.`id_equipo`  = ".$this->getId_equipo();
 
             $actualizadoEquipoDb = $db->query($sql_update) or die(infoErrorUpdateEquipo($db));
 
@@ -306,8 +289,6 @@ function readEquipo()
             return ($desactivadoClienteDb) ? true : false;
     } //End DesactivedUser()
 
-}// End Class Usuario
-
 /**
  * Imprimir estado de usuario en texto por codigo de estado de usuario BD
  *
@@ -315,9 +296,10 @@ function readEquipo()
  *
  * @return String echo <td></td>
  */
-function printCodEstadoEquipoToText($cod_estado_equipo)
+function printCodEstadoEquipoToTable($cod_estado_equipo)
 {
-    switch ($cod_estado_equipo) {
+    switch ($cod_estado_equipo)
+     {
     case '1':
         echo '
             <td class="text-center">
@@ -338,19 +320,30 @@ function printCodEstadoEquipoToText($cod_estado_equipo)
         break;
     }
 }
-function printCodTipoEquipoToText($cod_tipo_equipo)
+
+
+
+/**
+ * Imprimir rol de usuario en texto por codigo de rol de usuario BD
+ *
+ * $cod_rol @param int codigo de rol de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */ 
+function printCodTipoEquipoToTable($cod_tipo_equipo)
 {
-    switch ($cod_tipo_equipo) {
+    switch ($cod_tipo_equipo) 
+    {
     case '1':
         echo '
             <td class="text-center">
-                Hardware
+                Escritorio
             </td>';
         break;
     case '2':
         echo '
             <td class="text-center">
-                Software
+                Portatil
             </td>';
         break;
     default:
@@ -362,13 +355,7 @@ function printCodTipoEquipoToText($cod_tipo_equipo)
     }
 }
 
-/**
- * Imprimir rol de usuario en texto por codigo de rol de usuario BD
- *
- * $cod_rol @param int codigo de rol de usuario desde BD
- *
- * @return String echo <td></td>
- */ 
+
 /**
  * Imprimir Aviso error crear nuevo usuario
  *
@@ -434,6 +421,8 @@ function infoErrorUpdateEquipo($db)
     </script>';
 
 }
+
+}// End Class Equipo
 ?>
 
 
