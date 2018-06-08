@@ -5,6 +5,7 @@
  * @category Class
  * @package  Model
  * @author   Andres Garcia <afagrcia0479@misena.edu.co>
+ * @author   Camila Torres <lctorres14@misena.edu.co>
  * @license  <a href="www.mit.org">mit</a>
  * @version  GIT:<ASD4A6S54DASD>
  * @link     www.github.com/andgar2010
