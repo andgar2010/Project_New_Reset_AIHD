@@ -6,30 +6,13 @@ $(document).ready(function() {
 
     // Go list of Users
     $("#listUsers").click(function() {
-        $.ajax({
-            url: "../mgmtUser/viewListUsers.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
+
     });
 
     // Go add new User
     $("#addUser").click(function() {
         $.ajax({
             url: "../mgmtUser/viewAddUser.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
-    });
-
-    // Go Edit User
-    $("#editUser").click(function() {
-        var id_usuario = $("tr>#id_usuario").html();
-        console.log(id_usuario);
-        $.ajax({
-            url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
             success: function(result) {
                 $("#content").html(result);
             }
@@ -89,3 +72,22 @@ $(document).ready(function() {
      * End Go to Ticket Management *
      *******************************/
 });
+
+// Go Edit User
+function goToEditUser(id_usuario) {
+    $.ajax({
+        url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+function goToListUsers() {
+    $.ajax({
+        url: "../mgmtUser/viewListUsers.php",
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}
