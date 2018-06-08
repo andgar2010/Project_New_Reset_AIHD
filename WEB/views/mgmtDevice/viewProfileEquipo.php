@@ -16,7 +16,7 @@
 if (isset($_GET['id'])) {
 
     $id_usuario = intval($_GET['id']);
-    include '../model/Equipo.php';
+    include '../../model/Equipo.php';
     $equipo = new Equipo();
     $equipo->readSingleRecordUsuer($id_equipo);
 
@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
         <meta name="description" content="Registro de nuevo equipo de NEW RESET A.H.I.D.">
         <!-- End HTML Meta Tags -->
 
-        <?php   require '../config/base_head.php';
+        <?php   require '../../config/base_head.php';
             //require '../config/googleAnaytics.php';?>
     </head>
 
@@ -90,16 +90,16 @@ if (isset($_GET['id'])) {
                             </td>
                         </tr>
                     </table>
-                    <a href="../views/listEquipo.php" class="btn btn-sm btn-info">
+                    <a href="../../views/listEquipo.php" class="btn btn-sm btn-info">
 			        	<span class="fa fa-arrow-circle-left fa-lg" aria-hidden="true"></span> Regresar
 			        </a>
 
-			        <a href="../views/viewEditEquipo.php?id=<?php echo $id_usuario;?>" title="Editar datos" class="btn btn-sm btn-success">
+			        <a href="../../views/viewEditEquipo.php?id=<?php echo $id_usuario;?>" title="Editar datos" class="btn btn-sm btn-success">
 			        	<span class="fa fa-edit fa-lg" aria-hidden="true"></span> Editar datos
 			        </a>
 
 
-			        <a href="../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name=<?php echo $serial_equipo .'&nik='.$id_equipo;?>" title="Eliminar" class="btn btn-sm btn-danger" onclick="return confirm(\'Esta seguro de borrar los datos '.$serial_equipo.'? \')">
+			        <a href="../../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name=<?php echo $serial_equipo .'&nik='.$id_equipo;?>" title="Eliminar" class="btn btn-sm btn-danger" onclick="return confirm(\'Esta seguro de borrar los datos '.$serial_equipo.'? \')">
 			        	<span class="fa fa-trash fa-lg" aria-hidden="true"></span> Eliminar
 			        </a>
                 </div>
@@ -107,7 +107,7 @@ if (isset($_GET['id'])) {
         </div>
         <div class="modal-footer"></div>
 
-        <?php require '../config/base_script.php';?>
+        <?php require '../../config/base_script.php';?>
         <?php
        
         /**

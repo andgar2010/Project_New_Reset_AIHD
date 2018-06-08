@@ -29,10 +29,20 @@ $(document).ready(function() {
      ***************************/
 
     // Go list of Device
-    $("#listEquipo").click(function() {
+    $("#listDevices").click(function() {
         $.ajax({
-            url: "../mgmtDevice/viewListEquipo.php",
+            url: "../../views/mgmtDevice/viewListEquipo.php",
             success: function(result) {
+                $("#content").html(result);
+            }
+        });
+    });
+
+    // Go add new Equipo
+    $("#addEquipo").click(function () {
+        $.ajax({
+            url: "../../views/mgmtDevice/viewAddEquipo.php",
+            success: function (result) {
                 $("#content").html(result);
             }
         });

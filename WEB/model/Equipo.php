@@ -147,7 +147,7 @@ class Equipo
      */
 function readAllEquipo()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM equipo";
 
         if ($output_sql = $db->query($sql_query)) {
@@ -163,7 +163,7 @@ function readAllEquipo()
                     <tr>
                         <td class="text-center">'.$row['id_equipo'].'</td>
                         <td>
-                            <a href="../views/viewInfoEquipo.php?id='.$row['id_equipo'].'">
+                            <a href="../mgmtDevice/viewInfoEquipo.php?id='.$row['id_equipo'].'">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['serial_equipo'].'</a> </td>';
 
@@ -175,7 +175,7 @@ function readAllEquipo()
                         <td class="text-center">
                             <a href="viewEditEquipo.php?id='.$row['id_equipo'].'" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
-                            <a href="../controllers/controllerDeletedEquipo.php?btnClickedEquipo=delete&name='.$row['serial_equipo'].'&nik='.$row['id_equipo'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['serial_equipo']. '? \')" class="btn btn-danger btn-sm">
+                            <a href="../../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name='.$row['serial_equipo'].'&nik='.$row['id_equipo'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['serial_equipo']. '? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
                         </td>
                     </tr>';
@@ -195,9 +195,8 @@ function readAllEquipo()
      */
     function readSingleEquipo($id_equipo)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM equipo WHERE id_equipo =". $id_equipo;
-
        if ($output_sql = $db->query($sql_query)) {
 
             if ($output_sql->num_rows == 0) {

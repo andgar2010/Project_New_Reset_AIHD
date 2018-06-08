@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista de equipos</title>
-    <?php include '../config/base_head.php';?>
-    <?php include '../config/googleAnaytics.php';?>
-    <?php include '../config/Toastr.php';?>
+    <?php include '../../config/base_head.php';?>
+    <?php include '../../config/googleAnaytics.php';?>
+    <?php include '../../config/Toastr.php';?>
     <!-- Styles Ends -->
 </head>
 
@@ -81,7 +81,7 @@
                     <!-- End div .col-sm-8 -->
                     <div class="col-sm-4 col-xs-6">
                         <br>
-                        <a id="addUser" href="./viewAddEquipo.php" class="">
+                        <a id="addEquipo"  class="">
                             <button type="button" class="btn btn-info pmd-btn-raised pmd-ripple-effect">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Agregar equipo
                             </button>
@@ -132,7 +132,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            require '../model/Equipo.php';
+                            require '../../model/Equipo.php';
                             $equipo = new Equipo();
                             $equipo->readAllEquipo();
                             ?>
@@ -149,7 +149,7 @@
     <!-- End div container -->
 
     <!-- Scripts Starts -->
-    <?php include '../config/base_script.php';?>
+    <?php include '../../config/base_script.php';?>
     <!-- Scripts End -->
 </body>
 </html>

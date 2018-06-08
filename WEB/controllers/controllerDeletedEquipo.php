@@ -13,18 +13,19 @@
  * This Model of Controller Equipo
  * Source DB
  */
+
 ob_start();
 require '../model/Equipo.php';
 $equipo = new Equipo();
-if (isset($_GET['btnClickedEquipo']) == 'delete') {
+if (isset($_GET['btnClickedUser']) == 'delete') {
     $id = intval($_GET['nik']);
     $name =$_GET['name'];
     $result = $equipo->desactiveEquipo($id);
 
     if ($result) {
-        header("location: ../views/viewListEquipo.php?info=deleted&name=$name");
+        header("location: ../views/mgmtDevice/viewListEquipo.php?info=deleted&name=$name");
     } else {
-        header('location: ../views/viewListEquipo.php?info=errorDeleted');
+        header('location: ../views/mgmtDevice/viewListEquipo.php?info=errorDeleted');
     }
 
 }

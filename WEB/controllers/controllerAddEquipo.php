@@ -44,14 +44,14 @@ if (isset($_POST['btnClickedEquipo']) == 'send') {
             $class  = "alert alert-success";
             $msg    = 'Datos insertados con éxito';
             //header("location: ../views/viewListEquipo.php");
-            header('location: ../views/viewListEquipo.php?info=added&name=$serial_equipo');
+            header('location: ../views/mgmtDevice/viewListEquipo.php?info=added&name=$serial_equipo');
             //ob_end_flush();
         } else {
             $stusT  = 'error';
             $titleT = 'Error';
             $msg    = $msgT = 'No se pudieron insertar los datos';
             $class  = 'alert alert-danger';
-            header("location: ../views/viewAddEquipo.php");
+            header("location: ../views/mgmtDevice/viewAddEquipo.php");
         }
 
         if (isset($msg) && isset($class)) {

@@ -1,55 +1,55 @@
 <?php
 ob_start();
 ?>
-<!DOCTYPE html>
-<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registro nuevo equipo</title>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Registro nuevo equipo</title>
 
 
-    <!-- HTML Meta Tags -->
-    <title>Registro nuevo equipo</title>
-    <meta name="description" content="Registro de nuevo equipo de NEW RESET A.H.I.D.">
-    <!-- End HTML Meta Tags -->
+            <!-- HTML Meta Tags -->
+            <title>Registro nuevo equipo</title>
+            <meta name="description" content="Registro de nuevo equipo de NEW
+                RESET A.H.I.D.">
+            <!-- End HTML Meta Tags -->
 
-    <?php
-    /*
-     * Modelo Clase Usuario
-     *
-     * @category Class
-     * @package  Model
-     * @author   Andres Garcia <afagrcia0479@misena.edu.co>
-     * @license  <a href="www.mit.org">mit</a>
-     * @version  GIT:<ASD4A6S54DASD>
-     * @link     www.github.com/andgar2010
-     *
-     * This Model of Class User
-     * Source DB
-     */
+            <?php
+/*
+ * Modelo Vista Usuario
+ *
+ * @category Views
+ * @package Views
+ * @author Andres Garcia <afagrcia0479@misena.edu.co>
+ * @author Camila Torres <lctorres14@misena.edu.co>
 
-    require '../config/base_head.php';
-    require '../config/base_script.php'; 
-    require '../config/Toastr.php';
-    require '../model/TipoEquipo.php';
+ * @license <a href="www.mit.org">mit</a>
+ * @version GIT:<ASD4A6S54DASD>
+ * @link www.github.com/andgar2010
+ *
+ * This Model of vista User
+ * Source DB
+ */
 
-    $tipo_equipo     = new TipoEquipo();
-   
+require '../../config/base_head.php';
+require '../../config/base_script.php';
+require '../../config/Toastr.php';
+require '../../model/EstadoEquipo.php';
+require '../../model/TipoEquipo.php';
+
+$estado_equipo = new EstadoEquipo();
+$tipo_equipo = new TipoEquipo();
+
 ?>
 
-    <!--
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    -->
 
-</head>
+                    </head>
 
-<body>
+                   <body>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -57,7 +57,7 @@ ob_start();
             </div>
             <hr>
             <div class="modal-body">
-                <form method="POST" action="../controllers/controllerAddEquipo.php" class="">
+                <form method="POST" action="../../controllers/controllerAddEquipo.php" class="">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -80,9 +80,9 @@ ob_start();
                     </div>
 
                   <div class="row">
-                        
 
-                 
+
+
 
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
                             <button id="enviar" name="btnClickedEquipo" value="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Ingresar nuevo equipo</button>
@@ -106,4 +106,4 @@ ob_start();
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> -->
 </body>
 
-</html>
+    </html>>>

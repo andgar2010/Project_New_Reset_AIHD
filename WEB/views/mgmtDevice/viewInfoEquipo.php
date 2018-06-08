@@ -17,7 +17,7 @@
 if (isset($_GET['id'])) {
 
     $id_equipo = intval($_GET['id']);
-    include '../model/Equipo.php';
+    include '../../model/Equipo.php';
     $equipo = new Equipo();
     $equipo->readSingleEquipo($id_equipo);
 
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
    if ($equipo->getSerial_equipo() == null) {
 
         //Si no encontrado registro de usuario en base de datos, redireccionar -> viewListUsers.php con parametros
-        header("location: ./listEquipo.php?info=search&result=no");
+        header("location: ./viewListEquipo.php?info=search&result=no");
 
     } else {
 
@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
 
 } else {
 
-    header('location:./listEquipo.php?info=search&result=no');
+    header('location:./viewListEquipo.php?info=search&result=no');
 }
 ?>
 
@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
         <meta name="description" content="Registro de nuevo equipo de NEW RESET A.H.I.D.">
         <!-- End HTML Meta Tags -->
 
-        <?php   require '../config/base_head.php';
+        <?php   require '../../config/base_head.php';
             //require '../config/googleAnaytics.php';?>
     </head>
 
@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
                         <tr>
                             <th>Tipo Equipo</th>
                             <td>
-                                <?php echo $equipo->printCodTipoEquipoToText($cod_tipo_equipo)  ; ?>
+                                <?php echo $equipo->printCodTipoEquipoToTable($cod_tipo_equipo)  ; ?>
                             </td>
                         </tr>
                         <tr>
@@ -89,20 +89,19 @@ if (isset($_GET['id'])) {
                         <tr>
                             <th>Estado del equipo</th>
                             <td>
-                                <?php echo $equipo->printCodEstadoEquipoToText($cod_estado_equipo); ?>
+                                <?php echo $equipo->printCodEstadoEquipoToTable($cod_estado_equipo); ?>
                             </td>
                         </tr>
                     </table>
-                    <a href="../views/listEquipo.php" class="btn btn-sm btn-info">
+                    <a href="./viewListEquipo.php" class="btn btn-sm btn-info">
 			        	<span class="fa fa-arrow-circle-left fa-lg" aria-hidden="true"></span> Regresar
 			        </a>
 
-			        <a href="../views/viewEditEquipo.php?id=<?php echo $id_usuario;?>" title="Editar datos" class="btn btn-sm btn-success">
+			        <a href="./viewEditEquipo.php?id=<?php echo $id_equipo;?>" title="Editar datos" class="btn btn-sm btn-success">
 			        	<span class="fa fa-edit fa-lg" aria-hidden="true"></span> Editar datos
 			        </a>
 
-
-			        <a href="../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name=<?php echo $serial_equipo .'&nik='.$id_equipo;?>" title="Eliminar" class="btn btn-sm btn-danger" onclick="return confirm(\'Esta seguro de borrar los datos '.$serial_equipo.'? \')">
+			        <a href="../../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name=<?php echo $serial_equipo .'&nik='.$id_equipo;?>" title="Eliminar" class="btn btn-sm btn-danger" onclick="return confirm(\'Esta seguro de borrar los datos '.$serial_equipo.'? \')">
 			        	<span class="fa fa-trash fa-lg" aria-hidden="true"></span> Eliminar
 			        </a>
                 </div>
@@ -110,7 +109,7 @@ if (isset($_GET['id'])) {
         </div>
         <div class="modal-footer"></div>
 
-        <?php require '../config/base_script.php';?>
+        <?php require '../../config/base_script.php';?>
     </body>
 
     </html>
