@@ -235,10 +235,11 @@ function printCodRolToText($cod_rol)
 
             <!-- Gestion de usuarios  -->
             <?php
+                //<a id="listUsers" class="pmd-ripple-effect">
             if ($codRol == 1 || $codRol == 1) {
                 echo '
                 <li>
-                    <a id="listUsers" class="pmd-ripple-effect">
+                    <a onClick="goToListUsers()" class="pmd-ripple-effect">
                         <span class="media-body">
                             <i class="fa fa-user fa-lg"></i>Gestión de usuarios
                         </span>
@@ -356,6 +357,54 @@ function printCodRolToText($cod_rol)
 
     <script src="../../assets/js/animateSidebar.js"></script>
     <script src="../../assets/js/ajaxLoadPage.js"></script>
+
+    <?php
+
+    if (isset($_GET['info']) && isset($_GET['name'])) {
+        switch ($_GET['info']) {
+            case 'added':
+                echo ' <script>
+                    goToListUsers();
+                    </script>';
+                break;
+
+            case 'updated':
+                $nameUser = $_GET['name'];
+                $stusT = 'success';
+                $titleT = 'Bien hecho!';
+                $msgT = 'Los datos han sido actualizado con éxito.';
+                $class = "alert alert-success alert-dismissable pmd-z-depth-1";
+                $msg = 'usuario de datos actualizado con éxito';
+
+                if (isset($msg) && isset($class)) {
+                    echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                    echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+                }
+                break;
+
+            case 'deleted':
+                $nameUser = $_GET['name'];
+                $stusT = 'info';
+                $titleT = 'Bien hecho!';
+                $msgT = 'Los datos han sido eliminado con éxito.';
+                $class = "alert alert-info alert-dismissable pmd-z-depth-1";
+                $msg = 'usuario de datos eliminado con éxito';
+
+                if (isset($msg) && isset($class)) {
+                    echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                    echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+                }
+                break;
+
+            default:
+                /*echo '<div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
+                        </div>';*/
+                break;
+        }
+    }
+
+    ?>
 
 </body>
 

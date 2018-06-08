@@ -426,7 +426,7 @@ class Usuario
                         //href="../mgmtUser/viewEditUser.php?id='.$row['id_usuario'].'"
                     echo '
                         <td class="text-center">
-                            <a id="editUser" title="Editar datos" class="btn btn-primary btn-sm">
+                            <a id="editUser" onClick=" goToEditUser('. $row['id_usuario'] .')" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
                             <a href="../../controllers/controllerDeletedUser.php?btnClickedUser=delete&name='.$row['nombre'].'&nik='.$row['id_usuario'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['nombre']. ' '. $row['apellido'] .'? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>

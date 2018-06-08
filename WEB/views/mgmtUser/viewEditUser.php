@@ -217,7 +217,7 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <a id="listUsers" href="../dashboard/indexDashboard.php">
+                            <a onClick="goToListUsers()">
                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
                             </a>
                         </div>
