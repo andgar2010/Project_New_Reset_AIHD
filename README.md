@@ -7,6 +7,39 @@
 
 Proyecto de grado para App Servidor Gestión de incidentes de equipos de computo para Institución Educativa Distrital Alfredo Iriarte
 
+
+# Modulos
+
+### Modulos Generales para funcionamiento del sistema
+
+* Menu dinamico por perfil de usuario *(Pendiente)*
+* Modificación de clave usuario logueado *(Pendiente)*
+* Visor de Perfil usuario logueado
+* redirección pagina de inicio asignada a usuario
+* avatares de usuario logueado *(Pendiente)*
+
+### Modulos administración de Usuario y perfiles
+* Registro de usuarios -> sólo para usuarios con rol admin
+* Recuperación de clave mediante correo *(Pendiente)*
+* Modificación peril definido a usuario
+* Modificación Datos de usuario *(Pendiente subir avatar)*
+* Modificación de password de usuario especifico *(Pendiente)*
+* Activar o desactivar usuario
+* Registro, eliminacion y actualización de perfiles plantillas
+
+### Modulos administración de Equipo
+* Registro de Equipo -> sólo para usuarios con rol admin
+* Modificación Datos de equipo
+* Activar o desactivar equipo
+
+### Modulos administración de Tickets
+* Registro de ticket -> todos los usuarios *(Pendiente)*
+* Modificación Datos de Ticket -> sólo para usuarios con rol tecnico *(Pendiente)*
+* Actualizar estado de ticket  -> sólo para usuarios con rol tecnico *(Pendiente)*
+
+### Adicionales
+* Alertas mediante jquery-confirm!
+
 ## Instalación / Primeros pasos
 
 Una rápida introducción a la configuración mínima que necesita para tener un New Reset A.I.H.D. en marcha. 
@@ -153,3 +186,19 @@ Documents your database design and schemas, relations etc...
 ## Licencia de uso
 
 State what the license is and how to find the text version of the license.
+
+
+## Agradecimientos
+
+* Propeller
+* Bootstrap Twitter
+* JQuery 
+* Font-awesome
+* Material Design Icons Google
+* Moment.JS 
+* TinyMCE 
+* Toastr
+* Fundación MariaDB
+* PHP
+* Node.js
+* GitHub
