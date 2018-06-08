@@ -186,3 +186,19 @@ Documents your database design and schemas, relations etc...
 ## Licencia de uso
 
 State what the license is and how to find the text version of the license.
+
+
+## Agradecimientos
+
+* Propeller
+* Bootstrap Twitter
+* JQuery 
+* Font-awesome
+* Material Design Icons Google
+* Moment.JS 
+* TinyMCE 
+* Toastr
+* Fundación MariaDB
+* PHP
+* Node.js
+* GitHub
