@@ -55,14 +55,18 @@ npm start
 ## En desarrollo
 
 ### Construido con
-* Propellerkit ^1.1.0
-* Bootstrap ^3.3.7
-* JQuery ^3.2.1
-* Font-awesome ^4.7.0
-* Material Design Icons ^3.0.1
-* Moment.JS ^2.19.4
-* TinyMCE ^4.7.9
-* Toastr ^2.1.4
+* [JQuery ^3.2.1](https://github.com/jquery/jquery)
+* [Bootstrap ^3.3.7](https://github.com/twbs/bootstrap)
+* [Material Design Icons ^3.0.1](https://github.com/google/material-design-icons)
+* [Propellerkit ^1.3.0](https://github.com/digicorp/propeller)
+* [DataTables plug-in for jQuery](https://github.com/DataTables/DataTables)
+* [Font-awesome ^4.7.0](https://github.com/FortAwesome/Font-Awesome)
+* [Moment.JS ^2.19.4](https://github.com/moment/moment)
+* [TinyMCE ^4.7.9](https://github.com/tinymce/tinymce)
+* [Toastr ^2.1.4](https://github.com/CodeSeven/toastr)
+* [Animate.css ^3.6.1](https://github.com/daneden/animate.css/)
+* [AOS ^2.3.0](https://github.com/michalsnik/aos)
+* [Sweetalert2 ^7.20.10](https://github.com/sweetalert2/sweetalert2) 
 
 Nota: **^**, es versión adelante superior .
 
