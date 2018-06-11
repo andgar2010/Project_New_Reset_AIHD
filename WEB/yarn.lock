@@ -1603,7 +1603,7 @@ jquery-mousewheel@>=3.0.6, jquery-mousewheel@~3.1.13:
   version "3.1.13"
   resolved "https://registry.yarnpkg.com/jquery-mousewheel/-/jquery-mousewheel-3.1.13.tgz#06f0335f16e353a695e7206bf50503cb523a6ee5"
 
-jquery@>=1.12.0, jquery@>=1.2.6, jquery@^3.3.1:
+"jquery@1.9.1 - 3", jquery@>=1.12.0, jquery@>=1.2.6, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
@@ -1788,10 +1788,6 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
-
-material-design-icons@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/material-design-icons/-/material-design-icons-3.0.1.tgz#9a71c48747218ebca51e51a66da682038cdcb7bf"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -2261,12 +2257,19 @@ propellerkit-select2@^1.1.0:
     select2 "^4.0.2"
     select2-bootstrap-theme "^0.1.0-beta.4"
 
-propellerkit@*.*.*, propellerkit@^1.1.0:
+propellerkit@*.*.*:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/propellerkit/-/propellerkit-1.1.0.tgz#dc86c58dab494b54db9fe0e4a22f75206a13909d"
   dependencies:
     bootstrap "^3.0.0"
     jquery "^1.9.0"
+
+propellerkit@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/propellerkit/-/propellerkit-1.3.1.tgz#59ea2b9ea7b0c7c1844cae6ea339457a18d6a1e8"
+  dependencies:
+    bootstrap "^3.0.0"
+    jquery "1.9.1 - 3"
 
 prr@~1.0.1:
   version "1.0.1"
