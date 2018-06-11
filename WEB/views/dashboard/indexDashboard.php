@@ -18,21 +18,21 @@ if (isset($_SESSION)) {
 function printCodRolToText($cod_rol)
 {
     switch ($cod_rol) {
-    case '1':
-        echo'Superadministrador';
-        break;
-    case '2':
-        echo'Técnico';
-        break;
-    case '3':
-        echo'Administrativo';
-        break;
-    case '4':
-        echo'Usuario';
-        break;
-    default:
-        echo'<span class="label label-warning">No seleccionado</span>';
-        break;
+        case '1':
+            echo'Superadministrador';
+            break;
+        case '2':
+            echo'Técnico';
+            break;
+        case '3':
+            echo'Administrativo';
+            break;
+        case '4':
+            echo'Usuario';
+            break;
+        default:
+            echo'<span class="label label-warning">No seleccionado</span>';
+            break;
     }
 }
 
@@ -251,19 +251,18 @@ function printCodRolToText($cod_rol)
             <!-- End Gestion de usuarios  -->
 
             <!-- Gestion de Equipos  -->
-           <?php
-           if ($codRol == 1 || $codRol == 2) {
-               echo '
+            <?php
+            if ($codRol == 1 || $codRol == 2) {
+                echo '
                 <li>
                 <a id="listDevices" class="pmd-ripple-effect">
                     <span class="media-body">
                         <i class="fa fa-desktop fa-lg"></i>Gestión de Equipos
                     </span>
                 </a>
-            </li>
-               ';
-           }
-           ?>
+            </li>';
+            }
+            ?>
             <!-- End Gestion de Equipos  -->
 
             <!-- Panel de Control-->
@@ -369,31 +368,37 @@ function printCodRolToText($cod_rol)
                 break;
 
             case 'updated':
-                $nameUser = $_GET['name'];
-                $stusT = 'success';
-                $titleT = 'Bien hecho!';
-                $msgT = 'Los datos han sido actualizado con éxito.';
-                $class = "alert alert-success alert-dismissable pmd-z-depth-1";
-                $msg = 'usuario de datos actualizado con éxito';
+                echo ' <script>
+                    goToListUsers();
+                    </script>';
+                // $nameUser = $_GET['name'];
+                // $stusT = 'success';
+                // $titleT = 'Bien hecho!';
+                // $msgT = 'Los datos han sido actualizado con éxito.';
+                // $class = "alert alert-success alert-dismissable pmd-z-depth-1";
+                // $msg = 'usuario de datos actualizado con éxito';
 
-                if (isset($msg) && isset($class)) {
-                    echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                    echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
-                }
+                // if (isset($msg) && isset($class)) {
+                //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+                // }
                 break;
 
             case 'deleted':
-                $nameUser = $_GET['name'];
-                $stusT = 'info';
-                $titleT = 'Bien hecho!';
-                $msgT = 'Los datos han sido eliminado con éxito.';
-                $class = "alert alert-info alert-dismissable pmd-z-depth-1";
-                $msg = 'usuario de datos eliminado con éxito';
+                    echo ' <script>
+                goToListUsers();
+                </script>';
+                // $nameUser = $_GET['name'];
+                // $stusT = 'info';
+                // $titleT = 'Bien hecho!';
+                // $msgT = 'Los datos han sido eliminado con éxito.';
+                // $class = "alert alert-info alert-dismissable pmd-z-depth-1";
+                // $msg = 'usuario de datos eliminado con éxito';
 
-                if (isset($msg) && isset($class)) {
-                    echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                    echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
-                }
+                // if (isset($msg) && isset($class)) {
+                //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+                // }
                 break;
 
             default:
