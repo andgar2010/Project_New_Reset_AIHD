@@ -5,4 +5,4 @@ $SweetAlert2_js               =$url_host .'/node_modules/sweetalert2/dist/sweeta
 
 echo '
 <!-- SweetAlert2 Script  -->
-<script src="' . $SweetAlert2_js . '"></script>';
+<script defer src="' . $SweetAlert2_js . '"></script>';

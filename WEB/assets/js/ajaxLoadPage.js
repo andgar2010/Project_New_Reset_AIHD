@@ -6,34 +6,12 @@ $(document).ready(function() {
 
     // Go list of Users
     $("#listUsers").click(function() {
-        $.ajax({
-            url: "../mgmtUser/viewListUsers.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
+
     });
 
     // Go add new User
     $("#addUser").click(function() {
-        $.ajax({
-            url: "../mgmtUser/viewAddUser.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
-    });
-
-    // Go Edit User
-    $("#editUser").click(function() {
-        var id_usuario = $("tr>#id_usuario").html();
-        console.log(id_usuario);
-        $.ajax({
-            url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
+       
     });
 
     /*****************************
@@ -46,10 +24,20 @@ $(document).ready(function() {
      ***************************/
 
     // Go list of Device
-    $("#listEquipo").click(function() {
+    $("#listDevices").click(function() {
         $.ajax({
-            url: "../mgmtDevice/viewListEquipo.php",
+            url: "../../views/mgmtDevice/viewListEquipo.php",
             success: function(result) {
+                $("#content").html(result);
+            }
+        });
+    });
+
+    // Go add new Equipo
+    $("#addEquipo").click(function () {
+        $.ajax({
+            url: "../../views/mgmtDevice/viewAddEquipo.php",
+            success: function (result) {
                 $("#content").html(result);
             }
         });
@@ -89,3 +77,43 @@ $(document).ready(function() {
      * End Go to Ticket Management *
      *******************************/
 });
+
+// Go to Edit User
+function goToEditUser(id_usuario) {
+    $.ajax({
+        url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+// Go to Add User
+function goToAddUser() {
+    $.ajax({
+        url: "../mgmtUser/viewAddUser.php",
+        success: function (result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+// Go to Info User
+function goToInfoUser(id_usuario) {
+    $.ajax({
+        url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+// Go to List of Users
+function goToListUsers() {
+    $.ajax({
+        url: "../mgmtUser/viewListUsers.php",
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}

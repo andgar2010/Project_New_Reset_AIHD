@@ -18,21 +18,21 @@ if (isset($_SESSION)) {
 function printCodRolToText($cod_rol)
 {
     switch ($cod_rol) {
-    case '1':
-        echo'Superadministrador';
-        break;
-    case '2':
-        echo'Técnico';
-        break;
-    case '3':
-        echo'Administrativo';
-        break;
-    case '4':
-        echo'Usuario';
-        break;
-    default:
-        echo'<span class="label label-warning">No seleccionado</span>';
-        break;
+        case '1':
+            echo'Superadministrador';
+            break;
+        case '2':
+            echo'Técnico';
+            break;
+        case '3':
+            echo'Administrativo';
+            break;
+        case '4':
+            echo'Usuario';
+            break;
+        default:
+            echo'<span class="label label-warning">No seleccionado</span>';
+            break;
     }
 }
 
@@ -53,6 +53,26 @@ function printCodRolToText($cod_rol)
         //require '../config/googleAnaytics.php';
     ?>
     <!-- Styles Ends -->
+
+    <!-- Scripts Starts -->
+    <?php include '../../config/base_script.php';?>
+    <!-- Scripts End -->
+
+    <!-- Javascript for Datepicker -->
+    <!-- build:[src] components/datetimepicker/js/ -->
+    <script defer type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
+    <script defer type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <!-- /build -->
+    <script>
+        // Linked date and time picker
+        // start date date and time picker
+        $('#datepicker-default').datetimepicker();
+        $(".auto-update-year").html(new Date().getFullYear());
+    </script>
+
+    <script defer src="../../assets/js/animateSidebar.js"></script>
+    <script defer src="../../assets/js/ajaxLoadPage.js"></script>
+
 </head>
 
 <body>
@@ -219,10 +239,11 @@ function printCodRolToText($cod_rol)
 
             <!-- Gestion de usuarios  -->
             <?php
+                //<a id="listUsers" class="pmd-ripple-effect">
             if ($codRol == 1 || $codRol == 1) {
                 echo '
                 <li>
-                    <a id="listUsers" class="pmd-ripple-effect">
+                    <a onClick="goToListUsers()" class="pmd-ripple-effect">
                         <span class="media-body">
                             <i class="fa fa-user fa-lg"></i>Gestión de usuarios
                         </span>
@@ -234,19 +255,18 @@ function printCodRolToText($cod_rol)
             <!-- End Gestion de usuarios  -->
 
             <!-- Gestion de Equipos  -->
-           <?php
-           if ($codRol == 1 || $codRol == 2) {
-               echo '
+            <?php
+            if ($codRol == 1 || $codRol == 2) {
+                echo '
                 <li>
                 <a id="listDevices" class="pmd-ripple-effect">
                     <span class="media-body">
                         <i class="fa fa-desktop fa-lg"></i>Gestión de Equipos
                     </span>
                 </a>
-            </li>
-               ';
-           }
-           ?>
+            </li>';
+            }
+            ?>
             <!-- End Gestion de Equipos  -->
 
             <!-- Panel de Control-->
@@ -322,24 +342,61 @@ function printCodRolToText($cod_rol)
     </div>
     <!--end content area-->
 
-    <!-- Scripts Starts -->
-    <?php include '../../config/base_script.php';?>
-    <!-- Scripts End -->
 
-    <!-- Javascript for Datepicker -->
-    <!-- build:[src] components/datetimepicker/js/ -->
-    <script type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
-    <script type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <!-- /build -->
-    <script>
-        // Linked date and time picker
-        // start date date and time picker
-        $('#datepicker-default').datetimepicker();
-        $(".auto-update-year").html(new Date().getFullYear());
-    </script>
 
-    <script src="../../assets/js/animateSidebar.js"></script>
-    <script src="../../assets/js/ajaxLoadPage.js"></script>
+    <?php
+
+    if (isset($_GET['info']) && isset($_GET['name'])) {
+        switch ($_GET['info']) {
+            case 'added':
+                echo ' <script>
+                    goToListUsers();
+                    </script>';
+                break;
+
+            case 'updated':
+                echo ' <script>
+                    goToListUsers();
+                    </script>';
+                // $nameUser = $_GET['name'];
+                // $stusT = 'success';
+                // $titleT = 'Bien hecho!';
+                // $msgT = 'Los datos han sido actualizado con éxito.';
+                // $class = "alert alert-success alert-dismissable pmd-z-depth-1";
+                // $msg = 'usuario de datos actualizado con éxito';
+
+                // if (isset($msg) && isset($class)) {
+                //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+                // }
+                break;
+
+            case 'deleted':
+                    echo ' <script>
+                goToListUsers();
+                </script>';
+                // $nameUser = $_GET['name'];
+                // $stusT = 'info';
+                // $titleT = 'Bien hecho!';
+                // $msgT = 'Los datos han sido eliminado con éxito.';
+                // $class = "alert alert-info alert-dismissable pmd-z-depth-1";
+                // $msg = 'usuario de datos eliminado con éxito';
+
+                // if (isset($msg) && isset($class)) {
+                //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+                // }
+                break;
+
+            default:
+                /*echo '<div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
+                        </div>';*/
+                break;
+        }
+    }
+
+    ?>
 
 </body>
 
