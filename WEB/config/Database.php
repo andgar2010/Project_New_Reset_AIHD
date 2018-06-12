@@ -4,6 +4,10 @@ $dbhost = 'localhost';  //  nombre de ruta base de datos
 $dbuser = 'root';       //  nombre de usuario de base de datos
 $dbpass = '';           //  contraseña de usuario de base de datos
 $dbname = 'newreset';   //  nombre de base de datos que utiliza
+// $dbhost = '64.62.211.134';  //  nombre de ruta base de datos
+// $dbuser = 'afgarcia_root';       //  nombre de usuario de base de datos
+// $dbpass = '123456';           //  contraseña de usuario de base de datos
+// $dbname = 'afgarcia_newreset';   //  nombre de base de datos que utiliza
 $db   = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 // Check connection

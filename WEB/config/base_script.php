@@ -11,7 +11,7 @@
  * @version  Release:<ASD4A6S54DASD>
  * @link     www.github.com/andgar2010
  */
-$url_host = '..';
+$url_host = '../..';
 $js_path        =$url_host .'/assets/js/';
 $framework_path =$url_host .'/assets/Framework/';
 //  JAVASCRIPT NODE_MODULES
@@ -27,8 +27,8 @@ echo '
 <!-- Scripts Starts -->
 <!-- Javascript for Bootstrap Propeller -->
 <!-- build:[src] assets/js/ -->
-<script src="' . $framework_path.'propeller-themes/js/jquery-2.2.4.min.js"></script>
-<script src="' . $propeller_bootstrap_js . '"></script>
+<script defer src="' . $framework_path.'propeller-themes/js/jquery-2.2.4.min.js"></script>
+<script defer src="' . $propeller_bootstrap_js . '"></script>
 <!-- /build -->
 
 
@@ -69,5 +69,13 @@ echo '
 
 <!-- Javascript for Propeller -->
 <!-- build:[src] assets/js/ -->
-<script src="' . $propeller_js . '"></script>
-<!-- /build -->';
+<script defer src="' . $propeller_js . '"></script>
+<!-- /build -->
+
+<!-- Javascript for Ajax Load Page -->
+<!-- build:[src] assets/js/ -->
+<script defer src="' . $js_path . 'ajaxLoadPage.js"></script>
+<!-- /build -->
+
+
+';

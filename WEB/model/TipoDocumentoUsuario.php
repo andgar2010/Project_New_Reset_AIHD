@@ -73,8 +73,8 @@ class TipoDocumentoUsuario
      */
     public function readTipoDocumento()
     {
-        include '../config/Database.php';
-        $sql_query = "SELECT * FROM tipo_documento_usuario";
+        include '../../config/Database.php';
+        $sql_query = "SELECT * FROM tipo_documento_usuario LIMIT 3";
 
         if ($output_sql = $db->query($sql_query)) {
 

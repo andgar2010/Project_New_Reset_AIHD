@@ -11,8 +11,8 @@ $bootstrap_datepicker_js    =$url_host .'/node_modules/propellerkit-datetimepick
 echo '
 <!-- Javascript for Datepicker -->
 <!-- build:[src] components/datetimepicker/js/ -->
-<script type="text/javascript" language="javascript" src="' . $moment_js . '"></script>
-<script type="text/javascript" language="javascript" src="' . $bootstrap_datepicker_js . '"></script>
+<script defer type="text/javascript" language="javascript" src="' . $moment_js . '"></script>
+<script defer type="text/javascript" language="javascript" src="' . $bootstrap_datepicker_js . '"></script>
 <!-- /build -->
 <!-- Scripts Ends -->';
 

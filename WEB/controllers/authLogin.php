@@ -67,18 +67,18 @@ case '2': // -- cod_estado_usuario 2 Activo --
 
     switch ($_SESSION['cod_rol']) {
     case '1'://SuperAdministrador
-        header('location:../views/dashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         break;
     case '2'://Tecnico
-        header('location:../views/dashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         // header('location:../views/viewListUsers.php');
         break;
     case '3'://Administrativo
-        header('location:../views/dashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         // header('location:../views/viewAddUser.php');
         break;
     case '4'://Profesor
-        header('location:../views/dashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         // header('location:../views/listTicket.php');
         break;
     }//End Switch cod_rol

@@ -73,7 +73,7 @@ class GeneroUsuario
      */
     public function readGenero()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM genero_usuario";
 
         if ($output_sql = $db->query($sql_query)) {
