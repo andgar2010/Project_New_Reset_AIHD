@@ -11,12 +11,7 @@ $(document).ready(function() {
 
     // Go add new User
     $("#addUser").click(function() {
-        $.ajax({
-            url: "../mgmtUser/viewAddUser.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
+       
     });
 
     /*****************************
@@ -83,7 +78,7 @@ $(document).ready(function() {
      *******************************/
 });
 
-// Go Edit User
+// Go to Edit User
 function goToEditUser(id_usuario) {
     $.ajax({
         url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
@@ -93,6 +88,27 @@ function goToEditUser(id_usuario) {
     });
 }
 
+// Go to Add User
+function goToAddUser() {
+    $.ajax({
+        url: "../mgmtUser/viewAddUser.php",
+        success: function (result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+// Go to Info User
+function goToInfoUser(id_usuario) {
+    $.ajax({
+        url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+// Go to List of Users
 function goToListUsers() {
     $.ajax({
         url: "../mgmtUser/viewListUsers.php",
