@@ -186,6 +186,29 @@ function readAllEquipo()
             $db->close();
         }
     }//End readUser()
+
+    function readAllSelectEquipo()
+    {
+        include '../../config/Database.php';
+        $sql_query = "SELECT * FROM equipo";
+
+        if ($output_sql = $db->query($sql_query)) {
+
+            if ($row = $output_sql->num_rows == 0) {
+                echo'
+                <tr>
+                    <td colspan="8">No hay datos</td>
+                </tr>';
+            } else {
+                while ($row = $output_sql->fetch_assoc()) {
+                    echo'<option value="'.$row['id_equipo'].'">'.$row['serial_equipo'].'</option>';
+                }
+
+                $output_sql->close();
+            }
+            $db->close();
+        }
+    }//End readUser()
         /**
      * Consultar unico usuario
      *

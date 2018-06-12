@@ -8,7 +8,9 @@ $nomArea        = $_SESSION['nom_area'];
 $nomCargo       = $_SESSION['nom_cargo'];
 
 include '../../Model/Ticket.php';
+include '../../Model/Equipo.php';
 $ticket = new Ticket();
+$equipo = new Equipo();
 
 $idLastTicket = $ticket->readLastTicket();
 
@@ -27,6 +29,7 @@ $idLastTicket = $ticket->readLastTicket();
     <title>Nuevo Ticket</title>
     <?php include '../../config/base_head.php';?>
     <?php include '../../config/Toastr.php';?>
+    <link rel="stylesheet" href="../../node_modules/propellerkit-select2/css/pmd-select2.css">
 </head>
 
 <body>
@@ -198,7 +201,9 @@ $idLastTicket = $ticket->readLastTicket();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="serial_equipo" class="control-label" style="display: block; text-align:center;"> Serial Equipo* </label>
-                                                <input id="serial_equipo" name="cod_equipo" type="text" class="form-control" value="" style="text-align:center;"></input>
+                                                <select class="select-with-search form-control pmd-select2" id="serial_equipo" name="cod_equipo">
+                                                    <?php $equipo->readAllSelectEquipo();?>
+                                                </select>
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Serial Equipo-->
@@ -288,6 +293,8 @@ $idLastTicket = $ticket->readLastTicket();
     <!-- End Container -->
     <?php include '../../config/base_script.php';?>
 
+    <script src="../../node_modules/propellerkit-select2/js/pmd-select2.js"></script>
+
     <script>
         // Linked date and time picker
         // start date date and time picker
@@ -301,12 +308,33 @@ $idLastTicket = $ticket->readLastTicket();
     <?php include '../../config/TinyMCE.php';?>
 
     <!-- Moment and format datetime -->
-    <?php include '../config/moment.php';?>
+    <?php include '../../config/moment.php';?>
     <script type="text/javascript">
         moment.locale('es');
         document.getElementById('now_time_ticket').value = moment().format('DD/MMM/YYYY, hh:mm a');
     </script>
 
+    <!-- Jquery js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Propeller textfield js -->
+<script type="text/javascript" src="http://propeller.in/components/textfield/js/textfield.js"></script>
+
+<!-- Select2 js-->
+<script type="text/javascript" src="http://propeller.in/components/select2/js/select2.full.js"></script>
+
+<!-- Propeller Select2 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		<!-- Selectbox with search -->
+		$(".select-with-search").select2({
+			theme: "bootstrap"
+		});
+		
+	});
+</script>
+<script type="text/javascript" src="http://propeller.in/components/select2/js/pmd-select2.js"></script>
     <body>
 
 </html>

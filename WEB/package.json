@@ -41,7 +41,7 @@
     "propellerkit-datatables": "^1.1.0",
     "propellerkit-datetimepicker": "^1.1.0",
     "propellerkit-range-slider": "^1.1.0",
-    "propellerkit-select2": "^1.1.0",
+    "propellerkit-select2": "^1.2.0",
     "sweetalert2": "^7.20.10",
     "tinymce": "^4.7.9",
     "toastr": "^2.1.4"

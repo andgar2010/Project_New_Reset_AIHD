@@ -26,6 +26,8 @@ $msg = $class = null;
 
 print_r($_POST);
 
+
+
 if (isset($_POST['btn_ClickedTicket']) == 'send'){
     if (isset($_POST) && !empty($_POST)) {
         $ticket->setDescrip_incidencia($_POST['descrip_incidencia']);
@@ -34,26 +36,24 @@ if (isset($_POST['btn_ClickedTicket']) == 'send'){
         //$ticket->setCod_estado_ticket($_POST['cod_estado_ticket']);
         $ticket->setCod_usuario($_POST['cod_usuario']);
         $ticket->setCod_equipo($_POST['cod_equipo']);
-
-        var_dump($ticket);
-
         $creadoNuevoRegistrodb = $ticket->createTicket();
+        
         if ($creadoNuevoRegistrodb){
-            $id_ticket = $ticket->getTicket();
+            $id_ticket = $ticket->getId_ticket();
             $stusT    = 'success';
             $titleT   = 'Bien hecho!';
             $msgT     = 'Los datos han sido guardados con exito.';
             $class    = "alert alert-success";
             $msg      = 'Ticket enviado con exito';
             //header("location: ../views/viewListTicket.php");
-            header("location: ../view/mgmtTicket/viewListTicket.php?info=added&name=$id_ticket");
+            header("location: ../views/mgmtTicket/viewListTicket.php?info=added&name=$id_ticket");
             //ob_end_flush();
         }else{
             $stusT = 'error';
             $titleT = 'Error';
             $msg = $msgT = 'No se pudo agregar el ticket';
             $class = 'alert alert-danger';
-            header("location: ../view/mgmtTicket/viewAddTicket");            
+            header("location: ../views/mgmtTicket/viewAddTicket.php");            
         }
         if (isset($msg)&& isset($class)){
             echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar: true})</script>';

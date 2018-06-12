@@ -15,7 +15,7 @@
  */
 
  /**
- * Modelo Clase Usuario
+ * Modelo Clase ticket
  *
  * @category Class
  * @package  Model
@@ -25,7 +25,7 @@
  * @Release  GIT:<ASD4A6S54DASD>
  * @link     www.github.com/andgar2010
  *
- * This Model of Class User
+ * This Model of Class Ticket
  * Source DB
  */
 class Ticket
@@ -41,7 +41,7 @@ class Ticket
     protected $cod_usuario;
 
     /**
-     * This Construct Class Usuario
+     * This Construct Class Ticket
      */
     public function __construct()
     {
@@ -200,7 +200,7 @@ class Ticket
     /**
      * get the values of cod_equipo
      */
-    public function get_Cod_equipo()
+    public function getCod_equipo()
     {
         return $this->cod_equipo;
     }
@@ -213,7 +213,7 @@ class Ticket
     public function setCod_equipo($cod_equipo)
     {
         include '../config/Database.php';
-        $this->cod_estado =$db->real_escape_string($cod_equipo);
+        $this->cod_equipo =$db->real_escape_string($cod_equipo);
 
         //return $this;
     }
@@ -279,40 +279,18 @@ class Ticket
     {
         include '../config/Database.php';
         define('ENVIADO', '1');//Defecto num 1: Activo por Estado de TICKET
-
-        /*$sql_insert = "INSERT INTO 'ticket'
-                            ('descrip_incidencia',
-                            'archivo_evidencia',
-                            'cod_categoria',
-                            'cod_estado_ticket',
-                            'cod_usuario',
-                            'cod_equipo')
-                        VALUES
-                            ('".$this->getDescrip_incidencia()."',
-                            '".$this->getArchivo_evidencia()."',
-                            '".$this->getCod_categoria()."',
-                            '".$this->getCod_estado_ticket()."',
-                            '".$this->getCod_usuario()."',
-                            '".$this->get_Cod_equipo()."',
-                            '".ENVIADO."');";
-                            */
-
-                            $sql_insert = "INSERT INTO 'ticket'
-                            ('descrip_incidencia',
-                            'cod_categoria',
-                            'cod_estado_ticket',
-                            'cod_usuario',
-                            'cod_equipo')
-                        VALUES
-                            ('".$this->getDescrip_incidencia()."',
-                            '".$this->getCod_categoria()."',
-                            '".ENVIADO."',
-                            '".$this->getCod_usuario()."',
-                            '".$this->get_Cod_equipo()."');";
-
-                            var_dump($sql_insert);
-
-
+                            $sql_insert = "INSERT INTO `ticket`
+                                                (`descrip_incidencia`,
+                                                `cod_categoria`, 
+                                                `cod_estado_ticket`,
+                                                `cod_usuario`,
+                                                `cod_equipo`) 
+                                            VALUES 
+                                                ('".$this->getDescrip_incidencia()."',
+                                                '".$this->getCod_categoria()."',
+                                                '".ENVIADO."',
+                                                '".$this->getCod_usuario()."',
+                                                '".$this->getCod_equipo()."')";
         $insertadoTicketDb = $db->query($sql_insert)or die (infoErrorCreatedTicket($db));
         $db->close();
         return ($insertadoTicketDb) ? true : false;
