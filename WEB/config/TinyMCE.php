@@ -9,8 +9,8 @@ $tinyMCE_js               =$url_host .'/node_modules/tinymce/tinymce.min.js';
 
 echo '
 <!-- TinyMCE Script  -->
-<script src="' . $tinyMCE_jquery_js . '"></script>
-<script src="' . $tinyMCE_js . '"></script>';
+<script defer src="' . $tinyMCE_jquery_js . '"></script>
+<script defer src="' . $tinyMCE_js . '"></script>';
 
 echo "
 <!-- TinyMCE Configure -->

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Project>
-   <description>Pruebas para el proyecto New Reset</description>
-   <name>TestingNewReset</name>
-   <tag></tag>
-   <UUID>e8e9044a-85f6-4ebc-ae1c-bb7054b43983</UUID>
-   <migratedVersion>5.4.0</migratedVersion>
-   <pageLoadTimeout>0</pageLoadTimeout>
-</Project>

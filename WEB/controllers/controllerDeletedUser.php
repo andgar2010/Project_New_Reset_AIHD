@@ -21,9 +21,11 @@ if (isset($_GET['btnClickedUser']) == 'delete') {
     $result = $usuario->desactiveUser($id);
 
     if ($result) {
-        header("location: ../views/viewListUsers.php?info=deleted&name=$name");
+        header("location: ../views/dashboard/indexDashboard.php?info=deleted&name=$name");
+        // header("location: ../views/mgmtUser/viewListUsers.php?info=deleted&name=$name");
     } else {
-        header('location: ../views/viewListUsers.php?info=errorDeleted');
+        header("location: ../views/dashboard/indexDashboard.php?info=errorDeleted");
+        // header('location: ../views/mgmtUser/viewListUsers.php?info=errorDeleted');
     }
 
 }
