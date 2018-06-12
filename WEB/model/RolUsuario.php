@@ -73,7 +73,7 @@ class RolUsuario
      */
     public function readRol()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM rol_usuario";
 
         if ($output_sql = $db->query($sql_query)) {

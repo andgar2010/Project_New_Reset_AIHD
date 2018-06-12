@@ -1,0 +1,141 @@
++ setId_usuario(int)
++ getId_usuario()                           :int
++ setDocumento(String)
++ getDocumento()                            :String
++ setCod_tipo_doc(int)
++ getCod_tipo_doc()                         :int
++ setNombre(String)
++ getNombre()                               :String
++ setApellido(String)
++ getApellido()                             :String
++ setCod_genero(int)
++ getCod_genero()                           :int
++ setEmail(String)
++ getEmail()                                :String
++ setPassword(String)
++ getPassword()                             :String
++ setCod_area(int)
++ getCod_area()                             :int
++ setCod_cargo(int)
++ getCod_cargo()                            :int
++ setCod_rol(int)
++ getCod_rol()                              :int
++ setCod_estado_usuario(int)
++ getCod_estado_usuario()                   :int
++ createUser()                              :Bool
++ readUser()                                :String
++ readSingleRecordUsuer(String)             :Object
++ updateUser()                              :Bool
++ confirmNewUser()                          :Bool
++ recoveryPasswordUser()                    :Bool
++ resetPasswordUser()                       :Bool
++ desactiveUser(String)                     :Bool
++ printCodEstadoUsuarioToText(int)          :String
++ printCodRolToText(int)                    :String
++ printCodCargoToText(int)                  :String
++ printCodAreaToText(int)                   :String
++ infoErrorCreatedUser(Object)              :String
++ infoErrorUpdateUser(Object)               :String
++ infoErrorConfirmNewUser(Object)           :String
++ infoErrorRecoveryPasswordUser(Object)     :String
++ infoErrorResetPasswordUser(Object)        :String
+
+
+# $id_area: int
+# $nombre: String
++ construct()
++ getId_area():int
++ setId_area(int)
++ getNombre():String
++ setNombre(String)
++ readArea(): String
+
+# id_cargo: int
+# nombre: String
++ construct()
++ getId_cargo():int
++ setId_cargo(int)
++ getNombre():String
++ setNombre(String)
++ readCargo(): String
+
+# id_genero: int
+# nombre: String
++ construct()
++ getId_genero():int
++ setId_genero(int)
++ getNombre():String
++ setNombre(String)
++ readGenero(): String
+
+
+# id_rol: int
+# nombre: String
++ construct()
++ getId_rol():int
++ setId_rol(int)
++ getNombre():String
++ setNombre(String)
++ readRol(): String
+
+
+
+# id_equipo: int
+# cod_tipo_equipo: int
+# serial_equipo: String
+# cod_estado_equipo: int
++ setId_equipo(int)
++ getId_equipo():int
++ setCod_tipo_equipo(int)
++ getCod_tipo_equipo():int
++ setSerial_equipo(String)
++ getSerial_equipo():String
++ setCod_estado_equipo(int)
++ getCod_estado_equipo():int
++ createEquipo():Bool
++ readEquipo():Object
++ readSingleEquipo(int):Object
++ updateEquipo(int):Bool
++ desactiveEquipo(int):Bool
+
+
+# id_ticket: int
+# fecha_inicio: datetime
+# fecha_fin: datetime
+# descrip_incidencia: string
+# archivo_evidencia: string
+# cod_categoria: int
+# cod_estado_ticket: int
+# cod_equipo: int
+# cod_usuario: int
+
+
++ setId_ticket(int)
++ getId_ticket():int
++ setFecha_inicio(datetime)
++ getFecha_inicio():datetime
++ setFecha_fin(datetime)
++ getFecha_fin():datetime
++ setDescrip_incidencia(string)
++ getDescrip_incidencia():string
++ setArchivo_evidencia(string)
++ getArchivo_evidencia():string
++ setCod_categoria(int)
++ getCod_categoria():int
++ setCod_estado_ticket(int)
++ getCod_estado_ticket():int
++ setCod_equipo(int)
++ getCod_equipo():int
++ setCod_usuario(int)
++ getCod_usuario():int
+
+
+# id_estado_ticket: int
+# nombre: String
+
++ construct()
++ getId_estado_usuario():int
++ setId_estado_usuario(int)
++ getNombre():String
++ setNombre(String)
++ readEstadoTicket(): String

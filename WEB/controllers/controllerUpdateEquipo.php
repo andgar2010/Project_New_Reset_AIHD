@@ -23,7 +23,7 @@ require '../model/Equipo.php';
 $equipo = new Equipo();
 
 $msg = $class = null;
-if (isset($_POST['btnClickedEquipo']) == 'sendUpdate') {
+if (isset($_POST['btnClickedUser']) == 'sendUpdate') {
     if (isset($_POST) && !empty($_POST)) {
         $equipo->setId_equipo($_POST['id_equipo']);
         $equipo->setCod_tipo_equipo($_POST['cod_tipo_equipo']);
@@ -34,7 +34,7 @@ if (isset($_POST['btnClickedEquipo']) == 'sendUpdate') {
         $actualizadoEquipoDB = $equipo->updateEquipo();
         if ($actualizadoEquipoDB) {
             $serial_equipo = $equipo->getSerial_equipo();
-            header("location: ../views/viewListEquipo.php?info=updated&name=$name");
+            header("location: ../../views/mgmtDevice/viewListEquipo.php?info=updated&name=$name");
             // $stusT  = 'success';
             // $titleT = 'Bien hecho!';
             // $msgT   = 'Los datos han sido guardados con éxito.';

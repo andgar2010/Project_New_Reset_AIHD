@@ -1,0 +1,112 @@
+<?php
+/**
+ *  Upload file to folder.
+ *  PHP Version 7.2.
+ *
+ * @category  UploadFile
+ * @package   UploadFile_BD
+ * @author    Andres Garcia (andgar2010) <afgarcia0479@misena.edu.co>
+ * @author    Obed Alvarado (created code) <info@obedalvarado.pw>
+ * @copyright 2018 - 2018 Andres Garcia
+ * @copyright 2015 - 2018 Obed Alvarado
+ * @license   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
+ * @link      https://github.com/andgar2010/Project_New_Reset/ Project NEW RESET A.I.H.D.
+ * @note      This program is distributed in the hope that it will be useful - WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
+//echo count($_FILES["file0"]["name"]);exit;
+
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"])) {
+
+    $target_dir = "upload/";
+    $carpeta=$target_dir;
+
+    // If no exist folder, create a folder with access level
+    if (!file_exists($carpeta)) {
+        mkdir($carpeta, 0777, true);
+    }
+
+    // name of path for saved to folder
+    $target_file = $carpeta . basename($_FILES["fileToUpload"]["name"]);
+
+    $uploadOk = 1;
+
+    // variable name extension of file
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+    // Check if image file is a actual image or fake image
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if ($check !== false) {
+        $message[]= "El archivo es una imagen - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        $errors[]= "El archivo no es una imagen.";
+        $uploadOk = 0;
+    }
+
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        $errors[]="Lo sentimos, archivo ya existe.";
+        $uploadOk = 0;
+    }
+    // Check file size
+    if ($_FILES["fileToUpload"]["size"] > 524288) {
+        $errors[]= "Lo sentimos, el archivo es demasiado grande. Tamaño máximo admitido: 0.5 MB";
+        $uploadOk = 0;
+    }
+    // Allow certain file formats
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        $errors[]= "Lo sentimos, sólo archivos JPG, JPEG, PNG & GIF son permitidos.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        $errors[]= "Lo sentimos, tu archivo no fue subido.";
+
+        // if everything is ok, try to upload file
+        // move file from folder temp to destino
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $messages[]= "El Archivo ha sido subido correctamente.";
+        } else {
+            $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";
+        }
+    }
+
+    // If have errors, show message
+    if (isset($errors)) {
+        ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Error!</strong>
+            <?php
+            foreach ($errors as $error) {
+                echo"<p>$error</p>";
+            }
+            ?>
+        </div>
+        <?php
+    }
+
+    // If have a message, show
+    if (isset($messages)) {
+    ?>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Aviso!</strong>
+    <?php
+    foreach ($messages as $message) {
+        echo"<p>$message</p>";
+    }
+    ?>
+    </div>
+    <?php
+    }
+}
+?>

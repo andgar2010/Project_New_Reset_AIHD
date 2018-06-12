@@ -74,7 +74,7 @@ class EstadoEquipo
      */
     public function readEstadoEquipo()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM estado_equipo";
 
         if ($output_sql = $db->query($sql_query)) {

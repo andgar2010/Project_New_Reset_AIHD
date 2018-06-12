@@ -73,7 +73,7 @@ class AreaUsuario
      */
     public function readArea()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM area_usuario";
 
         if ($output_sql = $db->query($sql_query)) {

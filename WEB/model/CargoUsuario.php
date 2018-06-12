@@ -73,7 +73,7 @@ class CargoUsuario
      */
     public function readCargo()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM cargo_usuario";
 
         if ($output_sql = $db->query($sql_query)) {

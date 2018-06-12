@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../node_modules/propellerkit/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../node_modules/propellerkit/dist/css/propeller.min.css">
+    <link rel="stylesheet" href="../assets/Framework/propeller-themes/css/propeller-theme.css">
+    <!-- <link rel="stylesheet" href="../assets/Framework/propeller-themes/css/propeller-admin.css"> -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap-sweetalert/dist/sweetalert.css"> -->
 </head>
 
 <body>
@@ -31,10 +34,78 @@
             </div>
         </div>
     </div>
+    <button class="btn btn-warning" onclick="testWarningSwal()">Prueba Sweet alert warning</button>
+    <button class="btn btn-danger" onclick="testErrorSwal()">Prueba Sweet alert Error</button>
+    <button class="btn btn-success" onclick="testSuccessSwal()">Prueba Sweet alert success</button>
+    <button class="btn btn-info" onclick="testInfoSwal()">Prueba Sweet alert Info</button>
+    <button class="btn btn-info" onclick="testSwal()">Prueba Sweet alert</button>
 
     <script>
         function goBack() {
             window.history.back();
+        }
+        function testSwal() {
+            // swal("Hello world!");
+            // swal("Here's the title!", "...and here's the text!");
+
+            // "warning", "error", "success" and "info"
+            // swal("Good job!", "You clicked the button!", "warning");
+
+            // swal({
+            //     title: "Good job!",
+            //     text: "You clicked the button!",
+            //     icon: "success",
+            // });
+
+            // swal({
+            //     title: "Good job!",
+            //     text: "You clicked the button!",
+            //     icon: "success",
+            //     button: "Aww yiss!",
+            // });
+
+            // swal("Good job!", "You clicked the button!", "success", {
+            //     button: "Aww yiss!",
+            // });
+
+            swal("Click on either the button or outside the modal.")
+                .then((value) => {
+                    swal(`The returned value is: ${value}`);
+                });
+
+            // swal({
+            //     title: "Are you sure?",
+            //     text: "Once deleted, you will not be able to recover this imaginary file!",
+            //     icon: "warning",
+            //     buttons: true,
+            //     dangerMode: true,
+            // })
+            //     .then((willDelete) => {
+            //         if (willDelete) {
+            //             swal("Poof! Your imaginary file has been deleted!", {
+            //                 icon: "success",
+            //             });
+            //         } else {
+            //             swal("Your imaginary file is safe!");
+            //         }
+            //     });
+
+            //     swal("Are you sure you want to do this?", {
+            //     buttons: ["Oh noez!", "Aww yiss!"],
+            // });
+        }
+
+        function testWarningSwal() {
+            swal("Good job!", "You clicked the button!", "warning");
+        }
+        function testErrorSwal() {
+            swal("Good job!", "You clicked the button!", "error");
+        }
+        function testSuccessSwal() {
+            swal("Good job!", "You clicked the button!", "success");
+        }
+        function testInfoSwal() {
+            swal("Good job!", "You clicked the button!", "info");
         }
     </script>
     <!-- Optional JavaScript -->
@@ -44,6 +115,9 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/propellerkit/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/propellerkit/dist/js/propeller.min.js"></script>
+    <!-- <script src="../node_modules/bootstrap-sweetalert/dist/sweetalert.min.js"></script> -->
+    <!-- <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script> -->
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

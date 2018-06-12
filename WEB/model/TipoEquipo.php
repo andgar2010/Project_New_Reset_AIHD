@@ -74,7 +74,7 @@ class TipoEquipo
      */
     public function readTipoEquipo()
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM tipo_equipo";
 
         if ($output_sql = $db->query($sql_query)) {

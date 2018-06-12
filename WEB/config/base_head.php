@@ -1,5 +1,5 @@
 <?php
-$url_host       = '..';
+$url_host       = '../..';
 $image_path     = $url_host."/assets/images/";
 $js_path        = $url_host.'/assets/js/';
 $css_path       = $url_host.'/assets/css/';
@@ -21,7 +21,7 @@ echo '
 <link rel="shortcut icon" type="image/x-icon" href="' . $image_path . 'favicon.ico">
 
 <!-- Google icon -->
-<link rel="stylesheet" type="text/css" href="' . $material_design_fonts_css . '">
+<link rel="stylesheet" type="text/css" href="' . $fonts_path   . 'Material-Icons/materialicons.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <!-- Bootstrap css -->

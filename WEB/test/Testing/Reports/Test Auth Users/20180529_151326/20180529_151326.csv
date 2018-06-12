@@ -1,0 +1,46 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Test Auth Users,Firefox 60.0,,2018-05-29 15:13:28,2018-05-29 15:14:09,"41,683s",PASSED
+,,,,,,
+Test Cases/01 Ingreso Usuario/01.01 Ingreso Usuario SuperAdministrador,Firefox 60.0,,2018-05-29 15:13:28,2018-05-29 15:13:38,"10,071s",PASSED
+openBrowser,Firefox 60.0,,2018-05-29 15:13:28,2018-05-29 15:13:34,"5,379s",PASSED
+navigateToUrl,Firefox 60.0,,2018-05-29 15:13:34,2018-05-29 15:13:37,"3,094s",PASSED
+click,Firefox 60.0,,2018-05-29 15:13:37,2018-05-29 15:13:37,"0,291s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:13:37,2018-05-29 15:13:37,"0,090s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:13:37,2018-05-29 15:13:37,"0,070s",PASSED
+click,Firefox 60.0,,2018-05-29 15:13:37,2018-05-29 15:13:38,"0,334s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:13:38,2018-05-29 15:13:38,"0,043s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:13:38,2018-05-29 15:13:38,"0,024s",PASSED
+closeBrowser,Firefox 60.0,,2018-05-29 15:13:38,2018-05-29 15:13:38,"0,463s",PASSED
+,,,,,,
+Test Cases/01 Ingreso Usuario/01.02 Ingreso Usuario Tecnico,Firefox 60.0,,2018-05-29 15:13:38,2018-05-29 15:13:50,"11,773s",PASSED
+openBrowser,Firefox 60.0,,2018-05-29 15:13:38,2018-05-29 15:13:43,"4,235s",PASSED
+navigateToUrl,Firefox 60.0,,2018-05-29 15:13:43,2018-05-29 15:13:49,"6,122s",PASSED
+click,Firefox 60.0,,2018-05-29 15:13:49,2018-05-29 15:13:49,"0,265s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:13:49,2018-05-29 15:13:49,"0,071s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:13:49,2018-05-29 15:13:49,"0,050s",PASSED
+click,Firefox 60.0,,2018-05-29 15:13:49,2018-05-29 15:13:49,"0,468s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:13:49,2018-05-29 15:13:50,"0,042s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:13:50,2018-05-29 15:13:50,"0,027s",PASSED
+closeBrowser,Firefox 60.0,,2018-05-29 15:13:50,2018-05-29 15:13:50,"0,374s",PASSED
+,,,,,,
+Test Cases/01 Ingreso Usuario/01.03 Ingreso Usuario Administrativo,Firefox 60.0,,2018-05-29 15:13:50,2018-05-29 15:14:00,"10,222s",PASSED
+openBrowser,Firefox 60.0,,2018-05-29 15:13:50,2018-05-29 15:13:55,"5,203s",PASSED
+navigateToUrl,Firefox 60.0,,2018-05-29 15:13:55,2018-05-29 15:13:59,"3,738s",PASSED
+click,Firefox 60.0,,2018-05-29 15:13:59,2018-05-29 15:13:59,"0,265s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:13:59,2018-05-29 15:13:59,"0,070s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:13:59,2018-05-29 15:13:59,"0,053s",PASSED
+click,Firefox 60.0,,2018-05-29 15:13:59,2018-05-29 15:14:00,"0,306s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:14:00,2018-05-29 15:14:00,"0,030s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:14:00,2018-05-29 15:14:00,"0,019s",PASSED
+closeBrowser,Firefox 60.0,,2018-05-29 15:14:00,2018-05-29 15:14:00,"0,434s",PASSED
+,,,,,,
+Test Cases/01 Ingreso Usuario/01.04 Ingreso Usuario Profesor,Firefox 60.0,,2018-05-29 15:14:00,2018-05-29 15:14:09,"9,307s",PASSED
+openBrowser,Firefox 60.0,,2018-05-29 15:14:00,2018-05-29 15:14:05,"4,783s",PASSED
+navigateToUrl,Firefox 60.0,,2018-05-29 15:14:05,2018-05-29 15:14:08,"3,078s",PASSED
+click,Firefox 60.0,,2018-05-29 15:14:08,2018-05-29 15:14:08,"0,267s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:14:08,2018-05-29 15:14:08,"0,063s",PASSED
+setText,Firefox 60.0,,2018-05-29 15:14:08,2018-05-29 15:14:09,"0,054s",PASSED
+click,Firefox 60.0,,2018-05-29 15:14:09,2018-05-29 15:14:09,"0,319s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:14:09,2018-05-29 15:14:09,"0,031s",PASSED
+verifyElementText,Firefox 60.0,,2018-05-29 15:14:09,2018-05-29 15:14:09,"0,017s",PASSED
+closeBrowser,Firefox 60.0,,2018-05-29 15:14:09,2018-05-29 15:14:09,"0,574s",PASSED
