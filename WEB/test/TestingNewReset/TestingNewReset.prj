@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Project>
-   <description>Testing fof New Reset WebApp</description>
-   <name>TestingNewReset</name>
-   <tag></tag>
-   <UUID>79032ce8-81b7-453e-b283-c576c24c4c1d</UUID>
-   <migratedVersion>5.4.0</migratedVersion>
-   <pageLoadTimeout>0</pageLoadTimeout>
-</Project>

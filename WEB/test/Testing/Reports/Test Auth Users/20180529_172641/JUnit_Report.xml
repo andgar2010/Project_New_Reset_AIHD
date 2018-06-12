@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Test Auth Users" time="37" tests="4" failures="0" errors="0">
+   <testsuite name="Test Auth Users" tests="4" failures="0" errors="0" time="37" timestamp="2018-05-29 17:26:42" hostname="SENA - DESKTOP-L0GLE2A" id="Test Suites/Test Auth Users">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\xampp\\htdocs\\Project_New_Reset_AIHD\\WEB\\test\\Testing\\Reports\\Test Auth Users\\20180529_172641"/>
+         <property name="logFiles" value="C:\\xampp\\htdocs\\Project_New_Reset_AIHD\\WEB\\test\\Testing\\Reports\\Test Auth Users\\20180529_172641\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="SENA - DESKTOP-L0GLE2A"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.4.1.1"/>
+         <property name="browser" value="Chrome 66.0.3359.181"/>
+         <property name="hostAddress" value="192.168.2.239"/>
+         <property name="sessionId" value="6fd55d686d64936cec9c29917df2bbb7"/>
+         <property name="seleniumVersion" value="3.7.1"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0}"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/01 Ingreso Usuario/01.01 Ingreso Usuario SuperAdministrador" classname="Test Cases/01 Ingreso Usuario/01.01 Ingreso Usuario SuperAdministrador" status="PASSED">
+         <system-out><![CDATA[2018-05-29 17:26:43 - [TEST_CASE][PASSED] - Test Cases/01 Ingreso Usuario/01.01 Ingreso Usuario SuperAdministrador: Test Cases/01 Ingreso Usuario/01.01 Ingreso Usuario SuperAdministrador
+
+2018-05-29 17:26:43 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-05-29 17:26:46 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-05-29 17:26:46 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:26:49 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:26:49 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:26:49 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:26:49 - [TEST_STEP][PASSED] - delay: Delayed 2 second(s)
+
+2018-05-29 17:26:51 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+2018-05-29 17:26:51 - [TEST_STEP][PASSED] - setText: Text 'sa@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:26:52 - [MESSAGE][PASSED] - Text 'sa@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:26:52 - [TEST_STEP][PASSED] - setText: Text '123456789' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:26:52 - [MESSAGE][PASSED] - Text '123456789' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:26:52 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:26:53 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:26:53 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_New Reset AIHD Admin Dashboard/div_Super Admin' are matched.
+
+2018-05-29 17:26:53 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_New Reset AIHD Admin Dashboard/div_Super Admin' are matched.
+
+2018-05-29 17:26:53 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_New Reset AIHD Admin Dashboard/i_Superadministrador' are matched.
+
+2018-05-29 17:26:53 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_New Reset AIHD Admin Dashboard/i_Superadministrador' are matched.
+
+2018-05-29 17:26:53 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-05-29 17:26:53 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/01 Ingreso Usuario/01.02 Ingreso Usuario Tecnico" classname="Test Cases/01 Ingreso Usuario/01.02 Ingreso Usuario Tecnico" status="PASSED">
+         <system-out><![CDATA[2018-05-29 17:26:53 - [TEST_CASE][PASSED] - Test Cases/01 Ingreso Usuario/01.02 Ingreso Usuario Tecnico: Test Cases/01 Ingreso Usuario/01.02 Ingreso Usuario Tecnico
+
+2018-05-29 17:26:54 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-05-29 17:26:56 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-05-29 17:26:56 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:26:59 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:26:59 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:27:00 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:27:00 - [TEST_STEP][PASSED] - delay: Delayed 2 second(s)
+
+2018-05-29 17:27:02 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+2018-05-29 17:27:02 - [TEST_STEP][PASSED] - setText: Text 'tech@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:27:02 - [MESSAGE][PASSED] - Text 'tech@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:27:02 - [TEST_STEP][PASSED] - setText: Text '12345678' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:27:02 - [MESSAGE][PASSED] - Text '12345678' is set on object 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:27:02 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:27:03 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:27:03 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/div_Tech Admin' are matched.
+
+2018-05-29 17:27:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/div_Tech Admin' are matched.
+
+2018-05-29 17:27:03 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/i_Tcnico' are matched.
+
+2018-05-29 17:27:03 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/i_Tcnico' are matched.
+
+2018-05-29 17:27:03 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-05-29 17:27:04 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/01 Ingreso Usuario/01.03 Ingreso Usuario Administrativo" classname="Test Cases/01 Ingreso Usuario/01.03 Ingreso Usuario Administrativo" status="PASSED">
+         <system-out><![CDATA[2018-05-29 17:27:04 - [TEST_CASE][PASSED] - Test Cases/01 Ingreso Usuario/01.03 Ingreso Usuario Administrativo: Test Cases/01 Ingreso Usuario/01.03 Ingreso Usuario Administrativo
+
+2018-05-29 17:27:04 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-05-29 17:27:06 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-05-29 17:27:06 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:27:09 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:27:09 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:27:09 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:27:09 - [TEST_STEP][PASSED] - delay: Delayed 2 second(s)
+
+2018-05-29 17:27:11 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+2018-05-29 17:27:11 - [TEST_STEP][PASSED] - setText: Text 'rct@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:27:11 - [MESSAGE][PASSED] - Text 'rct@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:27:11 - [TEST_STEP][PASSED] - setText: Text '1234567' is set on object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:27:11 - [MESSAGE][PASSED] - Text '1234567' is set on object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:27:11 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:27:11 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:27:11 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_New Reset AIHD Admin Dashboard/div_Camilo Torres' are matched.
+
+2018-05-29 17:27:12 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_New Reset AIHD Admin Dashboard/div_Camilo Torres' are matched.
+
+2018-05-29 17:27:12 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_New Reset AIHD Admin Dashboard/i_Administrativo' are matched.
+
+2018-05-29 17:27:12 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_New Reset AIHD Admin Dashboard/i_Administrativo' are matched.
+
+2018-05-29 17:27:12 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-05-29 17:27:12 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/01 Ingreso Usuario/01.04 Ingreso Usuario Profesor" classname="Test Cases/01 Ingreso Usuario/01.04 Ingreso Usuario Profesor" status="PASSED">
+         <system-out><![CDATA[2018-05-29 17:27:12 - [TEST_CASE][PASSED] - Test Cases/01 Ingreso Usuario/01.04 Ingreso Usuario Profesor: Test Cases/01 Ingreso Usuario/01.04 Ingreso Usuario Profesor
+
+2018-05-29 17:27:12 - [TEST_STEP][PASSED] - openBrowser: Browser is opened with url: ''
+
+2018-05-29 17:27:14 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2018-05-29 17:27:14 - [TEST_STEP][PASSED] - navigateToUrl: Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:27:17 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/Project_New_Reset_AIHD/WEB/' successfully
+
+2018-05-29 17:27:17 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:27:17 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/button_Inicia sesion' is clicked on
+
+2018-05-29 17:27:17 - [TEST_STEP][PASSED] - delay: Delayed 2 second(s)
+
+2018-05-29 17:27:19 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+2018-05-29 17:27:19 - [TEST_STEP][PASSED] - setText: Text 'uag@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:27:19 - [MESSAGE][PASSED] - Text 'uag@email.com' is set on object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_email'
+
+2018-05-29 17:27:19 - [TEST_STEP][PASSED] - setText: Text '1234560' is set on object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:27:19 - [MESSAGE][PASSED] - Text '1234560' is set on object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_password'
+
+2018-05-29 17:27:19 - [TEST_STEP][PASSED] - click: Object: 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:27:19 - [MESSAGE][PASSED] - Object: 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar' is clicked on
+
+2018-05-29 17:27:19 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_New Reset AIHD Admin Dashboard/div_Andrs Garca' are matched.
+
+2018-05-29 17:27:19 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_New Reset AIHD Admin Dashboard/div_Andrs Garca' are matched.
+
+2018-05-29 17:27:19 - [TEST_STEP][PASSED] - verifyElementText: Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_New Reset AIHD Admin Dashboard/i_Usuario' are matched.
+
+2018-05-29 17:27:20 - [MESSAGE][PASSED] - Actual text and expected text of test object 'Object Repository/01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_New Reset AIHD Admin Dashboard/i_Usuario' are matched.
+
+2018-05-29 17:27:20 - [TEST_STEP][PASSED] - closeBrowser: Browser is closed
+
+2018-05-29 17:27:20 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-05-29 17:26:42 - [TEST_SUITE][PASSED] - Test Auth Users: Test Cases/01 Ingreso Usuario/01.04 Ingreso Usuario Profesor]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>
