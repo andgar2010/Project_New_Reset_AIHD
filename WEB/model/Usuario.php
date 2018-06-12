@@ -407,7 +407,7 @@ class Usuario
                     <tr id="' . $row['id_usuario'] . '">
                         <td class="text-center" id="id_usuario">'.$row['id_usuario'].'</td>
                         <td>
-                            <a href="../views/mgmtUser/viewProfileUser.php?id='.$row['id_usuario'].'">
+                            <a onClick=" goToInfoUser('. $row['id_usuario'] .')">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['nombre'].' '. $row['apellido'].
                             '</a> </td>';
