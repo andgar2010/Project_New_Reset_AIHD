@@ -53,6 +53,26 @@ function printCodRolToText($cod_rol)
         //require '../config/googleAnaytics.php';
     ?>
     <!-- Styles Ends -->
+
+    <!-- Scripts Starts -->
+    <?php include '../../config/base_script.php';?>
+    <!-- Scripts End -->
+
+    <!-- Javascript for Datepicker -->
+    <!-- build:[src] components/datetimepicker/js/ -->
+    <script defer type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
+    <script defer type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <!-- /build -->
+    <script>
+        // Linked date and time picker
+        // start date date and time picker
+        $('#datepicker-default').datetimepicker();
+        $(".auto-update-year").html(new Date().getFullYear());
+    </script>
+
+    <script defer src="../../assets/js/animateSidebar.js"></script>
+    <script defer src="../../assets/js/ajaxLoadPage.js"></script>
+
 </head>
 
 <body>
@@ -338,24 +358,7 @@ function printCodRolToText($cod_rol)
     </div>
     <!--end content area-->
 
-    <!-- Scripts Starts -->
-    <?php include '../../config/base_script.php';?>
-    <!-- Scripts End -->
 
-    <!-- Javascript for Datepicker -->
-    <!-- build:[src] components/datetimepicker/js/ -->
-    <script type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
-    <script type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <!-- /build -->
-    <script>
-        // Linked date and time picker
-        // start date date and time picker
-        $('#datepicker-default').datetimepicker();
-        $(".auto-update-year").html(new Date().getFullYear());
-    </script>
-
-    <script src="../../assets/js/animateSidebar.js"></script>
-    <script src="../../assets/js/ajaxLoadPage.js"></script>
 
     <?php
 
