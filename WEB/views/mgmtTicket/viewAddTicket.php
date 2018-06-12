@@ -1,5 +1,18 @@
 <?php
 session_start();
+
+$id_usuario     = $_SESSION['id_usuario'];
+$nombreUsuario  = $_SESSION['nombres_completos'];
+$codRol         = $_SESSION['cod_rol'];
+$nomArea        = $_SESSION['nom_area'];
+$nomCargo       = $_SESSION['nom_cargo'];
+
+include '../../Model/Ticket.php';
+$ticket = new Ticket();
+
+$idLastTicket = $ticket->readLastTicket();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +58,7 @@ session_start();
                 <!--End section-title -->
 
                     <!-- Start section content -->
-                    <form id="newTicket" action="" method="post" enctype="multipart/form-data">
+                    <form id="newTicket" action="../../controllers/ControllerAddNewTicket.php" method="post" enctype="multipart/form-data">
                         <div class="pmd-card pmd-z-depth-5">
                             <div class="pmd-card-body">
 
@@ -85,7 +98,7 @@ session_start();
                                             <!-- Readonly Input Numero ticket -->
                                             <div class="form-group pmd-textfield">
                                                 <label for="num_ticket" class="control-label" style="display: block; text-align:center;"> Numero de ticket </label>
-                                                <input id="num_ticket" name="num_ticket" type="text" readonly="" value="#000 <?php //echo $idLastTicket; ?>" class="mat-input form-control"
+                                                <input id="num_ticket" name="num_ticket" type="text" readonly="" value="# <?php echo ++$idLastTicket; ?>" class="mat-input form-control"
                                                     style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
@@ -95,7 +108,7 @@ session_start();
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                             <div class="form-group pmd-textfield ">
                                                 <label for="estado" class="control-label" style="display: block; text-align:center;"> Estado de ticket </label>
-                                                <input id="estado" name="estado" type="text" class="form-control" readonly="" value="Nuevo<?php //echo $datos_ticket->estado; ?>" style="text-align:center;" disabled></input>
+                                                <input id="estado" name="id_estado_ticket" type="text" class="form-control" readonly="" value="Nuevo<?php //echo $datos_ticket->estado; ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 3 estado-->
@@ -136,9 +149,9 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="nombre" class="control-label" style="display: block; text-align:center;"> Nombres y apellidos </label>
-                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->nombre .' ' . $datos_usuario->apellido ; ?>" style="display: block; text-align:center;"
+                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php echo $nombreUsuario;?>" style="display: block; text-align:center;"
                                                     disabled>
-                                                <input type="hidden" name="id_usuario" id="id_usuario" class="form-control" maxlength="100" value="<?php //echo $datos_usuario->id; ?>">
+                                                <input type="hidden" name="cod_usuario" id="id_usuario" class="form-control" value="<?php echo $id_usuario;?>">
                                             </div>
                                         </div>
                                         <!--End Column 1 Nombre completos-->
@@ -147,7 +160,7 @@ session_start();
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="cargo" class="control-label" style="display: block; text-align:center;"> Cargo </label>
-                                                <input id="cargo" name="cargo" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->cargo; ?>" style="text-align:center;" disabled></input>
+                                                <input id="cargo" name="cod_cargo" type="text" class="form-control" readonly="" value="<?php echo $nomCargo; ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Cargo-->
@@ -156,7 +169,7 @@ session_start();
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="area" class="control-label" style="display: block; text-align:center;"> Area </label>
-                                                <input id="area" name="area" type="text" class="form-control" readonly="" value="<?php //echo $datos_usuario->area; ?>" style="text-align:center;" disabled></input>
+                                                <input id="area" name="cod_area" type="text" class="form-control" readonly="" value="<?php echo $nomArea ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 3 Area-->
@@ -185,7 +198,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="serial_equipo" class="control-label" style="display: block; text-align:center;"> Serial Equipo* </label>
-                                                <input id="serial_equipo" name="serial_equipo" type="text" class="form-control" value="" style="text-align:center;"></input>
+                                                <input id="serial_equipo" name="cod_equipo" type="text" class="form-control" value="" style="text-align:center;"></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Serial Equipo-->
@@ -194,7 +207,7 @@ session_start();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="categoria" class="control-label" style="display: block; text-align: center">Tipo de falla*</label>
-                                                <select id="categoria" name="categoria" class="select-simple form-control pmd-select2 text-center">
+                                                <select id="categoria" name="cod_categoria" class="select-simple form-control pmd-select2 text-center">
                                                     <option value=""> </option>
                                                     <option value="1">Hardware</option>
                                                     <option value="2">Software</option>
@@ -212,7 +225,7 @@ session_start();
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield">
                                                 <label class="control-label"> Descripción* </label>
-                                                <textarea name="descripcion" class="form-control"required ></textarea>
+                                                <textarea name="descrip_incidencia" class="form-control"required ></textarea>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Descripcion-->
@@ -225,7 +238,7 @@ session_start();
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield">
                                                 <label for="archivo" class="control-label"> Archivo adjunto </label>
-                                                <input id="archivo" name="archivo" type='file' class="" placeholder="carga tu Archivo adjunto" required>
+                                                <input id="archivo" name="archivo" type='file' class="" placeholder="carga tu Archivo adjunto" >
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Archivo adjunto-->
@@ -245,7 +258,7 @@ session_start();
 
                                     <div class="pmd-card-actions">
                                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
-                                                <button id="enviar" name="enviar" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect">Enviar</button>
+                                                <button id="btn_ClickedTicket" name="btn_ClickedTicket" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect">Enviar</button>
                                             </div>
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
                                             <a id="listTicket">

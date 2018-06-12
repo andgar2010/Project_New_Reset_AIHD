@@ -4,7 +4,15 @@ session_start();
 
 require '../config/Database.php';
 require '../model/Usuario.php';
+require '../model/CargoUsuario.php';
+require '../model/AreaUsuario.php';
+require '../model/RolUsuario.php';
+
 $usuario = new Usuario();
+$areaUsuario = new AreaUsuario();
+$cargoUsuario = new CargoUsuario();
+$rolUsuario  = new RolUsuario();
+
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
@@ -51,11 +59,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $db->close();
 }
 
+$_SESSION['id_usuario']             = $usuario->getId_usuario();
 $_SESSION['nombre']                 = $usuario->getNombre();
 $_SESSION['apellido']               = $usuario->getApellido();
 $_SESSION['cod_rol']                = $usuario->getCod_rol();
 $_SESSION['cod_estado_usuario']     = $usuario->getCod_estado_usuario();
 $_SESSION['nombres_completos']      = $usuario->getNombre().' '.$usuario->getApellido();
+$_SESSION['cod_area']               = $usuario->getCod_area();
+$_SESSION['cod_cargo']              = $usuario->getCod_cargo();
+$_SESSION['nom_area']               = $areaUsuario->readSingleNomArea($_SESSION['cod_area']);
+$_SESSION['nom_cargo']              = $cargoUsuario->readSingleNomCargo($_SESSION['cod_cargo']);
+
 
 switch ($_SESSION['cod_estado_usuario']) {
 case '1': // -- cod_estado_usuario 1 Inactivo --

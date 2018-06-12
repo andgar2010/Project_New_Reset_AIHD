@@ -34,7 +34,7 @@ class Ticket
     protected $fecha_inicio;
     protected $fecha_fin;
     protected $descrip_incidencia;
-    protected $archivo_evidencia;
+    //protected $archivo_evidencia;
     protected $cod_categoria;
     protected $cod_estado_ticket;
     protected $cod_equipo;
@@ -112,45 +112,48 @@ class Ticket
 
     /**
      * Get the values of descrip_incidencia
-     */
+     **/
     public function getDescrip_incidencia()
     {
         return $this->descrip_incidencia;
     }
-
+    
     /**
      * Set the value of descrip_incidencia
-     * 
-     * @return self
-     */
+     *
+     *@return self
+    */
     public function setDescrip_incidencia($descrip_incidencia)
     {
         include '../config/Database.php';
-        $this->descrip_incidencia = $db->real_escape_string($descrip_incidencia);
+       $this->descrip_incidencia = $db->real_escape_string($descrip_incidencia);
 
-        //return $this;
-    }
+      //return $this;
+     }
+     
 
     /**
      * Get the values of archivo_evidencia
-     */
-    public function getArchivo_evidencia()
-    {
-        return $this->archivo_evidencia;
-    }
+     *
+    *public function getArchivo_evidencia()
+    *{
+    *    return $this->archivo_evidencia;
+    *}
+    */
 
     /**
      *  set the value of archivo evidencia
      * 
      * @return self
-     */
-    public function setArchivo_evidencia($archivo_evidencia)
-    {
-        include '../config/Database.php';
-        $this->archivo_evidencia = $db->real_escape_string($archivo_evidencia);
+     
+    *public function setArchivo_evidencia($archivo_evidencia)
+    *{
+     *   include '../config/Database.php';
+     *   $this->archivo_evidencia = $db->real_escape_string($archivo_evidencia);
 
-        //return $this;
-    }
+     *   //return $this;
+    *}
+    */
 
     /**
      * Get the values of cod_categoria
@@ -236,6 +239,36 @@ class Ticket
         //return $this;
     }
 
+    /**
+     * 
+     */
+    function readLastTicket()
+    {
+        include '../../config/Database.php';
+
+        $sql_query = "SELECT id_ticket FROM `ticket` ORDER BY id_ticket DESC LIMIT 1";
+        
+        if ($output_sql = $db->query($sql_query)) {
+
+            if ($output_sql->num_rows == 0) {
+                // Si no encontrado usuario en BD
+                return $encontradoDB = 0;
+            } else {
+                /* fetch object array */
+                while ($obj = $output_sql->fetch_object()) {
+                    $Id_ticket = $obj->id_ticket;
+                }
+            }
+            /* free output_sql set */
+            $output_sql->close();
+        }
+        /* close connection */
+        $db->close();
+
+        return $Id_ticket;
+
+    }
+
 
      /**
      * Crear ticket al BD mediante metodo por objeto ticket
@@ -247,7 +280,7 @@ class Ticket
         include '../config/Database.php';
         define('ENVIADO', '1');//Defecto num 1: Activo por Estado de TICKET
 
-        $sql_insert = "INSERT INTO 'ticket'
+        /*$sql_insert = "INSERT INTO 'ticket'
                             ('descrip_incidencia',
                             'archivo_evidencia',
                             'cod_categoria',
@@ -262,6 +295,23 @@ class Ticket
                             '".$this->getCod_usuario()."',
                             '".$this->get_Cod_equipo()."',
                             '".ENVIADO."');";
+                            */
+
+                            $sql_insert = "INSERT INTO 'ticket'
+                            ('descrip_incidencia',
+                            'cod_categoria',
+                            'cod_estado_ticket',
+                            'cod_usuario',
+                            'cod_equipo')
+                        VALUES
+                            ('".$this->getDescrip_incidencia()."',
+                            '".$this->getCod_categoria()."',
+                            '".ENVIADO."',
+                            '".$this->getCod_usuario()."',
+                            '".$this->get_Cod_equipo()."');";
+
+                            var_dump($sql_insert);
+
 
         $insertadoTicketDb = $db->query($sql_insert)or die (infoErrorCreatedTicket($db));
         $db->close();
