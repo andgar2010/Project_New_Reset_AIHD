@@ -106,6 +106,8 @@ session_start();
 
             <!-- div row -->
             <div class="row">
+
+
                 <!-- TABLE -->
                 <div class="table-responsive">
                     <table class="table table-hover table-striped table-bordered ">
@@ -127,38 +129,6 @@ session_start();
                             $ticket = new Ticket();
                             $ticket->readAllListTicket();
                             ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                            <tr>
-                
-                                    <!--  -->
-                                    <a href="" class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </a>
-                                    <!--  -->
-                                    <!-- END Button  -->
-                                    <a href="" class="btn btn-danger btn-sm">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </a>
-                                    <!-- END Button  -->
-                                </td>
-                            </tr>
-                            <tr>
-                                
-                                    <!--  -->
-                                    <a href="" class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </a>
-                                    <!--  -->
-                                    <!-- END Button  -->
-                                    <a href="" class="btn btn-danger btn-sm">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </a>
-                                    <!-- END Button  -->
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
