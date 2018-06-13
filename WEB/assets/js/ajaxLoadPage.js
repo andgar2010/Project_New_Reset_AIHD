@@ -1,24 +1,4 @@
 $(document).ready(function() {
-
-    /*************************
-     * Go to User Management *
-     ************************/
-
-    // Go list of Users
-    $("#listUsers").click(function() {
-
-    });
-
-    // Go add new User
-    $("#addUser").click(function() {
-       
-    });
-
-    /*****************************
-     * End Go to User Management *
-     *****************************/
-
-
     /****************************
      * Go to Device Management *
      ***************************/
@@ -34,10 +14,10 @@ $(document).ready(function() {
     });
 
     // Go add new Equipo
-    $("#addEquipo").click(function () {
+    $("#addEquipo").click(function() {
         $.ajax({
             url: "../../views/mgmtDevice/viewAddEquipo.php",
-            success: function (result) {
+            success: function(result) {
                 $("#content").html(result);
             }
         });
@@ -78,11 +58,17 @@ $(document).ready(function() {
      *******************************/
 });
 
-// Go to Edit User
-function goToEditUser(id_usuario) {
+
+
+/*************************
+ * Go to User Management *
+ ************************/
+
+// Go to List of Users
+function goToListUsers() {
     $.ajax({
-        url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
-        success: function(result) {
+        url: "../mgmtUser/viewListUsers.php",
+        success: function (result) {
             $("#content").html(result);
         }
     });
@@ -98,22 +84,25 @@ function goToAddUser() {
     });
 }
 
-// Go to Info User
-function goToInfoUser(id_usuario) {
+// Go to Edit User
+function goToEditUser(id_usuario) {
     $.ajax({
-        url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
-        success: function(result) {
+        url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
+        success: function (result) {
             $("#content").html(result);
         }
     });
 }
 
-// Go to List of Users
-function goToListUsers() {
+// Go to Info User
+function goToInfoUser(id_usuario) {
     $.ajax({
-        url: "../mgmtUser/viewListUsers.php",
-        success: function(result) {
+        url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
+        success: function (result) {
             $("#content").html(result);
         }
     });
 }
+/*****************************
+ * End Go to User Management *
+ *****************************/
