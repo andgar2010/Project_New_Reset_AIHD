@@ -295,7 +295,191 @@ class Ticket
         $db->close();
         return ($insertadoTicketDb) ? true : false;
     }
-     
+
+/**
+ * Consultar lista de ticket
+ * 
+ * @return String arrayListTicket
+ */
+public function readAllListTicket()
+{
+    include '../../config/Database.php';
+    $sql_query = " SELECT 
+	ticket.id_ticket, 
+    ticket.fecha_inicio,
+    tipo_equipo.nombre as 'NomTipoEquipo',
+    equipo.serial_equipo,
+    categoria_ticket.nombre as 'NomTipoIncidencia',
+    ticket.descrip_incidencia,
+    estado_ticket.nombre as 'NomEstadoTicket'
+FROM
+	ticket
+INNER JOIN
+	equipo
+ON
+	equipo.id_equipo = ticket.cod_equipo
+INNER JOIN
+	tipo_equipo
+ON
+	tipo_equipo.id_tipo_equipo = equipo.cod_tipo_equipo
+INNER JOIN
+	categoria_ticket
+ON
+	categoria_ticket.id_categoria = ticket.cod_categoria
+INNER JOIN
+	estado_ticket
+ON
+	estado_ticket.id_estado_ticket = ticket.cod_estado_ticket";
+
+    if($output_sql = $db->query($sql_query)){
+        if($row = $output_sql->num_rows == 0){
+            echo'
+            <tr>
+                <td colspan="8">No hay datos</td>
+            </tr>';
+        }else{
+            while ($row = $output_sql->fetch_assoc()){
+                echo'
+                <tr id="' .$row['id_ticket'] . '">
+                    <td class="text-center" id="id_ticket">
+                        <a onClick=" goToInfoTicket('. $row['id_ticket'] .')">
+                        <span class="fa fa-info-circle fa-lg" aria-hidden="true">&nbsp;</span>'
+                            .$row['id_ticket'].
+                        '</a> 
+                    </td>
+                    <td>'
+                        . $row['fecha_inicio'].
+                    '</td>
+                    <td>'
+                        .$row['NomTipoEquipo'].
+                    '</td>
+                    <td>'
+                        .$row['serial_equipo'].
+                    '</td>
+                    <td>'
+                        .$row['NomTipoIncidencia'].
+                    '</td>
+                    <td>'
+                        .$row['descrip_incidencia'].
+                    '</td>
+                    <td>'
+                        .$row['NomEstadoTicket'].
+                    '</td>';
+                echo'
+                    <td class="text-center">
+                        <a id="editTicket" onClick="goToEditTicket('. $row['id_ticket'] . ') " title="Editar datos" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
+                        <a href="../../controllers/controllerDeletedTicket.php?btnClickedUser=delete&name=' .$row['serial_equipo'].'& nik=' .$row['id_ticket'].'" title="Eliminar" onClick="return confirm(\'Desea finalizar el proceso del ticket numero ' .$row['id_ticket'] .'?\')"
+                        class="btn btn-danger btn-sm">
+                            <span class="fa fa-archive" aria-hidden="true"></span>
+                            </a>
+                    </tr>';
+            }
+
+            $output_sql->close();
+        }
+
+        $db->close();     
+    }
+} //End readTicket()
+
+/**
+ * consultar unico ticket
+ * 
+ * $id_ticket @param int numero de ticket desde seleccion lista de ticket
+ * 
+ * @return Ticket objeto
+ */
+public function readSingleRecordTicket($id_ticket)
+{
+    include '../../config/Database.php';
+    $sql_query = "SELECT 
+	ticket.id_ticket, 
+    ticket.fecha_inicio,
+    tipo_equipo.nombre as 'NomTipoEquipo',
+    equipo.serial_equipo,
+    categoria_ticket.nombre as 'NomTipoIncidencia',
+    ticket.descrip_incidencia,
+    estado_ticket.nombre 'Estado',
+    usuario.nombre as 'NombreUsuario',
+    usuario.apellido as 'ApellidoUsuario',
+    cargo_usuario.nombre as 'Cargo',
+    area_usuario.nombre as 'Area'
+    
+FROM
+	ticket 
+INNER JOIN
+	equipo
+ON
+	equipo.id_equipo = ticket.cod_equipo
+INNER JOIN
+	tipo_equipo
+ON
+	tipo_equipo.id_tipo_equipo = equipo.cod_tipo_equipo
+INNER JOIN
+	categoria_ticket
+ON
+	categoria_ticket.id_categoria = ticket.cod_categoria
+INNER JOIN
+	estado_ticket
+ON
+	estado_ticket.id_estado_ticket = ticket.cod_estado_ticket
+INNER JOIN
+	usuario
+ON
+	usuario.id_usuario = ticket.cod_usuario
+INNER JOIN
+	cargo_usuario
+ON
+	cargo_usuario.id_cargo = usuario.cod_cargo
+INNER JOIN
+	area_usuario
+ON
+	area_usuario.id_area = usuario.cod_area
+
+WHERE ticket.id_ticket = ". $id_ticket;
+    
+    if ($output_sql = $db->query($sql_query)){
+        if($output_sql->num_rows == 0){
+            //Si no encuentra ticket en BD
+            return $encontradoDB = false;
+        }else{
+            //Si encuentra el ticket en BD, recoge los datos al this objeto.
+            $encontradoDB = true;
+
+            /*fetch object array*/
+            while ($obj = $output_sql->fetch_object()){
+                $this->id_ticket            =
+                $obj->id_ticket;
+                $this->fecha_inicio         =
+                $obj->fecha_inicio;
+                $this->Estado               =
+                $obj->Estado;
+                $this->NombreUsuario        =
+                $obj->NombreUsuario;
+                $this->ApellidoUsuario      =
+                $obj->ApellidoUsuario;
+                $this->Cargo                =
+                $obj->Cargo;
+                $this->Area                 =
+                $obj->Area;
+                $this->tipo_equipo          =
+                $obj->tipo_equipo;
+                $this->serial_equipo        =
+                $obj->serial_equipo;
+                $this->NomTipoIncidencia    =
+                $obj->NomTipoIncidencia;
+                $this->descrip_incidencia   =
+                $obj->descrip_incidencia;
+
+            }
+            /*free output_sql set*/
+            $output_sql->close();
+        }
+        /*close connection
+    }
+}
+
 }
 
 /**
