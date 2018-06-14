@@ -73,6 +73,20 @@ $(document).ready(function() {
         });
     });
 
+
+    // Go to Edit ticket
+function goToEditTicket(id_ticket) {
+    $.ajax({
+        url: "../mgmtUser/viewEditTicket.php?id=" + id_ticket,
+        success: function(result) {
+            $("#content").html(result);
+        }
+    });
+}
+
+
+// Go to Add User
+
     /*******************************
      * End Go to Ticket Management *
      *******************************/
