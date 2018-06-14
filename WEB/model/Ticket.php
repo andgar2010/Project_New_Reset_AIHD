@@ -45,7 +45,6 @@ class Ticket
      */
     public function __construct()
     {
-
     }//End construct()
 
     /**
@@ -129,7 +128,7 @@ class Ticket
        $this->descrip_incidencia = $db->real_escape_string($descrip_incidencia);
 
       //return $this;
-     }
+    }
      
 
     /**
@@ -369,7 +368,7 @@ ON
                     <td class="text-center">
                         <a id="editTicket" onClick="goToEditTicket('. $row['id_ticket'] . ') " title="Editar datos" class="btn btn-primary btn-sm">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
-                        <a href="../../controllers/controllerDeletedTicket.php?btnClickedUser=delete&name=' .$row['serial_equipo'].'& nik=' .$row['id_ticket'].'" title="Eliminar" onClick="return confirm(\'Desea finalizar el proceso del ticket numero ' .$row['id_ticket'] .'?\')"
+                        <a href="../../controllers/controllerDeleteTicket.php?btnClickedUser=delete&serial=' .$row['serial_equipo'].'& nik=' .$row['id_ticket'].'" title="Eliminar" onClick="return confirm(\'Desea finalizar el proceso del ticket numero ' .$row['id_ticket'] .'?\')"
                         class="btn btn-danger btn-sm">
                             <span class="fa fa-archive" aria-hidden="true"></span>
                             </a>
@@ -476,9 +475,98 @@ WHERE ticket.id_ticket = ". $id_ticket;
             /*free output_sql set*/
             $output_sql->close();
         }
-        /*close connection
-    }
+        /*close connection*/
+        $db->close();
+    } //End readSingleRecordTicket
 }
+
+    /**
+    * Editar unico ticket
+    * 
+    * $$id_ticket @param int numero de ticket desde seleccion de lista de ticket
+    * 
+    * @return Boolean actualizadoTicket
+    */
+    public function updateTicket()
+    {
+        include '../config/Database.php';
+
+        $sql_update = "UPDATE   'ticket'
+                        SET 'serial_equipo'         =
+                        '".$this->getSerial_equipo()."',
+                            'categoria'             =
+                            '".$this->getCod_categoria()."',
+                            'descrip_incidencia'    = 
+                            '".$this->getDescrip_incidencia()."',
+                            'archivo_evidencia'     =
+                            '".$this->getArchivo_evidencia()."'
+                        WHERE 
+                            'ticket'.'id_ticket'        =  
+                            '".$this->getId_ticket()."'";
+            $actualizadoTicketDb =$db->query($sql_update) or
+            die(infoErrorUptadeTicket($db));
+
+            /* free sql_update set */
+            //$actualizadoTicketDb->close();
+
+            /* close connection */
+            $db->close();
+
+            return ($actualizadoTicketDb) ? true : false;
+    }//End updateTicket()
+
+    /**
+     * Archivar ticket
+     * 
+     * $id_ticket @param int numero de ticket desde seleccion lista de ticket
+     * 
+     * @return Boolean archivarTicket
+     */
+    public function archivarTicket($id_ticket)
+    {
+        define('SOLUCIONADO', '4');
+
+        include '../config/Database.php';
+
+       // UPDATE `ticket` SET `cod_estado_ticket` = '4' WHERE `ticket`.`id_ticket` = 12;
+            $sql_update = "UPDATE `ticket` SET `cod_estado_ticket` = '".SOLUCIONADO."' WHERE `ticket`.`id_ticket` = ".$id_ticket;
+            
+            $archivadoTicketDb = $db->query($sql_update)
+            or die(
+                '<h1 class="text-center">Oooops!</h1>
+                    <br>
+                    <p>Hubo un error al archivar el ticket.</p>
+                    <br><br>
+                    <strong>Origen error:</strong>
+                    <br>' . mysqli_error($db)
+            );
+            /* free sql_update set*/
+            //$archivadoTicketDb->close();
+
+            /*close connection*/
+            $db->close();
+            return ($archivadoTicketDb) ? true : false;
+    }//End archivadoTicket
+
+    /**
+     * Editar unico ticket
+     *
+     * $id_ticket @param int numero de ticket desde selecciona lista de ticket
+     *
+     * @return Boolean actualizadoTicket
+     */
+
+     public function updateTicket()
+     {
+         include '../config/Database.php';
+
+         $sql_update = ""
+     }
+
+
+
+
+
 
 }
 
@@ -490,27 +578,27 @@ WHERE ticket.id_ticket = ". $id_ticket;
  * @return String echo html
  */
 function infoErrorCreateTicket($db)
-{
-    echo '<div class="mosal-dialog">
-        <div class="modal-content"
-            <div class="modal-header"
-                <button class="btn btn-info" onclick="goBack()">Regresar</button>
-                <h1 class="section-title modal-title text-center"> Oooops!</h1>
-            </div>
-            <hr>
-            <div class="modal-body">
-                Hubo un error al registrar el Ticket.
-                <br>
-                <br>
-                <strong>Origen error:</strong>
-                </br>' . mysqli_error($db). '
-            </div>
-        </div>
-    </div>
+{   
+        echo '<div class="mosal-dialog">
+            <div class="modal-content"
+             <div class="modal-header"
+                 <button class="btn btn-info" onclick="goBack()">Regresar</button>
+                    <h1 class="section-title modal-title text-center"> Oooops!</h1>
+                </div>
+                <hr>
+                <div class="modal-body">
+                     Hubo un error al registrar el Ticket.
+                    <br>
+                    <br>
+                     <strong>Origen error:</strong>
+                    </br>' . mysqli_error($db). '
+                </div>
+             </div>
+             </div>
     
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>';
+        <script>
+            function goBack() {
+             window.history.back();
+             }
+            </script>';
 }
