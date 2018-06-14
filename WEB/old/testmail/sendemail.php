@@ -18,6 +18,19 @@ use PHPMailer\PHPMailer\PHPMailer;
         $mail->setFrom($mail_setFromEmail, $mail_setFromName);      //Introduzca la direccion de la que debe aparecer el correo electronico. Puede utilizar cualquier direccion que el servidor SMTP acepte como valida. El segundo parametro opcional para esta funcion es el nombre que se mostrara com el remitente en lugar de la direccion de correo electronico en si.
         $mail->addAddress($mail_addAddress);        // Agregar quien recibe el email enviado
         $message = file_get_contents($template);
+        $message = str_replace('{{first_name}}', $mail_setFromName, $message);
+        $message = str_replace('{{customer_email}}', $mail_setFromEmail, $message);
+        $mail->isHTML(true);  //Establecer el formato de correo electronico en HTML
+
+        $mail->Subject = $email_subject;
+        $mail->msgHTML($message);
+        if (!$mail->send()) {
+            echo '<p style="color:red"> No se pudo enviar el mensaje..';
+            echo 'Error de correo:'. $mail->ErrorInfo;
+            echo '</p>';
+        } else {
+            echo '<p style="color:green">Tu mensaje ha sido enviado!</p>';
+        }
 
 
     }

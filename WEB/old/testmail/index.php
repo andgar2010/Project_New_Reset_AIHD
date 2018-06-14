@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    <div class="content">
+
+<div class="container">
+<div class="row">
+<div class="content">
         <div class="contact-main">
             <form action="" method="post">
                 <h3>Tu correo electronico</h3>
@@ -26,11 +29,11 @@
                 <textarea name="message" id="message" placeholder="Leave your message here..." required></textarea>
                 <?php
                     if (isset($_POST['send'])) {
-                        include('sendmail.php'); //Mando a llamar ala funcion que se encarga de enviar el correo eletronico
+                        include('sendemail.php'); //Mando a llamar ala funcion que se encarga de enviar el correo eletronico
 
                         /* Configuracion de variables para enviar el correo */
-                        $mail_username              = ''; //Correo electronico saliente. ejemplo: tucorreo@gmail.com
-                        $mail_userpassword          = ''; //Tu contraseña correo
+                        $mail_username              = 'soportenewreset@gmail.com'; //Correo electronico saliente. ejemplo: tucorreo@gmail.com
+                        $mail_userpassword          = 'AG40DA48CT41'; //Tu contraseña correo
                         $mail_sendtoAddAddressMail  = '';
                         $template         = "email_template.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
 
@@ -62,6 +65,10 @@
             </form>
         </div>
     </div>
+</div>
+</div>
+
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
