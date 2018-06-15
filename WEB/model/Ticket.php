@@ -492,17 +492,27 @@ WHERE ticket.id_ticket = ". $id_ticket;
         include '../config/Database.php';
 
         $sql_update = "UPDATE   'ticket'
-                        SET 'serial_equipo'         =
-                        '".$this->getSerial_equipo()."',
-                            'categoria'             =
+                        SET 'descrip_incidencia'         =
+                            '".$this->getDescrip_incidencia()."'
+                        
+                        WHERE 
+                            'ticket'.'id_ticket'        =  
+                            '".$this->getId_ticket()."' AND 'ticket'.'cod_equipo' = '".$this->getCod_equipo()."'";
+
+                          /*  "UPDATE   'ticket'
+                        SET 'fecha_inicio'         =
+                        '".$this->getFecha_inicio()."',
+                            'cod_categoria'             =
                             '".$this->getCod_categoria()."',
                             'descrip_incidencia'    = 
                             '".$this->getDescrip_incidencia()."',
                             'archivo_evidencia'     =
-                            '".$this->getArchivo_evidencia()."'
+                            '".$this->getArchivo_evidencia()."',
+                            'cod_estado_ticket'     =
+                            '".$this->getCod_estado_ticket()."'
                         WHERE 
                             'ticket'.'id_ticket'        =  
-                            '".$this->getId_ticket()."'";
+                            '".$this->getId_ticket()."'";*/
             $actualizadoTicketDb =$db->query($sql_update) or
             die(infoErrorUptadeTicket($db));
 
@@ -546,29 +556,10 @@ WHERE ticket.id_ticket = ". $id_ticket;
             /*close connection*/
             $db->close();
             return ($archivadoTicketDb) ? true : false;
-    }//End archivadoTicket
-
-    /**
-     * Editar unico ticket
-     *
-     * $id_ticket @param int numero de ticket desde selecciona lista de ticket
-     *
-     * @return Boolean actualizadoTicket
-     */
-
-     public function updateTicket()
-     {
-         include '../config/Database.php';
-
-         $sql_update = ""
-     }
+    }//End archivadoTicket}
 
 
 
-
-
-
-}
 
 /**
  * Imprimir aviso error crear nuevo ticket
@@ -601,4 +592,5 @@ function infoErrorCreateTicket($db)
              window.history.back();
              }
             </script>';
+}
 }
