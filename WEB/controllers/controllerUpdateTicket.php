@@ -26,10 +26,16 @@
  if(isset($_POST['btnClickerUser']) == 'sendUpdate'){
      if(isset($_POST) && !empty($_POST)){
          $ticket->setId_ticket($_POST['id_ticket']);
+         //$ticket->setSerial_equipo($_POST['serial_equipo']);
+         $ticket->setCod_equipo($_POST['cod_equipo']);
+         $ticket->setDescrip_incidencia($_POST['descrip_incidencia']);
+         //$ticket->setArchivo_evidencia($_POST['archivo_evidencia']);
+
+         /*$ticket->setId_ticket($_POST['id_ticket']);
          $ticket->setSerial_equipo($_POST['serial_equipo']);
          $ticket->setId_tipo_equipo($_POST['id_tipo_equipo']);
          $ticket->setDescrip_incidencia($_POST['descrip_incidencia']);
-         $ticket->setArchivo_evidencia($_POST['archivo_evidencia']);
+         $ticket->setArchivo_evidencia($_POST['archivo_evidencia']);*/
 
          //$actualizadoTicketDB = $ticket->updateTicket($id_ticket, $serial_equipo, $id_tipo_equipo, $decrip_incidencia, $archivo_evidencia);
          $actualizadoTicketDB = $ticket->updateTicket();
