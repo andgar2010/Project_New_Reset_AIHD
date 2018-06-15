@@ -6,13 +6,44 @@ $nombreUsuario  = $_SESSION['nombres_completos'];
 $codRol         = $_SESSION['cod_rol'];
 $nomArea        = $_SESSION['nom_area'];
 $nomCargo       = $_SESSION['nom_cargo'];
+$serial_equipo  = 
 
+$id_ticket = intval($_GET['id']);
 include '../../Model/Ticket.php';
 include '../../Model/Equipo.php';
 $ticket = new Ticket();
 $equipo = new Equipo();
+$ticket->readSingleRecordTicket($id_ticket);
+    if($ticket->getCod_equipo() == null){
+
+    ////Si no se encuentra registro de ticket en base de datos, redireccionar -> viewListUsers.php con parametros
+    header ("location: ./viewListTicket.php?info=search&result=no");
+    }else{
+        //Si se encuentra el registro del ticket en base de datos, llevar datos del ticket al formulario
+        $id_ticket                  =$ticket->getId_ticket();
+        $fecha_inicio               =$ticket->getFecha_inicio();
+        $fecha_fin                  =$ticket->getFecha_fin();
+        $descrip_incidencia         =$ticket->getDescrip_incidencia();
+        $cod_categoria              =$ticket->getCod_categoria();
+        $cod_estado_ticket          =$ticket->getCod_estado_ticket();
+        $cod_equipo                 =$ticket->getCod_equipo();
+        $cod_usuario                =$ticket->getCod_usuario();
+        $cod_cargo                  =$ticket->getCod_cargo();
+        $cod_area                   =$ticket->getCod_area();
+        $tipo_equipo                =$ticket->getTipo_equipo();
+
+        $tiempo_actual              =new DateTime("now");
+        $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);
+
+    }
+
+
+
+
+
 
 $idLastTicket = $ticket->readLastTicket();
+
 
 
 ?>
@@ -185,8 +216,7 @@ $idLastTicket = $ticket->readLastTicket();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="serial_equipo" class="control-label" style="display: block; text-align:center;"> Serial Equipo* </label>
-                                                <select class="select-with-search form-control pmd-select2" id="serial_equipo" name="cod_equipo">
-                                                    <?php $equipo->readAllSelectEquipo();?>
+                                                <input id="serial_equipo" name="serial_equipo" type="text" class="form-control" readonly="" value="<?php echo $serial_equipo; ?>" style="text-align:center;" disabled></input>
                                                 </select>
                                             </div>
                                         </div>
