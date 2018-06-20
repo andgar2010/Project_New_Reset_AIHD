@@ -100,7 +100,7 @@ class AreaUsuario
      */
     public function readSingleNomArea($id_area)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM area_usuario WHERE id_area = " . $id_area;
 
         if ($output_sql = $db->query($sql_query)) {
