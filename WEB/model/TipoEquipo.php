@@ -105,7 +105,36 @@ class TipoEquipo
         }
 
     }//End readTipoEquipo()
+
+    
+    public function readSingleCodToName($id_tipo_equipo)
+    {
+        include '../../config/Database.php';
+        $sql_query = "SELECT nombre FROM tipo_equipo WHERE id_tipo_equipo =". $id_tipo_equipo;
+       if ($output_sql = $db->query($sql_query)) {
+    
+            if ($output_sql->num_rows == 0) {
+                // Si no encontrado usuario en BD
+                return $encontradoDB = false;
+            } else {
+                // Si encontrado datos de usuario en BD, recoge los datos al this objeto.
+                $encontradoDB = true;
+    
+                /* fetch object array */
+                while ($obj = $output_sql->fetch_object()) {
+                    $this->setNombre($obj->nombre);
+                 
+                }             
+            }
+            /* free output_sql set */
+            //$output_sql->close();
+        }
+        /* close connection */
+        $db->close();
+    } //End readSingleRecordUsuer()
 }
+
+
 ?>
 
 
