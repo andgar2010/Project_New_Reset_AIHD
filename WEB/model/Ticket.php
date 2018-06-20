@@ -237,7 +237,7 @@ class Ticket
 
         //return $this;
     }
-
+    
     /**
      * 
      */
@@ -392,85 +392,39 @@ ON
 public function readSingleRecordTicket($id_ticket)
 {
     include '../../config/Database.php';
-    $sql_query = "SELECT 
-	ticket.id_ticket, 
-    ticket.fecha_inicio,
-    tipo_equipo.nombre as 'NomTipoEquipo',
-    equipo.serial_equipo,
-    categoria_ticket.nombre as 'NomTipoIncidencia',
-    ticket.descrip_incidencia,
-    estado_ticket.nombre 'Estado',
-    usuario.nombre as 'NombreUsuario',
-    usuario.apellido as 'ApellidoUsuario',
-    cargo_usuario.nombre as 'Cargo',
-    area_usuario.nombre as 'Area'
     
-FROM
-	ticket 
-INNER JOIN
-	equipo
-ON
-	equipo.id_equipo = ticket.cod_equipo
-INNER JOIN
-	tipo_equipo
-ON
-	tipo_equipo.id_tipo_equipo = equipo.cod_tipo_equipo
-INNER JOIN
-	categoria_ticket
-ON
-	categoria_ticket.id_categoria = ticket.cod_categoria
-INNER JOIN
-	estado_ticket
-ON
-	estado_ticket.id_estado_ticket = ticket.cod_estado_ticket
-INNER JOIN
-	usuario
-ON
-	usuario.id_usuario = ticket.cod_usuario
-INNER JOIN
-	cargo_usuario
-ON
-	cargo_usuario.id_cargo = usuario.cod_cargo
-INNER JOIN
-	area_usuario
-ON
-	area_usuario.id_area = usuario.cod_area
-
-WHERE ticket.id_ticket = ". $id_ticket;
+    $sql_query = "SELECT
+	                fecha_inicio,
+                    id_ticket,
+                    cod_estado_ticket,
+                    fecha_fin,
+                    cod_usuario,
+                    cod_equipo,
+                    descrip_incidencia
+                FROM
+                	ticket
+                WHERE
+                	id_ticket = ". $id_ticket;
+    
     
     if ($output_sql = $db->query($sql_query)){
         if($output_sql->num_rows == 0){
             //Si no encuentra ticket en BD
             return $encontradoDB = false;
         }else{
+            
             //Si encuentra el ticket en BD, recoge los datos al this objeto.
             $encontradoDB = true;
 
             /*fetch object array*/
             while ($obj = $output_sql->fetch_object()){
-                $this->id_ticket            =
-                $obj->id_ticket;
-                $this->fecha_inicio         =
-                $obj->fecha_inicio;
-                $this->Estado               =
-                $obj->Estado;
-                $this->NombreUsuario        =
-                $obj->NombreUsuario;
-                $this->ApellidoUsuario      =
-                $obj->ApellidoUsuario;
-                $this->Cargo                =
-                $obj->Cargo;
-                $this->Area                 =
-                $obj->Area;
-                $this->tipo_equipo          =
-                $obj->tipo_equipo;
-                $this->serial_equipo        =
-                $obj->serial_equipo;
-                $this->NomTipoIncidencia    =
-                $obj->NomTipoIncidencia;
-                $this->descrip_incidencia   =
-                $obj->descrip_incidencia;
-
+                $this->id_ticket = $obj->id_ticket;
+                $this->fecha_inicio = $obj->fecha_inicio;
+                $this->cod_estado_ticket = $obj->cod_estado_ticket;
+                $this->fecha_fin = $obj->fecha_fin;
+                $this->cod_usuario = $obj->cod_usuario;
+                $this->cod_equipo = $obj->cod_equipo;
+                $this->descrip_incidencia = $obj->descrip_incidencia;
             }
             /*free output_sql set*/
             $output_sql->close();
@@ -593,4 +547,5 @@ function infoErrorCreateTicket($db)
              }
             </script>';
 }
+
 }
