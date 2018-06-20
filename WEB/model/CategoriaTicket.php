@@ -60,7 +60,7 @@
        * 
        * @return self
        */
-      public function setNobre($nombre)
+      public function setNombre($nombre)
       {
           $this->nombre = $nombre;
 
@@ -90,5 +90,35 @@
             $db->close();
           }
       }//End readCategoriaTicket()
+
+ public function readSingleCodToName($id_categoria_ticket)
+ {
+    include '../../config/Database.php';
+    $sql_query = "SELECT nombre FROM categoria_ticket WHERE id_categoria =". $id_categoria_ticket;
+   if ($output_sql = $db->query($sql_query)) {
+
+        if ($output_sql->num_rows == 0) {
+            // Si no encontrado usuario en BD
+            return $encontradoDB = false;
+        } else {
+            // Si encontrado datos de usuario en BD, recoge los datos al this objeto.
+            $encontradoDB = true;
+
+            /* fetch object array */
+            while ($obj = $output_sql->fetch_object()) {
+                $this->setNombre($obj->nombre);
+             
+            }             
+        }
+        /* free output_sql set */
+        //$output_sql->close();
+    }
+    /* close connection */
+    $db->close();
+} //End readSingleRecordUsuer()
+
+
  }
+
+
  ?>
