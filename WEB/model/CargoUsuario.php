@@ -99,7 +99,7 @@ class CargoUsuario
      */
     public function readSingleNomCargo($id_cargo)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $sql_query = "SELECT * FROM cargo_usuario WHERE id_cargo = " . $id_cargo;
 
         if ($output_sql = $db->query($sql_query)) {
@@ -108,7 +108,7 @@ class CargoUsuario
                 echo'No hay datos de Cargo Usuario';
             } else {
                 while ($row = $output_sql->fetch_assoc()) {
-                     $nomCargo = $row['nombre'];
+                    $nomCargo = $row['nombre'];
                 }
                 $output_sql->close();
             }
