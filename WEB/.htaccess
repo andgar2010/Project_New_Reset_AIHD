@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*\.js) gzip.php?type=js&file=$1
+RewriteRule ^(.*\.css) gzip.php?type=css&file=$1
+</IfModule>

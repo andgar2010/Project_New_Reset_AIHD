@@ -4,7 +4,6 @@ if (isset($_SESSION)) {
 } else {
 	session_start();
 }
-
 ?>
 
 <!doctype html>
@@ -18,8 +17,8 @@ if (isset($_SESSION)) {
 	<title>Login | NEW RESET AIHD - Admin Dashboard</title>
 
 	<?php
-		require '../config/base_head.php';
-		require '../config/googleAnaytics.php';
+		require '../../config/base_head.php';
+		require '../../config/googleAnaytics.php';
 	?>
 
 	<!-- Styles Ends -->
@@ -29,11 +28,11 @@ if (isset($_SESSION)) {
 	<div class="logincard">
 		<div class="pmd-card card-default pmd-z-depth">
 			<div class="login-card">
-				<form role="form" method="POST" action="../controllers/authLogin.php">
+				<form role="form" method="POST" action="../../controllers/authLogin.php">
 					<div class="pmd-card-title card-header-border text-center">
 						<div class="loginlogo">
-							<a href="../index.php;">
-								<img src="../assets/images/IsotipoV2_Alpha_256.png" alt="Logo">
+							<a href="../../index.php;">
+								<img src="../../assets/images/IsotipoV2_Alpha_256.png" alt="Logo">
 							</a>
 						</div>
 						<h3>Iniciar Sesión <span>con <strong>NEW RESET A.I.H.D.</strong> </span> </h3>
@@ -45,8 +44,7 @@ if (isset($_SESSION)) {
 							<div class="form-group">
 								<label id="email" for="email" class="control-label pmd-input-group-label">
 									<span class="fa fa-user fa-lg"></span>&nbsp;Email</label>
-								<input id="email" type="text" class="form-control" name="email" placeholder="                                          Ingrese su email"
-								    required>
+								<input id="email" type="text" class="form-control" name="email" placeholder="                                          Ingrese su email" required>
 							</div>
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
@@ -54,8 +52,7 @@ if (isset($_SESSION)) {
 								<label id="password" for="password" class="control-label pmd-input-group-label">
 									<span class="fa fa-key fa-lg"></span> Contraseña
 								</label>
-								<input id="password" type="password" class="form-control" name="password" placeholder="                                          ingrese contraseña"
-								    required>
+								<input id="password" type="password" class="form-control" name="password" placeholder="                                          ingrese contraseña"required>
 							</div>
 						</div>
 					</div>
@@ -73,8 +70,8 @@ if (isset($_SESSION)) {
 							</span>
 						</div>
 						<button type="submit" class="btn pmd-ripple-effect btn-primary btn-block">
-							<span class="fa fa-sign-in fa-lg" required></span>
-							<p>Iniciar Sesión </p>
+							Iniciar Sesión &nbsp; <span class="fa fa-sign-in fa-lg" required></span>
+
 						</button>
 
 						<p class="redirection-link">¿No tiene una cuenta? <a href="javascript:void(0);" class="login-register">Cree una</a>.</p>
@@ -88,12 +85,12 @@ if (isset($_SESSION)) {
 				<div class="pmd-card-title card-header-border text-center">
 					<div class="loginlogo">
 						<a href="javascript:void(0);">
-							<img src="../assets/images/IsotipoV2_Alpha_256.png" alt="Logo">
+							<img src="../../assets/images/IsotipoV2_Alpha_256.png" alt="Logo">
 						</a>
 					</div>
 					<h3>Crear cuenta <span>con <strong>NEW RESET AIHD</strong> </span> </h3>
 				</div>
-				<form role="form" method="POST" action="../controllers/">
+				<form role="form" method="POST" action="../../controllers/">
 					<div class="pmd-card-body">
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="inputError1" class="control-label pmd-input-group-label">Usuario</label>
@@ -136,11 +133,11 @@ if (isset($_SESSION)) {
 
 			<!-- ¿Has olvidado tu contraseña? -->
 			<div class="forgot-password-card">
-				<form role="form" method="POST" action="../controllers/">
+				<form role="form" method="POST" action="../../controllers/">
 					<div class="pmd-card-title card-header-border text-center">
 						<div class="loginlogo">
 							<a href="javascript:void(0);">
-								<img src="../assets/images/IsotipoV2_Alpha_256.png" alt="Logo">
+								<img src="../../assets/images/IsotipoV2_Alpha_256.png" alt="Logo">
 							</a>
 						</div>
 						<h3>¿Has olvidado tu contraseña?
@@ -168,7 +165,7 @@ if (isset($_SESSION)) {
 	</div>
 
 	<!-- Scripts Starts -->
-	<?php include '../config/base_script.php';?>
+	<?php include '../../config/base_script.php';?>
 	<script>
 		$(document).ready(function () {
 			var sPath = window.location.pathname;
