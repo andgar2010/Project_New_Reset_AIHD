@@ -2,10 +2,12 @@
 session_start();
 
 $id_usuario     = $_SESSION['id_usuario'];
+
 $nombreUsuario  = $_SESSION['nombres_completos'];
 $codRol         = $_SESSION['cod_rol'];
-$nomArea        = $_SESSION['nom_area'];
-$nomCargo       = $_SESSION['nom_cargo'];
+$nomArea        = $_SESSION['nombre'];
+$nomCargo       = $_SESSION['nombre'];
+
 
 
 $id_ticket = intval($_GET['id']);
@@ -17,6 +19,7 @@ include '../../Model/EstadoTicket.php';
 include '../../Model/AreaUsuario.php';
 include '../../Model/CargoUsuario.php';
 include '../../Model/Usuario.php';
+
 $ticket = new Ticket();
 $equipo = new Equipo();
 $tipoEquipo = new TipoEquipo();
@@ -29,6 +32,7 @@ $usuario = new Usuario();
 
 
 
+
 $ticket->readSingleRecordTicket($id_ticket);
     if($ticket->getId_ticket() == null){
 
@@ -37,35 +41,58 @@ $ticket->readSingleRecordTicket($id_ticket);
     }else{
         //Si se encuentra el registro del ticket en base de datos, llevar datos del ticket al formulario
         
-        $id_ticket                  =$ticket->getId_ticket();
-        $fecha_inicio               =$ticket->getFecha_inicio();
-        $cod_estado_ticket          =$ticket->getCod_estado_ticket();
-        $fecha_fin                  =$ticket->getFecha_fin();
-        $cod_usuario                =$ticket->getCod_usuario();
-        $descrip_incidencia         =$ticket->getDescrip_incidencia();
+        // $id_ticket                  =$ticket->getId_ticket();
+        // $fecha_inicio               =$ticket->getFecha_inicio();
+        // $cod_estado_ticket          =$ticket->getCod_estado_ticket();
+
+        // $fecha_fin                  =$ticket->getFecha_fin();
+        // $cod_usuario                =$ticket->getCod_usuario();
+        $descrip_incidencia            =$ticket->getDescrip_incidencia();
+     
+        var_dump($equipo);
+    
+
+
 
         $equipo->readSingleEquipo($ticket->getCod_equipo());
+
+       
+
         
         $serialEquipo = $equipo->getSerial_equipo();
 
-        $nameTipoEquipo = $tipoEquipo->readSingleCodToName($equipo->getCod_tipo_equipo());
 
-        $nameCategoriaTicket = $categoriaTicket->readSingleCodToName($ticket->getCod_categoria());
+        $nameTipoEquipo = $tipoEquipo->readSingleCodToName($tipoEquipo->getId_tipo_equipo());
+       
+
+
+        
+    
+        $nameCategoriaTicket = $categoriaTicket->readSingleCodToNameCategoria($ticket->getCod_categoria());
+    
+
+
+        
 
 
         $usuario->readSingleRecordUsuer($ticket->getCod_usuario());
     
 
         $nameCargo = $cargoUsuario->readSingleNomCargo($usuario->getCod_cargo());
+        
 
         $nameArea = $areaUsuario->readSingleNomArea($usuario->getCod_area());
 
-        $tiempo_actual              =new DateTime("now");
-        $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);
 
+
+      /*   $tiempo_actual              =new DateTime("now");
+        $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);
+ */
 
     }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -83,6 +110,7 @@ $ticket->readSingleRecordTicket($id_ticket);
 </head>
 
 <body>
+
     <!-- Container -->
     <div class="container">
 
@@ -230,7 +258,7 @@ $ticket->readSingleRecordTicket($id_ticket);
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="serial_equipo" class="control-label" style="display: block; text-align:center;"> Serial Equipo* </label>
                                                 <input id="serial_equipo" name="serial_equipo" type="text" class="form-control" readonly="" value="<?php echo $serialEquipo; ?>" style="text-align:center;" disabled></input>
-                                            
+                                          
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Serial Equipo-->
@@ -254,7 +282,7 @@ $ticket->readSingleRecordTicket($id_ticket);
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield">
                                                 <label class="control-label"> Descripción* </label>
-                                                <textarea name="descrip_incidencia" class="form-control"required ></textarea>
+                                                <textarea name="descrip_incidencia" class="form-control"><?php echo  $descrip_incidencia ; ?></textarea>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Descripcion-->
@@ -296,11 +324,11 @@ $ticket->readSingleRecordTicket($id_ticket);
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <!-- <div>
                                         <br>
                                         <br>
                                         <br>
-                                    </div>
+                                    </div> -->
 
                             </div>
 
