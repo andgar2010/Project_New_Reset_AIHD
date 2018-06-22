@@ -354,7 +354,7 @@ function printCodRolToText($cod_rol)
 
         <div class="container-fluid">
             <div class="row" id="card-masonry">
-
+                    <?php var_dump($_SESSION);?>
             </div>
         </div>
 
