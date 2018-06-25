@@ -55,28 +55,28 @@ function printCodRolToText($cod_rol)
     ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 
-        <!-- Styles Ends -->
+    <!-- Styles Ends -->
 
-        <!-- Scripts Starts -->
+    <!-- Scripts Starts -->
     <?php
         include_once '../../config/base_script.php';
     ?>
-        <!-- Scripts End -->
+    <!-- Scripts End -->
 
-        <!-- Javascript for Datepicker -->
-        <!-- build:[src] components/datetimepicker/js/ -->
-        <script defer type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
-        <script defer type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-        <!-- /build -->
-        <script>
-            // Linked date and time picker
-            // start date date and time picker
-            $('#datepicker-default').datetimepicker();
-            $(".auto-update-year").html(new Date().getFullYear());
-        </script>
+    <!-- Javascript for Datepicker -->
+    <!-- build:[src] components/datetimepicker/js/ -->
+    <script defer type="text/javascript" language="javascript" src="../../node_modules/moment/min/moment-with-locales.js"></script>
+    <script defer type="text/javascript" language="javascript" src="../../node_modules/propellerkit-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <!-- /build -->
+    <script>
+        // Linked date and time picker
+        // start date date and time picker
+        $('#datepicker-default').datetimepicker();
+        $(".auto-update-year").html(new Date().getFullYear());
+    </script>
 
-        <script defer src="../../assets/js/animateSidebar.js"></script>
-        <script defer src="../../assets/js/ajaxLoadPage.js"></script>
+    <script defer src="../../assets/js/animateSidebar.js"></script>
+    <script defer src="../../assets/js/ajaxLoadPage.js"></script>
 </head>
 
 <body class="">
@@ -190,7 +190,8 @@ function printCodRolToText($cod_rol)
             <div class="navbar-header">
                 <a href="javascript:void(0);" data-target="basicSidebar" data-placement="left" data-position="slidepush" is-open="true" is-open-width="1200"
                     class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle">
-                    <i class="material-icons md-light">menu</i>
+                    <!-- TODO Need verfity work icon -->
+                    <i class="material-icons md-light">&nbsp;&nbsp;<i class="fa fa-bars" aria-hidden="true"></i>menu</i>
                 </a>
                 <a href="../../index.php" class="navbar-brand">
                     <img class="img-responsive" src="../../assets/images/LogoInverted_TEXTV2Alpha_128.png" alt="Logo New Reset AHID">
@@ -357,8 +358,8 @@ function printCodRolToText($cod_rol)
             <div class="row" id="card-masonry">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <?php var_dump($_SESSION);?>
+                </div>
             </div>
-        </div>
         </div>
 
     </section>
@@ -370,7 +371,7 @@ function printCodRolToText($cod_rol)
         switch ($_GET['info']) {
             case 'added':
                 echo '<script> goToListUsers(); </script>';
-            break;
+                break;
 
             case 'updated':
                 echo '<script> goToListUsers(); </script>';

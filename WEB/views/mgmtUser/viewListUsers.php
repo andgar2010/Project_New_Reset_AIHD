@@ -32,7 +32,7 @@ session_start();
     <script defer src="../../node_modules/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <!-- <script src="../../node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script> -->
 
-    <script>
+    <script defer>
         $(document).ready(function() {
             $("#myTable").DataTable({
                 "language":{
@@ -128,11 +128,12 @@ session_start();
             <!-- div row -->
             <div class="row">
         <?php
-            if (isset($_GET['info']) && isset($_GET['name'])) {
+        // TODO Fix name key 
+        if (isset($_GET['lastVisited']) && isset($_GET['name'])) {
 
-                $btnMsg = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>';
+            $btnMsg = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>';
 
-                switch ($_GET['info']) {
+            switch ($_GET['lastVisited']) {
                 case 'added':
                     $nameUser = $_GET['name'];
                     $stusT  = 'success';
@@ -180,8 +181,8 @@ session_start();
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
                         </div>';*/
                 break;
-                }
             }
+        }
             ?>
             </div>
             <!-- End div row -->
