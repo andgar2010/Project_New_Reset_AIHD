@@ -65,9 +65,9 @@ function goToAddTicket() {
  ************************/
 
 // Go to List of Users
-function goToListUsers() {
+function goToListUsers(lastVisited = "", name = "", idUser = "") {
     $.ajax({
-        url    : "../mgmtUser/viewListUsers.php",
+        url    : "../mgmtUser/viewListUsers.php?lastVisited=" + lastVisited + "?name=" + name + "?idUser=" + idUser,
         success: function (result) {
             $("section").html(result);
         }
