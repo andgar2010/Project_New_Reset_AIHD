@@ -50,12 +50,12 @@ function printCodRolToText($cod_rol)
     <meta name="description" content="Panel de Control NEW RESET A.I.H.D.">
 
     <?php require_once '../../config/base_head.php';
-        //require '../config/googleAnaytics.php';
-	?>
+//require '../config/googleAnaytics.php';
+?>
         <!-- Styles Ends -->
 
         <!-- Scripts Starts -->
-        <?php include_once '../../config/base_script.php'; ?>
+        <?php include_once '../../config/base_script.php';?>
         <!-- Scripts End -->
 
         <!-- Javascript for Datepicker -->
@@ -210,7 +210,7 @@ function printCodRolToText($cod_rol)
                     </div>
                     <div>
                         <i class="dic-more-vert dic" style="margin-left: 55px;">
-                            &nbsp;<?php printCodRolToText($codRol); ?>
+                            &nbsp;<?php printCodRolToText($codRol);?>
                         </i>
                     </div>
                     <div class="media-right media-middle">
@@ -258,8 +258,8 @@ function printCodRolToText($cod_rol)
 
             <!-- Gestion de usuarios  -->
             <?php
-            if ($codRol == 1 || $codRol == 1) {
-                echo '
+if ($codRol == 1 || $codRol == 1) {
+    echo '
                 <li>
 			        <a class="pmd-ripple-effect" href="#"   onClick="goToListUsers()">
                         <i class="media-left media-middle">
@@ -269,15 +269,15 @@ function printCodRolToText($cod_rol)
                     </a>
                 </li>
                 ';
-            }
+}
 
-            ?>
+?>
             <!-- End Gestion de usuarios  -->
 
             <!-- Gestion de usuarios  -->
             <?php
-            if ($codRol == 1 || $codRol == 1) {
-                echo '
+if ($codRol == 1 || $codRol == 1) {
+    echo '
                 <li>
 			        <a id="listDevices" class="pmd-ripple-effect" href="#"   onClick="goToListDevices()">
                         <i class="media-left media-middle">
@@ -287,9 +287,9 @@ function printCodRolToText($cod_rol)
                     </a>
                 </li>
                 ';
-            }
+}
 
-            ?>
+?>
             <!-- End Gestion de usuarios  -->
 
             <!-- <li class="dropdown pmd-dropdown">
@@ -348,67 +348,64 @@ function printCodRolToText($cod_rol)
         <div class="container-fluid">
             <div class="row" id="card-masonry">
 
-
-
             </div>
         </div>
 
     </section>
     <!--end content area-->
 
-
     <?php
 
-    if (isset($_GET['info']) && isset($_GET['name'])) {
+        if (isset($_GET['info']) && isset($_GET['name'])) {
         switch ($_GET['info']) {
-            case 'added':
-                echo ' <script>
+        case 'added':
+            echo ' <script>
                     goToListUsers();
                     </script>';
-                break;
+            break;
 
-            case 'updated':
-                echo ' <script>
+        case 'updated':
+            echo ' <script>
                     goToListUsers();
                     </script>';
-                // $nameUser = $_GET['name'];
-                // $stusT = 'success';
-                // $titleT = 'Bien hecho!';
-                // $msgT = 'Los datos han sido actualizado con éxito.';
-                // $class = "alert alert-success alert-dismissable pmd-z-depth-1";
-                // $msg = 'usuario de datos actualizado con éxito';
+            // $nameUser = $_GET['name'];
+            // $stusT = 'success';
+            // $titleT = 'Bien hecho!';
+            // $msgT = 'Los datos han sido actualizado con éxito.';
+            // $class = "alert alert-success alert-dismissable pmd-z-depth-1";
+            // $msg = 'usuario de datos actualizado con éxito';
 
-                // if (isset($msg) && isset($class)) {
-                //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
-                // }
-                break;
+            // if (isset($msg) && isset($class)) {
+            //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+            //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+            // }
+            break;
 
-            case 'deleted':
-                echo ' <script>
+        case 'deleted':
+            echo ' <script>
                 goToListUsers();
                 </script>';
-                // $nameUser = $_GET['name'];
-                // $stusT = 'info';
-                // $titleT = 'Bien hecho!';
-                // $msgT = 'Los datos han sido eliminado con éxito.';
-                // $class = "alert alert-info alert-dismissable pmd-z-depth-1";
-                // $msg = 'usuario de datos eliminado con éxito';
+            // $nameUser = $_GET['name'];
+            // $stusT = 'info';
+            // $titleT = 'Bien hecho!';
+            // $msgT = 'Los datos han sido eliminado con éxito.';
+            // $class = "alert alert-info alert-dismissable pmd-z-depth-1";
+            // $msg = 'usuario de datos eliminado con éxito';
 
-                // if (isset($msg) && isset($class)) {
-                //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
-                // }
-                break;
+            // if (isset($msg) && isset($class)) {
+            //     echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+            //     echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+            // }
+            break;
 
-            default:
-                /*echo '<div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
-                        </div>';*/
-                break;
+        default:
+            /*echo '<div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
+            </div>';*/
+            break;
         }
-    }
-    ?>
+        }
+?>
 
 </body>
 

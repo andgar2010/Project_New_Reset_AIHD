@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# RewriteRule ^(.*\.js) gzip.php?type=js&file=$1
+# RewriteRule ^(.*\.css) gzip.php?type=css&file=$1
+ErrorDocument 401 /Project_New_Reset_AIHD/WEB/errors/404.html
+ErrorDocument 404 /Project_New_Reset_AIHD/WEB/errors/404.html
+ErrorDocument 500 /Project_New_Reset_AIHD/WEB/errors/500.html
+ErrorDocument 503 /Project_New_Reset_AIHD/WEB/errors/503.html
+</IfModule>
