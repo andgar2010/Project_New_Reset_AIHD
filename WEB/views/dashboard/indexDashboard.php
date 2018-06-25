@@ -88,6 +88,7 @@ function printCodRolToText($cod_rol)
         <div class="container-fluid">
             <div class="pmd-navbar-right-icon pull-right navigation">
 
+                <!-- RIBBON  -->
                 <a class="github-fork-ribbon" href="https: //github.com/andgar2010/Project_New_Reset_AIHD#readme" data-ribbon="EN DESARROLLO" title="EN DESARROLLO">EN DESARROLLO</a>
 
                 <!-- Notifications -->
@@ -267,7 +268,7 @@ function printCodRolToText($cod_rol)
 
             <!-- Gestion de usuarios  -->
             <?php
-            if ($codRol == 1 || $codRol == 1) {
+            if ($codRol == 1 || $codRol == 2) {
                 echo '
                 <li>
 			        <a class="pmd-ripple-effect" onClick="goToListUsers()">
@@ -284,7 +285,7 @@ function printCodRolToText($cod_rol)
 
             <!-- Gestion de usuarios  -->
             <?php
-            if ($codRol == 1 || $codRol == 1) {
+            if ($codRol == 1 || $codRol == 2) {
                 echo '
                 <li>
             	    <a id="listDevices" class="pmd-ripple-effect" onClick="goToListDevices()">
@@ -352,10 +353,12 @@ function printCodRolToText($cod_rol)
     <!--content area start-->
     <section id="content" class="pmd-content content-area dashboard">
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row" id="card-masonry">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <?php var_dump($_SESSION);?>
             </div>
+        </div>
         </div>
 
     </section>
@@ -366,15 +369,11 @@ function printCodRolToText($cod_rol)
     if (isset($_GET['info']) && isset($_GET['name'])) {
         switch ($_GET['info']) {
             case 'added':
-                echo '<script>
-                    goToListUsers();
-                    </script>';
+                echo '<script> goToListUsers(); </script>';
             break;
 
             case 'updated':
-                echo '<script>
-                    goToListUsers();
-                    </script>';
+                echo '<script> goToListUsers(); </script>';
             // $nameUser = $_GET['name'];
             // $stusT = 'success';
             // $titleT = 'Bien hecho!';
@@ -389,9 +388,7 @@ function printCodRolToText($cod_rol)
             break;
 
             case 'deleted':
-                echo ' <script>
-                goToListUsers();
-                </script>';
+                echo ' <script> goToListUsers(); </script>';
             // $nameUser = $_GET['name'];
             // $stusT = 'info';
             // $titleT = 'Bien hecho!';
