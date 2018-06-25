@@ -1,8 +1,8 @@
 /*
-                                                                                    File   : 500 CSS
-                                                                                    Author : Chris
-                                                                             Author URI    : https:                //codepen.io/chrisburton/pen/BsIrq
-                                                                                    License: <a href="#">NULL</a>
+                                                                                           File   : 500 CSS
+                                                                                           Author : Chris
+                                                                                    Author URI    : https:                //codepen.io/chrisburton/pen/BsIrq
+                                                                                           License: <a href="#">NULL</a>
 */
 
 @import url(./node_modules/font-awesome/css/font-awesome.min.css);
@@ -25,7 +25,7 @@ body {
     height     : 360px;
     margin     : 0 auto;
     position   : absolute;
-    top        : 50%;
+    top        : 25%;
     left       : 50%;
     margin-top : -175px;
     margin-left: -25%;
