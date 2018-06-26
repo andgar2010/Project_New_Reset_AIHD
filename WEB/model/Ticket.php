@@ -35,7 +35,7 @@ class Ticket
     protected $fecha_fin;
     protected $descrip_incidencia;
     //protected $archivo_evidencia;
-    protected $cod_categoria;
+    protected $cod_tipo_falla_ticket;
     protected $cod_estado_ticket;
     protected $cod_equipo;
     protected $cod_usuario;
@@ -155,22 +155,22 @@ class Ticket
     */
 
     /**
-     * Get the values of cod_categoria
+     * Get the values of cod_tipo_falla_ticket
      */
-    public function getCod_categoria()
+    public function getCod_tipo_falla_ticket()
     {
-        return $this->cod_categoria;
+        return $this->cod_tipo_falla_ticket;
     }
 
     /**
-     * set the value of cod_categoria
+     * set the value of cod_tipo_falla_ticket
      * 
      * @return self
      */
-    public function setCod_categoria($cod_categoria)
+    public function setCod_tipo_falla_ticket($cod_tipo_falla_ticket)
     {
         include '../config/Database.php';
-        $this->cod_categoria = $db->real_escape_string($cod_categoria);
+        $this->cod_tipo_falla_ticket = $db->real_escape_string($cod_tipo_falla_ticket);
 
         //return $this;
     }
@@ -184,7 +184,7 @@ class Ticket
     }
 
     /**
-     * set the value of cod-estado_ticket
+     * set the value of cod_estado_ticket
      * 
      * @return self
      */
@@ -280,13 +280,13 @@ class Ticket
         define('ENVIADO', '1');//Defecto num 1: Activo por Estado de TICKET
                             $sql_insert = "INSERT INTO `ticket`
                                                 (`descrip_incidencia`,
-                                                `cod_categoria`, 
+                                                `cod_tipo_falla_ticket`, 
                                                 `cod_estado_ticket`,
                                                 `cod_usuario`,
                                                 `cod_equipo`) 
                                             VALUES 
                                                 ('".$this->getDescrip_incidencia()."',
-                                                '".$this->getCod_categoria()."',
+                                                '".$this->getCod_tipo_falla_ticket()."',
                                                 '".ENVIADO."',
                                                 '".$this->getCod_usuario()."',
                                                 '".$this->getCod_equipo()."')";
@@ -308,7 +308,7 @@ public function readAllListTicket()
     ticket.fecha_inicio,
     tipo_equipo.nombre as 'NomTipoEquipo',
     equipo.serial_equipo,
-    categoria_ticket.nombre as 'NomTipoIncidencia',
+    tipo_falla_ticket.nombre as 'NomTipoIncidencia',
     ticket.descrip_incidencia,
     estado_ticket.nombre as 'NomEstadoTicket'
 FROM
@@ -322,9 +322,9 @@ INNER JOIN
 ON
 	tipo_equipo.id_tipo_equipo = equipo.cod_tipo_equipo
 INNER JOIN
-	categoria_ticket
+	tipo_falla_ticket
 ON
-	categoria_ticket.id_categoria = ticket.cod_categoria
+	tipo_falla_ticket.id_tipo_falla_ticket = ticket.cod_tipo_falla_ticket
 INNER JOIN
 	estado_ticket
 ON
@@ -396,11 +396,13 @@ public function readSingleRecordTicket($id_ticket)
     $sql_query = "SELECT
 	                fecha_inicio,
                     id_ticket,
+                    cod_tipo_falla_ticket,
                     cod_estado_ticket,
                     fecha_fin,
                     cod_usuario,
                     cod_equipo,
                     descrip_incidencia
+                    
                 FROM
                 	ticket
                 WHERE
@@ -420,6 +422,7 @@ public function readSingleRecordTicket($id_ticket)
             while ($obj = $output_sql->fetch_object()){
                 $this->id_ticket = $obj->id_ticket;
                 $this->fecha_inicio = $obj->fecha_inicio;
+                $this->cod_tipo_falla_ticket = $obj->cod_tipo_falla_ticket;
                 $this->cod_estado_ticket = $obj->cod_estado_ticket;
                 $this->fecha_fin = $obj->fecha_fin;
                 $this->cod_usuario = $obj->cod_usuario;
