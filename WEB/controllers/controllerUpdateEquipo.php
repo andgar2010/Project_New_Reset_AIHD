@@ -34,7 +34,8 @@ if (isset($_POST['btnClickedUser']) == 'sendUpdate') {
         $actualizadoEquipoDB = $equipo->updateEquipo();
         if ($actualizadoEquipoDB) {
             $serial_equipo = $equipo->getSerial_equipo();
-            header("location: ../../views/mgmtDevice/viewListEquipo.php?info=updated&name=$name");
+           header("location: ../views/dashboard/indexDashboard.php?info=updated&name=$serial_equipo");
+
             // $stusT  = 'success';
             // $titleT = 'Bien hecho!';
             // $msgT   = 'Los datos han sido guardados con éxito.';
