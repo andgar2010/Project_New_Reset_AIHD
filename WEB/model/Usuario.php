@@ -41,7 +41,6 @@ class Usuario
     protected $cod_rol;
     protected $cod_estado_usuario;
     protected $fecha_creado;
-    protected $encontradoDB;
 
     /**
      * This Construct Class Usuario
@@ -49,27 +48,6 @@ class Usuario
     public function __construct()
     {
     }//End construct()
-
-    /**
-     * Get the value of encontradoDB
-     */
-    public function getEncontradoDB()
-    {
-        return $this->encontradoDB;
-    }
-
-    /**
-     * Set the value of encontradoDB
-     *
-     * @return self
-     */
-    public function setEncontradoDB($encontradoDB)
-    {
-        include '../config/Database.php';
-        $this->encontradoDB = $db->real_escape_string($encontradoDB);
-
-        //return $this;
-    }
 
     /**
      * Get the value of fecha_creado
@@ -445,7 +423,7 @@ class Usuario
      *
      * @return Usuario objeto
      */
-    public function readSingleRecordUsuer($id_usuario)
+    public function readSingleRecordUser($id_usuario)
     {
         include '../../config/Database.php';
         $sql_query = "SELECT * FROM usuario WHERE id_usuario =". $id_usuario;
