@@ -163,7 +163,7 @@ function readAllEquipo()
                     <tr>
                         <td class="text-center">'.$row['id_equipo'].'</td>
                         <td>
-                            <a href="../mgmtDevice/viewInfoEquipo.php?id='.$row['id_equipo'].'">
+                            <a onClick=" goToInfoEquipo('. $row['id_equipo'] .')">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['serial_equipo'].'</a> </td>';
 
@@ -173,7 +173,7 @@ function readAllEquipo()
 
                     echo'
                         <td class="text-center">
-                            <a href="viewEditEquipo.php?id='.$row['id_equipo'].'" title="Editar datos" class="btn btn-primary btn-sm">
+                           <a id="editEquipo" onClick=" goToEditEquipo('. $row['id_equipo'] .')" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
                             <a href="../../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name='.$row['serial_equipo'].'&nik='.$row['id_equipo'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['serial_equipo']. '? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
