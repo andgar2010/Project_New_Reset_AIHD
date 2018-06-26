@@ -1,103 +1,75 @@
 $(document).ready(function() {
 
-    /*************************
-     * Go to User Management *
-     ************************/
+});
 
-    // Go list of Users
-    $("#listUsers").click(function() {
+/****************************
+ * Go to Device Management *
+ ***************************/
 
-    });
-
-    // Go add new User
-    $("#addUser").click(function() {
-       
-    });
-
-    /*****************************
-     * End Go to User Management *
-     *****************************/
-
-
-    /****************************
-     * Go to Device Management *
-     ***************************/
-
-    // Go list of Device
-    $("#listDevices").click(function() {
-        $.ajax({
-            url: "../../views/mgmtDevice/viewListEquipo.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
-    });
-
-    // Go add new Equipo
-    $("#addEquipo").click(function () {
-        $.ajax({
-            url: "../../views/mgmtDevice/viewAddEquipo.php",
-            success: function (result) {
-                $("#content").html(result);
-            }
-        });
-    });
-
-
-    /*******************************
-     * End Go to Device Management *
-     *******************************/
-
-
-    /****************************
-     * Go to Ticket Management *
-     ***************************/
-
-    // Go list of Ticket
-    $("#listTicket").click(function() {
-        $.ajax({
-            url: "../mgmtTicket/viewListTicket.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
-    });
-
-    // Go add new Ticket
-    $("#newTicket").click(function() {
-        $.ajax({
-            url: "../mgmtTicket/viewAddTicket.php",
-            success: function(result) {
-                $("#content").html(result);
-            }
-        });
-    });
-
-
-    // Go to Edit ticket
-function goToEditTicket(id_ticket) {
+// Go list of Device
+function goToListDevices() {
     $.ajax({
-        url: "../mgmtUser/viewEditTicket.php?id=" + id_ticket,
-        success: function(result) {
-            $("#content").html(result);
+        url    : "../../views/mgmtDevice/viewListEquipo.php",
+        success: function (result) {
+            $("section").html(result);
         }
     });
 }
 
-
-// Go to Add User
-
-    /*******************************
-     * End Go to Ticket Management *
-     *******************************/
-});
-
-// Go to Edit User
-function goToEditUser(id_usuario) {
+// Go add new Device
+function goToAddDevice() {
     $.ajax({
-        url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
-        success: function(result) {
-            $("#content").html(result);
+        url    : "../../views/mgmtDevice/viewAddEquipo.php",
+        success: function (result) {
+            $("section").html(result);
+        }
+    });
+}
+
+/*******************************
+ * End Go to Device Management *
+ *******************************/
+
+
+/****************************
+ * Go to Ticket Management *
+ ***************************/
+
+// Go list of Tickets
+function goTolistTickets() {
+    $.ajax({
+        url    : "../mgmtTicket/viewListTicket.php",
+        success: function (result) {
+            $("section").html(result);
+        }
+    });
+}
+
+// Go add new Ticket
+function goToAddTicket() {
+    $.ajax({
+        url    : "../mgmtTicket/viewAddTicket.php",
+        success: function (result) {
+            $("section").html(result);
+        }
+    });
+}
+
+/*******************************
+ * End Go to Ticket Management *
+ *******************************/
+
+
+/*************************
+ * Go to User Management *
+ ************************/
+
+// Go to List of Users
+function goToListUsers(lastVisited = "", name = "", idUser = "") {
+    $.ajax({
+        url    : "../mgmtUser/viewListUsers.php?lastVisited=" + lastVisited + "?name=" + name + "?idUser=" + idUser,
+        success: function (result) {
+            $("section").html(result);
         }
     });
 }
@@ -105,9 +77,19 @@ function goToEditUser(id_usuario) {
 // Go to Add User
 function goToAddUser() {
     $.ajax({
-        url: "../mgmtUser/viewAddUser.php",
+        url    : "../mgmtUser/viewAddUser.php",
         success: function (result) {
-            $("#content").html(result);
+            $("section").html(result);
+        }
+    });
+}
+
+// Go to Edit User
+function goToEditUser(id_usuario) {
+    $.ajax({
+        url    : "../mgmtUser/viewEditUser.php?id=" + id_usuario,
+        success: function (result) {
+            $("section").html(result);
         }
     });
 }
@@ -115,19 +97,12 @@ function goToAddUser() {
 // Go to Info User
 function goToInfoUser(id_usuario) {
     $.ajax({
-        url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
-        success: function(result) {
-            $("#content").html(result);
+        url    : "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
+        success: function (result) {
+            $("section").html(result);
         }
     });
 }
-
-// Go to List of Users
-function goToListUsers() {
-    $.ajax({
-        url: "../mgmtUser/viewListUsers.php",
-        success: function(result) {
-            $("#content").html(result);
-        }
-    });
-}
+/*****************************
+ * End Go to User Management *
+ *****************************/

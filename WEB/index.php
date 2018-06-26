@@ -48,6 +48,8 @@ session_start();
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css"/>
+    
 
     <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
     <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
@@ -68,6 +70,7 @@ session_start();
 
 <body style="font-family:'Open Sans', sans-serif;">
     <nav class="navbar navbar-default" style="height:100px;">
+    <a class="github-fork-ribbon" href="https: //github.com/andgar2010/Project_New_Reset_AIHD#readme" data-ribbon="EN DESARROLLO" title="EN DESARROLLO">EN DESARROLLO</a>
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand navbar-link" href="#" style="width:285px;">
