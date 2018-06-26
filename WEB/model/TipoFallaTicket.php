@@ -1,6 +1,6 @@
 <?php
 /**
- * Modelo Clase Usuario
+ * Modelo Clase TipoFallaTicket
  *
  * @category Class
  * @package  Model
@@ -10,17 +10,17 @@
  * @version  GIT:<ASD4A6S54DASD>
  * @link     www.github.com/andgar2010
  *
- * This Model of Class User
+ * This Model of Class TipoFallaTicket
  * Source DB
  */
 
- Class CategoriaTicket
+ Class TipoFallaTicket
  {
-     protected $id_categoria_ticket;
+     protected $id_tipo_falla_ticket;
      protected $nombre;
 
      /**
-      * This Construct Class CategoriaTicket
+      * This Construct Class TipoFallaTicket
       */
       public function __construct()
       {
@@ -28,21 +28,21 @@
       }
 
       /**
-       * Get the value of id_categoria_ticket
+       * Get the value of id_tipo_falla_ticket
        */
-      public function getId_categoria_ticket()
+      public function getId_tipo_falla_ticket()
       {
-          return $this->id_categoria_ticket;
+          return $this->id_tipo_falla_ticket;
       }
 
       /**
-       * Set the value of id_catgoria_ticket
+       * Set the value of id_tipo_falla_ticket
        * 
        * @return self
        */
-      public function setId_categoria_ticket($id_categoria_ticket)
+      public function setId_tipo_falla_ticket($id_tipo_falla_ticket)
       {
-          $this->id_categoria_ticket = $id_categoria_ticket;
+          $this->id_tipo_falla_ticket = $id_tipo_falla_ticket;
 
           return $this;
       }
@@ -75,15 +75,15 @@
       public function readAllCategoriaTicket()
       {
           include '../config/Database.php';
-          $sql_query = "SELECT * FROM categoria_ticket";
+          $sql_query = "SELECT * FROM tipo_falla_ticket";
 
           if($output_sql = $db->query($sql_query)){
 
             if ($row = $output_sql->num_rows == 0){
-                echo 'No hay datos de Categoria Ticket';
+                echo 'No hay datos de tipo de falla del Ticket';
             } else {
                 while ($row = $output_sql->fetch_assoc()){
-                echo '<option value="'.$row['categoria_ticket'].'">'.$row['nombre'].'</option>';
+                echo '<option value="'.$row['id_tipo_falla_ticket'].'">'.$row['nombre'].'</option>';
                 }
                 $output_sql->close();
             }
@@ -91,10 +91,10 @@
           }
       }//End readCategoriaTicket()
 
- public function readSingleCodToName($id_categoria_ticket)
+ public function readSingleCodToNameCategoria($id_tipo_falla_ticket)
  {
     include '../../config/Database.php';
-    $sql_query = "SELECT nombre FROM categoria_ticket WHERE id_categoria =". $id_categoria_ticket;
+    $sql_query = "SELECT nombre FROM tipo_falla_ticket WHERE id_tipo_falla_ticket =". $id_tipo_falla_ticket;
    if ($output_sql = $db->query($sql_query)) {
 
         if ($output_sql->num_rows == 0) {
