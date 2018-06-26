@@ -4,18 +4,84 @@ session_start();
 $id_usuario     = $_SESSION['id_usuario'];
 $nombreUsuario  = $_SESSION['nombres_completos'];
 $codRol         = $_SESSION['cod_rol'];
-$nomArea        = $_SESSION['nom_area'];
-$nomCargo       = $_SESSION['nom_cargo'];
+$nomArea        = $_SESSION['nombre'];
+$nomCargo       = $_SESSION['nombre'];
+
+
+if (isset($_GET['id'])) {
+
+$id_ticket = intval($_GET['id']);
+
 
 include '../../Model/Ticket.php';
 include '../../Model/Equipo.php';
+include '../../Model/TipoEquipo.php';
+include '../../Model/TipoFallaTicket.php';
+include '../../Model/EstadoTicket.php';
+include '../../Model/AreaUsuario.php';
+include '../../Model/CargoUsuario.php';
+include '../../Model/Usuario.php';
+
 $ticket = new Ticket();
 $equipo = new Equipo();
+$tipoEquipo = new TipoEquipo();
+$tipoFallaTicket = new TipoFallaTicket();
+$estadoTicket = new EstadoTicket();
+$areaUsuario = new AreaUsuario();
+$cargoUsuario = new CargoUsuario();
+$usuario = new Usuario();
 
-$idLastTicket = $ticket->readLastTicket();
 
 
+
+
+$ticket->readSingleRecordTicket($id_ticket);
+    if($ticket->getId_ticket() == null){
+
+    ////Si no se encuentra registro de ticket en base de datos, redireccionar -> viewListUsers.php con parametros
+    //header ("location: ./viewListTicket.php?info=search&result=no");
+    }else{
+        //Si se encuentra el registro del ticket en base de datos, llevar datos del ticket al formulario
+        
+        // $id_ticket                  =$ticket->getId_ticket();
+        // $fecha_inicio               =$ticket->getFecha_inicio();
+        // $cod_estado_ticket          =$ticket->getCod_estado_ticket();
+
+        // $fecha_fin                  =$ticket->getFecha_fin();
+        // $cod_usuario                =$ticket->getCod_usuario();
+        $descrip_incidencia            =$ticket->getDescrip_incidencia();
+
+        
+        // consulta serial_equipo
+        $equipo->readSingleEquipo($ticket->getCod_equipo());
+        $serialEquipo = $equipo->getSerial_equipo();
+        
+        // consulta tipo_equipo
+        $tipoEquipo->readSingleCodToName($equipo->getCod_tipo_equipo());       
+        $nameTipoEquipo = $tipoEquipo->getNombre();
+
+        // consulta tipo_falla_ticket
+        $tipoFallaTicket->readSingleCodToNameCategoria($ticket->getCod_tipo_falla_ticket());
+        $nameTipoFalla =  $tipoFallaTicket->getNombre();
+         
+        // consulta usuario
+        $usuario->readSingleRecordUser($ticket->getCod_usuario());
+        $usuarioTicket = $usuario->getNombre() . ' '. $usuario->getApellido();
+        
+        //consulta cargo_usuario
+        $nameCargo = $cargoUsuario->readSingleNomCargo($usuario->getCod_cargo());
+
+        //consulta area_usuario
+        $nameArea = $areaUsuario->readSingleNomArea($usuario->getCod_area());
+
+      /* $tiempo_actual =new DateTime("now");
+        $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);*/
+    }
+}else{
+    header('location:./viewListTicket.php?info=search&result=no');
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -26,13 +92,14 @@ $idLastTicket = $ticket->readLastTicket();
     <meta name="description" content="Nuevo ticket">
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 
-    <title>Nuevo Ticket</title>
+    <title>Editar Ticket</title>
     <?php include '../../config/base_head.php';?>
     <?php include '../../config/Toastr.php';?>
     <link rel="stylesheet" href="../../node_modules/propellerkit-select2/css/pmd-select2.css">
 </head>
 
 <body>
+
     <!-- Container -->
     <div class="container">
 
@@ -47,7 +114,7 @@ $idLastTicket = $ticket->readLastTicket();
                     <li>
                         <a href="dashboard.php">Lista de Ticket</a>
                     </li>
-                    <li class="active">Solicitar nuevo ticket</li>
+                    <li class="active">Editar ticket</li>
                 </ol>
                 <!--End breadcrum -->
 
@@ -56,7 +123,7 @@ $idLastTicket = $ticket->readLastTicket();
 
                 <!--section-title -->
                 <h1 class="section-title" id="services">
-                    <span>Crear nuevo ticket</span>
+                    <span>Editar ticket</span>
                 </h1>
                 <!--End section-title -->
 
@@ -64,22 +131,6 @@ $idLastTicket = $ticket->readLastTicket();
                     <form id="newTicket" action="../../controllers/ControllerAddNewTicket.php" method="post" enctype="multipart/form-data">
                         <div class="pmd-card pmd-z-depth-5">
                             <div class="pmd-card-body">
-
-                                <!-- TO DO -->
-                                <!-- PK idTicket OK         **** num_ticket-->
-                                    <!-- fecha_inicio OK    **** now_time_ticket-->
-                                    <!-- fin_atencion       **** solve_time-->
-                                    <!-- archivo_evidencia  **** archivo-->
-                                    <!-- descrip_incidencia **** descripcion-->
-                                <!-- ENUM cod_categoria     **** categoria-->
-                                <!-- ENUM cod_estado_ticket **** estado-->
-                                <!-- FK cod_usuario         **** id_usuario-->
-                                <!-- FK cod_equipo -->
-
-                                <?php
-                                //$idLastTicket = $con->id;
-                                //$idLastTicket++;
-                                ?>
 
                                     <!--Row 1-->
                                     <div class="group-fields clearfix row">
@@ -101,8 +152,7 @@ $idLastTicket = $ticket->readLastTicket();
                                             <!-- Readonly Input Numero ticket -->
                                             <div class="form-group pmd-textfield">
                                                 <label for="num_ticket" class="control-label" style="display: block; text-align:center;"> Numero de ticket </label>
-                                                <input id="num_ticket" name="num_ticket" type="text" readonly="" value="# <?php echo ++$idLastTicket; ?>" class="mat-input form-control"
-                                                    style="text-align:center;" disabled></input>
+                                                <input id="num_ticket" name="num_ticket" type="text" readonly="" value="# <?php echo $id_ticket; ?>" class="mat-input form-control" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 2 NumTicket size 6-->
@@ -120,29 +170,29 @@ $idLastTicket = $ticket->readLastTicket();
                                     <!--End Row 1-->
 
                                     <!--Row 2-->
-                                    <!-- <div class="group-fields clearfix row"> -->
+                                    <div class="group-fields clearfix row"> 
 
                                         <!--Colmun 1 Tiempo transcurrido -->
-                                        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                                             <div class="form-group pmd-textfield">
                                                 <label for="elapsed_time" class="control-label" style="display: block; text-align:center;"> Tiempo transcurrido </label>
                                                 <input id="elapsed_time" name="elapsed_time " type="text" readonly="" value="00 Días 00:00:00" class="mat-input form-control"
                                                     style="text-align:center;" disabled></input>
                                             </div>
-                                        </div> -->
+                                        </div> 
                                         <!--End Colmun 1 Tiempo transcurrido -->
 
                                         <!--Colmun 2 Tiempo por solucionado-->
-                                        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                                             <div class="form-group pmd-textfield">
                                                 <label for="solve_time" class="control-label" style="display: block; text-align:center;"> Fecha de cierre </label>
                                                 <input id="solve_time" type="text" name="solve_time" readonly="" value="00 Días 00:00:00" class="mat-input form-control" style="text-align:center;"
                                                     disabled></input>
                                             </div>
-                                        </div> -->
+                                        </div> 
                                         <!--End Colmun 2 Tiempo por solucionado-->
 
-                                    <!-- </div> -->
+                                     </div> 
                                     <!--End Row 2-->
 
                                     <!-- Row 3  -->
@@ -152,18 +202,17 @@ $idLastTicket = $ticket->readLastTicket();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="nombre" class="control-label" style="display: block; text-align:center;"> Nombres y apellidos </label>
-                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php echo $nombreUsuario;?>" style="display: block; text-align:center;"
-                                                    disabled>
-                                                <input type="hidden" name="cod_usuario" id="id_usuario" class="form-control" value="<?php echo $id_usuario;?>">
+                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php echo $usuarioTicket;?>" style="display: block; text-align:center;" disabled></input>
+                                               <input type="hidden" name="cod_usuario" id="id_usuario" class="form-control" value="<?php echo $usuario->getId_usuario;?>"></input>
                                             </div>
-                                        </div>
+                                        </div> 
                                         <!--End Column 1 Nombre completos-->
 
                                         <!--Colmun 2 Cargo-->
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="cargo" class="control-label" style="display: block; text-align:center;"> Cargo </label>
-                                                <input id="cargo" name="cod_cargo" type="text" class="form-control" readonly="" value="<?php echo $nomCargo; ?>" style="text-align:center;" disabled></input>
+                                                <input id="cargo" name="cod_cargo" type="text" class="form-control" readonly="" value="<?php echo $nameCargo; ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Cargo-->
@@ -172,7 +221,7 @@ $idLastTicket = $ticket->readLastTicket();
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="area" class="control-label" style="display: block; text-align:center;"> Area </label>
-                                                <input id="area" name="cod_area" type="text" class="form-control" readonly="" value="<?php echo $nomArea ?>" style="text-align:center;" disabled></input>
+                                                <input id="area" name="cod_area" type="text" class="form-control" readonly="" value="<?php echo $nameArea ?>" style="text-align:center;" disabled></input>
                                             </div>
                                         </div>
                                         <!--End Colmun 3 Area-->
@@ -185,25 +234,25 @@ $idLastTicket = $ticket->readLastTicket();
                                     <div class="group-fields clearfix row">
 
                                         <!--Colmun 1 Tipo de Equipo-->
-                                        <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="rol" class="control-label" style="display: block; text-align:center;"> Tipo de Equipo* </label>
-                                                <select id="cod_tipo_equipo" name="cod_tipo_equipo" class="select-simple form-control pmd-select2 text-center">
-                                                    <option value=""> </option>
-                                                    <option value="1">Escritorio</option>
-                                                    <option value="2">Portátil</option>
-                                                </select>
+                                                <input id="tipo_equipo" name="tipo_equipo" type="text" class="form-control" readonly="" value="<?php echo $nameTipoEquipo; ?>" style="text-align:center;" disabled></input> 
+                                               <!-- <select id="cod_tipo_equipo" name="cod_tipo_equipo" class="select-simple form-control pmd-select2 text-center"> 
+                                                    <option value=""> </option> 
+                                                    <option value="1">Escritorio</option> 
+                                                    <option value="2">Portátil</option> 
+                                                </select> -->
                                             </div>
-                                        </div> -->
+                                        </div> 
                                         <!--End Colmun 1 Tipo de Equipo-->
 
                                         <!--Colmun 2 Serial Equipo-->
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="serial_equipo" class="control-label" style="display: block; text-align:center;"> Serial Equipo* </label>
-                                                <select class="select-with-search form-control pmd-select2" id="serial_equipo" name="cod_equipo">
-                                                    <?php $equipo->readAllSelectEquipo();?>
-                                                </select>
+                                                <input id="serial_equipo" name="serial_equipo" type="text" class="form-control" readonly="" value="<?php echo $serialEquipo; ?>" style="text-align:center;" disabled></input>
+                                          
                                             </div>
                                         </div>
                                         <!--End Colmun 2 Serial Equipo-->
@@ -212,11 +261,14 @@ $idLastTicket = $ticket->readLastTicket();
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="categoria" class="control-label" style="display: block; text-align: center">Tipo de falla*</label>
-                                                <select id="categoria" name="cod_categoria" class="select-simple form-control pmd-select2 text-center">
-                                                    <option value=""> </option>
-                                                    <option value="1">Hardware</option>
-                                                    <option value="2">Software</option>
-                                                </select>
+                                                <input id="categoria_ticket" name="categoria_ticket" type="text" class="form-control" readonly="" value="<?php echo $nameTipoFalla; ?>" style="text-align:center;" disabled></input>  
+
+                                                <!-- <select id="categoria" name="cod_categoria" class="select-simple form-control pmd-select2 text-center"> 
+                                                    <option value=""> </option> 
+                                                    <option value="1" >Hardware</option> 
+                                                    <option value="2">Software</option> 
+                                                </select> -->
+                                            
                                             </div>
                                         </div>
                                         <!--End Column 3 Tipo de falla-->
@@ -230,7 +282,7 @@ $idLastTicket = $ticket->readLastTicket();
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group pmd-textfield">
                                                 <label class="control-label"> Descripción* </label>
-                                                <textarea name="descrip_incidencia" class="form-control"required ></textarea>
+                                                <textarea name="descrip_incidencia" class="form-control"><?php echo  $descrip_incidencia ; ?></textarea>
                                             </div>
                                         </div>
                                         <!--End Colmun 1 Descripcion-->
@@ -252,12 +304,12 @@ $idLastTicket = $ticket->readLastTicket();
 
                                     <div class="group-fields clearfix row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <!-- <div class="checkbox pmd-default-theme">
+                                            <div class="checkbox pmd-default-theme">
                                 <label class="pmd-checkbox checkbox-pmd-ripple-effect">
                                     <input type="checkbox" value="">
                                     <span>Save Details</span>
                                 </label>
-                            </div> -->
+                            </div> 
                                         </div>
                                     </div>
 
@@ -272,11 +324,11 @@ $idLastTicket = $ticket->readLastTicket();
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <!-- <div>
                                         <br>
                                         <br>
                                         <br>
-                                    </div>
+                                    </div> -->
 
                             </div>
 

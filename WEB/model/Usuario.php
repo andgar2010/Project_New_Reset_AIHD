@@ -423,7 +423,7 @@ class Usuario
      *
      * @return Usuario objeto
      */
-    public function readSingleRecordUsuer($id_usuario)
+    public function readSingleRecordUser($id_usuario)
     {
         include '../../config/Database.php';
         $sql_query = "SELECT * FROM usuario WHERE id_usuario =". $id_usuario;

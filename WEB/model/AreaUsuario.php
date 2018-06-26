@@ -90,5 +90,34 @@ class AreaUsuario
         }
 
     }//End readArea()
+
+
+
+     /**
+     * Extraer el nombre del area
+     *
+     * @return String nomArea
+     */
+    public function readSingleNomArea($id_area)
+    {
+        include '../../config/Database.php';
+        $sql_query = "SELECT * FROM area_usuario WHERE id_area = " . $id_area;
+
+        if ($output_sql = $db->query($sql_query)) {
+
+            if ($row = $output_sql->num_rows == 0) {
+                echo'No hay datos de Area Usuarios';
+            } else {
+                while ($row = $output_sql->fetch_assoc()) {
+                     $nomArea = $row['nombre'];
+                }
+                $output_sql->close();
+            }
+            $db->close();
+
+        }
+
+        return $nomArea;
+    }//End readSingleNomArea()
 }
 ?>

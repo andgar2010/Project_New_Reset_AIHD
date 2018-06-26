@@ -14,8 +14,8 @@
 
 // if (isset($_GET['id'])) {
 
-    // $id_usuario = intval($_GET['id']);
-    $id_usuario = intval(1);
+    $id_usuario = intval($_GET['id']);
+    //$id_usuario = intval(1);
     include '../model/Usuario.php';
     $usuario = new Usuario();
     $usuario->readSingleRecordUsuer($id_usuario);

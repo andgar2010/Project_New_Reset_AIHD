@@ -44,8 +44,9 @@ if (isset($_POST['btnClickedEquipo']) == 'send') {
             $class  = "alert alert-success";
             $msg    = 'Datos insertados con éxito';
             //header("location: ../views/viewListEquipo.php");
-            header('location: ../views/mgmtDevice/viewListEquipo.php?info=added&name=$serial_equipo');
-            //ob_end_flush();
+           header("location: ../views/dashboard/indexDashboard.php?info=added&name=$serial_equipo");
+//header("location: ../views/mgmtUser/viewListUsers.php?info=added&name=$nombreUsuario");
+
         } else {
             $stusT  = 'error';
             $titleT = 'Error';

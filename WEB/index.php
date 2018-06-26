@@ -176,7 +176,7 @@ session_start();
                     <!-- Card header -->
                     <div class="pmd-card-title">
                         <strong>
-                            <h2 class="pmd-card-title-text text-center" data-aos="zoom-in" data-aos-duration="1600" id="quienesSomos">Quienes Somos?</h2>
+                            <h2 class="pmd-card-title-text text-center" data-aos="zoom-in" data-aos-duration="1600" id="quienesSomos"> ¿Quienes somos?</h2>
                         </strong>
                     </div>
 
@@ -296,7 +296,7 @@ session_start();
         <div class="container">
             <div class="intro">
                 <h2 class="pmd-card-title-text text-center" data-aos="zoom-in" data-aos-duration="1500" style="padding:10px 0px 0px;margin:20px 0px;">Equipo </h2>
-                <p class="text-center" data-aos="zoom-in" data-aos-duration="1500">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                <p class="text-center" data-aos="zoom-in" data-aos-duration="1500">Nuestro equipo esta conformado por:  </p>
             </div>
             <div class="row people">
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 item text-center">
@@ -327,14 +327,14 @@ session_start();
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 item text-center">
             	<div class="pmd-card pmd-z-depth">
                 	<div class="pmd-card-media" style="margin-top: 30px;">
-                        <img class="img-circle" src="assets/images/2.jpg" data-aos="zoom-in" data-aos-duration="2000" alt="Avatar Camila Torres" width="160" height="160">
+                        <img class="img-circle" src="assets/images/avatar-CTorres.jpg" data-aos="zoom-in" data-aos-duration="2000" alt="Avatar Camila Torres" width="160" height="160">
                     </div>
                     <div class="pmd-card-title">
                         <h2 data-aos="zoom-in" data-aos-duration="2000" class="pmd-card-title-text name" style="margin-top: -24px;">Camila Torres</h2>
                         <p data-aos="zoom-in" data-aos-duration="2000" class="title" style="margin-top: -4px;">Aprendiz ADSI</p>
                     </div>
                     <div class="pmd-card-body">
-                        <p class="description" data-aos="zoom-in" data-aos-duration="2000">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                        <p class="description" data-aos="zoom-in" data-aos-duration="2000">Mi nombre es Camila Torres, tengo 17 años, estoy estudiando Analisis y desarrollo de sistemas de informacion (ADSI) en SENA CEET (Centro Electricidad, Electrónica y Telecomunicaciones), soy una persona muy curiosa que siempre intenta encontrar el porque de las cosas, me gusta ver como funcionan las cosas, tratarlas de hacer yo misma y por esa razon decidi estudiar dicha carrera. </p>
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="2800" class="social pmd-card-actions">
                         <a class="pmd-btn-raised pmd-ripple-effect" href="#" role="button">
@@ -342,7 +342,9 @@ session_start();
                         </a>
                         <a class="pmd-btn-raised pmd-ripple-effect" href="#" role="button">
                             <i class="fa fa-twitter fa-lg"></i>
-                        </a>
+                            .0.
+                            .0
+                                                    </a>
                         <a class="pmd-btn-raised pmd-ripple-effect" href="#" role="button">
                             <i class="fa fa-instagram fa-lg"></i>
                         </a>
@@ -379,10 +381,9 @@ session_start();
         </div>
     </div>
     <section class="testimonials">
-        <h2 class="text-center">People Love It!</h2>
+        <h2 class="text-center">Politica de proteccion de datos</h2>
         <blockquote>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>Famous tech website</footer>
+         
         </blockquote>
     </section>
     <section class="features"></section>

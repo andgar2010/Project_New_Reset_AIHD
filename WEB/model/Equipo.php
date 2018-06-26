@@ -163,7 +163,7 @@ function readAllEquipo()
                     <tr>
                         <td class="text-center">'.$row['id_equipo'].'</td>
                         <td>
-                            <a href="../mgmtDevice/viewInfoEquipo.php?id='.$row['id_equipo'].'">
+                            <a onClick=" goToInfoEquipo('. $row['id_equipo'] .')">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['serial_equipo'].'</a> </td>';
 
@@ -173,12 +173,35 @@ function readAllEquipo()
 
                     echo'
                         <td class="text-center">
-                            <a href="viewEditEquipo.php?id='.$row['id_equipo'].'" title="Editar datos" class="btn btn-primary btn-sm">
+                           <a id="editEquipo" onClick=" goToEditEquipo('. $row['id_equipo'] .')" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
                             <a href="../../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name='.$row['serial_equipo'].'&nik='.$row['id_equipo'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['serial_equipo']. '? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
                         </td>
                     </tr>';
+                }
+
+                $output_sql->close();
+            }
+            $db->close();
+        }
+    }//End readUser()
+
+    function readAllSelectEquipo()
+    {
+        include '../../config/Database.php';
+        $sql_query = "SELECT * FROM equipo";
+
+        if ($output_sql = $db->query($sql_query)) {
+
+            if ($row = $output_sql->num_rows == 0) {
+                echo'
+                <tr>
+                    <td colspan="8">No hay datos</td>
+                </tr>';
+            } else {
+                while ($row = $output_sql->fetch_assoc()) {
+                    echo'<option value="'.$row['id_equipo'].'">'.$row['serial_equipo'].'</option>';
                 }
 
                 $output_sql->close();
