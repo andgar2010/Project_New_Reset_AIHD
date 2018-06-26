@@ -31,13 +31,14 @@ ob_start();
  * @version GIT:<ASD4A6S54DASD>
  * @link www.github.com/andgar2010
  *
- * This Model of vista User
+ * This Model of vista Equipo
  * Source DB
  */
 
-require '../../config/base_head.php';
+
 require '../../config/base_script.php';
 require '../../config/Toastr.php';
+
 require '../../model/EstadoEquipo.php';
 require '../../model/TipoEquipo.php';
 
@@ -45,12 +46,10 @@ $estado_equipo = new EstadoEquipo();
 $tipo_equipo = new TipoEquipo();
 
 ?>
+ </head>
 
-
-                    </head>
-
-                   <body>
-    <div class="modal-dialog">
+  <body>
+     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="section-title modal-title text-center">Ingresar nuevo equipo </h1>
@@ -61,7 +60,7 @@ $tipo_equipo = new TipoEquipo();
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="serial_equipo" class="control-label">serial</label>
+                                <label for="serial_equipo" class="control-label">Serial</label>
                                 <input id="serial_equipo" type="text" name="serial_equipo" class="form-control" pattern="[0-9]{8,14}" title="Por favor ingresa unicamente los números"
                                     required>
                             </div>
@@ -81,17 +80,13 @@ $tipo_equipo = new TipoEquipo();
 
                   <div class="row">
 
-
-
-
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
                             <button id="enviar" name="btnClickedEquipo" value="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Ingresar nuevo equipo</button>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"> &nbsp;&nbsp;&nbsp;&nbsp;</div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <a id="listEquipo" href="./listEquipo.php">
+                            <a onClick="goToListDevice()">
                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
-                            </a>
                         </div>
 
                     </div>
@@ -106,4 +101,4 @@ $tipo_equipo = new TipoEquipo();
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> -->
 </body>
 
-    </html>>>
+    </html>
