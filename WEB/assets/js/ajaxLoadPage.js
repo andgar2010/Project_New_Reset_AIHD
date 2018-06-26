@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 });
 
@@ -9,7 +9,7 @@ $(document).ready(function() {
 // Go list of Device
 function goToListDevices() {
     $.ajax({
-        url    : "../../views/mgmtDevice/viewListEquipo.php",
+        url: "../../views/mgmtDevice/viewListEquipo.php",
         success: function (result) {
             $("section").html(result);
         }
@@ -19,7 +19,17 @@ function goToListDevices() {
 // Go add new Device
 function goToAddDevice() {
     $.ajax({
-        url    : "../../views/mgmtDevice/viewAddEquipo.php",
+        url: "../../views/mgmtDevice/viewAddEquipo.php",
+        success: function (result) {
+            $("section").html(result);
+        }
+    });
+}
+
+// Go to Edit ticket 
+function goToEditTicket(id_ticket) {
+    $.ajax({
+        url: "../mgmtTicket/viewEditTicket.php?id=" + id_ticket,
         success: function (result) {
             $("section").html(result);
         }
@@ -38,7 +48,7 @@ function goToAddDevice() {
 // Go list of Tickets
 function goTolistTickets() {
     $.ajax({
-        url    : "../mgmtTicket/viewListTicket.php",
+        url: "../mgmtTicket/viewListTicket.php",
         success: function (result) {
             $("section").html(result);
         }
@@ -48,7 +58,7 @@ function goTolistTickets() {
 // Go add new Ticket
 function goToAddTicket() {
     $.ajax({
-        url    : "../mgmtTicket/viewAddTicket.php",
+        url: "../mgmtTicket/viewAddTicket.php",
         success: function (result) {
             $("section").html(result);
         }
@@ -67,7 +77,7 @@ function goToAddTicket() {
 // Go to List of Users
 function goToListUsers(lastVisited = "", name = "", idUser = "") {
     $.ajax({
-        url    : "../mgmtUser/viewListUsers.php?lastVisited=" + lastVisited + "?name=" + name + "?idUser=" + idUser,
+        url: "../mgmtUser/viewListUsers.php?lastVisited=" + lastVisited + "?name=" + name + "?idUser=" + idUser,
         success: function (result) {
             $("section").html(result);
         }
@@ -77,7 +87,7 @@ function goToListUsers(lastVisited = "", name = "", idUser = "") {
 // Go to Add User
 function goToAddUser() {
     $.ajax({
-        url    : "../mgmtUser/viewAddUser.php",
+        url: "../mgmtUser/viewAddUser.php",
         success: function (result) {
             $("section").html(result);
         }
@@ -87,7 +97,7 @@ function goToAddUser() {
 // Go to Edit User
 function goToEditUser(id_usuario) {
     $.ajax({
-        url    : "../mgmtUser/viewEditUser.php?id=" + id_usuario,
+        url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
         success: function (result) {
             $("section").html(result);
         }
@@ -97,7 +107,7 @@ function goToEditUser(id_usuario) {
 // Go to Info User
 function goToInfoUser(id_usuario) {
     $.ajax({
-        url    : "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
+        url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
         success: function (result) {
             $("section").html(result);
         }

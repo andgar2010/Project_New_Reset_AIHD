@@ -13,16 +13,16 @@ session_start();
     <link rel="stylesheet" href="../../node_modules/datatables.net-bs/css/dataTables.bootstrap.css">
     <!-- <link rel="stylesheet" href="../../node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css"> -->
     <link rel="stylesheet" href="https: //cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
-    
+
     <?php
     require '../../config/base_head.php';
     //require '../../config/base_script.php';
-    require '../../config/Toastr.php';
-    //include '../../config/googleAnaytics.php.php';
-    ?>
+    require '../../config/Toastr.php'
+    //include '../config/googleAnaytics.php';
+    ;?>
 
-    <!-- Scripts starts -->
-    <script defer src="../../assets/js/ajaxLoadPage.js"></script>
+    <!-- Scripts Starts -->
+    <script src="../../assets/js/ajaxLoadPage.js"></script>
     <script defer src="../../node_modules/datatables.net/js/jquery.dataTables.js"></script>
     <script defer src="../../node_modules/datatables.net-bs/js/dataTables.bootstrap.js"></script>
     <script defer src="../../node_modules/datatables.net-buttons/js/dataTables.buttons.js"></script>
@@ -32,8 +32,7 @@ session_start();
     <script defer src="../../node_modules/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <!-- <script src="../../node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script> -->
 
-
-    <script>
+    <script defer>
         $(document).ready(function() {
             $("#myTable").DataTable({
                 "language":{
@@ -78,6 +77,12 @@ session_start();
         });
     </script>
     <!-- Scripts End -->
+
+
+    <!-- <script src="../../node_modules/datatables.net-autofill/js/dataTables.autoFill.min.js"></script> -->
+    <!-- <script src="../../node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script> -->
+    <!-- <script src="../../node_modules/datatables.net-rowgroup/js/dataTables.rowGroup.min.js"></script> -->
+        <!-- Styles Ends -->
 </head>
 
 
@@ -110,7 +115,7 @@ session_start();
 
                 <!-- TABLE -->
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped table-bordered ">
+                    <table id="myTable" class="table table-hover table-striped table-bordered tablesorter">
                         <thead>
                             <tr>
                                 <th>Num</th>
@@ -140,9 +145,6 @@ session_start();
         <!-- End div content -->
     </div>
     <!-- End div container -->
-
-    <!-- Scripts Starts -->
-    <?php include '../../config/base_script.php';?>
-    <!-- Scripts End -->
 </body>
+
 </html>
