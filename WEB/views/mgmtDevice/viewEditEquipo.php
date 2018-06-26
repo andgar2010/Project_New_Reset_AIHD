@@ -44,6 +44,8 @@ if (isset($_GET['id'])) {
     <!-- End HTML Meta Tags -->
 
     <?php require '../../config/base_head.php';
+          require '../../config/base_script.php';
+
 //require '../config/googleAnaytics.php';?>
 
 </head>
@@ -105,7 +107,7 @@ echo '
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <a id="listEquipo" href="./viewListEquipo.php">
+                            <a  onClick="goToListEquipo()">
                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>
                             </a>
                         </div>
