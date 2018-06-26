@@ -2,19 +2,21 @@
 session_start();
 
 $id_usuario     = $_SESSION['id_usuario'];
-
 $nombreUsuario  = $_SESSION['nombres_completos'];
 $codRol         = $_SESSION['cod_rol'];
 $nomArea        = $_SESSION['nombre'];
 $nomCargo       = $_SESSION['nombre'];
 
 
+if (isset($_GET['id'])) {
 
 $id_ticket = intval($_GET['id']);
+
+
 include '../../Model/Ticket.php';
 include '../../Model/Equipo.php';
 include '../../Model/TipoEquipo.php';
-include '../../Model/CategoriaTicket.php';
+include '../../Model/TipoFallaTicket.php';
 include '../../Model/EstadoTicket.php';
 include '../../Model/AreaUsuario.php';
 include '../../Model/CargoUsuario.php';
@@ -23,7 +25,7 @@ include '../../Model/Usuario.php';
 $ticket = new Ticket();
 $equipo = new Equipo();
 $tipoEquipo = new TipoEquipo();
-$categoriaTicket = new CategoriaTicket();
+$tipoFallaTicket = new TipoFallaTicket();
 $estadoTicket = new EstadoTicket();
 $areaUsuario = new AreaUsuario();
 $cargoUsuario = new CargoUsuario();
@@ -48,49 +50,36 @@ $ticket->readSingleRecordTicket($id_ticket);
         // $fecha_fin                  =$ticket->getFecha_fin();
         // $cod_usuario                =$ticket->getCod_usuario();
         $descrip_incidencia            =$ticket->getDescrip_incidencia();
-     
-        var_dump($equipo);
-    
 
-
-
+        
+        // consulta serial_equipo
         $equipo->readSingleEquipo($ticket->getCod_equipo());
-
-       
-
-        
         $serialEquipo = $equipo->getSerial_equipo();
-
-
-        $nameTipoEquipo = $tipoEquipo->readSingleCodToName($tipoEquipo->getId_tipo_equipo());
-       
-
-
         
-    
-        $nameCategoriaTicket = $categoriaTicket->readSingleCodToNameCategoria($ticket->getCod_categoria());
-    
+        // consulta tipo_equipo
+        $tipoEquipo->readSingleCodToName($equipo->getCod_tipo_equipo());       
+        $nameTipoEquipo = $tipoEquipo->getNombre();
 
-
+        // consulta tipo_falla_ticket
+        $tipoFallaTicket->readSingleCodToNameCategoria($ticket->getCod_tipo_falla_ticket());
+        $nameTipoFalla =  $tipoFallaTicket->getNombre();
+         
+        // consulta usuario
+        $usuario->readSingleRecordUser($ticket->getCod_usuario());
+        $usuarioTicket = $usuario->getNombre() . ' '. $usuario->getApellido();
         
-
-
-        $usuario->readSingleRecordUsuer($ticket->getCod_usuario());
-    
-
+        //consulta cargo_usuario
         $nameCargo = $cargoUsuario->readSingleNomCargo($usuario->getCod_cargo());
-        
 
+        //consulta area_usuario
         $nameArea = $areaUsuario->readSingleNomArea($usuario->getCod_area());
 
-
-
-      /*   $tiempo_actual              =new DateTime("now");
-        $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);
- */
-
+      /* $tiempo_actual =new DateTime("now");
+        $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);*/
     }
-
+}else{
+    header('location:./viewListTicket.php?info=search&result=no');
+}
 ?>
 
 
@@ -210,13 +199,13 @@ $ticket->readSingleRecordTicket($id_ticket);
                                     <div class="group-fields clearfix row">
 
                                         <!--Column 1 Nombre completos-->
-                                        <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="nombre" class="control-label" style="display: block; text-align:center;"> Nombres y apellidos </label>
-                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php //echo $usuario;?>" style="display: block; text-align:center;"></input>
-                                                <input type="hidden" name="cod_usuario" id="id_usuario" class="form-control" value="<?php //echo $id_usuario;?>"></input>
+                                                <input id="nombre" name="nombre" type="text" class="form-control" readonly="" value="<?php echo $usuarioTicket;?>" style="display: block; text-align:center;" disabled></input>
+                                               <input type="hidden" name="cod_usuario" id="id_usuario" class="form-control" value="<?php echo $usuario->getId_usuario;?>"></input>
                                             </div>
-                                        </div> -->
+                                        </div> 
                                         <!--End Column 1 Nombre completos-->
 
                                         <!--Colmun 2 Cargo-->
@@ -248,7 +237,12 @@ $ticket->readSingleRecordTicket($id_ticket);
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="rol" class="control-label" style="display: block; text-align:center;"> Tipo de Equipo* </label>
-                                                <input id="tipo_equipo" name="tipo_equipo" type="text" class="form-control" readonly="" value="<?php echo $nameTipoEquipo; ?>" style="text-align:center;" disabled></input>
+                                                <input id="tipo_equipo" name="tipo_equipo" type="text" class="form-control" readonly="" value="<?php echo $nameTipoEquipo; ?>" style="text-align:center;" disabled></input> 
+                                               <!-- <select id="cod_tipo_equipo" name="cod_tipo_equipo" class="select-simple form-control pmd-select2 text-center"> 
+                                                    <option value=""> </option> 
+                                                    <option value="1">Escritorio</option> 
+                                                    <option value="2">Portátil</option> 
+                                                </select> -->
                                             </div>
                                         </div> 
                                         <!--End Colmun 1 Tipo de Equipo-->
@@ -267,7 +261,13 @@ $ticket->readSingleRecordTicket($id_ticket);
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                                 <label for="categoria" class="control-label" style="display: block; text-align: center">Tipo de falla*</label>
-                                                <input id="categoria_ticket" name="categoria_ticket" type="text" class="form-control" readonly="" value="<?php echo $nameCategoriaTicket; ?>" style="text-align:center;" disabled></input> 
+                                                <input id="categoria_ticket" name="categoria_ticket" type="text" class="form-control" readonly="" value="<?php echo $nameTipoFalla; ?>" style="text-align:center;" disabled></input>  
+
+                                                <!-- <select id="categoria" name="cod_categoria" class="select-simple form-control pmd-select2 text-center"> 
+                                                    <option value=""> </option> 
+                                                    <option value="1" >Hardware</option> 
+                                                    <option value="2">Software</option> 
+                                                </select> -->
                                             
                                             </div>
                                         </div>
