@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
 });
 
@@ -9,8 +9,28 @@ $(document).ready(function () {
 // Go list of Device
 function goToListDevices() {
     $.ajax({
-        url: "../../views/mgmtDevice/viewListEquipo.php",
-        success: function (result) {
+        url: "../mgmtDevice/viewListEquipo.php",
+        success: function(result) {
+            $("section").html(result);
+        }
+    });
+}
+
+// Go Info of Device
+function goToInfoDevice(id_device) {
+    $.ajax({
+        url: "../mgmtDevice/viewInfoEquipo.php?id=" + id_device,
+        success: function(result) {
+            $("section").html(result);
+        }
+    });
+}
+
+// Go Edit of Device
+function goToEditDevice(id_device) {
+    $.ajax({
+        url: "../mgmtDevice/viewEditEquipo.php?id=" + id_device,
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -19,8 +39,8 @@ function goToListDevices() {
 // Go add new Device
 function goToAddDevice() {
     $.ajax({
-        url: "../../views/mgmtDevice/viewAddEquipo.php",
-        success: function (result) {
+        url: "../mgmtDevice/viewAddEquipo.php",
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -30,7 +50,7 @@ function goToAddDevice() {
 function goToEditTicket(id_ticket) {
     $.ajax({
         url: "../mgmtTicket/viewEditTicket.php?id=" + id_ticket,
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -49,7 +69,7 @@ function goToEditTicket(id_ticket) {
 function goTolistTickets() {
     $.ajax({
         url: "../mgmtTicket/viewListTicket.php",
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -59,7 +79,7 @@ function goTolistTickets() {
 function goToAddTicket() {
     $.ajax({
         url: "../mgmtTicket/viewAddTicket.php",
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -78,7 +98,7 @@ function goToAddTicket() {
 function goToListUsers(lastVisited = "", name = "", idUser = "") {
     $.ajax({
         url: "../mgmtUser/viewListUsers.php?lastVisited=" + lastVisited + "?name=" + name + "?idUser=" + idUser,
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -88,7 +108,7 @@ function goToListUsers(lastVisited = "", name = "", idUser = "") {
 function goToAddUser() {
     $.ajax({
         url: "../mgmtUser/viewAddUser.php",
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -98,7 +118,7 @@ function goToAddUser() {
 function goToEditUser(id_usuario) {
     $.ajax({
         url: "../mgmtUser/viewEditUser.php?id=" + id_usuario,
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
@@ -108,7 +128,7 @@ function goToEditUser(id_usuario) {
 function goToInfoUser(id_usuario) {
     $.ajax({
         url: "../mgmtUser/viewProfileUser.php?id=" + id_usuario,
-        success: function (result) {
+        success: function(result) {
             $("section").html(result);
         }
     });
