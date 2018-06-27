@@ -13,10 +13,10 @@ session_start();
     <!-- <link rel="stylesheet" href="../../node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css"> -->
     <link rel="stylesheet" href="https: //cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
     <?php
-     require '../../config/base_head.php';
-   //  include '../../config/googleAnaytics.php';
-    require '../../config/Toastr.php'
-    ;?>
+require '../../config/base_head.php';
+//  include '../../config/googleAnaytics.php';
+require '../../config/Toastr.php'
+;?>
     <!-- Styles Ends -->
     <!-- Scripts Starts -->
     <script defer src="../../assets/js/ajaxLoadPage.js"></script>
@@ -79,10 +79,68 @@ session_start();
     <!-- <script src="../../node_modules/datatables.net-autofill/js/dataTables.autoFill.min.js"></script> -->
     <!-- <script src="../../node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"></script> -->
     <!-- <script src="../../node_modules/datatables.net-rowgroup/js/dataTables.rowGroup.min.js"></script> -->
-        <!-- Styles Ends -->    
+        <!-- Styles Ends -->
 </head>
 <body>
-     <div class="container">
+
+<?php
+if (isset($_GET['info']) && isset($_GET['name'])) {
+
+    $btnMsg = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>';
+
+    switch ($_GET['info']) {
+        case 'added':
+            $nameUser = $_GET['name'];
+            $stusT = 'success';
+            $titleT = 'Bien hecho!';
+            $msgT = 'Los datos han sido guardados con éxito.';
+            $class = "alert alert-success alert-dismissable pmd-z-depth-1";
+            $msg = 'usuario de datos insertados con éxito';
+
+            if (isset($msg) && isset($class)) {
+                echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+            }
+            break;
+
+        case 'updated':
+            $nameUser = $_GET['name'];
+            $stusT = 'success';
+            $titleT = 'Bien hecho!';
+            $msgT = 'Los datos han sido actualizado con éxito.';
+            $class = "alert alert-success alert-dismissable pmd-z-depth-1";
+            $msg = 'usuario de datos actualizado con éxito';
+
+            if (isset($msg) && isset($class)) {
+                echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+            }
+            break;
+
+        case 'deleted':
+            $nameUser = $_GET['name'];
+            $stusT = 'info';
+            $titleT = 'Bien hecho!';
+            $msgT = 'Los datos han sido eliminado con éxito.';
+            $class = "alert alert-info alert-dismissable pmd-z-depth-1";
+            $msg = 'usuario de datos eliminado con éxito';
+
+            if (isset($msg) && isset($class)) {
+                echo '<script>toastr.' . $stusT . '("' . $msgT . '", "' . $titleT . '", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
+                echo '<div class="' . $class . '">' . $btnMsg . $nameUser . ' ' . $msg . '</div>';
+            }
+            break;
+
+        default:
+            /*echo '<div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
+            </div>';*/
+            break;
+    }
+}
+?>
+
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <!--breadcrum start-->
@@ -96,7 +154,7 @@ session_start();
             </div>
         </div>
         <!-- div content -->
-        <div class="table-wr    apper">
+        <div class="table-wrapper">
             <!-- div row -->
             <div class="table-title">
                 <div class="row pmd-card-title">
@@ -122,95 +180,30 @@ session_start();
 
             <!-- div row -->
             <div class="row">
-
-
-<?php
-            if (isset($_GET['info']) && isset($_GET['name'])) {
-
-                $btnMsg = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>';
-
-                switch ($_GET['info']) {
-                case 'added':
-                    $nameUser = $_GET['name'];
-                    $stusT  = 'success';
-                    $titleT = 'Bien hecho!';
-                    $msgT   = 'Los datos han sido guardados con éxito.';
-                    $class  = "alert alert-success alert-dismissable pmd-z-depth-1";
-                    $msg    = 'usuario de datos insertados con éxito';
-
-                    if (isset($msg) && isset($class)) {
-                        echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                        echo '<div class="'.$class.'">'.$btnMsg . $nameUser. ' '. $msg. '</div>';
-                    }
-                    break;
-
-                case 'updated':
-                    $nameUser = $_GET['name'];
-                    $stusT  = 'success';
-                    $titleT = 'Bien hecho!';
-                    $msgT   = 'Los datos han sido actualizado con éxito.';
-                    $class  = "alert alert-success alert-dismissable pmd-z-depth-1";
-                    $msg    = 'usuario de datos actualizado con éxito';
-
-                    if (isset($msg) && isset($class)) {
-                        echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                        echo '<div class="'.$class.'">' . $btnMsg . $nameUser. ' '. $msg. '</div>';
-                    }
-                    break;
-
-                case 'deleted':
-                    $nameUser = $_GET['name'];
-                    $stusT  = 'info';
-                    $titleT = 'Bien hecho!';
-                    $msgT   = 'Los datos han sido eliminado con éxito.';
-                    $class  = "alert alert-info alert-dismissable pmd-z-depth-1";
-                    $msg    = 'usuario de datos eliminado con éxito';
-
-                    if (isset($msg) && isset($class)) {
-                        echo '<script>toastr.'.$stusT.'("'.$msgT.'", "'.$titleT.'", {timeOut: 6000, "closeButton": true, "progressBar": true})</script>';
-                        echo '<div class="'.$class.'">'. $btnMsg .$nameUser. ' '. $msg. '</div>';
-                    }
-                    break;
-
-                default:
-                /*echo '<div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>Los datos han sido guardados con éxito.
-                        </div>';*/
-                    break;
-                }
-            }
-            ?>
-            </div>
-   
-            <!-- div row -->
-            <div class="row">
                 <!-- TABLE -->
                 <div class="table-responsive">
-                <table id="myTable" class="table table-hover table-striped table-bordered tablesorter">
-                                                                        <thead>
+                    <table id="myTable" class="table table-hover table-striped table-bordered tablesorter">
+                        <thead>
                             <tr>
                                 <th>Num</th>
-                               
-                                <th> Serial</th>
+                                <th>Serial</th>
                                 <th>Equipo</th>
-                            
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
+                        <?php
                             require '../../model/Equipo.php';
                             $equipo = new Equipo();
                             $equipo->readAllEquipo();
-                            ?>
+                        ?>
                         </tbody>
                     </table>
                 </div>
                 <!-- END TABLE -->
             </div>
             <!-- End div row -->
-
         </div>
         <!-- End div content -->
     </div>
