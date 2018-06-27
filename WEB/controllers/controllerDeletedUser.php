@@ -12,8 +12,8 @@
  * This Model of Class User
  * Source DB
  */
-ob_start();
-require '../model/Usuario.php';
+//ob_start();
+require_once '../model/Usuario.php';
 $usuario = new Usuario();
 if (isset($_GET['btnClickedUser']) == 'delete') {
     $id = intval($_GET['nik']);

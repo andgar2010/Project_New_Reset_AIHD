@@ -205,7 +205,7 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            require '../../model/Usuario.php';
+                            require_once '../../model/Usuario.php';
                             $usuario = new Usuario();
                             $usuario->readAllListUsers();
                         ?>

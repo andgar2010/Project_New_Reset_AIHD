@@ -163,7 +163,7 @@ function readAllEquipo()
                     <tr>
                         <td class="text-center">'.$row['id_equipo'].'</td>
                         <td>
-                            <a onClick=" goToInfoEquipo('. $row['id_equipo'] .')">
+                            <a onClick=" goToInfoDevice('. $row['id_equipo'] .')">
                             <span class="fa fa-user fa-lg" aria-hidden="true">&nbsp;</span>'.
                                 $row['serial_equipo'].'</a> </td>';
 
@@ -173,7 +173,7 @@ function readAllEquipo()
 
                     echo'
                         <td class="text-center">
-                           <a id="editEquipo" onClick=" goToEditEquipo('. $row['id_equipo'] .')" title="Editar datos" class="btn btn-primary btn-sm">
+                           <a id="editEquipo" onClick=" goToEditDevice('. $row['id_equipo'] .')" title="Editar datos" class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
                             <a href="../../controllers/controllerDeletedEquipo.php?btnClickedUser=delete&name='.$row['serial_equipo'].'&nik='.$row['id_equipo'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['serial_equipo']. '? \')" class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
@@ -256,13 +256,15 @@ function readAllEquipo()
         //function updateUser($id_usuario, $cod_tipo_doc, $documento, $nombre, $apellido, $cod_genero, $email, $cod_area, $cod_cargo, $cod_rol, $cod_estado_usuario)
         include '../config/Database.php';
 
-        $sql_update = "UPDATE `equipo`
-                        SET `cod_tipo_equipo`          = '".$this->getCod_tipo_equipo()."',
-                            `serial_equipo`            = '".$this->getSerial_equipo()."',
-                            `cod_estado_equipo`        = '".$this->getCod_estado_equipo()."'
-
+        $sql_update = "UPDATE
+                            `equipo`
+                        SET
+                            `cod_tipo_equipo` = '". $this->getCod_tipo_equipo() ."',
+                            `serial_equipo` = '". $this->getSerial_equipo() ."',
+                            `cod_estado_equipo` = '".$this->getCod_estado_equipo()."'
                         WHERE
-                            `equipo`.`id_equipo`  = ".$this->getId_equipo();
+                            `equipo`.`id_equipo` = ".$this->getId_equipo().";";
+                            var_dump($sql_update);
 
             $actualizadoEquipoDb = $db->query($sql_update) or die(infoErrorUpdateEquipo($db));
 
@@ -376,8 +378,6 @@ function printCodTipoEquipoToTable($cod_tipo_equipo)
         break;
     }
 }
-
-
 /**
  * Imprimir Aviso error crear nuevo usuario
  *
@@ -410,7 +410,6 @@ function infoErrorCreatedEquipo($db)
         }
     </script>';
 }
-
 /**
  * Imprimir Aviso error actualizar usuario
  *

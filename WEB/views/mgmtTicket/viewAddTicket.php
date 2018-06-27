@@ -211,8 +211,8 @@ $idLastTicket = $ticket->readLastTicket();
                                         <!--Column 3 Tipo de falla-->
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                                <label for="categoria" class="control-label" style="display: block; text-align: center">Tipo de falla*</label>
-                                                <select id="categoria" name="cod_categoria" class="select-simple form-control pmd-select2 text-center">
+                                                <label for="tipo_falla_ticket" class="control-label" style="display: block; text-align: center">Tipo de falla*</label>
+                                                <select id="tipo_falla_ticket" name="cod_tipo_falla_ticket" class="select-simple form-control pmd-select2 text-center">
                                                     <option value=""> </option>
                                                     <option value="1">Hardware</option>
                                                     <option value="2">Software</option>

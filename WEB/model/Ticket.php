@@ -525,7 +525,7 @@ public function readSingleRecordTicket($id_ticket)
  * 
  * @return String echo html
  */
-function infoErrorCreateTicket($db)
+function infoErrorCreatedTicket($db)
 {   
         echo '<div class="mosal-dialog">
             <div class="modal-content"

@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
     $id_usuario = intval($_GET['id']);
     include '../../model/Usuario.php';
     $usuario = new Usuario();
-    $usuario->readSingleRecordUsuer($id_usuario);
+    $usuario->readSingleRecordUser($id_usuario);
 
     if ($usuario->getNombre() == null) {
 

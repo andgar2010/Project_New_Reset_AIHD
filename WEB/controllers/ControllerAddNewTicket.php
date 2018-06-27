@@ -32,7 +32,7 @@ if (isset($_POST['btn_ClickedTicket']) == 'send'){
     if (isset($_POST) && !empty($_POST)) {
         $ticket->setDescrip_incidencia($_POST['descrip_incidencia']);
         //$ticket->setArchivo_evidencia($_POST['archivo_evidencia']);
-        $ticket->setCod_categoria($_POST['cod_categoria']);
+        $ticket->setCod_tipo_falla_ticket($_POST['cod_tipo_falla_ticket']);
         //$ticket->setCod_estado_ticket($_POST['cod_estado_ticket']);
         $ticket->setCod_usuario($_POST['cod_usuario']);
         $ticket->setCod_equipo($_POST['cod_equipo']);
@@ -45,8 +45,7 @@ if (isset($_POST['btn_ClickedTicket']) == 'send'){
             $msgT     = 'Los datos han sido guardados con exito.';
             $class    = "alert alert-success";
             $msg      = 'Ticket enviado con exito';
-            //header("location: ../views/viewListTicket.php");
-            header("location: ../views/mgmtTicket/viewListTicket.php?info=added&name=$id_ticket");
+            header("location: ../views/dashboard/indexDashboard.php?info=added&name=$id_ticket");
             //ob_end_flush();
         }else{
             $stusT = 'error';
