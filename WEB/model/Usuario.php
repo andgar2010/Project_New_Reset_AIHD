@@ -64,7 +64,7 @@ class Usuario
      */
     public function setFecha_creado($fecha_creado)
     {
-        include '../config/Database.php';
+        include_once '../../config/Database.php';
         $this->fecha_creado = $db->real_escape_string($fecha_creado);
 
         //return $this;
@@ -85,7 +85,7 @@ class Usuario
      */
     public function setCod_estado_usuario($cod_estado_usuario)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->cod_estado_usuario = $db->real_escape_string($cod_estado_usuario);
 
         //return $this;
@@ -106,7 +106,7 @@ class Usuario
      */
     public function setCod_rol($cod_rol)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->cod_rol = $db->real_escape_string($cod_rol);
 
         //return $this;
@@ -127,7 +127,7 @@ class Usuario
      */
     public function setCod_cargo($cod_cargo)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->cod_cargo = $db->real_escape_string($cod_cargo);
 
         //return $this;
@@ -148,7 +148,7 @@ class Usuario
      */
     public function setCod_area($cod_area)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->cod_area = $db->real_escape_string($cod_area);
 
         //return $this;
@@ -169,7 +169,7 @@ class Usuario
      */
     public function setPassword($password)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->password = $db->real_escape_string($password);
 
         //return $this;
@@ -190,7 +190,7 @@ class Usuario
      */
     public function setEmail($email)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->email = $db->real_escape_string($email);
 
         //return $this;
@@ -211,7 +211,7 @@ class Usuario
      */
     public function setCod_genero($cod_genero)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->cod_genero = $db->real_escape_string($cod_genero);
 
         //return $this;
@@ -232,7 +232,7 @@ class Usuario
      */
     public function setApellido($apellido)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->apellido = $db->real_escape_string($apellido);
 
         //return $this;
@@ -253,7 +253,7 @@ class Usuario
      */
     public function setNombre($nombre)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->nombre = $db->real_escape_string($nombre);
 
         //return $this;
@@ -274,7 +274,7 @@ class Usuario
      */
     public function setCod_tipo_doc($cod_tipo_doc)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->cod_tipo_doc = $db->real_escape_string($cod_tipo_doc);
 
         //return $this;
@@ -295,7 +295,7 @@ class Usuario
      */
     public function setDocumento($documento)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->documento = $db->real_escape_string($documento);
 
         //return $this;
@@ -316,7 +316,7 @@ class Usuario
      */
     public function setId_usuario($id_usuario)
     {
-        include '../config/Database.php';
+        include '../../config/Database.php';
         $this->id_usuario = $db->real_escape_string($id_usuario);
 
         // return $this;
@@ -329,7 +329,7 @@ class Usuario
      */
     public function createUser()
     {
-        include '../config/Database.php';
+        include_once '../../config/Database.php';
         define('INACTIVO', '1');//Defecto num 2: Activo por ENUM Estado de Ususario
 
         $sql_insert = "INSERT INTO `usuario`
@@ -370,7 +370,7 @@ class Usuario
      */
     public function readAllListUsers()
     {
-        include '../../config/Database.php';
+        include_once '../../config/Database.php';
         $sql_query = "SELECT * FROM usuario";
 
         if ($output_sql = $db->query($sql_query)) {
@@ -390,13 +390,82 @@ class Usuario
                                 $row['nombre'].' '. $row['apellido'].
                             '</a> </td>';
 
-                        printCodCargoToText($row['cod_cargo']);
+                        
+                    switch ($row['cod_cargo']) {
+                        case '1':
+                            echo '<td class="text-center">Técnico</td>';
+                            break;
+                        case '2':
+                            echo '<td class="text-center">Rector</td>';
+                            break;
+                        case '3':
+                            echo '<td class="text-center">Coordinador académico</td>';
+                            break;
+                        case '4':
+                            echo '<td class="text-center">Profesor</td>';
+                            break;
+                        default:
+                            echo '<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
+                            break;
+                    }
 
-                        printCodAreaToText($row['cod_area']);
+                    switch ($row['cod_area']) {
+                        case '1':
+                            echo '<td class="text-center">Académica</td>';
+                            break;
+                        case '2':
+                            echo '<td class="text-center">Administrativa</td>';
+                            break;
+                        case '3':
+                            echo '<td class="text-center">Técnica</td>';
+                            break;
+                        case '4':
+                            echo '<td class="text-center">Tecnológica</td>';
+                            break;
+                        default:
+                            echo '<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
+                            break;
+                    }
 
-                        printCodRolToText($row['cod_rol']);
+                    switch ($row['cod_rol']) {
+                        case '1':
+                            echo '<td class="text-center">Superadministrador</td>';
+                            break;
+                        case '2':
+                            echo '<td class="text-center">Técnico</td>';
+                            break;
+                        case '3':
+                            echo '<td class="text-center">Administrativo</td>';
+                            break;
+                        case '4':
+                            echo '<td class="text-center">Usuario</td>';
+                            break;
+                        default:
+                            echo '<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
+                            break;
+                    }
 
-                        printCodEstadoUsuarioToText($row['cod_estado_usuario']);
+
+    switch ($row['cod_estado_usuario']) {
+        case '1':
+            echo '
+                <td class="text-center">
+                    <span class="label label-info">inactivo</span>
+                </td>';
+            break;
+        case '2':
+            echo '
+                <td class="text-center">
+                    <span class="label label-success">Activo</span>
+                </td>';
+            break;
+        default:
+            echo '
+                <td class="text-center">
+                    <span class="label label-warning">No seleccionado</span>
+                </td>';
+            break;
+    }
 
 
                         //href="../mgmtUser/viewEditUser.php?id='.$row['id_usuario'].'"
@@ -486,7 +555,7 @@ class Usuario
      */
     public function updateUser()
     {
-        include '../config/Database.php';
+        include_once '../../config/Database.php';
 
         $sql_update = "UPDATE `usuario`
                         SET `cod_tipo_doc`          = '".$this->getCod_tipo_doc()."',
@@ -521,7 +590,7 @@ class Usuario
      */
     public function confirmNewUser()
     {
-        include '../../config/Database.php';
+        include_once '../../config/Database.php';
 
         $sql_update = "UPDATE `usuario`
                         SET `documento`             = '".$this->getDocumento()."',
@@ -548,7 +617,7 @@ class Usuario
      */
     public function recoveryPasswordUser()
     {
-        include '../../config/Database.php';
+        include_once '../../config/Database.php';
         $codConfirm = bin2hex(random_bytes(7));
 
         $sql_update = "UPDATE `usuario`
@@ -573,7 +642,7 @@ class Usuario
      */
     public function resetPasswordUser()
     {
-        include '../../config/Database.php';
+        include_once '../../config/Database.php';
 
         $sql_update = "UPDATE `usuario`
                         SET
@@ -600,7 +669,7 @@ class Usuario
     {
         define('INACTIVO', '1');
 
-        include '../config/Database.php';
+        include_once '../config/Database.php';
             $sql_update = "UPDATE
 								`usuario`
 							SET
@@ -624,133 +693,19 @@ class Usuario
             $db->close();
             return ($desactivadoClienteDb) ? true : false;
     } //End DesactivedUser()
-}// End Class Usuario
 
-/**
- * Imprimir estado de usuario en texto por codigo de estado de usuario BD
- *
- * $cod_estado_usuario @param int codigo de estado de usuario desde BD
- *
- * @return String echo <td></td>
- */
-function printCodEstadoUsuarioToText($cod_estado_usuario)
-{
-    switch ($cod_estado_usuario) {
-        case '1':
-            echo '
-                <td class="text-center">
-                    <span class="label label-info">inactivo</span>
-                </td>';
-            break;
-        case '2':
-            echo '
-                <td class="text-center">
-                    <span class="label label-success">Activo</span>
-                </td>';
-            break;
-        default:
-            echo '
-                <td class="text-center">
-                    <span class="label label-warning">No seleccionado</span>
-                </td>';
-            break;
-    }
-}
 
-/**
- * Imprimir rol de usuario en texto por codigo de rol de usuario BD
- *
- * $cod_rol @param int codigo de rol de usuario desde BD
- *
- * @return String echo <td></td>
- */
-function printCodRolToText($cod_rol)
-{
-    switch ($cod_rol) {
-        case '1':
-            echo'<td class="text-center">Superadministrador</td>';
-            break;
-        case '2':
-            echo'<td class="text-center">Técnico</td>';
-            break;
-        case '3':
-            echo'<td class="text-center">Administrativo</td>';
-            break;
-        case '4':
-            echo'<td class="text-center">Usuario</td>';
-            break;
-        default:
-            echo'<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
-            break;
-    }
-}
 
-/**
- * Imprimir cargo de usuario en texto por codigo de cargo de usuario BD
- *
- * $cod_cargo @param int codigo de cargo de usuario desde BD
- *
- * @return String echo <td></td>
- */
-function printCodCargoToText($cod_cargo)
-{
-    switch ($cod_cargo) {
-        case '1':
-            echo'<td class="text-center">Técnico</td>';
-            break;
-        case '2':
-            echo'<td class="text-center">Rector</td>';
-            break;
-        case '3':
-            echo'<td class="text-center">Coordinador académico</td>';
-            break;
-        case '4':
-            echo'<td class="text-center">Profesor</td>';
-            break;
-        default:
-            echo'<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
-            break;
-    }
-}
-
-/**
- * Imprimir area de usuario en texto por codigo de area de usuario BD
- *
- * $cod_area @param int codigo de area de usuario desde BD
- *
- * @return String echo <td></td>
- */
-function printCodAreaToText($cod_area)
-{
-    switch ($cod_area) {
-        case '1':
-            echo'<td class="text-center">Académica</td>';
-            break;
-        case '2':
-            echo'<td class="text-center">Administrativa</td>';
-            break;
-        case '3':
-            echo'<td class="text-center">Técnica</td>';
-            break;
-        case '4':
-            echo'<td class="text-center">Tecnológica</td>';
-            break;
-        default:
-            echo'<td class="text-center"><span class="label label-warning">No seleccionado</span></td>';
-            break;
-    }
-}
-
-/**
- * Imprimir Aviso error crear nuevo usuario
- *
- * $db @param Object db desde BD
- *
- * @return String echo html
- */
-function infoErrorCreatedUser($db)
-{
-    echo '<div class="modal-dialog">
+    /**
+     * Imprimir Aviso error crear nuevo usuario
+     *
+     * $db @param Object db desde BD
+     *
+     * @return String echo html
+     */
+    function infoErrorCreatedUser($db)
+    {
+        echo '<div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button class="btn btn-info" onclick="goBack()">Regresar</button>
@@ -772,18 +727,18 @@ function infoErrorCreatedUser($db)
             window.history.back();
         }
     </script>';
-}
+    }
 
-/**
- * Imprimir Aviso error actualizar usuario
- *
- * $db @param Object db desde BD
- *
- * @return String echo html
- */
-function infoErrorUpdateUser($db)
-{
-    echo '<div class="modal-dialog">
+    /**
+     * Imprimir Aviso error actualizar usuario
+     *
+     * $db @param Object db desde BD
+     *
+     * @return String echo html
+     */
+    function infoErrorUpdateUser($db)
+    {
+        echo '<div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button class="btn btn-info" onclick="goBack()">Regresar</button>
@@ -804,18 +759,18 @@ function infoErrorUpdateUser($db)
             window.history.back();
         }
     </script>';
-}
+    }
 
-/**
- * Imprimir Aviso error confirmada nuevo usuario
- *
- * $db @param Object db desde BD
- *
- * @return String echo html
- */
-function infoErrorConfirmNewUser($db)
-{
-    echo '<div class="modal-dialog">
+    /**
+     * Imprimir Aviso error confirmada nuevo usuario
+     *
+     * $db @param Object db desde BD
+     *
+     * @return String echo html
+     */
+    function infoErrorConfirmNewUser($db)
+    {
+        echo '<div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button class="btn btn-info" onclick="goBack()">Regresar</button>
@@ -836,18 +791,18 @@ function infoErrorConfirmNewUser($db)
             window.history.back();
         }
     </script>';
-}
+    }
 
-/**
- * Imprimir Aviso error recuperar la contrseña del usuario
- *
- * $db @param Object db desde BD
- *
- * @return String echo html
- */
-function infoErrorRecoveryPasswordUser($db)
-{
-    echo '<div class="modal-dialog">
+    /**
+     * Imprimir Aviso error recuperar la contrseña del usuario
+     *
+     * $db @param Object db desde BD
+     *
+     * @return String echo html
+     */
+    function infoErrorRecoveryPasswordUser($db)
+    {
+        echo '<div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button class="btn btn-info" onclick="goBack()">Regresar</button>
@@ -868,18 +823,18 @@ function infoErrorRecoveryPasswordUser($db)
             window.history.back();
         }
     </script>';
-}
+    }
 
-/**
- * Imprimir Aviso error restablecer la contrseña del usuario
- *
- * $db @param Object db desde BD
- *
- * @return String echo html
- */
-function infoErrorResetPasswordUser($db)
-{
-    echo '<div class="modal-dialog">
+    /**
+     * Imprimir Aviso error restablecer la contrseña del usuario
+     *
+     * $db @param Object db desde BD
+     *
+     * @return String echo html
+     */
+    function infoErrorResetPasswordUser($db)
+    {
+        echo '<div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button class="btn btn-info" onclick="goBack()">Regresar</button>
@@ -900,4 +855,7 @@ function infoErrorResetPasswordUser($db)
             window.history.back();
         }
     </script>';
-}
+    }
+
+
+}// End Class Usuario
