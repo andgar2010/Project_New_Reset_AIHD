@@ -130,7 +130,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                    <form role="form" method="POST" action="./controllers/authLogin.php">
+                    <form role="form" method="POST" action="./controllers/auth/authLogin.php">
                         <div class="form-group">
                             <label id="email" for="email">
                                 <span class="fa fa-user fa-lg"></span> Usuario</label>
