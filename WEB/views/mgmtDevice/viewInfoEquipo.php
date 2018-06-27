@@ -93,11 +93,11 @@ if (isset($_GET['id'])) {
                             </td>
                         </tr>
                     </table>
-                    <a onClick="goToListEquipo()" class="btn btn-sm btn-info">
+                    <a onClick="goToListDevices()" class="btn btn-sm btn-info">
 			        	<span class="fa fa-arrow-circle-left fa-lg" aria-hidden="true"></span> Regresar
 			        </a>
 
-			        <a onClick="goToEditEquipo(<?php echo $id_usuario;?>)" title="Editar datos" class="btn btn-sm btn-success">
+			        <a onClick="goToEditDevice(<?php echo $id_equipo;?>)" title="Editar datos" class="btn btn-sm btn-success">
 			        	<span class="fa fa-edit fa-lg" aria-hidden="true"></span> Editar datos
 			        </a>
 

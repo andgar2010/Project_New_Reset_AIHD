@@ -108,7 +108,7 @@ session_start();
                     <!-- End div .col-sm-8 -->
                     <div class="col-sm-4 col-xs-6">
                         <br>
-                        <a onClick="goToAddEquipo()">
+                        <a onClick="goToAddDevice()">
                             <button type="button" class="btn btn-info pmd-btn-raised pmd-ripple-effect">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Agregar Equipo
                             </button>
