@@ -27,7 +27,7 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 
 
 
-RunConfiguration.setExecutionSettingFile("C:\\xampp\\htdocs\\Project_New_Reset_AIHD\\WEB\\test\\Testing\\Reports\\Test Auth Users\\20180607_175308\\execution.properties")
+RunConfiguration.setExecutionSettingFile("C:\\xampp\\htdocs\\Project_New_Reset_AIHD\\WEB\\test\\Testing\\Reports\\Test Auth Users\\20180627_142737\\execution.properties")
 
 TestCaseMain.beforeStart()
 

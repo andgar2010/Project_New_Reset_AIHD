@@ -105,7 +105,7 @@ if (isset($_GET['id'])) {
                         <tr>
                             <th>Cargo - Area</th>
                             <td>
-                                <?php echo printCodCargoText($cod_cargo) .' '.printCodAreaText($cod_area); ?>
+                                <?php echo printCodCargoText($cod_cargo) .'&nbsp;'.printCodAreaText($cod_area); ?>
                             </td>
                         </tr>
                         <tr>
@@ -248,19 +248,19 @@ if (isset($_GET['id'])) {
         {
             switch ($cod_cargo) {
             case '1':
-                echo'Técnico';
+                echo'Técnico ';
                 break;
             case '2':
-                echo'Rector';
+                echo'Rector ';
                 break;
             case '3':
-                echo'Coordinador académico';
+                echo'Coordinador académico ';
                 break;
             case '4':
-                echo'Profesor';
+                echo'Profesor ';
                 break;
             default:
-                echo'<span class="label label-warning">No seleccionado</span>';
+                echo'<span class="label label-warning">No seleccionado </span>';
                 break;
             }
         }

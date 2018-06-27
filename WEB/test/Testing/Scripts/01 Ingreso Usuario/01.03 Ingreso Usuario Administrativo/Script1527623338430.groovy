@@ -28,11 +28,13 @@ WebUI.click(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administra
 
 WebUI.delay(2)
 
-WebUI.setText(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_email'), 'rct@email.com')
+WebUI.setText(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_email'), 
+    'rct@email.com')
 
-WebUI.setText(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_password'), '1234567')
+WebUI.setText(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/input_password'), 
+    '1234567')
 
-WebUI.click(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar'))
+WebUI.click(findTestObject('01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar'))
 
 WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.03 Ingreso Usuario Administrativo/Page_New Reset AIHD Admin Dashboard/div_Camilo Torres'), 
     'Camilo Torres')

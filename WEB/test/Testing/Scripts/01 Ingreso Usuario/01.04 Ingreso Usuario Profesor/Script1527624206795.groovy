@@ -28,11 +28,13 @@ WebUI.click(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/P
 
 WebUI.delay(2)
 
-WebUI.setText(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_email'), 'uag@email.com')
+WebUI.setText(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_email'), 
+    'uag@email.com')
 
-WebUI.setText(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_password'), '1234560')
+WebUI.setText(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/input_password'), 
+    '1234560')
 
-WebUI.click(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar'))
+WebUI.click(findTestObject('01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_Bienvenido NEW RESET A.I.H.D/button_Ingresar'))
 
 WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.04 Ingreso Usuario Profesor/Page_New Reset AIHD Admin Dashboard/div_Andrs Garca'), 
     'Andrés García')

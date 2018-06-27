@@ -22,6 +22,8 @@
  require '../model/Ticket.php';
  $ticket = new Ticket();
 
+ var_dump($_POST);
+
  $msg = $class = null;
  if(isset($_POST['btnClickerUser']) == 'sendUpdate'){
      if(isset($_POST) && !empty($_POST)){

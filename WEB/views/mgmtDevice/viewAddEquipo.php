@@ -83,7 +83,7 @@ $tipo_equipo = new TipoEquipo();
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
                             <button id="enviar" name="btnClickedEquipo" value="send" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Ingresar nuevo equipo</button>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-2"> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2"> </div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
                             <a onClick="goToListDevices()">
                                 <button id="cancelar" name="cancelar" type="button" class="btn btn-block btn-danger pmd-z-depth-3 pmd-ripple-effect">Cancelar</button>

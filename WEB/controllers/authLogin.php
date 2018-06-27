@@ -2,11 +2,11 @@
 // ob_start();
 session_start();
 
-require_once '../../config/Database.php';
-require_once '../../model/Usuario.php';
-require_once '../../model/CargoUsuario.php';
-require_once '../../model/AreaUsuario.php';
-require_once '../../model/RolUsuario.php';
+require_once '../config/Database.php';
+require_once '../model/Usuario.php';
+require_once '../model/CargoUsuario.php';
+require_once '../model/AreaUsuario.php';
+require_once '../model/RolUsuario.php';
 
 $usuario = new Usuario();
 $areaUsuario = new AreaUsuario();
@@ -35,7 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if ($row = $output_sql->num_rows == 0) {
 
-        return header('location: ../../index.php?info=noFoundDB');
+        return header('location: ../index.php?info=noFoundDB');
 
     } else {
 
@@ -81,18 +81,18 @@ case '2': // -- cod_estado_usuario 2 Activo --
 
     switch ($_SESSION['cod_rol']) {
     case '1'://SuperAdministrador
-        header('location:../../views/dashboard/indexDashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         break;
     case '2'://Tecnico
-        header('location:../../views/dashboard/indexDashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         // header('location:../views/viewListUsers.php');
         break;
     case '3'://Administrativo
-        header('location:../../views/dashboard/indexDashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         // header('location:../views/viewAddUser.php');
         break;
     case '4'://Profesor
-        header('location:../../views/dashboard/indexDashboard.php');
+        header('location:../views/dashboard/indexDashboard.php');
         // header('location:../views/listTicket.php');
         break;
     }//End Switch cod_rol

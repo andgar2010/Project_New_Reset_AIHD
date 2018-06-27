@@ -70,7 +70,7 @@ session_start();
 
 <body style="font-family:'Open Sans', sans-serif;">
     <nav class="navbar navbar-default" style="height:100px;">
-    <a class="github-fork-ribbon" href="https: //github.com/andgar2010/Project_New_Reset_AIHD#readme" data-ribbon="EN DESARROLLO" title="EN DESARROLLO">EN DESARROLLO</a>
+    <a class="github-fork-ribbon" href="https: //github.com/andgar2010/Project_New_Reset_AIHD#readme" data-ribbon="ALPHA" title="ALPHA">ALPHA</a>
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand navbar-link" href="#" style="width:285px;">
@@ -130,7 +130,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                    <form role="form" method="POST" action="./controllers/auth/authLogin.php">
+                    <form role="form" method="POST" action="./controllers/authLogin.php">
                         <div class="form-group">
                             <label id="email" for="email">
                                 <span class="fa fa-user fa-lg"></span> Usuario</label>
@@ -147,7 +147,6 @@ session_start();
                         </div>
                         <button type="submit" class="btn btn-success pmd-btn-raised pmd-ripple-effect btn-block" style="border-radius: 8px;">
                             <i class="fa fa-sign-in fa-lg" required></i>
-                            <br>
                             <br>
                             Ingresar
                         </button>

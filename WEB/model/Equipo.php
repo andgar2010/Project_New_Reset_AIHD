@@ -344,6 +344,28 @@ function printCodEstadoEquipoToTable($cod_estado_equipo)
         break;
     }
 }
+/**
+ * Imprimir estado de usuario en texto por codigo de estado de usuario BD
+ *
+ * $cod_estado_usuario @param int codigo de estado de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */
+function printCodEstadoEquipoToText($cod_estado_equipo)
+{
+    switch ($cod_estado_equipo)
+     {
+    case '1':
+        echo '<span class="label label-info">inactivo</span>';
+        break;
+    case '2':
+        echo '<span class="label label-success">Activo</span>';
+        break;
+    default:
+        echo '<span class="label label-warning">No seleccionado</span>';
+        break;
+    }
+}
 
 
 
@@ -375,6 +397,29 @@ function printCodTipoEquipoToTable($cod_tipo_equipo)
             <td class="text-center">
                 <span class="label label-warning">No seleccionado</span>
             </td>';
+        break;
+    }
+}
+
+/**
+ * Imprimir rol de usuario en texto por codigo de rol de usuario BD
+ *
+ * $cod_rol @param int codigo de rol de usuario desde BD
+ *
+ * @return String echo <td></td>
+ */ 
+function printCodTipoEquipoToText($cod_tipo_equipo)
+{
+    switch ($cod_tipo_equipo) 
+    {
+    case '1':
+        echo 'Escritorio';
+        break;
+    case '2':
+        echo 'Portatil';
+        break;
+    default:
+        echo '<span class="label label-warning">No seleccionado</span>';
         break;
     }
 }

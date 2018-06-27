@@ -63,7 +63,7 @@ if (isset($_GET['id'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="section-title modal-title text-center">Editar equipo</h1>
+                    <h1 class="section-title modal-title text-center">Información equipo</h1>
                 </div>
                 <hr>
                 <div class="modal-body">
@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
                         <tr>
                             <th>Tipo Equipo</th>
                             <td>
-                                <?php echo $equipo->printCodTipoEquipoToTable($cod_tipo_equipo)  ; ?>
+                                <?php echo $equipo->printCodTipoEquipoToText($cod_tipo_equipo)  ; ?>
                             </td>
                         </tr>
                         <tr>
@@ -89,7 +89,7 @@ if (isset($_GET['id'])) {
                         <tr>
                             <th>Estado del equipo</th>
                             <td>
-                                <?php echo $equipo->printCodEstadoEquipoToTable($cod_estado_equipo); ?>
+                                <?php echo $equipo->printCodEstadoEquipoToText($cod_estado_equipo); ?>
                             </td>
                         </tr>
                     </table>

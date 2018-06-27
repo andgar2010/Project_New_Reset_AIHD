@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>button_Ingresar</name>
+   <name>span_Solicitar nuevo ticket</name>
    <tag></tag>
-   <elementGuidId>cdf25eff-04b8-48ef-9e72-373c9d362ed0</elementGuidId>
+   <elementGuidId>edab864e-24b5-42d7-a17c-6a73ab218393</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,21 +11,14 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>button</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>type</name>
-      <type>Main</type>
-      <value>submit</value>
+      <value>span</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>btn btn-success pmd-btn-raised pmd-ripple-effect btn-block</value>
+      <value>media-body</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -33,16 +26,14 @@
       <name>text</name>
       <type>Main</type>
       <value>
-                            
-                            
-                            Ingresar
-                        </value>
+                                 Solicitar nuevo ticket
+                            </value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;modalLogin&quot;)/div[@class=&quot;modal-dialog&quot;]/div[@class=&quot;modal-content&quot;]/div[@class=&quot;modal-body&quot;]/form[1]/button[@class=&quot;btn btn-success pmd-btn-raised pmd-ripple-effect btn-block&quot;]</value>
+      <value>id(&quot;basicSidebar&quot;)/ul[@class=&quot;nav pmd-sidebar-nav&quot;]/li[2]/a[@class=&quot;pmd-ripple-effect&quot;]/div[@class=&quot;row&quot;]/button[@class=&quot;btn btn-primary pmd-ripple-effect pmd-z-depth-2&quot;]/span[@class=&quot;media-body&quot;]</value>
    </webElementProperties>
 </WebElementEntity>

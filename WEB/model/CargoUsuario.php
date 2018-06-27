@@ -99,6 +99,33 @@ class CargoUsuario
      */
     public function readSingleNomCargo($id_cargo)
     {
+        include '../config/Database.php';
+        $sql_query = "SELECT * FROM cargo_usuario WHERE id_cargo = " . $id_cargo;
+
+        if ($output_sql = $db->query($sql_query)) {
+
+            if ($row = $output_sql->num_rows == 0) {
+                echo'No hay datos de Cargo Usuario';
+            } else {
+                while ($row = $output_sql->fetch_assoc()) {
+                    $nomCargo = $row['nombre'];
+                }
+                $output_sql->close();
+            }
+            $db->close();
+
+        }
+
+        return $nomCargo;
+    }//End readSingleNomcargo()
+  
+    /**
+     * Extraer el nombre del cargo
+     *
+     * @return String nomCargo
+     */
+    public function readSingleNomCargoUp($id_cargo)
+    {
         include '../../config/Database.php';
         $sql_query = "SELECT * FROM cargo_usuario WHERE id_cargo = " . $id_cargo;
 

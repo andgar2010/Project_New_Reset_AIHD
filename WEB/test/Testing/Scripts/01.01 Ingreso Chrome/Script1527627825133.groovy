@@ -36,9 +36,9 @@ WebUI.setText(findTestObject('Page_Bienvenido NEW RESET A.I.H.D./input_password'
 
 WebUI.click(findTestObject('Page_Bienvenido NEW RESET A.I.H.D./button_Ingresar'))
 
-WebUI.verifyElementText(findTestObject('Page_New Reset AIHD Admin Dashboard/div_Super Admin'), 'Super Admin')
+WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_New Reset AIHD Admin Dashboard/Page_New Reset AIHD Admin Dashboard/div_Super Admin'), 'Super Admin')
 
-WebUI.verifyElementText(findTestObject('Page_New Reset AIHD Admin Dashboard/i_Superadministrador'), 'Superadministrador')
+WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdministrador/Page_New Reset AIHD Admin Dashboard/Page_New Reset AIHD Admin Dashboard/i_Superadministrador'), 'Superadministrador')
 
 WebUI.closeBrowser()
 

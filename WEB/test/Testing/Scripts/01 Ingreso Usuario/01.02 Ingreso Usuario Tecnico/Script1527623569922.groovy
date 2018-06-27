@@ -39,7 +39,8 @@ WebUI.click(findTestObject('01 Ingreso Usuarios/01.01 Ingreso Usuario SuperAdmin
 WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/div_Tech Admin'), 
     'Tech Admin')
 
-WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/i_Tcnico'), 'Técnico')
+WebUI.verifyElementText(findTestObject('01 Ingreso Usuarios/01.02 Ingreso Usuario Tecnico/Page_New Reset AIHD Admin Dashboard/i_Tcnico'), 
+    'Técnico')
 
 WebUI.closeBrowser()
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>button_Ingresar</name>
+   <name>a_Gestin de Tickets</name>
    <tag></tag>
-   <elementGuidId>cdf25eff-04b8-48ef-9e72-373c9d362ed0</elementGuidId>
+   <elementGuidId>f930b6ad-3722-4e47-9528-3c7afe6e20f2</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,21 +11,28 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>button</value>
+      <value>a</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>type</name>
+      <name>id</name>
       <type>Main</type>
-      <value>submit</value>
+      <value>listTicket</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>btn btn-success pmd-btn-raised pmd-ripple-effect btn-block</value>
+      <value>pmd-ripple-effect</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onclick</name>
+      <type>Main</type>
+      <value>goTolistTickets()</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -33,16 +40,17 @@
       <name>text</name>
       <type>Main</type>
       <value>
+                    
                             
-                            
-                            Ingresar
-                        </value>
+                        
+                        Gestión de Tickets
+                </value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;modalLogin&quot;)/div[@class=&quot;modal-dialog&quot;]/div[@class=&quot;modal-content&quot;]/div[@class=&quot;modal-body&quot;]/form[1]/button[@class=&quot;btn btn-success pmd-btn-raised pmd-ripple-effect btn-block&quot;]</value>
+      <value>id(&quot;listTicket&quot;)</value>
    </webElementProperties>
 </WebElementEntity>

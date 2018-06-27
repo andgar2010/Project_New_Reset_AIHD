@@ -213,7 +213,7 @@ if (isset($_GET['id'])) {
                     <div class="row">
 
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">
-                            <button id="enviar" name="btnClickedUser" value="sendUpdate" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()">Actualizar datos</button>
+                            <button id="enviar" name="btnClickedUser" value="sendUpdate" type="submit" class="btn btn-block btn-success pmd-z-depth-3 pmd-ripple-effect" onsubmit="return checkPass()"><i class="fa fa-refresh" aria-hidden="true"></i> Actualizar datos</button>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2"></div>
                         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pull-right">

@@ -69,10 +69,10 @@ $ticket->readSingleRecordTicket($id_ticket);
         $usuarioTicket = $usuario->getNombre() . ' '. $usuario->getApellido();
         
         //consulta cargo_usuario
-        $nameCargo = $cargoUsuario->readSingleNomCargo($usuario->getCod_cargo());
+        $nameCargo = $cargoUsuario->readSingleNomCargoUp($usuario->getCod_cargo());
 
         //consulta area_usuario
-        $nameArea = $areaUsuario->readSingleNomArea($usuario->getCod_area());
+        $nameArea = $areaUsuario->readSingleNomAreaUp($usuario->getCod_area());
 
       /* $tiempo_actual =new DateTime("now");
         $tiempo_transcurrido        =date_diff($fecha_inicio, $tiempo_actual);*/
@@ -128,7 +128,7 @@ $ticket->readSingleRecordTicket($id_ticket);
                 <!--End section-title -->
 
                     <!-- Start section content -->
-                    <form id="newTicket" action="../../controllers/ControllerAddNewTicket.php" method="post" enctype="multipart/form-data">
+                    <form id="newTicket" action="../../controllers/controllerUpdateTicket.php" method="post" enctype="multipart/form-data">
                         <div class="pmd-card pmd-z-depth-5">
                             <div class="pmd-card-body">
 

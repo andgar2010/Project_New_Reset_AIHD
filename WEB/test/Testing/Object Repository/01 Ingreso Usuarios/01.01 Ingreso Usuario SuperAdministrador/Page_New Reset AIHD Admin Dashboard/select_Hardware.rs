@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>button_Ingresar</name>
+   <name>select_Hardware</name>
    <tag></tag>
-   <elementGuidId>cdf25eff-04b8-48ef-9e72-373c9d362ed0</elementGuidId>
+   <elementGuidId>181ee05d-f31a-418c-a901-193bca35b7c0</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -11,21 +11,28 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>button</value>
+      <value>select</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>type</name>
+      <name>id</name>
       <type>Main</type>
-      <value>submit</value>
+      <value>tipo_falla_ticket</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>cod_tipo_falla_ticket</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>btn btn-success pmd-btn-raised pmd-ripple-effect btn-block</value>
+      <value>select-simple form-control pmd-select2 text-center</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -33,16 +40,16 @@
       <name>text</name>
       <type>Main</type>
       <value>
-                            
-                            
-                            Ingresar
-                        </value>
+                                                     
+                                                    Hardware
+                                                    Software
+                                                </value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;modalLogin&quot;)/div[@class=&quot;modal-dialog&quot;]/div[@class=&quot;modal-content&quot;]/div[@class=&quot;modal-body&quot;]/form[1]/button[@class=&quot;btn btn-success pmd-btn-raised pmd-ripple-effect btn-block&quot;]</value>
+      <value>id(&quot;tipo_falla_ticket&quot;)</value>
    </webElementProperties>
 </WebElementEntity>

@@ -89,7 +89,7 @@ function printCodRolToText($cod_rol)
             <div class="pmd-navbar-right-icon pull-right navigation">
 
                 <!-- RIBBON  -->
-                <a class="github-fork-ribbon" href="https: //github.com/andgar2010/Project_New_Reset_AIHD#readme" data-ribbon="EN DESARROLLO" title="EN DESARROLLO">EN DESARROLLO</a>
+                <a class="github-fork-ribbon" href="https: //github.com/andgar2010/Project_New_Reset_AIHD#readme" data-ribbon="ALPHA" title="ALPHA">ALPHA</a>
 
                 <!-- Notifications -->
                 <div class="dropdown notification icons pmd-dropdown">
@@ -217,12 +217,12 @@ function printCodRolToText($cod_rol)
                     <div class="media-left">
                         <img src="../../assets/images/user-icon.png" alt="New User">
                     </div>
-                    <div class="media-body media-middle"> &nbsp;
+                    <div class="media-body media-middle">
                         <?php echo $nombreUsuario; ?> <i class="fa fa-chevron-circle-down rotate" aria-hidden="true"></i>
                     </div>
                     <div>
                         <i class="dic-more-vert dic" style="margin-left: 55px;">
-                            &nbsp;<?php printCodRolToText($codRol);?>
+                            <?php printCodRolToText($codRol);?>
                         </i>
                     </div>
                     <div class="media-right media-middle">
@@ -357,7 +357,7 @@ function printCodRolToText($cod_rol)
         <div class="container">
             <div class="row" id="card-masonry">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <?php var_dump($_SESSION);?>
+                    <?php //var_dump($_SESSION);?>
                 </div>
             </div>
         </div>
