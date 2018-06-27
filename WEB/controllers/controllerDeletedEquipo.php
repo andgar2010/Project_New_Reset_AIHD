@@ -23,7 +23,7 @@ if (isset($_GET['btnClickedUser']) == 'delete') {
     $result = $equipo->desactiveEquipo($id);
 
     if ($result) {
-        header("location: ../views/mgmtDevice/viewListEquipo.php?info=deleted&name=$name");
+        header("location: ../views/dashboard/indexDashboard.php?info=deleted&name=$name");
     } else {
         header('location: ../views/mgmtDevice/viewListEquipo.php?info=errorDeleted');
     }
