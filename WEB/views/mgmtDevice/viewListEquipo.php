@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,15 +10,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista de equipos</title>
-    <link rel="stylesheet" href="../../node_modules/datatables.net-bs/css/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="../../node_modules/datatables.net-bs/css/dataTables.bootstrap.css">
     <!-- <link rel="stylesheet" href="../../node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css"> -->
-    <link rel="stylesheet" href="https: //cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+
     <?php
-require '../../config/base_head.php';
-//  include '../../config/googleAnaytics.php';
-require '../../config/Toastr.php'
-;?>
-    <!-- Styles Ends -->
+    require '../../config/base_head.php';
+    //require '../../config/base_script.php';
+    require '../../config/Toastr.php'
+    //include '../config/googleAnaytics.php';
+    ;?>
+
     <!-- Scripts Starts -->
     <script defer src="../../assets/js/ajaxLoadPage.js"></script>
     <script defer src="../../node_modules/datatables.net/js/jquery.dataTables.js"></script>
@@ -29,7 +32,7 @@ require '../../config/Toastr.php'
     <script defer src="../../node_modules/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <!-- <script src="../../node_modules/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script> -->
 
-    <script>
+    <script defer>
         $(document).ready(function() {
             $("#myTable").DataTable({
                 "language":{

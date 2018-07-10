@@ -12,7 +12,7 @@ session_start();
     <title>Lista de Usuarios</title>
     <link rel="stylesheet" href="../../node_modules/datatables.net-bs/css/dataTables.bootstrap.css">
     <!-- <link rel="stylesheet" href="../../node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css"> -->
-    <link rel="stylesheet" href="https: //cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 
     <?php
     require '../../config/base_head.php';

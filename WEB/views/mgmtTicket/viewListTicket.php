@@ -12,7 +12,7 @@ session_start();
     <title>Lista de Tickets</title>
     <link rel="stylesheet" href="../../node_modules/datatables.net-bs/css/dataTables.bootstrap.css">
     <!-- <link rel="stylesheet" href="../../node_modules/datatables.net-buttons-bs/css/buttons.bootstrap.css"> -->
-    <link rel="stylesheet" href="https: //cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 
     <?php
     require '../../config/base_head.php';
@@ -22,7 +22,7 @@ session_start();
     ;?>
 
     <!-- Scripts Starts -->
-    <script src="../../assets/js/ajaxLoadPage.js"></script>
+    <script defer src="../../assets/js/ajaxLoadPage.js"></script>
     <script defer src="../../node_modules/datatables.net/js/jquery.dataTables.js"></script>
     <script defer src="../../node_modules/datatables.net-bs/js/dataTables.bootstrap.js"></script>
     <script defer src="../../node_modules/datatables.net-buttons/js/dataTables.buttons.js"></script>
@@ -111,8 +111,6 @@ session_start();
 
             <!-- div row -->
             <div class="row">
-
-
                 <!-- TABLE -->
                 <div class="table-responsive">
                     <table id="myTable" class="table table-hover table-striped table-bordered tablesorter">
